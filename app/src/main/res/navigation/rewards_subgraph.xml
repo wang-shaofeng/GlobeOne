@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rewards_subgraph"
+    app:startDestination="@id/rewardsFragment">
+
+    <fragment
+        android:id="@+id/rewardsFragment"
+        android:name="ph.com.globe.globeonesuperapp.rewards.RewardsFragment"
+        android:label="RewardsFragment"
+        tools:layout="@layout/rewards_fragment">
+        <action
+            android:id="@+id/action_rewardsFragment_to_dataAsCurrencyFragment"
+            app:destination="@id/dataAsCurrencyFragment" />
+        <action
+            android:id="@+id/action_rewardsFragment_to_noAccountsFragment"
+            app:destination="@id/noAccountsFragment" />
+        <action
+            android:id="@+id/action_rewardsFragment_to_rewardDetailsFragment"
+            app:destination="@id/rewardDetailsFragment" />
+        <action
+            android:id="@+id/action_rewardsFragment_to_AllRewradsFragment"
+            app:destination="@id/allRewardsFragment" />
+        <action
+            android:id="@+id/action_rewardsFragment_to_allRewardsInnerFragment"
+            app:destination="@id/allRewardsInnerFragment">
+            <argument
+                android:name="tab"
+                app:argType="ph.com.globe.model.rewards.RewardsCategory" />
+        </action>
+        <action
+            android:id="@+id/action_rewardsFragment_to_navigation_pos"
+            app:destination="@id/pos_subgraph">
+            <argument
+                android:name="enrolledAccountWithPoints"
+                android:defaultValue="@null"
+                app:argType="ph.com.globe.globeonesuperapp.rewards.pos.EnrolledAccountWithPoints"
+                app:nullable="true" />
+        </action>
+    </fragment>
+
+    <include app:graph="@navigation/pos_subgraph" />
+
+    <fragment
+        android:id="@+id/dataAsCurrencyFragment"
+        android:name="ph.com.globe.globeonesuperapp.rewards.data_as_currency.DataAsCurrencyFragment"
+        android:label="DataAsCurrencyFragment"
+        tools:layout="@layout/data_as_currency_fragment">
+        <action
+            android:id="@+id/action_dataAsCurrencyFragment_to_dataAsCurrencyProcessingFragment"
+            app:destination="@id/dataAsCurrencyProcessingFragment" />
+        <action
+            android:id="@+id/action_dataAsCurrencyFragment_to_rewardDetailsFragment"
+            app:destination="@id/rewardDetailsFragment" />
+        <action
+            android:id="@+id/action_dataAsCurrencyFragment_to_allRewardsInnerFragment"
+            app:destination="@id/allRewardsInnerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dataAsCurrencyProcessingFragment"
+        android:name="ph.com.globe.globeonesuperapp.rewards.data_as_currency.DataAsCurrencyProcessingFragment"
+        android:label="DataAsCurrencyProcessingFragment"
+        tools:layout="@layout/data_as_currency_processing_fragment">
+        <action
+            android:id="@+id/action_dataAsCurrencyProcessingFragment_to_dataAsCurrencySuccessfulFragment"
+            app:destination="@id/dataAsCurrencySuccessfulFragment" />
+        <action
+            android:id="@+id/action_dataAsCurrencyProcessingFragment_to_dataAsCurrencyUnsuccessfulFragment"
+            app:destination="@id/dataAsCurrencyUnsuccessfulFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dataAsCurrencySuccessfulFragment"
+        android:name="ph.com.globe.globeonesuperapp.rewards.data_as_currency.DataAsCurrencySuccessfulFragment"
+        android:label="DataAsCurrencySuccessfulFragment"
+        tools:layout="@layout/data_as_currency_successful_fragment">
+        <argument
+            android:name="conversionDelay"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_dataAsCurrencySuccessfulFragment_to_allRewardsInnerFragment"
+            app:destination="@id/allRewardsInnerFragment"
+            app:popUpTo="@id/dataAsCurrencyFragment">
+            <argument
+                android:name="tab"
+                app:argType="ph.com.globe.model.rewards.RewardsCategory" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/dataAsCurrencyUnsuccessfulFragment"
+        android:name="ph.com.globe.globeonesuperapp.rewards.data_as_currency.DataAsCurrencyUnsuccessfulFragment"
+        android:label="DataAsCurrencyUnsuccessfulFragment"
+        tools:layout="@layout/data_as_currency_unsuccessful_fragment">
+        <argument
+            android:name="conversionResult"
+            app:argType="ph.com.globe.globeonesuperapp.rewards.data_as_currency.ConversionResult" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/comingSoonFragment"
+        android:name="ph.com.globe.globeonesuperapp.coming_soon.ComingSoonFragment"
+        android:label="ComingSoonFragment"
+        tools:layout="@layout/coming_soon_fragment" />
+
+    <fragment
+        android:id="@+id/noAccountsFragment"
+        android:name="ph.com.globe.globeonesuperapp.rewards.data_as_currency.NoAccountsFragment"
+        android:label="NoAccountsFragment"
+        tools:layout="@layout/no_accounts_fragment">
+        <action
+            android:id="@+id/action_noAccountsFragment_to_navigation_add_account"
+            app:destination="@id/navigation_add_account">
+            <argument
+                android:name="dacFlow"
+                android:defaultValue="true"
+                app:argType="boolean" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment2"
+        android:name="ph.com.globe.globeonesuperapp.shop.promo.search.SearchFragment"
+        android:label="SearchFragment2"
+        tools:layout="@layout/search_fragment">
+        <argument
+            android:name="type"
+            app:argType="string" />
+        <argument
+            android:name="tabSelected"
+            android:defaultValue="1" />
+        <action
+            android:id="@+id/action_searchFragment2_to_rewardDetailsFragment"
+            app:destination="@id/rewardDetailsFragment" />
+    </fragment>
+
+    <include app:graph="@navigation/navigation_add_account" />
+
+    <fragment
+        android:id="@+id/rewardsFilterFragment"
+        android:name="ph.com.globe.globeonesuperapp.rewards.RewardsFilterFragment"
+        android:label="RewardsFilterFragment"
+        tools:layout="@layout/rewards_filter_fragment" />
+
+    <fragment
+        android:id="@+id/rewardDetailsFragment"
+        android:name="ph.com.globe.globeonesuperapp.rewards.RewardDetailsFragment"
+        android:label="RewardDetailsFragment"
+        tools:layout="@layout/reward_details_fragment">
+        <argument
+            android:name="rewardItem"
+            app:argType="ph.com.globe.model.rewards.RewardsCatalogItem" />
+        <action
+            android:id="@+id/action_rewardDetailsFragment_to_selectEnrolledAccountFragment"
+            app:destination="@id/selectEnrolledAccountFragment" />
+        <action
+            android:id="@+id/action_rewardDetailsFragment_to_rewardConfirmationFragment"
+            app:destination="@id/rewardConfirmationFragment" />
+        <action
+            android:id="@+id/action_rewardDetailsFragment_to_profile_subgraph"
+            app:destination="@id/profile_subgraph">
+            <argument
+                android:name="proceedForRaffle"
+                app:argType="boolean" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/allRewardsFragment"
+        android:name="ph.com.globe.globeonesuperapp.rewards.allrewards.AllRewardsFragment"
+        android:label="AllRewardsFragment"
+        tools:layout="@layout/all_rewards_fragment">
+        <action
+            android:id="@+id/action_allRewardsFragment_to_allRewardsInnerFragment"
+            app:destination="@id/allRewardsInnerFragment">
+            <argument
+                android:name="tab"
+                app:argType="ph.com.globe.model.rewards.RewardsCategory" />
+        </action>
+        <action
+            android:id="@+id/action_allRewardsFragment_to_selectEnrolledAccountFragment"
+            app:destination="@id/selectEnrolledAccountFragment" />
+        <action
+            android:id="@+id/action_allRewardsFragment_to_rewardDetailsFragment"
+            app:destination="@id/rewardDetailsFragment" />
+        <action
+            android:id="@+id/action_allRewardsFragment_to_pos_subgraph"
+            app:destination="@id/pos_subgraph">
+            <argument
+                android:name="enrolledAccountWithPoints"
+                android:defaultValue="@null"
+                app:argType="ph.com.globe.globeonesuperapp.rewards.pos.EnrolledAccountWithPoints"
+                app:nullable="true" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/allRewardsInnerFragment"
+        android:name="ph.com.globe.globeonesuperapp.rewards.allrewards.AllRewardsInnerFragment"
+        android:label="AllRewardsInnerFragment"
+        tools:layout="@layout/all_rewards_inner_fragment">
+        <argument
+            android:name="tab"
+            android:defaultValue="NONE"
+            app:argType="ph.com.globe.model.rewards.RewardsCategory" />
+        <argument
+            android:name="selected_enrolled_account"
+            app:argType="ph.com.globe.model.profile.domain_models.EnrolledAccount"
+            android:defaultValue="@null"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_allRewardsInnerFragment_to_selectEnrolledAccountFragment"
+            app:destination="@id/selectEnrolledAccountFragment" />
+        <action
+            android:id="@+id/action_allRewardsInnerFragment_to_rewardsFilterFragment"
+            app:destination="@id/rewardsFilterFragment" />
+        <action
+            android:id="@+id/action_allRewardsInnerFragment_to_searchFragment"
+            app:destination="@id/searchFragment2" />
+        <action
+            android:id="@+id/action_allRewardsInnerFragment_to_rewardDetailsFragment"
+            app:destination="@id/rewardDetailsFragment" />
+        <action
+            android:id="@+id/action_allRewardsInnerFragment_to_pos_subgraph"
+            app:destination="@id/pos_subgraph">
+            <argument
+                android:name="enrolledAccountWithPoints"
+                android:defaultValue="@null"
+                app:argType="ph.com.globe.globeonesuperapp.rewards.pos.EnrolledAccountWithPoints"
+                app:nullable="true" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/selectEnrolledAccountFragment"
+        android:name="ph.com.globe.globeonesuperapp.rewards.allrewards.enrolled_accounts.SelectEnrolledAccountFragment"
+        android:label="SelectEnrolledAccountFragment"
+        tools:layout="@layout/select_enrolled_account_fragment">
+        <argument
+            android:name="entryPoint"
+            app:argType="ph.com.globe.globeonesuperapp.rewards.allrewards.enrolled_accounts.EntryPoint" />
+        <argument
+            android:name="eligibleBrands"
+            android:defaultValue="@null"
+            app:argType="ph.com.globe.globeonesuperapp.rewards.AccountBrandParcelable[]"
+            app:nullable="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/rewardConfirmationFragment"
+        android:name="ph.com.globe.globeonesuperapp.rewards.RewardConfirmationFragment"
+        android:label="RewardConfirmationFragment"
+        tools:layout="@layout/reward_confirmation_fragment">
+        <argument
+            android:name="rewardItem"
+            app:argType="ph.com.globe.model.rewards.RewardsCatalogItem" />
+        <action
+            android:id="@+id/action_rewardConfirmationFragment_to_redeemRewardsSuccessfulFragment"
+            app:destination="@id/redeemRewardsSuccessfulFragment" />
+        <action
+            android:id="@+id/action_rewardConfirmationFragment_to_redeemRewardsUnsuccessfulFragment"
+            app:destination="@id/redeemRewardsUnsuccessfulFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/redeemRewardsSuccessfulFragment"
+        android:name="ph.com.globe.globeonesuperapp.rewards.RedeemRewardSuccessfulFragment"
+        android:label="RedeemRewardsSuccessfulFragment"
+        tools:layout="@layout/redeem_rewards_successful_fragment">
+
+        <argument
+            android:name="redeemRewords"
+            app:argType="ph.com.globe.model.rewards.RedeemLoyaltyRewardsResult" />
+        <argument
+            android:name="rewardItem"
+            app:argType="ph.com.globe.model.rewards.RewardsCatalogItem" />
+        <argument
+            android:name="enrolledAccount"
+            app:argType="ph.com.globe.model.profile.domain_models.EnrolledAccount" />
+        <argument
+            android:name="points"
+            app:argType="float" />
+    </fragment>
+    <fragment
+        android:id="@+id/redeemRewardsUnsuccessfulFragment"
+        android:name="ph.com.globe.globeonesuperapp.rewards.RedeemRewardsUnsuccessfulFragment"
+        android:label="RedeemRewardsUnsuccessfulFragment" />
+    <include app:graph="@navigation/profile_subgraph" />
+
+</navigation>

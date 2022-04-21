@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_raffle_banner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_standard"
+        android:adjustViewBounds="true"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/explore_rewards" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_raffle"
+        style="@style/Widget.App.TextIconButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_xmedium"
+        android:text="@string/raffle"
+        app:icon="@drawable/ic_raffle"
+        app:layout_constraintBottom_toTopOf="@id/btn_donations"
+        app:layout_constraintEnd_toStartOf="@id/btn_promos"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_raffle_banner" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_promos"
+        style="@style/Widget.App.TextIconButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_xmedium"
+        android:text="@string/promos"
+        app:icon="@drawable/ic_promos"
+        app:layout_constraintBottom_toTopOf="@id/btn_others"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/btn_raffle"
+        app:layout_constraintTop_toBottomOf="@id/iv_raffle_banner" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_donations"
+        style="@style/Widget.App.TextIconButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_smedium"
+        android:layout_marginTop="@dimen/margin_standard"
+        android:text="@string/donations"
+        app:icon="@drawable/ic_donate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/btn_raffle"
+        app:layout_constraintStart_toStartOf="@id/btn_raffle"
+        app:layout_constraintTop_toBottomOf="@id/btn_raffle" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_others"
+        style="@style/Widget.App.TextIconButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_standard"
+        android:text="@string/others"
+        app:icon="@drawable/ic_others"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/btn_promos"
+        app:layout_constraintStart_toStartOf="@id/btn_promos"
+        app:layout_constraintTop_toBottomOf="@id/btn_promos" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

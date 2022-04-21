@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sv_shop_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?neutralB2">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_header_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?accentLight"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_buying_for"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:text="@string/you_are_buying_for"
+                android:textAppearance="?baseRegularContent"
+                android:textColor="?neutralA3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_mobile_number"
+                style="@style/InputFieldStyle.SelectUserInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:hint="@string/mobile_number"
+                app:endIconDrawable="@drawable/ic_user"
+                app:endIconMode="custom"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_buying_for">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_mobile_number"
+                    style="@style/InputFieldTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:maxLength="@integer/phone_number_length" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/v_sort_background"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="?absoluteWhite"
+            app:layout_constraintBottom_toTopOf="@id/tv_check_these_out"
+            app:layout_constraintTop_toBottomOf="@id/cl_header_layout" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_sort"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/margin_standard"
+            android:background="@drawable/sort_layout_background"
+            app:layout_constraintBottom_toBottomOf="@id/iv_filter"
+            app:layout_constraintEnd_toStartOf="@id/iv_filter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_filter">
+
+            <TextView
+                android:id="@+id/tv_sort_by"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:text="@string/sort_by"
+                android:textAppearance="?smallAction"
+                android:textColor="?neutralA3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/v_sort_line_vertical"
+                android:layout_width="@dimen/toolbar_line_height"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:background="?neutralA4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_sort_by"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/sp_sort_dropdown"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:dropDownWidth="@dimen/spinner_dropdown_width"
+                android:popupBackground="@drawable/sort_dropdown_background"
+                android:spinnerMode="dropdown"
+                app:backgroundTint="?neutralA3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/v_sort_line_vertical"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/iv_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_smedium"
+            android:layout_marginEnd="@dimen/margin_standard"
+            android:layout_marginBottom="@dimen/margin_smedium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cl_sort"
+            app:layout_constraintTop_toBottomOf="@id/cl_header_layout"
+            app:srcCompat="@drawable/ic_filter_button" />
+
+        <TextView
+            android:id="@+id/tv_filter_badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/filter_badge_shape"
+            android:paddingHorizontal="@dimen/padding_small"
+            android:paddingVertical="@dimen/padding_xsmall"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="@dimen/text_size_small"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/iv_filter"
+            app:layout_constraintEnd_toEndOf="@id/iv_filter" />
+
+        <TextView
+            android:id="@+id/tv_check_these_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_smedium"
+            android:paddingTop="@dimen/padding_large"
+            android:text="@string/content_check_these_out"
+            android:textAppearance="?xBaseMultiline"
+            android:textColor="?neutralA3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_filter" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_content_promos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
+            android:paddingBottom="@dimen/padding_large"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/tv_check_these_out"
+            tools:listitem="@layout/shop_content_item" />
+
+        <include
+            android:id="@+id/inc_loading"
+            layout="@layout/shop_loading_content_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/tv_check_these_out" />
+
+        <include
+            android:id="@+id/inc_error"
+            layout="@layout/shop_loading_error_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="@id/tv_check_these_out" />
+
+        <LinearLayout
+            android:id="@+id/ll_no_promos_found"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_smedium"
+            android:background="?neutralB2"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/padding_medium"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/iv_filter">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="@dimen/no_promos_image_size"
+                android:layout_height="@dimen/no_promos_image_size"
+                android:layout_marginTop="@dimen/margin_smedium"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/empty_state" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:text="@string/no_promos_title"
+                android:textAppearance="?sMediumBold"
+                android:textColor="?accentDark" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/padding_xxlarge"
+                android:text="@string/no_promos_description"
+                android:textAppearance="?smallRegularContent"
+                android:textColor="?neutralA3" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

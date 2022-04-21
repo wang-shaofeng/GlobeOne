@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/TopRoundedBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_add_account_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_smedium"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back" />
+
+            <View
+                android:id="@+id/v_header_line_vertical"
+                style="@style/ThemeOverlay.App.HeaderLineTheme"
+                android:layout_width="@dimen/toolbar_line_height"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_smedium"
+                app:layout_constraintStart_toEndOf="@id/iv_back" />
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_standard"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_x_icon" />
+
+            <View
+                style="@style/ThemeOverlay.App.HeaderLineTheme"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toolbar_line_height"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_add_account_toolbar">
+
+            <TextView
+                android:id="@+id/tv_help_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:text="@string/help_capital"
+                android:textAppearance="?chip"
+                android:textColor="?neutralA3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_find_wifi_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:text="@string/find_my_sim_serial_number"
+                android:textAppearance="?xBaseMultiline"
+                android:textColor="?accentDark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_help_title" />
+
+            <TextView
+                android:id="@+id/tv_find_wifi_instructions_sim"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:text="@string/find_sim_serial_at_sim"
+                android:textAppearance="?baseRegularContent"
+                android:textColor="?neutralB0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_find_wifi_title" />
+
+            <ImageView
+                android:id="@+id/iv_find_number_sim_icon"
+                android:layout_width="@dimen/add_account_find_info_image_size"
+                android:layout_height="@dimen/add_account_find_info_image_size"
+                android:layout_marginTop="@dimen/margin_xstandard"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginEnd="@dimen/margin_standard"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_find_wifi_instructions_sim"
+                app:srcCompat="@drawable/find_sim_serial" />
+
+            <TextView
+                android:id="@+id/tv_cant_find_sim_serial_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cant_find_your_sim_serial"
+                android:textColor="?neutralB0"
+                android:textAppearance="@style/TextAppearance.AppTheme.SmallRegularContent"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_xmedium"
+                android:paddingStart="@dimen/margin_standard"
+                android:paddingEnd="@dimen/margin_standard"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_find_number_sim_icon"/>
+
+            <TextView
+                android:id="@+id/tv_add_account_otp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:padding="@dimen/margin_standard"
+                android:text="@string/add_hpw_using_otp"
+                android:textAppearance="?smallAction"
+                android:textColor="?primary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_cant_find_sim_serial_description"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

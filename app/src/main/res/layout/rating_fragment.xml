@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ml_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimaryDark"
+    app:layoutDescription="@xml/rating_fragment_scene">
+
+    <ImageView
+        android:id="@+id/iv_background"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_standard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/backdrop_shape_accent_light" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_background">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_standard"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_x_icon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/v_divider"
+        style="@style/Widget.App.Divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/stroke_width_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_toolbar" />
+
+    <TextView
+        android:id="@+id/tv_what_do_you_think"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_standard"
+        android:layout_marginTop="@dimen/margin_standard"
+        android:layout_marginEnd="@dimen/margin_standard"
+        android:text="@string/rating_what_do_you_think_so_far"
+        android:textAppearance="?mediumBold"
+        android:textColor="?corporateA600"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v_divider" />
+
+    <TextView
+        android:id="@+id/tv_we_hope_youre_loving_g1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_standard"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:text="@string/rating_we_hope_youre_loving_g1"
+        android:textAppearance="?baseRegularContent"
+        android:textColor="?neutralA1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_what_do_you_think" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_icons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_we_hope_youre_loving_g1">
+
+        <ImageView
+            android:id="@+id/iv_rating_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/iv_rating_2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_rating_1" />
+
+        <ImageView
+            android:id="@+id/iv_rating_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/iv_rating_3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/iv_rating_1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_rating_2" />
+
+        <ImageView
+            android:id="@+id/iv_rating_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/iv_rating_4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/iv_rating_2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_rating_3" />
+
+        <ImageView
+            android:id="@+id/iv_rating_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/iv_rating_5"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/iv_rating_3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_rating_4" />
+
+        <ImageView
+            android:id="@+id/iv_rating_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/iv_rating_4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_rating_5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_animations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_we_hope_youre_loving_g1">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lav_rating_1"
+            android:layout_width="@dimen/rating_animation_size"
+            android:layout_height="@dimen/rating_animation_size"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@id/lav_rating_2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/rating_1"
+            app:srcCompat="@drawable/ic_rating_1" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lav_rating_2"
+            android:layout_width="@dimen/rating_animation_size"
+            android:layout_height="@dimen/rating_animation_size"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@id/lav_rating_3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/lav_rating_1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/rating_2" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lav_rating_3"
+            android:layout_width="@dimen/rating_animation_size"
+            android:layout_height="@dimen/rating_animation_size"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@id/lav_rating_4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/lav_rating_2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/rating_3" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lav_rating_4"
+            android:layout_width="@dimen/rating_animation_size"
+            android:layout_height="@dimen/rating_animation_size"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@id/lav_rating_5"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/lav_rating_3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/rating_4" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lav_rating_5"
+            android:layout_width="@dimen/rating_animation_size"
+            android:layout_height="@dimen/rating_animation_size"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/lav_rating_4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/rating_5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/cl_negative_rating"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutDescription="@xml/rating_fragment_xml_cl_negative_rating_scene"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_icons">
+
+        <TextView
+            android:id="@+id/tv_negative_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_standard"
+            android:layout_marginEnd="@dimen/margin_standard"
+            android:text="@string/rating_select_items_we_could_improve"
+            android:textAppearance="?baseRegularContent"
+            android:textColor="?neutralA1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/cg_negative_suggestions"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:chipSpacing="@dimen/margin_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_negative_title" />
+
+        <TextView
+            android:id="@+id/tv_got_something_else"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_standard"
+            android:text="@string/rating_got_something_else"
+            android:textAppearance="?baseBoldContent"
+            android:textColor="?neutralA0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cg_negative_suggestions" />
+
+        <EditText
+            android:id="@+id/et_suggestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_xstandard"
+            android:layout_marginEnd="@dimen/margin_standard"
+            android:background="@drawable/negative_feedback_background_shape"
+            android:enabled="false"
+            android:gravity="top|left"
+            android:hint="@string/rating_tell_us_your_feedback"
+            android:inputType="textMultiLine"
+            android:lines="6"
+            android:overScrollMode="always"
+            android:padding="@dimen/padding_standard"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical"
+            android:scrollHorizontally="false"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_got_something_else" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_submit_feedback"
+            style="@style/Widget.App.ClassicButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginEnd="@dimen/margin_standard"
+            android:layout_marginBottom="@dimen/margin_standard"
+            android:text="@string/rating_submit_feedback"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/cl_positive_rating"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutDescription="@xml/rating_fragment_xml_cl_positive_rating_scene"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_icons">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lav_rating_positive"
+            android:layout_width="@dimen/default_animation_size"
+            android:layout_height="@dimen/default_animation_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/positive_rating" />
+
+        <TextView
+            android:id="@+id/tv_aww"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginTop="@dimen/margin_standard"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:gravity="center"
+            android:text="@string/rating_aw_thats_nice"
+            android:textColor="?attr/colorOnSecondary"
+            android:textSize="@dimen/text_size_xxlarge"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lav_rating_positive" />
+
+        <TextView
+            android:id="@+id/tv_dont_keep_it_to_yourself"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:gravity="center"
+            android:text="@string/rating_dont_keep_it_to_yourself"
+            android:textColor="?neutralA1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_aww" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_rate"
+            style="@style/Widget.App.ClassicButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginEnd="@dimen/margin_standard"
+            android:text="@string/rating_rate_us"
+            app:layout_constraintBottom_toTopOf="@id/btn_no_thanks"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_no_thanks"
+            style="@style/Widget.App.ClassicButtonNegative"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/rating_no_thanks"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

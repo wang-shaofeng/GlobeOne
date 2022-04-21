@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<resources>
+    <declare-styleable name="ProfileSubsectionItem">
+        <attr name="title" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="BingoView">
+    </declare-styleable>
+
+    <declare-styleable name="Wayfinder">
+        <attr name="label" format="string" />
+        <attr name="allCaps" format="boolean" />
+        <attr name="showCloseImage" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="RectangleUsageView">
+        <!-- fill style 0 - FilledRectangle, 1 - ChippedRectangle -->
+        <attr name="rectangleFillStyle" format="integer" />
+        <attr name="backgroundRectangleColor" format="color" />
+        <attr name="foregroundRectangleColor" format="color" />
+        <attr name="adjustedTextColor" format="color" />
+        <attr name="usageType" format="string" />
+        <attr name="titleText" format="string" />
+        <attr name="emptyMessage" format="string" />
+        <attr name="additionalText" format="string" />
+        <attr name="textTitleStyle" format="reference" />
+        <attr name="textAmountStyle" format="reference" />
+        <attr name="additionalTextStyle" format="reference" />
+        <attr name="includedIcon" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="CircularUsageView">
+        <attr name="ringWidth" format="dimension" />
+        <attr name="ringMarginStartEnd" format="dimension" />
+        <attr name="ringMarginTop" format="dimension" />
+        <attr name="circularBackgroundColor" format="color" />
+        <attr name="backgroundCircleColor" format="color" />
+        <attr name="foregroundCircleColor" format="color" />
+        <attr name="circularTitleText" format="string" />
+        <attr name="circularAdditionalText" format="string" />
+        <attr name="circularTextTitleStyle" format="reference" />
+        <attr name="circularTextTotalAmountStyle" format="reference" />
+        <attr name="circularTextRemainingAmountStyle" format="reference" />
+        <attr name="circularAdditionalTextStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="SwipeLayout">
+        <attr name="swipeDirection" format="integer">
+            <flag name="left" value="1" />
+            <flag name="right" value="2" />
+        </attr>
+        <attr name="isEnabledSwipe" format="boolean" />
+        <attr name="isFreeDragAfterOpen" format="boolean" />
+        <attr name="isFreeHorizontalDrag" format="boolean" />
+        <attr name="isContinuousSwipe" format="boolean" />
+        <attr name="isTogether" format="boolean" />
+        <attr name="rightItem" format="reference" />
+        <attr name="leftItem" format="reference" />
+        <attr name="draggedItem" format="reference" />
+        <attr name="autoMovingSensitivity" format="integer" />
+        <attr name="rightDragViewPadding" format="dimension" />
+        <attr name="leftDragViewPadding" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="DotsIndicator2">
+        <attr name="dot_width" format="dimension" />
+        <attr name="dot_height" format="dimension" />
+        <attr name="dot_margin" format="dimension" />
+        <attr name="dot_drawable" format="reference" />
+        <attr name="dot_drawable_unselected" format="reference" />
+        <attr name="dot_tint" format="color" />
+        <attr name="dots_animator" format="reference" />
+        <attr name="dots_animator_reverse" format="reference" />
+        <attr name="dots_orientation" format="enum">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+        <attr name="dots_gravity">
+            <flag name="top" value="0x30" />
+            <flag name="bottom" value="0x50" />
+            <flag name="left" value="0x03" />
+            <flag name="right" value="0x05" />
+            <flag name="center_vertical" value="0x10" />
+            <flag name="fill_vertical" value="0x70" />
+            <flag name="center_horizontal" value="0x01" />
+            <flag name="fill_horizontal" value="0x07" />
+            <flag name="center" value="0x11" />
+            <flag name="fill" value="0x77" />
+            <flag name="clip_vertical" value="0x80" />
+            <flag name="clip_horizontal" value="0x08" />
+            <flag name="start" value="0x00800003" />
+            <flag name="end" value="0x00800005" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="RectangleView">
+        <attr name="innerHorizontalPadding" format="dimension" />
+        <attr name="rectangleHeight" format="dimension" />
+        <attr name="outerColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="BalanceView">
+        <attr name="balanceTitle" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="BillStatusChip">
+        <attr name="biggerPadding" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="MaintenanceView">
+        <attr name="layout" format="reference" />
+    </declare-styleable>
+
+</resources>

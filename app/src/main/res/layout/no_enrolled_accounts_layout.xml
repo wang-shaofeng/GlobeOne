@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_empty_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?absoluteWhite"
+    android:padding="@dimen/padding_medium"
+    android:paddingBottom="@dimen/padding_xxlarge">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lav_empty_state"
+        android:layout_width="@dimen/default_animation_size"
+        android:layout_height="@dimen/default_animation_size"
+        android:layout_marginTop="@dimen/margin_large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/empty_state" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_no_accounts_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_standard"
+        android:text="@string/there_s_nothing_here_yet"
+        android:textAlignment="center"
+        android:textAppearance="?mediumBold"
+        android:textColor="?accentDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lav_empty_state" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_no_subscriptions"
+        style="@style/ThemeOverlay.App.Black70TextColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_standard"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:text="@string/you_haven_t_enrolled_a_gcash_account_yet"
+        android:textAlignment="center"
+        android:textAppearance="?smallRegularContent"
+        android:textColor="?neutralB0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_no_accounts_title" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_add_g_cash_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_medium"
+        android:text="@string/add_gcash_account"
+        android:textAppearance="?baseAction"
+        android:theme="@style/Widget.App.ClassicButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_no_subscriptions" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

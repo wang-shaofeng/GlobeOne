@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_xstandard"
+        android:layout_marginTop="@dimen/margin_xxxsmall"
+        android:layout_marginBottom="@dimen/margin_xsmall"
+        android:alpha="0.7"
+        android:textAppearance="?chip"
+        android:textColor="?absoluteWhite"
+        app:layout_constraintBottom_toTopOf="@id/iv_included"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="DATA" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_xstandard"
+        android:layout_marginBottom="@dimen/margin_xs_standard"
+        android:textAppearance="?narrowBold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="50 GB" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_remaining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_xstandard"
+        android:layout_marginBottom="@dimen/margin_xxxsmall"
+        android:textAppearance="?sMediumBold"
+        android:textColor="?absoluteWhite"
+        app:layout_constraintBottom_toTopOf="@id/tv_total"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="15 GB" />
+
+    <ImageView
+        android:id="@+id/iv_unlimited"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_xstandard"
+        android:layout_marginTop="@dimen/margin_xxstandard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:srcCompat="@drawable/ic_unlimited" />
+
+    <TextView
+        android:id="@+id/tv_unlimited"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:alpha="0.7"
+        android:text="@string/unli"
+        android:textAppearance="?smallBoldContent"
+        android:textColor="?absoluteWhite"
+        app:layout_constraintStart_toStartOf="@id/iv_unlimited"
+        app:layout_constraintTop_toBottomOf="@id/iv_unlimited" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_additional_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_xstandard"
+        android:layout_marginBottom="@dimen/margin_xsmall"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Some additional info" />
+
+    <TextView
+        android:id="@+id/tv_no_subs"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_xstandard"
+        android:layout_marginBottom="@dimen/margin_xstandard"
+        android:textAppearance="?xxSmallRegularContent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="You have No  data subscriptions yet" />
+
+    <TextView
+        android:id="@+id/tv_included"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_xstandard"
+        android:alpha="0.7"
+        android:text="@string/included"
+        android:textAppearance="?smallBoldContent"
+        android:textColor="?absoluteWhite"
+        app:layout_constraintBottom_toTopOf="@id/tv_remaining"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_included"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_xxsmall"
+        android:alpha="0.7"
+        app:layout_constraintBottom_toTopOf="@id/tv_included"
+        app:layout_constraintStart_toStartOf="@id/tv_included"
+        tools:src="@drawable/ic_included_call" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="tv_remaining,tv_total" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_unlimited"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="tv_unlimited,iv_unlimited" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_included"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="tv_included,iv_included" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

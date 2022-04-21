@@ -1,0 +1,116 @@
+/*
+ * Copyright (C) 2021 LotusFlare
+ * All Rights Reserved.
+ * Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+ */
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion globeCompileVersion
+    buildToolsVersion globeBuildToolsVersion
+
+    defaultConfig {
+        minSdkVersion globeMinSdkVersion
+        targetSdkVersion globeTargetSdkVersion
+        versionCode globeVersion.versionCode()
+        versionName globeVersion.versionName()
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            ext.enableCrashlytics = false
+            minifyEnabled false
+
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            splits.abi.enable = false
+            splits.density.enable = false
+            ext.alwaysUpdateBuildId = false
+            aaptOptions.cruncherEnabled = false
+        }
+    }
+
+    flavorDimensions "servers", "analyticsType"
+
+    productFlavors {
+
+        staging {
+            dimension "servers"
+
+            // Data as currency rate IDs
+            buildConfigField("String", "GHP_RATE_ID", "\"065f4cbe-5953-4f07-b1fd-c91102802000\"")
+            buildConfigField("String", "GHP_PREPAID_RATE_ID", "\"207ae073-605b-459f-afa1-0262893c3a68\"")
+            buildConfigField("String", "TM_RATE_ID", "\"734db23e-9e44-43ff-abbe-cfff86dabd14\"")
+            buildConfigField("String", "PW_RATE_ID", "\"1eabb402-17ea-45fb-8ca4-65faaa2a88d4\"")
+        }
+
+        prod {
+            dimension "servers"
+
+            // Data as currency rate IDs
+            buildConfigField("String", "GHP_RATE_ID", "\"81454b1e-963c-4a20-a05b-ef038dbe12f3\"")
+            buildConfigField("String", "GHP_PREPAID_RATE_ID", "\"6c07288b-2d1e-44f7-922d-f92f434b9f5e\"")
+            buildConfigField("String", "TM_RATE_ID", "\"8878a9f4-7fdb-4631-b807-9474b1c7ff5a\"")
+            buildConfigField("String", "PW_RATE_ID", "\"93b039e2-3f4c-4d2e-8ab6-1c3ed55545b9\"")
+        }
+
+        google {
+            dimension "analyticsType"
+        }
+
+        huawei {
+            dimension "analyticsType"
+        }
+
+        noAnalytics {
+            dimension "analyticsType"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    packagingOptions {
+        exclude 'META-INF/*.kotlin_module'
+    }
+}
+
+dependencies {
+    implementation project(':analytics')
+    implementation project(':model')
+    implementation project(':errors')
+    implementation project(':util')
+    implementation project(':inAppUpdate')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "androidx.core:core-ktx:$coreKtxVersion"
+    implementation "androidx.appcompat:appcompat:$appCompatVersion"
+    testImplementation "junit:junit:$junitVersion"
+
+    // Coroutine
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion"
+
+    // Dagger
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+    kaptTest "com.google.dagger:dagger-compiler:$daggerVersion"
+}

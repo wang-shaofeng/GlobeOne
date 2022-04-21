@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2022 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/corner_radius_xxxxsmall"/>
+            <solid android:color="?absoluteWhite"/>
+            <stroke android:width="@dimen/stroke_width_small" android:color="?attr/colorError"/>
+        </shape>
+    </item>
+</selector>

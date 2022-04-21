@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "207388992963",
+    "project_id": "globe-dgt-superapp-prod",
+    "storage_bucket": "globe-dgt-superapp-prod.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:207388992963:android:eac8117bccab1606f9c976",
+        "android_client_info": {
+          "package_name": "ph.com.globe.globeonesuperapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "207388992963-bh7lin492g29511pqgf828984v7fqomq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXClZYjYrmV154wI2yHS9i2eJ5Z5YXR6I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "207388992963-bh7lin492g29511pqgf828984v7fqomq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "207388992963-vfjg3l7r2spgs8hofatfkfi5a3nnnl7a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "ph.com.globe.GlobeOneSuperApp",
+                "app_store_id": "1555659963"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

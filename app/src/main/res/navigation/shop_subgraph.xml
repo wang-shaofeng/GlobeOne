@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/shop_subgraph"
+    app:startDestination="@id/shopFragment">
+
+    <fragment
+        android:id="@+id/shopFragment"
+        android:name="ph.com.globe.globeonesuperapp.shop.ShopFragment"
+        android:label="ShopFragment"
+        tools:layout="@layout/shop_fragment">
+        <argument
+            android:name="tabToSelect"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="mobileNumber"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="toolbarTab"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_shopFragment_to_contactsFragment"
+            app:destination="@id/contactsFragment" />
+        <action
+            android:id="@+id/action_shopFragment_to_shopPromoInnerFragment"
+            app:destination="@id/shopPromoInnerFragment" />
+        <action
+            android:id="@+id/action_shopFragment_to_shopItemDetailsFragment"
+            app:destination="@id/shopItemDetailsFragment" />
+        <action
+            android:id="@+id/action_shopFragment_to_selectOtherAccountFragment"
+            app:destination="@id/selectOtherAccountFragment" />
+        <action
+            android:id="@+id/action_shopFragment_to_navigation_payment"
+            app:destination="@id/payment_subgraph">
+            <argument
+                android:name="paymentParameter"
+                app:argType="ph.com.globe.globeonesuperapp.payment.PaymentParameters" />
+        </action>
+        <action
+            android:id="@+id/action_shopFragment_to_shopBorrowInnerFragment"
+            app:destination="@id/shopBorrowInnerFragment" />
+        <action
+            android:id="@+id/action_shopFragment_to_shopContentFilterFragment"
+            app:destination="@id/shopContentFilterFragment" />
+        <action
+            android:id="@+id/action_shopFragment_to_go_create_subgraph"
+            app:destination="@id/go_create_subgraph">
+            <argument
+                android:name="entryPoint"
+                app:argType="string" />
+            <argument
+                android:name="mobileNumber"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+        </action>
+        <argument
+            android:name="isToShopItemDetails"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="shopItem"
+            app:argType="ph.com.globe.model.shop.domain_models.ShopItem"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="isToShopPromoInner"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shopPromoInnerFragment"
+        android:name="ph.com.globe.globeonesuperapp.shop.promo.innerscreens.ShopPromoInnerFragment"
+        android:label="ShopPromoInnerFragment"
+        tools:layout="@layout/shop_promo_inner_fragment">
+        <argument
+            android:name="tabToScroll"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_shopPromoInnerFragment_to_shopPromoFilterFragment"
+            app:destination="@id/shopPromoFilterFragment" />
+        <action
+            android:id="@+id/action_shopPromoInnerFragment_to_shopSearchFragment"
+            app:destination="@id/shopSearchFragment" />
+        <action
+            android:id="@+id/action_shopPromoInnerFragment_to_shopItemDetailsFragment"
+            app:destination="@id/shopItemDetailsFragment" />
+        <action
+            android:id="@+id/action_shopPromoInnerFragment_to_contactsFragment"
+            app:destination="@id/contactsFragment" />
+        <action
+            android:id="@+id/action_shopPromoInnerFragment_to_selectOtherAccountFragment"
+            app:destination="@id/selectOtherAccountFragment" />
+        <action
+            android:id="@+id/action_shopPromoInnerFragment_to_shopBoosterDetailsFragment"
+            app:destination="@id/shopBoosterDetailsFragment" />
+        <argument
+            android:name="isFromAccountDetail"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shopPromoFilterFragment"
+        android:name="ph.com.globe.globeonesuperapp.shop.promo.filter.ShopPromoFilterFragment"
+        android:label="ShopPromoFilterFragment"
+        tools:layout="@layout/shop_promo_filter_fragment">
+        <argument
+            android:name="tabSelected"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shopContentFilterFragment"
+        android:name="ph.com.globe.globeonesuperapp.shop.content.filter.ShopContentFilterFragment"
+        android:label="ShopContentFilterFragment"
+        tools:layout="@layout/shop_content_filter_fragment" />
+
+    <fragment
+        android:id="@+id/shopSearchFragment"
+        android:name="ph.com.globe.globeonesuperapp.shop.promo.search.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/search_fragment">
+        <action
+            android:id="@+id/action_shopSearchFragment_to_shopItemDetailsFragment"
+            app:destination="@id/shopItemDetailsFragment" />
+        <argument
+            android:name="type"
+            app:argType="string" />
+        <argument
+            android:name="tabSelected"
+            android:defaultValue="1" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/selectOtherAccountFragment"
+        android:name="ph.com.globe.globeonesuperapp.shop.select_other_account.SelectOtherAccountFragment"
+        android:label="SelectOtherAccountFragment"
+        tools:layout="@layout/select_other_account_fragment">
+        <action
+            android:id="@+id/action_selectOtherAccountFragment_to_contacts_fragment"
+            app:destination="@id/contactsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shopItemDetailsFragment"
+        android:name="ph.com.globe.globeonesuperapp.shop.promo.itemdetails.ShopItemDetailsFragment"
+        android:label="ShopItemDetailsFragment"
+        tools:layout="@layout/shop_item_details_fragment">
+
+        <action
+            android:id="@+id/action_shopItemDetailsFragment_to_contactsFragment"
+            app:destination="@id/contactsFragment" />
+        <argument
+            android:name="shopItem"
+            app:argType="ph.com.globe.model.shop.domain_models.ShopItem" />
+        <action
+            android:id="@+id/action_shopItemDetailsFragment_to_navigation_payment"
+            app:destination="@id/payment_subgraph">
+            <argument
+                android:name="paymentParameter"
+                app:argType="ph.com.globe.globeonesuperapp.payment.PaymentParameters" />
+        </action>
+        <action
+            android:id="@+id/action_shopItemDetailsFragment_to_selectOtherAccountFragment"
+            app:destination="@id/selectOtherAccountFragment" />
+        <action
+            android:id="@+id/action_shopItemDetailsFragment_to_shopBorrowSubmitOtpFragment"
+            app:destination="@id/shopBorrowSubmitOtpFragment" />
+        <action
+            android:id="@+id/action_shopItemDetailsFragment_to_shopBorrowProcessingFragment"
+            app:destination="@id/shopBorrowProcessingFragment" />
+        <argument
+            android:name="isFromAccountDetail"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/contactsFragment"
+        android:name="ph.com.globe.globeonesuperapp.shop.util.ContactsFragment"
+        android:label="ContactsFragment"
+        tools:layout="@layout/contacts_fragment" />
+
+    <include app:graph="@navigation/payment_subgraph" />
+    <include app:graph="@navigation/go_create_subgraph" />
+
+    <fragment
+        android:id="@+id/shopBorrowInnerFragment"
+        android:name="ph.com.globe.globeonesuperapp.shop.borrow.innerscreen.ShopBorrowInnerFragment"
+        android:label="ShopBorrowInnerFragment"
+        tools:layout="@layout/shop_borrow_inner_fragment">
+        <argument
+            android:name="tabToScroll"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_shopBorrowInnerFragment_to_contactsFragment"
+            app:destination="@id/contactsFragment" />
+        <action
+            android:id="@+id/action_shopBorrowInnerFragment_to_selectOtherAccountFragment"
+            app:destination="@id/selectOtherAccountFragment" />
+        <action
+            android:id="@+id/action_shopBorrowInnerFragment_to_shopSearchFragment"
+            app:destination="@id/shopSearchFragment" />
+        <action
+            android:id="@+id/action_shopBorrowInnerFragment_to_shopItemDetailsFragment"
+            app:destination="@id/shopItemDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shopBorrowSubmitOtpFragment"
+        android:name="ph.com.globe.globeonesuperapp.shop.borrow.payment.ShopBorrowSubmitOtpFragment"
+        android:label="ShopBorrowSubmitOtpFragment"
+        tools:layout="@layout/shop_borrow_submit_otp_fragment">
+        <argument
+            android:name="phoneNumber"
+            app:argType="string" />
+        <argument
+            android:name="brandType"
+            app:argType="ph.com.globe.model.util.brand.AccountBrandType" />
+        <argument
+            android:name="referenceId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_shopBorrowSubmitOtpFragment_to_shopBorrowProcessingFragment"
+            app:destination="@id/shopBorrowProcessingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shopBorrowProcessingFragment"
+        android:name="ph.com.globe.globeonesuperapp.shop.borrow.payment.ShopBorrowProcessingFragment"
+        android:label="ShopBorrowProcessingFragment"
+        tools:layout="@layout/shop_borrow_processing_fragment">
+        <action
+            android:id="@+id/action_shopBorrowProcessingFragment_to_shopBorrowSuccessfulFragment"
+            app:destination="@id/shopBorrowSuccessfulFragment" />
+        <action
+            android:id="@+id/action_shopBorrowProcessingFragment_to_shopBorrowUnsuccessfulFragment"
+            app:destination="@id/shopBorrowUnsuccessfulFragment" />
+        <argument
+            android:name="otpReferenceId"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shopBorrowSuccessfulFragment"
+        android:name="ph.com.globe.globeonesuperapp.shop.borrow.payment.ShopBorrowSuccessfulFragment"
+        android:label="ShopBorrowSuccessfulFragment"
+        tools:layout="@layout/shop_borrow_successful_fragment">
+        <argument
+            android:name="amount"
+            app:argType="string" />
+        <argument
+            android:name="serviceFee"
+            app:argType="string" />
+        <argument
+            android:name="validity"
+            app:argType="ph.com.globe.model.shop.domain_models.Validity"
+            app:nullable="true" />
+        <argument
+            android:name="loanName"
+            app:argType="string" />
+        <argument
+            android:name="sentTo"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shopBorrowUnsuccessfulFragment"
+        android:name="ph.com.globe.globeonesuperapp.shop.borrow.payment.ShopBorrowUnsuccessfulFragment"
+        android:label="ShopBorrowUnsuccessfulFragment"
+        tools:layout="@layout/shop_borrow_unsuccessful_fragment">
+        <argument
+            android:name="errorMessage"
+            app:argType="string" />
+        <argument
+            android:name="buttonText"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_shopBorrowUnsuccessfulFragment_to_comingSoonFragment"
+            app:destination="@id/comingSoonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/comingSoonFragment"
+        android:name="ph.com.globe.globeonesuperapp.coming_soon.ComingSoonFragment"
+        android:label="ComingSoonFragment" />
+    <fragment
+        android:id="@+id/shopBoosterDetailsFragment"
+        android:name="ph.com.globe.globeonesuperapp.shop.promo.boosterdetails.ShopBoosterDetailsFragment"
+        android:label="ShopBoosterDetailsFragment"
+        tools:layout="@layout/shop_booster_details_fragment">
+        <argument
+            android:name="booster"
+            app:argType="ph.com.globe.globeonesuperapp.shop.promo.filter.BoosterDetailsItem" />
+        <action
+            android:id="@+id/action_shopBoosterDetailsFragment_to_payment_subgraph"
+            app:destination="@id/payment_subgraph">
+            <argument
+                android:name="paymentParameter"
+                app:argType="ph.com.globe.globeonesuperapp.payment.PaymentParameters" />
+        </action>
+    </fragment>
+    <action
+        android:id="@+id/action_global_shopItemDetailsFragment"
+        app:destination="@id/shopItemDetailsFragment"
+        app:popUpTo="@id/shopFragment"
+        app:popUpToInclusive="true" />
+    <action
+        android:id="@+id/action_global_shopPromoInnerFragment"
+        app:destination="@id/shopPromoInnerFragment"
+        app:popUpTo="@id/shopFragment"
+        app:popUpToInclusive="true" />
+
+</navigation>

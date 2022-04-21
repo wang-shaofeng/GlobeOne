@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?absoluteWhite">
+
+    <ph.com.globe.globeonesuperapp.utils.ui.Wayfinder
+        android:id="@+id/wf_transaction_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?accentLight"
+        app:label="@string/wayfinder_account_details"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_transaction_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?accentLight"
+        android:padding="@dimen/padding_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wf_transaction_details">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_transaction_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_transaction_type"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/ic_redeemed_reward" />
+
+        <TextView
+            android:id="@+id/tv_transaction_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_xstandard"
+            android:layout_marginEnd="@dimen/margin_smedium"
+            android:textAppearance="?xBaseBold"
+            android:textColor="?accentDark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_points"
+            app:layout_constraintStart_toEndOf="@id/iv_transaction_type"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/earned_points_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_xxsmall"
+            android:drawablePadding="@dimen/padding_xstandard"
+            android:textAppearance="?xBaseBoldNum"
+            android:textColor="?accentDark"
+            app:drawableStartCompat="@drawable/ic_star"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="-80 pts" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_by"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_standard"
+        android:layout_marginTop="@dimen/margin_large"
+        android:textAppearance="?baseRegularContent"
+        android:textColor="?neutralB0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_transaction_details"
+        tools:text="@string/earned_by" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_account"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_standard"
+        android:gravity="end"
+        android:textAppearance="?baseRegularContent"
+        android:textColor="?neutralA0"
+        app:layout_constraintBottom_toTopOf="@id/tv_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_by"
+        app:layout_constraintTop_toTopOf="@id/tv_by"
+        tools:text="@string/dac_mock_name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_large"
+        android:gravity="end"
+        android:textAppearance="?baseBoldContent"
+        android:textColor="?neutralA0"
+        app:layout_constraintBottom_toBottomOf="@id/tv_by"
+        app:layout_constraintEnd_toEndOf="@id/tv_account"
+        app:layout_constraintStart_toEndOf="@id/tv_by"
+        app:layout_constraintTop_toBottomOf="@id/tv_account"
+        tools:text="@string/dac_mock_msisdn" />
+
+    <View
+        android:id="@+id/v_divider1"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/toolbar_line_height"
+        android:layout_marginHorizontal="@dimen/margin_standard"
+        android:layout_marginTop="@dimen/margin_standard"
+        android:background="?neutralA5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_number" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_store"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_standard"
+        android:layout_marginTop="@dimen/margin_smedium"
+        android:text="@string/store"
+        android:textAppearance="?baseRegularContent"
+        android:textColor="?neutralB0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v_divider1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_store_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_large"
+        android:gravity="end"
+        android:textAppearance="?baseBoldContent"
+        android:textColor="?neutralA0"
+        app:layout_constraintBottom_toBottomOf="@id/tv_store"
+        app:layout_constraintEnd_toEndOf="@id/tv_account"
+        app:layout_constraintStart_toEndOf="@id/tv_store"
+        app:layout_constraintTop_toTopOf="@id/tv_store"
+        tools:text="Jamba juice" />
+
+    <View
+        android:id="@+id/v_divider2"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/toolbar_line_height"
+        android:layout_marginHorizontal="@dimen/margin_standard"
+        android:layout_marginTop="@dimen/margin_smedium"
+        android:background="?neutralA5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_store" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/g_store"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="v_divider2, tv_store, tv_store_name"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_on"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_standard"
+        android:layout_marginTop="@dimen/margin_smedium"
+        android:textAppearance="?baseRegularContent"
+        android:textColor="?neutralB0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v_divider2"
+        tools:text="@string/earned_on" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_large"
+        android:gravity="end"
+        android:textAppearance="?baseBoldContent"
+        android:textColor="?neutralA0"
+        app:layout_constraintBottom_toBottomOf="@id/tv_on"
+        app:layout_constraintEnd_toEndOf="@id/tv_account"
+        app:layout_constraintStart_toEndOf="@id/tv_on"
+        app:layout_constraintTop_toTopOf="@id/tv_on"
+        tools:text="@string/mock_date" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_transaction_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_standard"
+        android:layout_marginTop="@dimen/margin_xxxlarge"
+        android:visibility="gone"
+        app:cardCornerRadius="@dimen/corner_radius_xxxsmall"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_on"
+        app:strokeColor="?neutralA5"
+        app:strokeWidth="@dimen/stroke_width_small"
+        tools:visibility="visible">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_xstandard"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/v_vertical_line"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_activity_help" />
+
+            <View
+                android:id="@+id/v_vertical_line"
+                android:layout_width="@dimen/stroke_width_small"
+                android:layout_height="0dp"
+                android:background="?neutralB1"
+                android:alpha="0.2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tv_transaction_details"
+                app:layout_constraintStart_toEndOf="@id/iv_history"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_transaction_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_xstandard"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:layout_marginEnd="@dimen/margin_xs_standard"
+                android:layout_marginBottom="@dimen/margin_standard"
+                android:textAppearance="?smallRegularContent"
+                android:textColor="?neutralA3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/v_vertical_line"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/earned_points_details" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

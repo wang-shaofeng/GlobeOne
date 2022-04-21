@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginHorizontal="@dimen/margin_standard"
+    android:layout_marginVertical="@dimen/margin_small">
+
+    <TextView
+        android:id="@+id/tvDateHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:textAppearance="?xBaseBold"
+        android:textColor="?neutralA3"
+        android:visibility="gone"
+        tools:text="October 02, 1995"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/corner_radius_xxxsmall"
+        app:cardElevation="0dp"
+        app:strokeColor="?neutralB1"
+        app:strokeWidth="@dimen/stroke_width_small">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_medium">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tv_type"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@drawable/ic_redeemed_reward" />
+
+            <TextView
+                android:id="@+id/tv_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_xstandard"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:layout_marginBottom="8dp"
+                android:textAppearance="?xBaseBold"
+                android:textColor="?accentDark"
+                app:layout_constraintBottom_toTopOf="@+id/tv_plan"
+                app:layout_constraintEnd_toStartOf="@id/tv_date"
+                app:layout_constraintStart_toEndOf="@id/iv_type"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Redeemed reward" />
+
+            <TextView
+                android:id="@+id/tv_plan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_xstandard"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:layout_marginBottom="8dp"
+                android:textAppearance="?xSmallRegularContent"
+                android:textColor="?titleTextColor"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/tv_points"
+                app:layout_constraintEnd_toStartOf="@id/tv_date"
+                app:layout_constraintStart_toEndOf="@id/iv_type"
+                app:layout_constraintTop_toBottomOf="@+id/tv_type"
+                tools:text="300 MB" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?smallRegularContent"
+                android:textColor="?neutralA3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_type"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="May 5, 2021" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_points"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/padding_xstandard"
+                android:textAppearance="?comfyData"
+                android:textColor="@color/success"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_type"
+                app:layout_constraintTop_toBottomOf="@+id/tv_plan"
+                tools:text="+P100" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?absoluteWhite">
+
+    <ph.com.globe.globeonesuperapp.utils.ui.Wayfinder
+        android:id="@+id/wf_bill_payment_to_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?accentLight"
+        app:label="@string/wayfinder_history"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/sv_details"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/margin_standard"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/btn_view_OR"
+        app:layout_constraintStart_toStartOf="@id/btn_view_OR"
+        app:layout_constraintTop_toBottomOf="@id/wf_bill_payment_to_history">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_payment_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?accentLight"
+                android:padding="@dimen/padding_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_amount_paid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_bill_payment" />
+
+                <TextView
+                    android:id="@+id/tv_amount_paid_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_xstandard"
+                    android:text="@string/amount_paid"
+                    android:textAppearance="?xBaseBold"
+                    android:textColor="?accentDark"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/tv_amount_paid_value"
+                    app:layout_constraintStart_toEndOf="@id/iv_amount_paid"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_amount_paid_value"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:gravity="end"
+                    android:textAppearance="?xBaseBold"
+                    android:textColor="?accentDark"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="2.0"
+                    app:layout_constraintStart_toEndOf="@id/tv_amount_paid_label"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/mock_amount_paid_value" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_account_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_large"
+                android:text="@string/account"
+                android:textAppearance="?baseRegularContent"
+                android:textColor="?neutralB0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cl_payment_details" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_account"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_large"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:gravity="end"
+                android:textAppearance="?baseRegularContent"
+                android:textColor="?neutralA0"
+                app:layout_constraintBottom_toTopOf="@id/tv_number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_account_label"
+                app:layout_constraintTop_toTopOf="@id/tv_account_label"
+                tools:text="@string/dac_mock_name" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_large"
+                android:gravity="end"
+                android:textAppearance="?baseBoldContent"
+                android:textColor="?neutralA0"
+                app:layout_constraintBottom_toBottomOf="@id/tv_account_label"
+                app:layout_constraintEnd_toEndOf="@id/tv_account"
+                app:layout_constraintStart_toEndOf="@id/tv_account_label"
+                app:layout_constraintTop_toBottomOf="@id/tv_account"
+                tools:text="@string/dac_mock_msisdn" />
+
+            <View
+                android:id="@+id/v_divider1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/toolbar_line_height"
+                android:layout_marginHorizontal="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:background="?neutralA5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_number" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_payment_channel_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_smedium"
+                android:text="@string/payment_channel"
+                android:textAppearance="?baseRegularContent"
+                android:textColor="?neutralB0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/v_divider1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_payment_channel_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_large"
+                android:gravity="end"
+                android:textAppearance="?baseBoldContent"
+                android:textColor="?neutralA0"
+                app:layout_constraintBottom_toBottomOf="@id/tv_payment_channel_label"
+                app:layout_constraintEnd_toEndOf="@id/tv_account"
+                app:layout_constraintStart_toEndOf="@id/tv_payment_channel_label"
+                app:layout_constraintTop_toTopOf="@id/tv_payment_channel_label"
+                tools:text="@string/mock_payment_channel" />
+
+            <View
+                android:id="@+id/v_divider2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/toolbar_line_height"
+                android:layout_marginHorizontal="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_smedium"
+                android:background="?neutralA5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_payment_channel_label" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_payment_date_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_smedium"
+                android:text="@string/payment_date"
+                android:textAppearance="?baseRegularContent"
+                android:textColor="?neutralB0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/v_divider2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_payment_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_large"
+                android:gravity="end"
+                android:textAppearance="?baseBoldContent"
+                android:textColor="?neutralA0"
+                app:layout_constraintBottom_toBottomOf="@id/tv_payment_date_label"
+                app:layout_constraintEnd_toEndOf="@id/tv_account"
+                app:layout_constraintStart_toEndOf="@id/tv_payment_date_label"
+                app:layout_constraintTop_toTopOf="@id/tv_payment_date_label"
+                tools:text="@string/mock_bill_payment_date" />
+
+            <View
+                android:id="@+id/v_divider3"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/toolbar_line_height"
+                android:layout_marginHorizontal="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_smedium"
+                android:background="?neutralA5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_payment_date_label" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_posting_date_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_smedium"
+                android:text="@string/posting_date"
+                android:textAppearance="?baseRegularContent"
+                android:textColor="?neutralB0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/v_divider3" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_posting_date_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_large"
+                android:gravity="end"
+                android:textAppearance="?baseBoldContent"
+                android:textColor="?neutralA0"
+                app:layout_constraintBottom_toBottomOf="@id/tv_posting_date_label"
+                app:layout_constraintEnd_toEndOf="@id/tv_account"
+                app:layout_constraintStart_toEndOf="@id/tv_posting_date_label"
+                app:layout_constraintTop_toTopOf="@id/tv_posting_date_label"
+                tools:text="@string/mock_bill_payment_date" />
+
+            <View
+                android:id="@+id/v_divider4"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/toolbar_line_height"
+                android:layout_marginHorizontal="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_smedium"
+                android:background="?neutralA5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_posting_date_label" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_or_number_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_smedium"
+                android:text="@string/or_number"
+                android:textAppearance="?baseRegularContent"
+                android:textColor="?neutralB0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/v_divider4" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_or_number_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_large"
+                android:gravity="end"
+                android:textAppearance="?baseBoldContent"
+                android:textColor="?neutralA0"
+                app:layout_constraintBottom_toBottomOf="@id/tv_or_number_label"
+                app:layout_constraintEnd_toEndOf="@id/tv_account"
+                app:layout_constraintStart_toEndOf="@id/tv_or_number_label"
+                app:layout_constraintTop_toTopOf="@id/tv_or_number_label"
+                tools:text="@string/mock_bill_payment_or_number" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_view_OR"
+        style="@style/Widget.App.ClassicButtonOutlined"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_standard"
+        android:layout_marginEnd="@dimen/margin_standard"
+        android:layout_marginBottom="@dimen/margin_xmedium"
+        android:text="@string/view_or"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

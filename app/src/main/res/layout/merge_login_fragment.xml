@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2022 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/accentLight">
+
+    <ph.com.globe.globeonesuperapp.utils.ui.Wayfinder
+        android:id="@+id/wf_merge_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:allCaps="true"
+        app:label="@string/get_started"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wf_merge_login">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_link_account_text"
+                    style="@style/Widget.App.ScreenTitleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/link_your_profile"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_already_connected_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_xmedium"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:textAlignment="center"
+                    android:textAppearance="?baseRegularContent"
+                    android:textColor="?neutralB0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_link_account_text"
+                    tools:text="@string/looks_like_already_login" />
+
+                <ImageView
+                    android:id="@+id/iv_left_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:contentDescription="@string/image"
+                    app:layout_constraintEnd_toStartOf="@id/divider1"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_already_connected_text" />
+
+                <ImageView
+                    android:id="@+id/divider1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_xxsmall"
+                    android:contentDescription="@string/image"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_left_icon"
+                    app:layout_constraintEnd_toStartOf="@id/iv_link_icon"
+                    app:layout_constraintStart_toEndOf="@id/iv_left_icon"
+                    app:layout_constraintTop_toTopOf="@id/iv_left_icon"
+                    app:srcCompat="@drawable/link_divider" />
+
+                <ImageView
+                    android:id="@+id/iv_link_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_left_icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/divider2"
+                    app:layout_constraintStart_toEndOf="@id/divider1"
+                    app:layout_constraintTop_toTopOf="@id/iv_left_icon"
+                    app:srcCompat="@drawable/ic_link" />
+
+                <ImageView
+                    android:id="@+id/divider2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_xxsmall"
+                    android:contentDescription="@string/image"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_left_icon"
+                    app:layout_constraintEnd_toStartOf="@id/iv_right_icon"
+                    app:layout_constraintStart_toEndOf="@id/iv_link_icon"
+                    app:layout_constraintTop_toTopOf="@id/iv_left_icon"
+                    app:srcCompat="@drawable/link_divider" />
+
+                <ImageView
+                    android:id="@+id/iv_right_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_left_icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/divider2"
+                    app:layout_constraintTop_toTopOf="@id/iv_left_icon" />
+
+                <TextView
+                    android:id="@+id/tv_already_connect_to_a_account"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_xmedium"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:textAlignment="center"
+                    android:textAppearance="?baseRegularContent"
+                    android:textColor="?neutralB0"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_left_icon"
+                    tools:text="@string/email_already_connected" />
+
+                <TextView
+                    android:id="@+id/tv_merge_account_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_xmedium"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:textAlignment="center"
+                    android:textAppearance="?baseRegularContent"
+                    android:textColor="?neutralB0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_already_connect_to_a_account"
+                    tools:text="@string/merge_email_account" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_verify"
+                style="@style/Widget.App.ClassicButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_standard"
+                android:layout_marginBottom="@dimen/margin_xxlarge"
+                android:text="@string/verify_this_account"
+                android:textAppearance="?baseAction"
+                android:theme="@style/ThemeOverlay.App.ClassicButton"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

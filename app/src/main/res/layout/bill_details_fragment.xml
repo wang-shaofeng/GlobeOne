@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/accent_light">
+
+    <ph.com.globe.globeonesuperapp.utils.ui.Wayfinder
+        android:id="@+id/wf_bill_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?accentLight"
+        app:label="@string/wayfinder_account_details"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_bill_breakdown"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_standard"
+        android:layout_marginTop="@dimen/margin_standard"
+        android:text="@string/account_details_bill_details"
+        android:textAppearance="?mediumBold"
+        android:textColor="?accentDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wf_bill_details" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tl_bills"
+        style="@style/TabOnWhiteLayoutStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?accentLight"
+        app:layout_constraintTop_toBottomOf="@id/tv_bill_breakdown"
+        app:tabContentStart="@dimen/margin_standard"
+        app:tabIndicatorFullWidth="false"
+        app:tabIndicatorHeight="@dimen/indicator_height_big"
+        app:tabMinWidth="0dp"
+        app:tabTextAppearance="?sMediumBold" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_bills"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tl_bills">
+
+        <include
+            android:id="@+id/inc_current"
+            layout="@layout/include_bill_details"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ScrollView
+            android:id="@+id/sv_previous"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?accentLight"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/pb_previous_loading"
+                    style="@style/Widget.MaterialComponents.CircularProgressIndicator.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    app:indicatorColor="?primary"
+                    app:indicatorSize="@dimen/progress_bar_size"
+                    app:layout_constraintBottom_toTopOf="@id/btn_view_history"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:trackColor="@color/black_10"
+                    app:trackCornerRadius="@dimen/corner_radius_xxsmall"
+                    app:trackThickness="@dimen/progress_bar_thickness" />
+
+                <include
+                    android:id="@+id/inc_bill_info"
+                    layout="@layout/include_bill_info"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_xmedium"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_view_history"
+                    style="@style/Widget.App.ClassicButtonNegative"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_standard"
+                    android:layout_marginBottom="@dimen/margin_standard"
+                    android:text="@string/view_history"
+                    android:textColor="?primary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/inc_bill_info"
+                    app:layout_constraintVertical_bias="1.0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.viewpager.widget.ViewPager>
+</androidx.constraintlayout.widget.ConstraintLayout>

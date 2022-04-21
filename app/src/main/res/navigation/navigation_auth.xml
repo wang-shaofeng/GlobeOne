@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_auth"
+    app:startDestination="@id/selectSignMethodFragment">
+
+    <fragment
+        android:id="@+id/selectSignMethodFragment"
+        android:name="ph.com.globe.globeonesuperapp.select_sign_method.SelectSignMethodFragment"
+        android:label="select_user_fragment"
+        tools:layout="@layout/select_sign_method_fragment">
+        <action
+            android:id="@+id/action_selectSignMethodFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_selectSignMethodFragment_to_shopSubgraph"
+            app:destination="@id/shop_subgraph">
+            <argument
+                android:name="tabToSelect"
+                app:argType="integer" />
+            <argument
+                android:name="mobileNumber"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+        </action>
+        <action
+            android:id="@+id/action_selectSignMethodFragment_to_discoverMoreFragment"
+            app:destination="@id/discoverMoreFragment" />
+        <action
+            android:id="@+id/action_selectSignMethodFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_selectSignMethodFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+        <action
+            android:id="@+id/action_selectSignMethodFragment_to_navigation_add_account"
+            app:destination="@id/navigation_add_account" />
+        <action
+            android:id="@+id/action_selectSignMethodFragment_to_socialLoginExistsFragment"
+            app:destination="@id/socialLoginExistsFragment" />
+        <action
+            android:id="@+id/action_selectSignMethodFragment_to_mergeLoginFragment"
+            app:destination="@id/mergeLoginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="ph.com.globe.globeonesuperapp.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/login_fragment">
+        <action
+            android:id="@+id/action_loginFragment_to_resetPasswordSendEmailFragment"
+            app:destination="@id/resetPasswordSendEmailFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_navigation_add_account"
+            app:destination="@id/navigation_add_account" />
+        <action
+            android:id="@+id/action_loginFragment_to_socialLoginExistsFragment"
+            app:destination="@id/socialLoginExistsFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_emailVerificationFragment"
+            app:destination="@id/emailVerificationFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_loginProblemFragment"
+            app:destination="@id/loginProblemFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_tooManyAttemptsFragment"
+            app:destination="@id/tooManyAttemptsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="ph.com.globe.globeonesuperapp.web_view_components.SocialSingInWebViewFragment"
+        android:label="fragment_web_view"
+        tools:layout="@layout/web_view_fragment" />
+
+    <fragment
+        android:id="@+id/termsAndPrivacyPolicyFragment"
+        android:name="ph.com.globe.globeonesuperapp.termsandprivacypolicy.TermsAndPrivacyPolicyFragment"
+        android:label="TermsAndPrivacyPolicyFragment" />
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="ph.com.globe.globeonesuperapp.register.RegisterFragment"
+        android:label="register_password_fragment"
+        tools:layout="@layout/register_fragment">
+        <action
+            android:id="@+id/action_registerFragment_to_emailVerificationFragment"
+            app:destination="@id/emailVerificationFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_emailExistsFragment"
+            app:destination="@id/emailExistsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resetPasswordSendEmailFragment"
+        android:name="ph.com.globe.globeonesuperapp.reset_password.ResetPasswordSendEmailFragment"
+        android:label="ResetPasswordSendEmailFragment">
+        <action
+            android:id="@+id/action_resetPasswordSendEmailFragment_to_resetPasswordEmailSentFragment"
+            app:destination="@id/resetPasswordEmailSentFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resetPasswordEmailSentFragment"
+        android:name="ph.com.globe.globeonesuperapp.reset_password.ResetPasswordEmailSentFragment"
+        android:label="ResetPasswordEmailSentFragment" />
+
+    <include app:graph="@navigation/navigation_add_account" />
+
+    <include app:graph="@navigation/shop_subgraph" />
+
+    <fragment
+        android:id="@+id/socialLoginExistsFragment"
+        android:name="ph.com.globe.globeonesuperapp.select_sign_method.SocialLoginExistsFragment"
+        android:label="social_login_exists_fragment"
+        tools:layout="@layout/social_login_exists_fragment">
+        <action
+            android:id="@+id/action_socialLoginExistsFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/selectSignMethodFragment" />
+        <action
+            android:id="@+id/action_socialLoginExistsFragment_to_resetPasswordSendEmailFragment"
+            app:destination="@id/resetPasswordSendEmailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/emailVerificationFragment"
+        android:name="ph.com.globe.globeonesuperapp.email_verification.EmailVerificationFragment"
+        android:label="EmailVerificationFragment"
+        tools:layout="@layout/email_verification_fragment">
+        <action
+            android:id="@+id/action_emailVerificationFragment_to_emailVerificationStatusFragment"
+            app:destination="@id/emailVerificationStatusFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/emailVerificationStatusFragment"
+        android:name="ph.com.globe.globeonesuperapp.email_verification.EmailVerificationStatusFragment"
+        android:label="EmailVerificationStatusFragment"
+        tools:layout="@layout/email_verification_status_fragment">
+        <argument
+            android:name="isSuccess"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_emailVerificationStatusFragment_to_navigation_add_account"
+            app:destination="@id/navigation_add_account">
+            <argument
+                android:name="newUser"
+                android:defaultValue="false"
+                app:argType="boolean" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/discoverMoreFragment"
+        android:name="ph.com.globe.globeonesuperapp.discover.DiscoverMoreFragment"
+        android:label="DiscoverMoreFragment"
+        tools:layout="@layout/discover_more_fragment">
+        <argument
+            android:name="previousScreenTitle"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/emailExistsFragment"
+        android:name="ph.com.globe.globeonesuperapp.register.EmailExistsFragment"
+        android:label="EmailExistsFragment"
+        tools:layout="@layout/email_exists_fragment" />
+    <fragment
+        android:id="@+id/loginProblemFragment"
+        android:name="ph.com.globe.globeonesuperapp.login.LoginProblemFragment"
+        android:label="LoginProblemFragment"
+        tools:layout="@layout/login_problem_fragment" />
+    <fragment
+        android:id="@+id/mergeLoginFragment"
+        android:name="ph.com.globe.globeonesuperapp.merge_login.MergeLoginFragment"
+        android:label="MergeLoginFragment"
+        tools:layout="@layout/merge_login_fragment">
+        <argument
+            android:name="loginSocialProvider"
+            app:argType="string" />
+        <argument
+            android:name="socialToken"
+            app:argType="string" />
+        <argument
+            android:name="moreInfo"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_mergeLoginFragment_to_linkEmailAccountFragment"
+            app:destination="@id/linkEmailAccountFragment" />
+        <action
+            android:id="@+id/action_mergeLoginFragment_to_linkSuccessfulFragment"
+            app:destination="@id/linkSuccessfulFragment" />
+        <action
+            android:id="@+id/action_mergeLoginFragment_to_tooManyAttemptsFragment"
+            app:destination="@id/tooManyAttemptsFragment" />
+        <action
+            android:id="@+id/action_mergeLoginFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/linkEmailAccountFragment"
+        android:name="ph.com.globe.globeonesuperapp.merge_login.LinkEmailAccountFragment"
+        android:label="LinkEmailAccountFragment"
+        tools:layout="@layout/link_email_account_fragment">
+        <action
+            android:id="@+id/action_linkEmailAccountFragment_to_resetPasswordSendEmailFragment"
+            app:destination="@id/resetPasswordSendEmailFragment" />
+        <argument
+            android:name="socialToken"
+            app:argType="string" />
+        <argument
+            android:name="provider"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_linkEmailAccountFragment_to_linkSuccessfulFragment"
+            app:destination="@id/linkSuccessfulFragment" />
+        <action
+            android:id="@+id/action_linkEmailAccountFragment_to_tooManyAttemptsFragment"
+            app:destination="@id/tooManyAttemptsFragment" />
+        <argument
+            android:name="providerText"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/linkSuccessfulFragment"
+        android:name="ph.com.globe.globeonesuperapp.merge_login.LinkSuccessfulFragment"
+        android:label="LinkSuccessfulFragment"
+        tools:layout="@layout/link_successful_fragment" >
+        <argument
+            android:name="recentProviderText"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/tooManyAttemptsFragment"
+        android:name="ph.com.globe.globeonesuperapp.merge_login.TooManyAttemptsFragment"
+        android:label="TooManyAttemptsFragment"
+        tools:layout="@layout/too_many_attempts_fragment" />
+
+</navigation>

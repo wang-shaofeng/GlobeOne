@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/accentLight"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_xmedium"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            app:cardCornerRadius="@dimen/corner_radius_xxxsmall"
+            app:cardElevation="@dimen/standard_elevation"
+            app:cardPreventCornerOverlap="false"
+            app:layout_constraintBottom_toTopOf="@id/tv_or_use"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_receipt_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/padding_large"
+                    android:paddingEnd="@dimen/padding_large"
+                    android:paddingBottom="@dimen/padding_large"
+                    android:theme="@style/ThemeOverlay.App.Light"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/lav_receipt"
+                        android:layout_width="@dimen/account_migration_image_size"
+                        android:layout_height="@dimen/account_migration_image_size"
+                        android:layout_marginTop="@dimen/margin_xmedium"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/failure" />
+
+                    <TextView
+                        android:id="@+id/tv_header_message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_standard"
+                        android:gravity="center"
+                        android:text="@string/error_wrong_email_or_password_title"
+                        android:textAppearance="?sMediumBold"
+                        android:textColor="?accentDark"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/lav_receipt" />
+
+                    <TextView
+                        android:id="@+id/tv_info_message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:gravity="center"
+                        android:text="@string/error_wrong_email_or_password_description"
+                        android:textAppearance="?baseRegularContent"
+                        android:textColor="?neutralB0"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_header_message" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <Button
+                    android:id="@+id/btn_try_again"
+                    style="@style/Widget.App.ClassicButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/colorPrimary"
+                    android:text="@string/try_again"
+                    android:textAllCaps="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cl_receipt_header" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:id="@+id/v_left_dash"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/toolbar_line_height"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:background="?attr/accentDark"
+            app:layout_constraintBottom_toBottomOf="@id/tv_or_use"
+            app:layout_constraintEnd_toStartOf="@id/tv_or_use"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_or_use" />
+
+        <TextView
+            android:id="@+id/tv_or_use"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_ssmedium"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:layout_marginRight="@dimen/margin_ssmedium"
+            android:text="@string/or_use"
+            android:textAppearance="?wideBold"
+            android:textColor="?accentDark"
+            android:textSize="@dimen/text_size_xsmall"
+            app:layout_constraintBottom_toTopOf="@id/inc_social_buttons"
+            app:layout_constraintEnd_toStartOf="@id/v_right_dash"
+            app:layout_constraintStart_toEndOf="@id/v_left_dash"
+            app:layout_constraintTop_toBottomOf="@id/cv_content" />
+
+        <View
+            android:id="@+id/v_right_dash"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/toolbar_line_height"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:background="?attr/accentDark"
+            app:layout_constraintBottom_toBottomOf="@id/tv_or_use"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_or_use"
+            app:layout_constraintTop_toTopOf="@id/tv_or_use" />
+
+        <include
+            android:id="@+id/inc_social_buttons"
+            layout="@layout/social_buttons_blue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_ssmedium"
+            android:layout_marginTop="@dimen/margin_xmedium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_or_use" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,23 @@
+<!--
+  ~ Copyright (C) 2022 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<vector android:height="40dp" android:viewportHeight="49"
+    android:viewportWidth="49" android:width="40dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="#FBB03B"
+        android:pathData="M33.0796,21.5688C32.8607,26.408 28.8736,30.2187 24.0294,30.2187V30.2187C19.1852,30.2187 15.1981,26.408 14.9792,21.5688L14.4294,9.4187L33.6294,9.4187L33.0796,21.5688Z"
+        android:strokeColor="#FBB03B" android:strokeWidth="2"/>
+    <path android:fillColor="#00000000"
+        android:pathData="M33.6292,14.2188H40.0292V16.4776C40.0292,20.532 36.7424,23.8188 32.688,23.8188V23.8188"
+        android:strokeColor="#FBB03B" android:strokeWidth="3"/>
+    <path android:fillColor="#00000000"
+        android:pathData="M14.4294,14.2188H8.0294V16.4776C8.0294,20.532 11.3162,23.8188 15.3706,23.8188V23.8188"
+        android:strokeColor="#FBB03B" android:strokeWidth="3"/>
+    <path android:fillColor="#00000000"
+        android:pathData="M24.0293,30.2188V36.6188"
+        android:strokeColor="#FBB03B" android:strokeWidth="4"/>
+    <path android:fillColor="#ffffff" android:pathData="M24.0293,11.0176L25.6294,16.2463L30.9576,15.0176L27.2294,19.0176L30.9576,23.0176L25.6294,21.7889L24.0293,27.0177L22.4293,21.7889L17.1011,23.0176L20.8293,19.0176L17.1011,15.0176L22.4293,16.2463L24.0293,11.0176Z"/>
+    <path android:fillColor="#F04283" android:pathData="M16.9705,35.9778L31.0881,35.959L32.0293,41.4178H16.0293L16.9705,35.9778Z"/>
+</vector>

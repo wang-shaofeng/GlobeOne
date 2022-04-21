@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?colorSurface"
+    app:layout_constraintTop_toBottomOf="@id/tv_your_subscriptions">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lav_postpaid_broadband"
+        android:layout_width="@dimen/lottie_postpaid_broadband_width"
+        android:layout_height="@dimen/lottie_postpaid_broadband_height"
+        android:layout_marginTop="@dimen/margin_xmedium"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/hey_you" />
+
+    <TextView
+        android:id="@+id/tv_postpaid_broadband_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_xmedium"
+        android:text="@string/account_details_postpaid_broadband_title"
+        android:textAppearance="?xBaseBold"
+        android:textColor="?accentDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lav_postpaid_broadband" />
+
+    <TextView
+        android:id="@+id/tv_postpaid_broadband_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_xxxxlarge"
+        android:layout_marginTop="@dimen/margin_xxsmall"
+        android:layout_marginBottom="@dimen/margin_xxxxlarge"
+        android:gravity="center"
+        android:text="@string/account_details_postpaid_broadband_description"
+        android:textAppearance="?baseRegularContent"
+        android:textColor="?neutralB0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_postpaid_broadband_title" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

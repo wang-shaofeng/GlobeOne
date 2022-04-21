@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorPrimary"
+    android:paddingBottom="@dimen/padding_xlarge">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_content_subscriptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_xxstandard"
+        android:nestedScrollingEnabled="false"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintTop_toTopOf="parent"
+        app:spanCount="2"
+        tools:itemCount="4"
+        tools:listitem="@layout/account_details_content_subscription_item" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_subscriptions_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_standard"
+        android:layout_marginTop="@dimen/margin_standard"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:background="@drawable/content_card_background"
+        app:layout_constraintTop_toBottomOf="@id/rv_content_subscriptions">
+
+        <ImageView
+            android:id="@+id/iv_help"
+            android:layout_width="@dimen/icon_dimen_standard"
+            android:layout_height="@dimen/icon_dimen_standard"
+            android:layout_marginStart="@dimen/margin_xs_standard"
+            android:layout_marginTop="@dimen/margin_xs_standard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_help"
+            app:tint="?accentDark" />
+
+        <View
+            android:id="@+id/v_vertical_line"
+            android:layout_width="@dimen/stroke_width_small"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/margin_xs_standard"
+            android:background="?neutralB1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_help"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_partner_apps_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_xs_standard"
+            android:text="@string/account_details_content_partner_apps_title"
+            android:textAppearance="?xBaseBold"
+            android:textColor="?accentDark"
+            app:layout_constraintStart_toEndOf="@id/v_vertical_line"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_partner_apps_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_xxsmall"
+            android:text="@string/account_details_content_partner_apps_description"
+            android:textAppearance="?smallRegularContent"
+            android:textColor="?neutralB0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/v_vertical_line"
+            app:layout_constraintTop_toBottomOf="@id/tv_partner_apps_title" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_spotify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/margin_standard"
+            app:cardCornerRadius="@dimen/corner_radius_xxxxsmall"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_partner_apps_description"
+            app:layout_constraintTop_toBottomOf="@id/tv_partner_apps_description">
+
+            <ImageView
+                android:id="@+id/iv_spotify"
+                android:layout_width="@dimen/icon_dimen_medium"
+                android:layout_height="@dimen/icon_dimen_medium"
+                app:srcCompat="@drawable/ic_content_spotify" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_viva_max"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_xxsmall"
+            app:cardCornerRadius="@dimen/corner_radius_xxxxsmall"
+            app:cardElevation="0dp"
+            app:layout_constraintStart_toEndOf="@id/cv_spotify"
+            app:layout_constraintTop_toTopOf="@id/cv_spotify">
+
+            <ImageView
+                android:id="@+id/iv_viva_max"
+                android:layout_width="@dimen/icon_dimen_medium"
+                android:layout_height="@dimen/icon_dimen_medium"
+                app:srcCompat="@drawable/ic_content_viva_max" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/inc_empty_state"
+        layout="@layout/account_no_subscriptions_empty_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lav_loading"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/large_animation_size"
+        android:adjustViewBounds="true"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loading_general" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

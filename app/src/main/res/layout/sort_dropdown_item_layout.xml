@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ellipsize="end"
+    android:gravity="start"
+    android:maxLines="1"
+    android:paddingVertical="@dimen/padding_smedium"
+    android:paddingStart="@dimen/padding_smedium"
+    android:paddingEnd="0dp"
+    android:textAppearance="?smallBoldContent"
+    android:textColor="?neutralA1" />

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/corporate_A_900" />
+    <corners android:radius="@dimen/corner_radius_xxxxsmall" />
+    <stroke android:color="#19FFFFFF" android:width="@dimen/stroke_width_small" />
+</shape>

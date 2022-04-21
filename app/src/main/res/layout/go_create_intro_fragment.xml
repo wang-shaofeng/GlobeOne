@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:background="?absoluteWhite">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ph.com.globe.globeonesuperapp.utils.ui.Wayfinder
+            android:id="@+id/wf_go_create"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?accentLight"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:label="@string/wayfinder_home" />
+
+        <ImageView
+            android:id="@+id/iv_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            app:layout_constraintTop_toBottomOf="@id/wf_go_create"
+            app:srcCompat="@drawable/gocreate_intro_banner" />
+
+        <TextView
+            android:id="@+id/tv_go_create_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_standard"
+            android:text="@string/go_create_intro_description"
+            android:textAppearance="?baseRegularContent"
+            android:textColor="?neutralB0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_banner" />
+
+        <View
+            android:id="@+id/v_divider"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/stroke_width_large"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:background="?neutralA5"
+            app:layout_constraintTop_toBottomOf="@id/tv_go_create_description" />
+
+        <TextView
+            android:id="@+id/tv_inclusions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_smedium"
+            android:text="@string/inclusions"
+            android:textAppearance="?xBaseMultiline"
+            android:textColor="?primary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/v_divider" />
+
+        <ImageView
+            android:id="@+id/iv_inclusions_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_smedium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_inclusions"
+            app:srcCompat="@drawable/ic_promo_details_text_icon" />
+
+        <TextView
+            android:id="@+id/tv_inclusions_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_standard"
+            android:text="@string/go_create_intro_inclusions_text"
+            android:textAppearance="?smallRegularContent"
+            android:textColor="?neutralB0"
+            app:layout_constraintBottom_toBottomOf="@id/iv_inclusions_info"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_inclusions_info"
+            app:layout_constraintTop_toTopOf="@id/iv_inclusions_info" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:background="?accentLight"
+            android:paddingHorizontal="@dimen/padding_medium"
+            app:layout_constraintTop_toBottomOf="@id/iv_inclusions_info">
+
+            <TextView
+                android:id="@+id/tv_buying_for"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_smedium"
+                android:text="@string/go_create_you_are_buying_for"
+                android:textAppearance="?baseRegularContent"
+                android:textColor="?neutralA3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_mobile_number"
+                style="@style/InputFieldStyle.ShopInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:layout_marginBottom="@dimen/margin_standard"
+                android:hint="@string/mobile_number"
+                app:endIconDrawable="@drawable/ic_user"
+                app:endIconMode="custom"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_buying_for">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_mobile_number"
+                    style="@style/InputFieldTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:focusable="false"
+                    android:inputType="number"
+                    android:maxLength="@integer/phone_number_length" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <View
+                android:id="@+id/v_select_account"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintBottom_toBottomOf="@id/til_mobile_number"
+                app:layout_constraintEnd_toEndOf="@id/til_mobile_number"
+                app:layout_constraintStart_toStartOf="@id/til_mobile_number"
+                app:layout_constraintTop_toTopOf="@id/til_mobile_number" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_go_create"
+                style="@style/Widget.App.ClassicButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxlarge"
+                android:layout_marginBottom="@dimen/margin_xstandard"
+                android:enabled="false"
+                android:text="@string/go_create_lets_go_create"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_mobile_number" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

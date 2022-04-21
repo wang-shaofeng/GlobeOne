@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:theme="@style/ThemeOverlay.App.Light"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <LinearLayout
+        android:id="@+id/ll_texts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/margin_ssmedium"
+        android:layout_marginBottom="@dimen/margin_smedium"
+        android:layout_marginStart="@dimen/margin_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_xmedium"
+            android:textColor="?neutralA1"
+            android:textAppearance="?xBaseMultiline"
+            tools:text="Profile details" />
+
+        <TextView
+            android:id="@+id/tv_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:text="Verify your email adress" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_arrow_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:rotation="180"
+        app:srcCompat="@drawable/ic_back" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fl_badge_container"
+        style="@style/ThemeOverlay.App.Light.Badge"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/profile_main_subsection_item_badge_diameter"
+        android:minWidth="@dimen/profile_main_subsection_item_badge_diameter"
+        android:layout_marginEnd="@dimen/margin_standard"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_arrow_right"
+        app:layout_constraintEnd_toStartOf="@+id/iv_arrow_right"
+        app:layout_constraintTop_toTopOf="@id/iv_arrow_right"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_badge"
+            style="@style/ThemeOverlay.App.Light.Badge.Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_xxsmall"
+            android:layout_marginEnd="@dimen/margin_xxsmall"
+            android:layout_marginBottom="@dimen/margin_xxxsmall"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="19" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        style="@style/Widget.App.Divider"
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium"
+        app:layout_constraintTop_toBottomOf="@id/ll_texts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </FrameLayout>
+
+</merge>

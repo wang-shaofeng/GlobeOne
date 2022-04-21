@@ -1,0 +1,90 @@
+/*
+ * Copyright (C) 2021 LotusFlare
+ * All Rights Reserved.
+ * Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+ */
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion globeCompileVersion
+    buildToolsVersion globeBuildToolsVersion
+
+    defaultConfig {
+        minSdkVersion globeMinSdkVersion
+        targetSdkVersion globeTargetSdkVersion
+        versionCode globeVersion.versionCode()
+        versionName globeVersion.versionName()
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            ext.enableCrashlytics = false
+            minifyEnabled false
+
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            splits.abi.enable = false
+            splits.density.enable = false
+            ext.alwaysUpdateBuildId = false
+            aaptOptions.cruncherEnabled = false
+        }
+    }
+
+    flavorDimensions "analyticsType"
+
+    productFlavors {
+        google {
+            dimension "analyticsType"
+        }
+
+        huawei {
+            dimension "analyticsType"
+        }
+
+        noAnalytics {
+            dimension "analyticsType"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    packagingOptions {
+        exclude 'META-INF/*.kotlin_module'
+    }
+}
+
+dependencies {
+    implementation project(':model')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "androidx.core:core-ktx:$coreKtxVersion"
+    implementation "androidx.appcompat:appcompat:$appCompatVersion"
+
+    // Hilt
+    implementation "com.google.dagger:hilt-android:$hiltDaggerVersion"
+    kapt "com.google.dagger:hilt-compiler:$hiltDaggerVersion"
+
+    // Firebase
+    implementation platform("com.google.firebase:firebase-bom:$firebaseBomVersion")
+    implementation "com.google.firebase:firebase-auth-ktx"
+    implementation "com.google.firebase:firebase-analytics-ktx"
+    implementation "com.google.firebase:firebase-crashlytics-ktx"
+}

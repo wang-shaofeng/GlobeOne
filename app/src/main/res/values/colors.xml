@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<resources>
+    <color name="bottom_nav_outline_cyan">#0AB5B6</color>
+    <color name="bottom_nav_icon_color_not_selected">#8EA4CA</color>
+
+    <color name="functional_primary">#0056BF</color>
+    <color name="blue_primary_10">#252274E5</color> <!-- primary variant -->
+    <color name="blue_secondary">#5982F2</color>
+    <color name="blue_accent_2">#002E8E</color>
+    <color name="state_success_green">#6FB126</color>
+    <color name="state_caution_orange">#F49331</color>
+    <color name="state_error_red">#EA5D5D</color>
+    <color name="state_alerts_red">#FF000C</color>
+    <color name="functional_neutral_2_gray">#D8D8D8</color>
+    <color name="functional_neutral_4_gray">#4A4A4A</color>
+    <color name="light_blue">#F1F6FB</color>
+    <color name="text_on_white">#345070</color>
+    <color name="black_85">#D91F3B59</color> <!-- neutralA0 variant -->
+    <color name="black_70">#B21F3B59</color> <!-- neutralA0 variant -->
+    <color name="black_50">#801F3B59</color> <!-- neutralA0 variant -->
+    <color name="black_30">#4D1F3B59</color> <!-- neutralA0 variant -->
+    <color name="black_10">#1A1F3B59</color> <!-- neutralA0 variant -->
+    <color name="password_strength_full_green">#0DC599</color>
+    <color name="otp_line_dark_blue">#34489E</color>
+    <color name="input_text_stroke_blue">#8034489E</color> <!-- otp_line_dark_blue variant -->
+    <color name="input_text_stroke_blue_1">#3334489E</color> <!-- otp_line_dark_blue variant -->
+    <color name="input_text_stroke_blue_2">#9FA8D0</color>
+    <color name="input_text_hint_red">#E15E5E</color>
+    <color name="input_text_background_red">#FFF8F8</color>
+    <color name="input_text_background_green">#F2FDFA</color>
+    <color name="input_text_stroke_red">#EA5D5D</color>
+    <color name="error_text_red">#C90A0A</color>
+    <color name="error_red">#E12929</color> <!-- login failed state -->
+    <color name="red">#D32020</color>
+    <color name="black">#163150</color>
+    <color name="dark_blue">#213488</color>
+    <color name="oval_blue">#0AB5B6</color>
+    <color name="bottom_nav_unselected_light_blue">#8EA4CA</color>
+    <color name="button_background_light_blue">#1A5982F2</color>
+    <color name="ball_icon_dark_blue">#1F3B59</color>
+    <color name="reward_points_stroke_gray">#1A163150</color>
+    <color name="dashboard_progress_blue">#2E1084</color>
+    <color name="dashboard_progress_text_light_gray">#F1F2F5</color>
+    <color name="dashboard_text_section_progress_green">#0AB1B1</color>
+    <color name="dashboard_background_light_blue">#C1D4E8</color>
+    <color name="quick_links_stroke_white">#1AFFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="dashboard_status_button_background">#190E2758</color>
+    <color name="dashboard_status_icon_tint">#0E2758</color>
+    <color name="dashboard_background">#E5E5E5</color>
+    <color name="dashboard_consumption_border">#0AFFFFFF</color>
+    <color name="dashboard_data_fill_color">#2C55E5</color>
+    <color name="dashboard_text_background_color">#212E59</color>
+    <color name="white_30">#1EFFFFFF</color>
+    <color name="dashboard_circle_foreground">#7550E3</color>
+
+    <color name="two_button_dialog_background">#F9FAFB</color>
+    <color name="two_button_dialog_description">#878B9C</color>
+    <color name="two_button_dialog_top_line">#E0E0E0</color>
+
+    <color name="password_strength_moderate_yellow">#F49331</color>
+    <color name="password_strength_low_red">#E12929</color>
+
+    <color name="select_account_item_stroke_color">#7299D1</color>
+    <color name="unselected_account_start_drawable_stroke_color">#4D122635</color> <!-- variant of prepaid_A_1000 -->
+
+    <color name="success">#0DC599</color>
+
+    <color name="reward_cost_yellow">#C9942D</color>
+
+    <color name="dashboard_morning">#5889e0</color>
+    <color name="dashboard_day">#22a9fb</color>
+    <color name="dashboard_sunset">#ff4a60</color>
+    <color name="dashboard_night">#141a47</color>
+
+</resources>

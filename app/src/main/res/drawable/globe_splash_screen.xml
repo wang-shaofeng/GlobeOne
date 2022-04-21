@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2020 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/corporate_A_800" />
+    <item android:top="@dimen/margin_xstandard">
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/ic_logo_splash_png" />
+    </item>
+</layer-list>

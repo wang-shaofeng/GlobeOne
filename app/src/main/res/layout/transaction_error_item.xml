@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lav_receipt"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/no_transaction_image_size"
+        android:layout_marginHorizontal="@dimen/no_transaction_horizontal_size"
+        android:layout_marginTop="@dimen/no_transaction_margin_size"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/tv_header_message"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/empty_state" />
+
+    <TextView
+        android:id="@+id/tv_header_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_medium"
+        android:text="@string/sorry_something_went_wrong"
+        android:textAlignment="center"
+        android:textAppearance="?sMediumBold"
+        android:textColor="?accentDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lav_receipt" />
+
+    <TextView
+        android:id="@+id/tv_info_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_xxxlarge"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/the_screen_didnt_load_properly"
+        android:textAppearance="?baseRegularContent"
+        android:textColor="?neutralB0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_header_message" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_reload"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_xxxxlarge"
+        android:paddingVertical="@dimen/padding_medium"
+        android:text="@string/reload_page"
+        android:textAllCaps="false"
+        android:textAppearance="?baseAction"
+        android:textColor="?absoluteWhite"
+        app:backgroundTint="?primary"
+        app:cornerRadius="@dimen/corner_radius_xxxsmall"
+        app:elevation="@dimen/standard_elevation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_info_message" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

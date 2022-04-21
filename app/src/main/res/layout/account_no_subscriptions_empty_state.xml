@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?absoluteWhite"
+    android:padding="@dimen/padding_large">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lav_animation"
+        android:layout_width="@dimen/surprise_is_coming_image_size"
+        android:layout_height="@dimen/surprise_is_coming_image_size"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/margin_xxxxlarge"
+        android:layout_marginEnd="@dimen/margin_xxxxlarge"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/empty_state" />
+
+    <TextView
+        android:id="@+id/tv_subscriptions_empty_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/no_subscriptions"
+        android:gravity="center"
+        android:textColor="?accentDark"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size_large"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_standard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lav_animation" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,15 @@
+<!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="19dp"
+    android:height="18dp"
+    android:viewportWidth="19"
+    android:viewportHeight="18">
+  <path
+      android:pathData="M11,1C11,0.4477 10.5523,0 10,0C9.4477,0 9,0.4477 9,1V8H1.9512C1.3989,8 0.9512,8.4477 0.9512,9C0.9512,9.5523 1.3989,10 1.9512,10H9L9,17C9,17.5523 9.4477,18 10,18C10.5523,18 11,17.5523 11,17V10H17.9512C18.5035,10 18.9512,9.5523 18.9512,9C18.9512,8.4477 18.5035,8 17.9512,8H11V1Z"
+      android:fillColor="#2274E6"/>
+</vector>

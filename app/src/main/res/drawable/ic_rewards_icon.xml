@@ -1,0 +1,41 @@
+<!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="21dp"
+    android:height="22dp"
+    android:viewportWidth="21"
+    android:viewportHeight="22">
+  <group>
+    <clip-path
+        android:pathData="M0,-0.0004h21v20.8689h-21z"/>
+    <path
+        android:pathData="M0,10.4341a10.5,10.4344 0,1 0,21 0a10.5,10.4344 0,1 0,-21 0z"
+        android:fillColor="#ffffff"/>
+    <path
+        android:strokeWidth="1"
+        android:pathData="M20.5,10.4341C20.5,15.9178 16.0258,20.3685 10.5,20.3685C4.9742,20.3685 0.5,15.9178 0.5,10.4341C0.5,4.9504 4.9742,0.4996 10.5,0.4996C16.0258,0.4996 20.5,4.9504 20.5,10.4341Z"
+        android:strokeAlpha="0.1"
+        android:fillColor="#00000000"
+        android:strokeColor="#1D3D55"/>
+    <path
+        android:pathData="M11.0963,5.6129L12.1544,7.9839C12.2496,8.1983 12.4467,8.3459 12.672,8.3751L15.1704,8.687C15.7256,8.7566 15.9496,9.4694 15.5392,9.8648L13.6939,11.64C13.5263,11.8015 13.4525,12.0396 13.4954,12.2721L13.9822,14.8352C14.0909,15.4061 13.5062,15.846 13.018,15.5634L10.82,14.2909C10.6215,14.1753 10.3788,14.1753 10.1803,14.2909L7.9823,15.5634C7.4928,15.846 6.9095,15.4061 7.0181,14.8352L7.5049,12.2721C7.5491,12.0396 7.4741,11.8015 7.3064,11.64L5.4611,9.8634C5.0507,9.468 5.2734,8.7552 5.8299,8.6856L8.3283,8.3737C8.5549,8.3459 8.7507,8.1983 8.846,7.9825L9.9041,5.6115C10.1387,5.0852 10.8616,5.0852 11.0963,5.6129Z">
+      <aapt:attr name="android:fillColor">
+        <gradient 
+            android:startY="5.21692"
+            android:startX="13.125"
+            android:endY="15.659"
+            android:endX="10.5308"
+            android:type="linear">
+          <item android:offset="0" android:color="#FFFACE5D"/>
+          <item android:offset="1E-4" android:color="#FFFAEA5D"/>
+          <item android:offset="1" android:color="#FFFACE5D"/>
+        </gradient>
+      </aapt:attr>
+    </path>
+  </group>
+</vector>

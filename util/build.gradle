@@ -1,0 +1,21 @@
+/*
+ * Copyright (C) 2021 LotusFlare
+ * All Rights Reserved.
+ * Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+ */
+
+plugins {
+    id 'java-library'
+    id 'kotlin'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'joda-time:joda-time:2.10.13'
+    implementation project(':model')
+}

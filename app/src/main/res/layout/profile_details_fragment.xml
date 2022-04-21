@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?absoluteWhite">
+
+    <ph.com.globe.globeonesuperapp.utils.ui.Wayfinder
+        android:id="@+id/wf_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?accentLight"
+        app:label="@string/wayfinder_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wf_profile">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_complete_kyc_banner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?prepaidA500"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_kyc_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_standard"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_email_sent"
+                    app:tint="?absoluteWhite" />
+
+                <TextView
+                    android:id="@+id/tv_kyc_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_standard"
+                    android:text="@string/kyc_banner_title"
+                    android:textAppearance="?baseRegularContent"
+                    android:textColor="?absoluteWhite"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/iv_kyc_icon"
+                    app:layout_constraintTop_toTopOf="@id/iv_kyc_icon" />
+
+                <TextView
+                    android:id="@+id/tv_kyc_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_standard"
+                    android:text="@string/kyc_banner_description"
+                    android:textAppearance="?xSmallRegularContent"
+                    android:textColor="?absoluteWhite"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/iv_kyc_icon"
+                    app:layout_constraintTop_toBottomOf="@id/tv_kyc_title" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_profile_details_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cl_complete_kyc_banner">
+
+                <ImageView
+                    android:id="@+id/iv_avatar"
+                    android:layout_width="@dimen/profile_details_avatar_width"
+                    android:layout_height="@dimen/profile_details_avatar_height"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_standard"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_note_about_editing"
+                    app:srcCompat="@drawable/ic_default_user_picture" />
+
+                <TextView
+                    android:id="@+id/tv_profile_details_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_standard"
+                    android:text="@string/profile_details_title"
+                    android:textAppearance="?largeBold"
+                    android:textColor="?accentDark"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_note_about_editing"
+                    style="@style/Widget.App.ProfileDetailsNote"
+                    android:layout_marginTop="@dimen/margin_smedium"
+                    android:text="@string/profile_editing_note"
+                    android:textColor="?neutralA2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_profile_details_title" />
+
+                <TextView
+                    android:id="@+id/tv_full_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_standard"
+                    android:text="@string/profile_your_name_placeholder"
+                    android:textAppearance="?mediumBold"
+                    android:textColor="?neutralA0"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_avatar"
+                    app:layout_constraintStart_toEndOf="@id/iv_avatar"
+                    app:layout_constraintTop_toTopOf="@id/iv_avatar" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_nickname"
+                style="@style/Widget.App.ProfileDetailsTextInputLayout"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:hint="@string/profile_details_tiet_hint_nickname"
+                app:counterEnabled="true"
+                app:counterMaxLength="15"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cl_profile_details_header">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiet_nickname"
+                    style="@style/Widget.App.ProfileDetailsTextInputEditText"
+                    android:digits="@string/profile_details_enabled_nickname_characters"
+                    android:maxLength="15" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_email"
+                style="@style/Widget.App.ProfileDetailsTextInputLayout"
+                android:hint="@string/profile_details_tiet_hint_email_adress"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_nickname">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiet_email"
+                    android:paddingEnd="@dimen/padding_standard"
+                    style="@style/Widget.App.ProfileDetailsTextInputEditText"
+                    android:enabled="false"
+                    tools:text="@string/mock_email_address"
+                    tools:ignore="RtlSymmetry" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_primary_contact_number"
+                style="@style/Widget.App.ProfileDetailsTextInputLayout"
+                android:layout_marginTop="@dimen/margin_xxstandard"
+                android:hint="@string/kyc_primary_contact_number"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_email">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiet_primary_contact_number"
+                    style="@style/Widget.App.ProfileDetailsTextInputEditText"
+                    android:inputType="numberDecimal"
+                    android:maxLength="11" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <FrameLayout
+                android:id="@+id/fl_divider_1"
+                style="@style/Widget.App.ProfileDetailsDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_primary_contact_number" />
+
+            <TextView
+                android:id="@+id/tv_salutation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/profile_details_salutation_title"
+                android:textAppearance="?labelSmall"
+                android:textColor="?neutralB0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fl_divider_1" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/cg_salutations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_small"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_salutation"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_mr"
+                    style="@style/Widget.App.Chip"
+                    android:checked="false"
+                    android:text="@string/profile_details_salutation_mr" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_ms"
+                    style="@style/Widget.App.Chip"
+                    android:checked="false"
+                    android:text="@string/profile_details_salutation_ms" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_mrs"
+                    style="@style/Widget.App.Chip"
+                    android:checked="false"
+                    android:text="@string/profile_details_salutation_mrs" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_first_name"
+                style="@style/Widget.App.ProfileDetailsTextInputLayout"
+                android:hint="@string/profile_details_tiet_hint_first_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cg_salutations">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiet_first_name"
+                    style="@style/Widget.App.ProfileDetailsTextInputEditText"
+                    android:digits="@string/profile_details_enabled_characters"
+                    android:maxLength="@integer/first_name_max_length" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_middle_name"
+                style="@style/Widget.App.ProfileDetailsTextInputLayout"
+                android:hint="@string/profile_details_tiet_hint_middle_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_first_name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiet_middle_name"
+                    style="@style/Widget.App.ProfileDetailsTextInputEditText"
+                    android:digits="@string/profile_details_enabled_characters"
+                    android:maxLength="@integer/middle_name_max_length" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_last_name"
+                style="@style/Widget.App.ProfileDetailsTextInputLayout"
+                android:hint="@string/profile_details_tiet_hint_last_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_middle_name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiet_last_name"
+                    style="@style/Widget.App.ProfileDetailsTextInputEditText"
+                    android:digits="@string/profile_details_enabled_characters"
+                    android:maxLength="@integer/last_name_max_length" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_menu_suffix"
+                style="@style/Widget.App.ProfileDetailsExposedDropdown"
+                android:hint="@string/profile_details_suffix_title"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_last_name"
+                tools:visibility="visible">
+
+                <AutoCompleteTextView
+                    android:id="@+id/actv_menu_suffix"
+                    style="@style/Widget.App.ProfileDetailsAutoCompleteTextView" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/iv_menu_suffix"
+                style="@style/ProfileDetailsDropdownIcon"
+                app:layout_constraintEnd_toEndOf="@id/til_menu_suffix"
+                app:layout_constraintTop_toTopOf="@id/til_menu_suffix"
+                app:srcCompat="@drawable/ic_dropdown_arrow" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_birthday"
+                style="@style/Widget.App.ProfileDetailsExposedDropdown"
+                android:hint="@string/profile_details_til_hint_birthday"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_menu_suffix"
+                app:placeholderText="@string/profile_details_til_placeholder_birthday">
+
+                <AutoCompleteTextView
+                    android:id="@+id/actv_birthday"
+                    style="@style/Widget.App.ProfileDetailsAutoCompleteTextView" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tv_note_about_age"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:text="@string/profile_details_birthday_note"
+                android:textAppearance="?smallRegularContent"
+                android:textColor="?neutralB0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_birthday" />
+
+            <ImageView
+                android:id="@+id/iv_birthday"
+                style="@style/ProfileDetailsDropdownIcon"
+                app:layout_constraintEnd_toEndOf="@id/til_birthday"
+                app:layout_constraintTop_toTopOf="@id/til_birthday"
+                app:srcCompat="@drawable/ic_calendar" />
+
+            <FrameLayout
+                android:id="@+id/fl_divider_2"
+                style="@style/Widget.App.ProfileDetailsDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_note_about_age" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_address1"
+                style="@style/Widget.App.ProfileDetailsTextInputLayout"
+                android:layout_marginTop="@dimen/margin_xxstandard"
+                android:hint="@string/profile_kyc_address1_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fl_divider_2"
+                app:placeholderText="@string/profile_details_til_placeholder_address1">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiet_address1"
+                    style="@style/Widget.App.ProfileDetailsTextInputEditText" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_address2"
+                style="@style/Widget.App.ProfileDetailsTextInputLayout"
+                android:hint="@string/profile_kyc_address2_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_address1"
+                app:placeholderText="@string/profile_details_til_placeholder_address2">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiet_address2"
+                    style="@style/Widget.App.ProfileDetailsTextInputEditText" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_street"
+                style="@style/Widget.App.ProfileDetailsTextInputLayout"
+                android:hint="@string/profile_kyc_street_hint"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_address2">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiet_street"
+                    style="@style/Widget.App.ProfileDetailsTextInputEditText" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_province"
+                style="@style/Widget.App.ProfileDetailsExposedDropdown"
+                android:hint="@string/profile_kyc_state_hint"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_street">
+
+                <AutoCompleteTextView
+                    android:id="@+id/actv_province"
+                    style="@style/Widget.App.ProfileDetailsAutoCompleteTextView" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/iv_province"
+                style="@style/ProfileDetailsDropdownIcon"
+                app:layout_constraintEnd_toEndOf="@id/til_province"
+                app:layout_constraintTop_toTopOf="@id/til_province"
+                app:srcCompat="@drawable/ic_dropdown_arrow" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_city"
+                style="@style/Widget.App.ProfileDetailsExposedDropdown"
+                android:hint="@string/profile_kyc_city_hint"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_province">
+
+                <AutoCompleteTextView
+                    android:id="@+id/actv_city"
+                    style="@style/Widget.App.ProfileDetailsAutoCompleteTextView" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/iv_city"
+                style="@style/ProfileDetailsDropdownIcon"
+                app:layout_constraintEnd_toEndOf="@id/til_city"
+                app:layout_constraintTop_toTopOf="@id/til_city"
+                app:srcCompat="@drawable/ic_dropdown_arrow" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_barangay"
+                style="@style/Widget.App.ProfileDetailsExposedDropdown"
+                android:hint="@string/profile_kyc_bangaray_hint"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_city">
+
+                <AutoCompleteTextView
+                    android:id="@+id/actv_barangay"
+                    style="@style/Widget.App.ProfileDetailsAutoCompleteTextView" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/iv_barangay"
+                style="@style/ProfileDetailsDropdownIcon"
+                app:layout_constraintEnd_toEndOf="@id/til_barangay"
+                app:layout_constraintTop_toTopOf="@id/til_barangay"
+                app:srcCompat="@drawable/ic_dropdown_arrow" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_zipcode"
+                style="@style/Widget.App.ProfileDetailsTextInputLayout"
+                android:hint="@string/profile_kyc_zipcode_hint"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_barangay">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiet_zipcode"
+                    style="@style/Widget.App.ProfileDetailsTextInputEditText"
+                    android:maxLength="@integer/zipcode_length" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tv_data_privacy"
+                style="@style/Widget.App.ProfileDetailsNote"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/profile_kyc_data_privacy_policy"
+                android:textColor="?absoluteBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_zipcode" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_save_profile_details_changes"
+                style="@style/Widget.App.ClassicButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:layout_marginBottom="@dimen/margin_xxxlarge"
+                android:enabled="false"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/profile_details_button_save_changes"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_min="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_data_privacy" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

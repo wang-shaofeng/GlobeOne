@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/corner_radius_xxsmall"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/data_consumption_view_height"
+            android:background="?corporateA900">
+
+            <View
+                android:id="@+id/v_used_indicatior"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:background="?corporateA500"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_data_usage_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:text="@string/data_left"
+                android:textAppearance="?compactCallSms"
+                android:textColor="?corporateA100"
+                app:layout_constraintBottom_toTopOf="@id/tv_data_usage_usage"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_data_usage_usage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginBottom="@dimen/margin_xxstandard"
+                android:textAppearance="?defaultData"
+                android:textColor="?accentLight"
+                app:layout_constraintBottom_toTopOf="@id/cg_app_images"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="@string/mock_data_usage" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/cg_app_images"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:layout_marginBottom="@dimen/margin_xxstandard"
+                app:chipSpacing="@dimen/margin_xxsmall"
+                app:layout_constraintBottom_toTopOf="@id/tv_data_usage_expiration"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_data_usage_expiration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginBottom="@dimen/margin_standard"
+                android:textAppearance="?smallRegularContent"
+                android:textColor="?highlight"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="@string/mock_data_expires_on" />
+
+            <ImageView
+                android:id="@+id/iv_unlimited"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_standard"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_unlimited"
+                app:tint="?corporateB100" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_unlimited_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?accentLight">
+
+            <TextView
+                android:id="@+id/tv_unlimited_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_xstandard"
+                android:paddingVertical="@dimen/padding_standard"
+                android:text="@string/unlimited_data_bucket_description"
+                android:textAppearance="?xxSmallRegularContent"
+                android:textColor="?neutralA1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvLearnMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_xstandard"
+                android:paddingVertical="@dimen/padding_small"
+                android:text="@string/learn_more"
+                android:textAppearance="?labelCaption"
+                android:textColor="?primary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

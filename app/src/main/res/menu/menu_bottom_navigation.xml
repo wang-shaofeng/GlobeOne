@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@id/dashboard_subgraph"
+        android:icon="@drawable/ic_home"
+        android:menuCategory="secondary"
+        android:title="@string/menu_home" />
+    <item
+        android:id="@id/help_subgraph"
+        android:icon="@drawable/ic_help"
+        android:menuCategory="secondary"
+        android:title="@string/menu_help" />
+    <item
+        android:id="@id/shop_subgraph"
+        android:icon="@drawable/ic_shop"
+        android:menuCategory="secondary"
+        android:title="@string/menu_shop" />
+    <item
+        android:id="@id/rewards_subgraph"
+        android:icon="@drawable/ic_rewards"
+        android:menuCategory="secondary"
+        android:title="@string/menu_rewrds" />
+</menu>

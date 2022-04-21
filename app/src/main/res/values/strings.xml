@@ -1,0 +1,1643 @@
+<!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<resources>
+    <string name="app_name">GlobeOne</string>
+
+    <!-- region GENERAL -->
+    <string name="button_ok">OK</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_next">Next</string>
+    <string name="button_yes">Yes</string>
+    <string name="button_no">No</string>
+    <string name="button_add">Add</string>
+    <string name="button_subscribe">Subscribe</string>
+    <string name="button_buy_load">Buy load</string>
+    <string name="rationale_button_allow">Allow</string>
+    <string name="rationale_button_deny">Deny</string>
+    <string name="got_it">Got it</string>
+    <string name="pay">Pay</string>
+    <string name="pull_to_refresh">Pull down and release to refresh</string>
+    <string name="template_fraction"> %1$s/%2$s</string>
+    <string name="reload_page">Reload page</string>
+    <string name="token_expired_title">Your session ended.</string>
+    <string name="token_expired_description">Please log in again to continue using GlobeOne.</string>
+    <!-- endregion -->
+
+    <!-- region Social sign in -->
+    <string name="token_url">https://ciamapi.globe.com.ph/cao/v1/native-redirection</string>
+    <!-- endregion -->
+
+    <!-- region Menu items -->
+    <string name="menu_home">Home</string>
+    <string name="menu_help">Help</string>
+    <string name="menu_shop">Shop</string>
+    <string name="menu_rewrds">Rewards</string>
+    <!-- endregion -->
+
+    <!-- region Account details -->
+    <string name="account_details_account_number">Acct. No.</string>
+    <string name="account_details_view_details">View details</string>
+    <string name="account_details_data_tab">Data</string>
+    <string name="account_details_content_tab">Content</string>
+    <string name="account_details_calls_tab">Calls</string>
+    <string name="account_details_text_tab">Text</string>
+    <string name="account_details_calls_and_text_tab">Calls &amp; Text</string>
+    <string name="account_details_try_these_out">Try these out!</string>
+    <string name="account_details_subscribe_again">Subscribe again</string>
+    <string name="account_details_shop_promos">Shop promos</string>
+    <string name="account_details_consumption_calls">%1$d / %2$d mins</string>
+    <string name="account_details_consumption_calls_left">Calls left</string>
+    <string name="account_details_consumption_calls_unli">Unli calls</string>
+    <string name="account_details_consumption_texts">%1$d / %2$d texts</string>
+    <string name="account_details_consumption_texts_left">Texts left</string>
+    <string name="account_details_consumption_texts_unli">Unli texts</string>
+    <string name="account_details_network_type_all">All networks</string>
+    <string name="account_details_network_type_other">Other networks</string>
+    <string name="account_details_network_type_globe_tm">Globe/TM</string>
+    <string name="account_details_content_not_activated">Not activated</string>
+    <string name="account_details_content_partner_apps_title">“Where’s my subscription?”</string>
+    <string name="account_details_content_partner_apps_description">If you subscribed to the following, you can check their status in their respective apps.</string>
+    <string name="account_details_inactive_header_title">This account is already inactive</string>
+    <string name="account_details_inactive_header_description">This account is no longer with us.</string>
+    <string name="account_details_postpaid_broadband_title">Something wonderful is coming!</string>
+    <string name="account_details_postpaid_broadband_description">More Postpaid Broadband features are coming to New GlobeOne soon!</string>
+    <string name="content_promo_unsubscribe">Unsubscribe</string>
+    <string name="content_promo_unsubscribe_dialog_title">Are you sure you want to unsubscribe to %s?</string>
+    <string name="content_promo_unsubscribe_dialog_description">This promo is non-refundable.</string>
+    <string name="get_a_freebie">Get a freebie!</string>
+    <string name="get_a_freebie_description">Subscribe to GoSURF50 and get a freebie! Promo runs until March 31, 2021. Learn more here.</string>
+    <string name="load_balance">Load balance</string>
+    <string name="balance_placeholder">-- --</string>
+    <string name="balance_zero_decimal">0.00</string>
+    <string name="acct_no">Acct. No.</string>
+    <string name="gcash_balance">GCash balance</string>
+    <string name="gcash_link">Link now</string>
+    <string name="loan_balance">Loan balance</string>
+    <string name="load_to_pay_balance">Load to pay balance</string>
+    <string name="shop_now">Shop now</string>
+    <string name="your_subscriptions">Your subscriptions</string>
+    <string name="no_subscriptions">No subscriptions yet!</string>
+    <string name="your_plan_usage">Your plan usage</string>
+    <string name="unlimited_data_bucket_description">You may experience changes in\ninternet speed to the Fair Use Policy</string>
+    <string name="enjoy_your_surfing">Enjoy your surfing!</string>
+    <string name="data_usage">%1$d%2$s/%3$d%4$s</string>
+    <string name="member_data_usage">%1$s / %2$s</string>
+    <string name="rewards_expires_on">%1$s pts expires on %2$s</string>
+    <string name="load_expires_on">P%1$s expires on %2$s</string>
+    <string name="name">Name</string>
+    <string name="managing_for_someone">I am managing this account for someone else.</string>
+    <string name="managing_different_accounts">Managing different accounts</string>
+    <string name="btn_save_changes">Save changes</string>
+    <string name="btn_remove_this_account">Remove this account</string>
+    <string name="account_remove_description">You may remove this account.</string>
+    <string name="account_removal_rationale_title">Are you sure you want to remove this account?</string>
+    <string name="account_removal_rationale_description">You can add it back anytime.</string>
+    <string name="account_removal_inactive_description">You can no longer add this again since it’s already inactive.</string>
+    <string name="activate_now">Activate now</string>
+    <string name="activate">Activate</string>
+    <string name="choose_freebie">Choose freebie</string>
+    <string name="claim_freebie">Claim freebie</string>
+    <string name="view_offers">View offers</string>
+    <string name="sit_tight">Sit tight!</string>
+    <string name="this_will_only_take_a_moment">This will only take a moment.</string>
+    <string name="your_freebie_is_on_the_way_please_wait_for_it_to_reflect_on_your_account">Your freebie is on the way. Please wait for it to reflect on your account.</string>
+    <string name="we_re_now_processing_your_freebie">We’re now processing your freebie!</string>
+    <string name="exclusive_promos">Exclusive Promos</string>
+    <string name="exclusive_sulit_promos">Exclusive sulit promos</string>
+    <string name="choose_your_free_app_data">Choose your free app data!</string>
+    <string name="choose_a_freebie">Choose a freebie</string>
+    <string name="app_included">App included</string>
+    <string name="weve_got_exclusive_promos_for_you">We’ve got exclusive promos for you!</string>
+    <string name="bhie_may_regalo_kami_para_sayo"><![CDATA[Bhie, may regalo kami para sa’yo! <3]]></string>
+    <string name="pocket">Pocket</string>
+    <string name="view_pocket_account">View pocket</string>
+    <string name="activity">View history</string>
+
+    <string name="account_details_bill_status_due_soon">DUE SOON</string>
+    <string name="account_details_bill_status_overdue">OVERDUE</string>
+    <string name="account_details_bill_amount_due">Bill amount due</string>
+    <string name="account_details_template_bill_time_span">%1$s to %2$s</string>
+    <string name="account_details_template_bill_due_on">Due on %1$s</string>
+    <string name="account_details_template_bill_due_last">Due last %1$s</string>
+    <string name="account_details_bill_calls">Calls</string>
+    <string name="account_details_bill_texts">Texts</string>
+    <string name="account_details_bill_data">Data</string>
+    <string name="account_details_bill_value_added_services">Value added services</string>
+    <string name="account_details_bill_others">Others</string>
+    <string name="account_details_bill_excess_charges">Excess charges</string>
+    <string name="account_details_bill_device_cashout">Device cashout</string>
+    <string name="account_details_bill_pay_now">Pay now</string>
+    <string name="account_details_bill_pay_in_advance">Pay in advance</string>
+    <string name="account_details_bill_missed_payment_title">You missed your payment!</string>
+    <string name="account_details_bill_missed_payment_description_connected_state">You’re already past the due date. Please pay right away to avoid temporary disconnection.</string>
+    <string name="account_details_bill_missed_payment_description_disconnected_state">You’re already past the due date. Please pay right away to get reconnected.</string>
+    <string name="account_details_bill_missed_payment_warning_connected_state">You’re already past the due date. Pay before you get disconnected.</string>
+    <string name="account_details_bill_missed_payment_warning_disconnected_state">You’re already past the due date. Pay to get reconnected.</string>
+    <string name="account_details_bill_you_are_all_set_for_this_month">You’re all set for this month!</string>
+    <string name="account_details_bill_all_set_description">You will receive your next billing statement after your cut-off.</string>
+    <string name="account_details_bill_you_paid_in_excess">You paid in excess</string>
+    <string name="account_details_bill_view_pdf_bill">View PDF Bill</string>
+    <string name="account_details_bill_excess_payment">Excess payment</string>
+    <string name="account_details_bill_previous_amount_to_pay">Previous amount to pay</string>
+    <string name="account_details_bill_download_bill_pdf">Download PDF Bill</string>
+    <string name="account_details_bill_downloaded_pdf_message">Downloaded PDF</string>
+    <string name="account_details_bill_downloaded_pdf_description">You have downloaded your PDF bill. You may find this in your device\'s Downloads folder.</string>
+    <string name="choose_amount">Choose amount</string>
+    <string name="you_are_paying_for">You are paying for</string>
+    <string name="globe_postpaid">Globe Postpaid</string>
+    <string name="total_amount_to_pay">Total amount to pay</string>
+    <string name="how_much_will_you_pay">How much will you pay?</string>
+    <string name="minimum_amount_is_100">The minimum amount to pay is P100.00.%1$s</string>
+    <string name="pay_in_full">\nPay in full to get reconnected.</string>
+    <string name="minimum_amount_error">Please enter at least P100.00</string>
+    <string name="enter_amount">Enter amount</string>
+    <string name="price_prefix">P</string>
+    <string name="proceed_to_payment">Proceed to payment</string>
+    <string name="biller">Biller</string>
+    <string name="full_payment_bill_info">Your payment will be posted as soon as possible, and you will be reconnected within 4 hours.</string>
+    <string name="partial_payment_bill_info">Make sure to pay your full overdue balance to get reconnected.</string>
+
+    <string name="account_details_postpaid_theres_nothing_to_pay">There’s nothing to pay.</string>
+    <string name="account_details_postpaid_youre_all_set">You’re all set!</string>
+    <string name="account_details_postpaid_well_reconect_you_soon">We will reconnect you soon!</string>
+    <string name="account_details_postpaid_next_bill_is_on_template">Next bill is on %1$d</string>
+
+    <string name="account_details_postpaid_your_bill_date_is_soon">Your bill is due soon!</string>
+    <string name="account_details_postpaid_not_yet_disconected">You’re already past your due date.</string>
+    <string name="account_details_postpaid_disconected">Pay soon to get reconnected!</string>
+
+    <string name="account_plan_details_title_plan_details">Plan details</string>
+    <string name="account_plan_details_label_plan">Plan</string>
+    <string name="account_plan_details_label_internet_speed">Internet speed</string>
+    <string name="account_plan_details_label_data_allocation">Data allocation</string>
+    <string name="account_plan_details_label_cutoff_date">Cut-off date</string>
+    <string name="account_plan_details_description_cutoff_date">The cut-off date is the last day of your billing cycle.</string>
+    <string name="account_plan_details_label_bill_due_date">Bill due date</string>
+    <string name="account_plan_details_spending_limit">Spending limit</string>
+    <string name="account_plan_details_spending_limit_description">The spending limit is the maximum amount that you can spend for extra services or products on top of your monthly plan so you can stay within or near your ideal plan budget.</string>
+    <string name="account_plan_details_label_contract_ending_date">Contract end date</string>
+    <string name="account_plan_details_template_every_x_of_the_month">Every %1$s of the month</string>
+    <string name="account_plan_details_template_address">%1$s %2$s\n%3$s %4$s\n%5$s %6$s %7$s</string>
+    <string name="account_plan_details_template_up_to_speed">Up to %1$s</string>
+
+    <string name="account_plan_details_title_personal_information">Personal Information</string>
+    <string name="account_plan_details_label_name">Name</string>
+    <string name="account_plan_details_label_birthday">Birthday</string>
+    <string name="account_plan_details_label_email">Email</string>
+    <string name="account_plan_details_name_without_middle">%1$s %2$s</string>
+    <string name="account_plan_details_name_with_middle">%1$s %2$s %3$s</string>
+    <string name="account_plan_details_description_email">We send your billing statements and official receipts to this email.</string>
+
+    <string name="account_plan_details_title_address">Address</string>
+    <string name="account_plan_details_label_address">Billing address</string>
+
+    <string name="account_changes_saved">Changes saved</string>
+    <string name="account_changes_saved_description">You’ve edited your details.</string>
+
+    <string name="account_official_payment_receipt_download_or">Download OR</string>
+
+    <string name="the_screen_didnt_load_properly">The screen didn’t load properly. Tap button to reload</string>
+    <string name="account_details_inactive_number_title">This number is no longer with us</string>
+    <!-- endregion -->
+
+    <!-- region Profile -->
+    <string name="profile_title">Profile</string>
+    <string name="profile_details_title">Profile details</string>
+    <string name="profile_subsection_profile_details">Profile details</string>
+    <string name="profile_subsection_accounts">Accounts</string>
+    <string name="profile_subsection_payment_methods">Payment methods</string>
+    <string name="profile_subsection_rewards_and_gifts">Rewards &amp; gifts</string>
+    <string name="profile_subsection_offers">Offers</string>
+    <string name="profile_subsection_custom_data_alert">Custom data alert</string>
+    <string name="profile_subsection_settings">Settings</string>
+    <string name="profile_subsection_privacy_policy">Privacy policy</string>
+    <string name="profile_subsection_logout">Logout</string>
+    <string name="profile_subsection_game_vouchers">Game vouchers</string>
+    <string name="profile_nickname_placeholder">User</string>
+    <string name="profile_your_name_placeholder">Your name</string>
+    <string name="version_code">Version %1$s</string>
+    <string name="logout_title">Are you sure you want to log out of GlobeOne?</string>
+    <string name="logout_message">You can always log back in! We’ll see you later.</string>
+
+    <string name="profile_details_validation_title">Verify your email account</string>
+    <string name="profile_details_validation_description">Get more out of GlobeOne by verifying your email account.</string>
+
+    <string name="profile_details_tab_basic_information">Basic info</string>
+    <string name="profile_details_tab_my_interests">My interests</string>
+    <string name="profile_details_tab_security">Security</string>
+
+    <string name="profile_details_tiet_hint_nickname">Nickname</string>
+    <string name="profile_details_tiet_hint_email_adress">Email address</string>
+    <string name="profile_details_tiet_hint_first_name">First name *</string>
+    <string name="profile_details_tiet_hint_middle_name">Middle name</string>
+    <string name="profile_details_tiet_hint_last_name">Last name *</string>
+    <string name="profile_details_til_hint_birthday">Birthday *</string>
+    <string name="profile_details_birthday_note">Heads up! We don\'t allow users below 18 years old to join raffles. Other than that, you can still enjoy the other features in GlobeOne!</string>
+    <string name="profile_details_chipgroup_title_preferred_pronouns">Preferred pronouns</string>
+    <string name="profile_details_enabled_characters">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz-\'ñ</string>
+    <string name="profile_details_enabled_nickname_characters">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz</string>
+
+    <string name="profile_details_til_placeholder_birthday">July 20, 2003</string>
+    <string name="profile_details_til_placeholder_address1">House No. / Floor / Unit</string>
+    <string name="profile_details_til_placeholder_address2">Subdivision / Condominium</string>
+
+    <string name="profile_details_suffix_title">Suffix</string>
+    <string name="profile_details_suffix_choose_an_option">Choose an option</string>
+    <string name="profile_details_suffix_jr">Jr.</string>
+    <string name="profile_details_suffix_II">II</string>
+    <string name="profile_details_suffix_III">III</string>
+    <string name="profile_details_suffix_IV">IV</string>
+    <string name="profile_details_suffix_V">V</string>
+    <string name="profile_details_suffix_VI">VI</string>
+    <string name="profile_details_suffix_VII">VII</string>
+    <string name="profile_details_suffix_VIII">VIII</string>
+    <string name="profile_details_suffix_IX">IX</string>
+    <string name="profile_details_suffix_X">X</string>
+
+    <string name="profile_details_salutation_title">Title</string>
+    <string name="profile_details_salutation_ms">Ms.</string>
+    <string name="profile_details_salutation_mrs">Mrs.</string>
+    <string name="profile_details_salutation_mr">Mr.</string>
+
+    <string name="profile_details_pronoun_she">She/Her</string>
+    <string name="profile_details_pronoun_he">He/Him</string>
+    <string name="profile_details_pronoun_they">They/Them</string>
+    <string name="profile_details_pronoun_none">Prefer not to say</string>
+
+    <string name="profile_details_interest_movies">Movies</string>
+    <string name="profile_details_interest_music">Music</string>
+    <string name="profile_details_interest_video_games">Video Games</string>
+    <string name="profile_details_interest_sports">Sports</string>
+    <string name="profile_details_interest_shopping">Shopping</string>
+    <string name="profile_details_interest_travel">Travel</string>
+    <string name="profile_details_interest_volunterism">Volunteerism</string>
+    <string name="profile_details_interest_health">Health &amp; Wellness</string>
+    <string name="profile_details_interest_food">Food &amp; Drink</string>
+
+    <string name="profile_details_security_subsection_password">Change my password</string>
+    <string name="profile_details_security_subsection_pin">Change my PIN</string>
+    <string name="profile_details_security_subsection_biometrics">Set up biometrics sign-in</string>
+
+    <string name="profile_details_button_save_changes">Save changes</string>
+
+    <string name="profile_editing_note">Once you fill out the fields, you can no longer leave them blank after saving. You may edit your profile details anytime.</string>
+
+    <string name="unverified">Unverified</string>
+    <string name="verified">Verified</string>
+    <string name="verify_email">Verify your email address</string>
+    <string name="verification_email_sent">Verification email sent</string>
+    <string name="verification_email_sent_description">We resent the email. Please check again.</string>
+
+    <string name="account_details_bill_details">Bill details</string>
+    <string name="account_details_bill_total_amount_to_pay">Total amount to pay</string>
+    <string name="account_details_bill_this_amount_can_be_different">This amount may be different from your bill due to payments made before and after your bill was issued.</string>
+    <string name="account_details_bill_if_you_already_paid">If you’ve already paid, please wait for 3 working days for your payment status to be reflected in your account.</string>
+    <string name="account_name_placeholder">%1$s %2$s</string>
+    <string name="account">Account</string>
+    <string name="globe">Globe</string>
+    <string name="date_paid">Date paid</string>
+    <string name="current">Current</string>
+    <string name="previous">Previous</string>
+    <string name="view_history">View history</string>
+    <!-- endregion -->
+
+    <!-- region PaymentMethods -->
+
+    <!-- region temp handling of the credit card payment -->
+    <string name="not_available_right_now_be_back_soon">Not available right now. Be back soon!</string>
+    <!-- endregion -->
+
+    <string name="payment_method">Payment method</string>
+    <string name="you_haven_t_linked_an_account_yet">You haven’t linked an account yet. Add now!</string>
+    <string name="you_haven_t_linked_a_card_yet">You haven’t linked a card yet.</string>
+    <string name="there_are_n_linked_accounts">There are %s linked accounts</string>
+    <string name="sorry_we_can_t_get_your_data_please_refresh">Sorry, we couldn’t get your data. Please refresh.</string>
+    <string name="you_can_link_these_enrolled_accounts">You can link these enrolled accounts.</string>
+    <string name="card_holder_string">•••• •••• %s</string>
+    <string name="expired">Expired</string>
+    <string name="expires_on">Expires on %1$s/%2$s</string>
+    <string name="expires_on_with_formatted_date">Expires on %1$s</string>
+    <string name="credit_debit">Credit or debit card</string>
+    <string name="are_you_sure_you_want_to_remove_this_credit_card">Are you sure you want to remove this credit/debit cards?</string>
+    <string name="are_you_sure_you_want_to_remove_this_gcash_account">Are you sure you want to remove this GCash account?</string>
+    <string name="you_can_add_credit_cards_back_later_on">You can add credit/debit cards back later on.</string>
+    <string name="linking_your_gcash_account">We’re linking your GCash account</string>
+    <string name="you_can_add_it_back_anytime">You can add it back anytime.</string>
+    <string name="you_already_linked_all_of_your_gcash_accounts">You already linked all of your GCash accounts.\nYou\'re all good!</string>
+    <string name="we_linked_your_gcash_and_added_it_to_your_payment_options">Good job! You’ve linked your GCash.</string>
+    <string name="back_to_my_account">Back to my GCash accounts</string>
+    <string name="error">Error</string>
+    <string name="sorry_we_were_not_able_to_link_your_gcash_please_try_again">Sorry, we were not able to link your GCash. Please try again.</string>
+    <string name="unlinked_accounts">Unlinked accounts</string>
+    <string name="linked_accounts">Linked accounts</string>
+    <string name="these_accounts_are_already_linked">These accounts are already linked.</string>
+    <string name="you_haven_t_enrolled_a_gcash_account_yet">You haven’t enrolled a GCash account yet.\nGo ahead and add one!</string>
+    <string name="add_gcash_account">Add GCash account</string>
+    <string name="there_s_nothing_here_yet">There’s nothing here yet</string>
+    <string name="add_g_cash">Add GCash</string>
+    <string name="okay">Okay</string>
+    <string name="back">Back</string>
+    <!-- endregion -->
+
+    <!-- region Shop -->
+    <string name="shop_title">Shop</string>
+    <string name="shop_tab_load">Load</string>
+    <string name="shop_tab_data">Data</string>
+    <string name="shop_tab_promos">Promos</string>
+    <string name="shop_tab_borrow">Borrow</string>
+    <string name="shop_tab_content">Content</string>
+    <string name="shop_search_text">What are you looking for?</string>
+    <string name="rationale_title">Allow access</string>
+    <string name="contacts_rationale_message">GlobeOne wants to access your phone’s contacts. Would you like to continue? </string>
+    <string name="you_are_buying_for">You’re buying for</string>
+    <string name="you_are_borrowing_for">You’re borrowing for</string>
+    <string name="choose_wallet">Choose wallet</string>
+    <string name="choose_the_right_load">Choose the right load for you</string>
+    <string name="enter_load_amount">Enter load amount:</string>
+    <string name="choose_here">Or choose here:</string>
+    <string name="error_amount_out_of_limits">Please enter between P%1$d and P%2$s only</string>
+    <string name="error_amount_exceeded_limits">You\'ve exceeded P%1$s. Please try again.</string>
+    <string name="amount_limits_hint">Enter between P%1$s and P%2$s</string>
+    <string name="error_amount_insert_amount">Please insert load amount</string>
+    <string name="error_non_globe_number">Please enter a valid Globe or TM number.</string>
+    <string name="invalid_number">Invalid Number. Please try again.</string>
+    <string name="postpaid_number_is_not_supported">Postpaid number is not supported</string>
+    <string name="right_promo_title">Choose the right promo</string>
+    <string name="category_personal">PERSONAL</string>
+    <string name="category_retailer">RETAILER</string>
+    <string name="all">All</string>
+    <string name="globe_prepaid">Globe Prepaid</string>
+    <string name="tm">TM</string>
+    <string name="home_prepaid_wifi">Home Prepaid WiFi</string>
+    <string name="home_prepaid_wifi_sg">Home Prepaid WiFi SG</string>
+    <string name="sort_by">Sort by</string>
+    <string name="popular">Popular</string>
+    <string name="pezos_prefix">P%1$s</string>
+    <string name="load_capital">LOAD</string>
+    <string name="choose_an_account">Choose an account</string>
+    <string name="enter_voucher_code">Enter voucher code</string>
+    <string name="select_amount">Select amount</string>
+    <string name="done">Done</string>
+    <string name="discounted">discounted</string>
+    <string name="new_attribute">new</string>
+    <string name="featured">Featured</string>
+    <string name="best_for_gaming">Best for Gaming</string>
+    <string name="for_your_next_trip">For your next trip</string>
+    <string name="unavailable_for_this_number">Unavailable for this number</string>
+    <string name="subscriber_for_another_number">You can subscribe to these promos for another number.</string>
+    <string name="view_all_promos">View all promos</string>
+    <string name="promos">Promos</string>
+    <string name="promos_all_caps">PROMOS</string>
+    <string name="looking_for">What are you looking for?</string>
+    <string name="business_card_title">Are you a business?</string>
+    <string name="business_card_description">Check out the myBusiness Prepaid WiFi Promos</string>
+    <string name="all_promos">All Promos</string>
+    <string name="filter">Filter</string>
+    <string name="right_fit">Create the right fit</string>
+    <string name="let_us_help">Let us help you find the best promo for you.</string>
+    <string name="lets_find_the_best_reward">Let’s find the best Reward for you!</string>
+    <string name="lets_find_the_best_content_subscription">Let’s find the best content subscription for you!</string>
+    <string name="content_check_these_out">Check these out</string>
+    <string name="content_valid_for">Valid for %1$s</string>
+    <string name="content_product_description">%1$s Valid for %2$s days.</string>
+    <string name="budget">Budget</string>
+    <string name="type">Type</string>
+    <string name="function">Function</string>
+    <string name="use">Use</string>
+    <string name="promo_type">Promo Type</string>
+    <string name="apply_filter">Apply filter</string>
+    <string name="clear_filters">Clear filters</string>
+    <string name="no_promos_title">No promos found.</string>
+    <string name="no_promos_description">We couldn’t find the promos you’re looking for. Maybe try out our other promos instead.</string>
+    <string name="no_promos_yet">No promos yet</string>
+    <string name="no_loans_yet">No loans yet</string>
+    <string name="check_this_page_daily_promos">Check this page daily for new promos!</string>
+    <string name="check_this_page_daily_loans">Check this page daily for loans!</string>
+    <string name="no_promos_with_filters_title">No results with these filters</string>
+    <string name="no_promos_with_filters_description">Sorry, we can’t find what you’re looking for. Try other filters!</string>
+    <string name="search_hint">What are you looking for?</string>
+    <string name="displaying">Displaying</string>
+    <string name="results">result</string>
+    <string name="recent_searches">Recent searches</string>
+    <string name="clear_searches">Clear searches</string>
+    <string name="inclusions">Inclusions</string>
+    <string name="freebies">Freebies</string>
+    <string name="promo_code_hint">Enter voucher code</string>
+    <string name="successful_promo_code_subscribe">Success. P100 discount for new users.</string>
+    <string name="subscribe">Subscribe</string>
+    <string name="cant_subscribe_error">This number is not eligible for this promo.</string>
+    <string name="number_has_loan_error">Selected phone number already has loan.</string>
+    <string name="validity_format">%1$s (%2$s)</string>
+    <string name="valid_for_days">%s days</string>
+    <string name="valid_for_a_day">%s day</string>
+    <string name="valid_for_hours">%s hours</string>
+    <string name="valid_for_an_hour">%s hour</string>
+    <string name="valid_for_no_expiry">No expiry</string>
+    <string name="urgent_situation_title">In an urgent situation? Borrow this promo from us, then pay later on your next reload.</string>
+    <string name="loan_explained">The total loan amount (regular price + service fee) will be automatically deducted upon your next reload. You can also pay manually by texting PAY LOAN to 3733. Just make sure that you have enough load to cover for your unpaid loaned amount + the corresponding service fee before texting.</string>
+    <string name="loan_processed">We’re processing your borrow request</string>
+    <string name="please_wait">Please wait…</string>
+    <string name="borrow_request_sent">Loan request sent</string>
+    <string name="borrow_request_description">You will receive a text to confirm your loan request. You can use it once it’s approved.</string>
+    <string name="service_fee">Service Fee</string>
+    <string name="about_borrow_request">About borrow requests</string>
+    <string name="borrow_request_declined_title">Your borrow request declined</string>
+    <string name="borrow_request_declined_description">Please try to make a borrow request or change your mobile number.</string>
+    <string name="already_have_loan">You already have an existing loan.</string>
+    <string name="credit_limit_reached">You already reached your credit limit.</string>
+    <string name="heads_up">Heads-up!</string>
+    <string name="unli">Unli</string>
+    <string name="text_size">%d texts</string>
+    <string name="call_size">%d mins</string>
+    <string name="type_new">New</string>
+    <string name="type_limited">Limited</string>
+    <string name="type_discounted">Discounted</string>
+    <string name="valid_for">Valid for %1$s.</string>
+    <plurals name="valid_for">
+        <item quantity="one">Valid for %1$s day</item>
+        <item quantity="other">Valid for %1$s days</item>
+    </plurals>
+    <string name="boosters">Boosters</string>
+    <string name="booster">Booster</string>
+    <string name="boosters_for_you">Boosters for you</string>
+    <string name="booster_for">Booster for %1$s</string>
+    <string name="booster_available_for">This booster is only available when you have an active <b>%1$s</b> promo.</string>
+    <string name="choose_up_to_three_boosters">Choose up to 3 boosters</string>
+    <string name="go_extra_with_connection">Go extra with your connection. Purchase boosters to get more out of your promo.</string>
+    <string name="and_more">and more!</string>
+    <plurals name="freebie_single_select_item_validity">
+        <item quantity="one">%1$d%2$s/%3$sday</item>
+        <item quantity="other">%1$d%2$s/%3$sdays</item>
+    </plurals>
+    <string name="freebie_single_select_item_1gb_validity">1GB/day</string>
+    <string name="additional_gb">Additional 1GB for social media apps</string>
+    <string name="you_will_be_missed">You will be missed!</string>
+    <string name="for_app">For %1$s</string>
+    <string name="loan_service_fee">+P%1$s service fee</string>
+    <string name="need_loan">Need loan? Borrow this promo now, and pay on your next reload.</string>
+    <string name="sent_to">Sent to</string>
+    <string name="loading_error_description">We couldn’t load this properly.\nPull down or tap button below to try again.</string>
+
+    <string-array name="sort_array">
+        <item>Most Popular</item>
+        <item>Price (Lowest to Highest)</item>
+        <item>Price (Highest to Lowest)</item>
+    </string-array>
+
+    <string name="you_are_claiming_for">You are claiming for</string>
+    <!-- endregion -->
+
+    <!-- region Rewards -->
+    <string name="rewards">Rewards</string>
+    <string name="points_count">%1$d points</string>
+    <string name="redeem">Redeem</string>
+    <string name="redeem_rewards">Redeem rewards</string>
+    <string name="donate">Donate</string>
+    <string name="pay_with_points">Pay with points</string>
+    <string name="convert_data">Convert data</string>
+    <string name="use_your_points">Use your points!</string>
+    <string name="view_all">View All</string>
+    <string name="convert_data_from">Convert data from</string>
+    <string name="how_much_data">How much data do you want to convert?</string>
+    <string name="you_will_get">You will get</string>
+    <string name="select_an_account">Select an account</string>
+    <string name="conversion_rate_first">1 GB = </string>
+    <string name="conversion_rate_second">%1$d points</string>
+    <string name="up_to">Up to %s</string>
+    <string name="gb_suffix">GB</string>
+    <string name="mb_suffix">MB</string>
+    <string name="kb_suffix">KB</string>
+    <string name="b_suffix">B</string>
+    <string name="data_in_gb">%1$dGB</string>
+    <string name="error_below_min_title">Please enter at least %1$d GB</string>
+    <string name="error_below_min_description">The minimum convertible data for %1$s is %2$d GB.</string>
+    <string name="error_above_max_title">Oops, your data exceeded</string>
+    <string name="error_above_max_description">You went past your total allocation.</string>
+    <string name="Points">Points</string>
+    <string name="get_these_rewards">Get these rewards!</string>
+    <string name="rewards_description">Avail your favorite mobile promos using your reward points.</string>
+    <string name="conversion_error">An error occurred</string>
+    <string name="were_converting_your_data">We’re converting your data</string>
+    <string name="insufficient_data">Insufficient data to convert</string>
+    <string name="no_data">There’s no data to convert.</string>
+    <string name="help">HELP</string>
+    <string name="data_conversion_failure_title">Sorry, we couldn’t convert your data</string>
+    <string name="data_conversion_failure_description">An error occurred while converting your data to reward points. Please try again.</string>
+    <string name="data_conversion_not_enough_title">Uh-oh! You’ve run out of available data to convert to reward points</string>
+    <string name="data_conversion_not_enough_description">Seems like your data depleted while converting. You may change the amount you’re converting or choose another wallet.</string>
+    <string name="im_experiencing_problem">I’m experiencing a problem</string>
+    <string name="valid_until">Valid until %1$s</string>
+    <string name="data_conversion_success_title">Data converted to</string>
+    <string name="data_conversion_success_description">You’ve successfully converted your data to reward points! Please expect to receive your rewards points within 24 hrs.</string>
+    <string name="data_conversion_success_with_delay_title">Data conversion is still ongoing</string>
+    <string name="data_conversion_success_with_delay_description">We are still processing your data conversion. Please wait for a few minutes.</string>
+    <string name="data_conversion_delay_text">Please expect to receive your rewards points within 24 hrs.</string>
+    <string name="rewards_points">Rewards points</string>
+    <string name="you_have_now_total_of">You have now a total of</string>
+    <string name="after_conversion">(after conversion)</string>
+    <string name="remaining_data">Remaining data</string>
+    <string name="remaining_gb">%1$d GB</string>
+    <string name="go_back">Go back</string>
+    <string name="go_to_dashboard">Go to home</string>
+    <string name="view_all_globe_rewards">View all Globe rewards</string>
+    <string name="view_all_rewards">View all rewards</string>
+    <string name="you_have_no_accounts_yet_title">You have no accounts yet!</string>
+    <string name="you_have_no_accounts_yet_message">Enroll your accounts first so you can convert your data.</string>
+    <string name="button_add_an_account">Add an account</string>
+    <string name="didnt_det_the_email">Didn`t get the email?</string>
+    <string name="we_sent_the_link">We sent the verification link to your email address:</string>
+    <string name="filter_criterium_budget">Budget</string>
+    <string name="filter_criterium_subscriber_type">Subscriber Type</string>
+    <string name="empty_state_no_rewards_title">No rewards found!</string>
+    <string name="empty_state_no_rewards_description">We couldn’t find the rewards you’re looking for.</string>
+    <string name="donation_category">DONATION</string>
+    <string name="other_category">OTHER</string>
+    <string name="promo_category">PROMO</string>
+    <string name="raffle_category">RAFFLE</string>
+    <string name="freebie_category">FREEBIE</string>
+    <plurals name="reward_points">
+        <item quantity="one">%1$d point</item>
+        <item quantity="other">%1$d points</item>
+    </plurals>
+    <plurals name="reward_points_short_decimal">
+        <item quantity="one">%.2f pt</item>
+        <item quantity="other">%.2f pts</item>
+    </plurals>
+    <plurals name="reward_points_short">
+        <item quantity="one">%d pt</item>
+        <item quantity="other">%d pts</item>
+    </plurals>
+    <string name="pt">pt</string>
+    <string name="pts">pts</string>
+    <string name="pts_placeholder">%1$s pts</string>
+    <string name="free">FREE</string>
+    <string name="explore_more_rewards">Explore more Rewards</string>
+    <string name="we_ve_got_rewards_for_food_entertainment_and_more">We’ve got rewards for food, entertainment, and more!</string>
+    <string name="more_ways_to_earn_points_coming_soon">More ways to earn points coming soon</string>
+    <string name="find_more">Always find yourself short in points? Stay tuned for our missions. We’ll let you know when it’s available.</string>
+    <string name="rewards_sign_in">Sign up to GlobeOne to redeem Rewards!</string>
+    <string name="rewards_sign_in_description">Create an account or log in to enjoy these awesome perks!</string>
+    <string name="raffle">Raffle</string>
+    <string name="donations">Donations</string>
+    <string name="others">Others</string>
+    <string name="redeem_rewards_title">REDEEM REWARDS</string>
+    <string name="enjoy_these_great_rewards">Enjoy these great rewards!</string>
+    <plurals name="displaying_x_results">
+        <item quantity="one">Displaying %d result</item>
+        <item quantity="other">Displaying %d results</item>
+    </plurals>
+    <string name="select_the_account_you_want_to_redeem_with">Select the account you want to redeem with:</string>
+    <string name="check_these_out">Check these out!</string>
+    <string name="exclusives">Exclusives</string>
+    <string name="cant_subscribe_to_this_reward">You can’t subscribe to this reward. Try another number.</string>
+    <string name="you_can_redeem_this_once_per_account">You can only redeem this once per account.</string>
+    <string name="this_reward_is_not_eligible_for_gah">This Reward is not eligible for Globe At Home Postpaid.</string>
+    <string name="this_account_cant_redeem_this_reward">This account can’t redeem this reward.</string>
+    <string name="sign_up_or_log_in_to_redeem">Sign up or log in to redeem</string>
+    <string name="next">Next</string>
+    <string name="text_message_info">You will receive a text message once the redemption is successful.</string>
+    <string name="rewards_catalog">Rewards catalog</string>
+    <string name="reward_details">Reward detail</string>
+    <string name="confirmation">Confirmation</string>
+    <string name="you_are_redeeming">You are redeeming</string>
+    <string name="you_are_redeeming_for">You’re redeeming for</string>
+    <string name="you_are_charging">You are charging rewards points to</string>
+    <string name="you_cant_redeem_this_reward">You can’t redeem this reward!</string>
+    <string name="you_may_have_reached_the_maximum_number">You may have reached the maximum number of points/rewards you can redeem for the day. Please try another reward or you may try again tomorrow.</string>
+    <string name="you_just_redeemed_a_reward">You just redeemed a reward!</string>
+    <string name="you_just_redeemed_a_reward_we_also_texted_you_the_confirmation">You just redeemed a reward! We also texted you the confirmation.</string>
+    <string name="you_just_redeemed_a_reward_you_may_check_your_voucher_in_the_pocket">You just redeemed a reward! You may check your voucher in the Pocket.</string>
+    <string name="reward">Reward</string>
+    <string name="points_remaining">Points remaining</string>
+    <string name="enter_code_manually">Enter code manually</string>
+    <string name="you_are_paying_to">You are paying to</string>
+    <string name="which_account_are_you_paying_with">Which account are you paying with?</string>
+    <string name="how_many_points_are_you_using">How many points are you using?</string>
+    <string name="_1_peso">1 Peso =</string>
+    <string name="_1_point"> 1 point</string>
+    <string name="enter_merchant_code">Enter merchant code</string>
+    <string name="invalid_merchant_code">Invalid merchant code. Please try again</string>
+    <string name="you_have_exceeded_your_points">You have exceeded your points.</string>
+    <string name="please_enter_at_least">Please enter at least %s points.</string>
+    <string name="store">Store</string>
+    <string name="we_don_t_have_permission_to_access_you_camera_please_update_grant_the_permission_in_your_device_s_settings">We don\'t have permission to access you camera. Please update grant the permission in your device\'s Settings</string>
+    <string name="go_to_settings">Go to Settings</string>
+    <string name="keep_in_mind">Keep in mind!</string>
+    <string name="dac_banner_gbs_to_points">GBs to Points is a limited-time promo exclusive to customers of GPlan Plus 999 to 2499</string>
+    <string name="dac_banner_eligible_customers">Eligible customers can convert up to 50GB per billing cycle</string>
+    <string name="convert_data_to_points_until">Convert Data to Points is until\nSept. 30, 2021 only</string>
+    <string name="prepaid_users_data_conversion">Prepaid users are allowed to convert <b>20 GB per month</b></string>
+    <string name="hpw_and_postpaid_users_data_conversion">Home Prepaid WiFi and Postpaid users are allowed to convert <b>50GB per billing cycle/month</b></string>
+    <string name="app_data_and_freebie_data_are_not_convertible">App and Freebie Data are not convertible</string>
+    <string name="we_are_displaying_the_data_allowed_to_convert">We are displaying the data you’re only allowed to convert per account.</string>
+
+    <!-- Typhoon Odette string -->
+    <string name="dac_typhoon_description">Conversion of GBs to Points is a limited time offer only.</string>
+
+    <string name="view_freebie">View Freebie</string>
+    <string name="view_pocket_rewards">View Pocket</string>
+    <string name="were_note_familiar_with_this_qr_code">We\'re not familiar with this QR code</string>
+    <string name="scan_the_qr_code_again">Scan the QR code again. You can also enter the merchant code instead.</string>
+    <string name="we_couldnt_scan_the_qr_code">We couldn\'t scan the QR code. Enter the merchant code instead.</string>
+    <!-- endregion -->
+
+    <!-- region REGISTER & LOGIN SCREENS -->
+    <string name="get_started">Get started</string>
+    <string name="email_address">Email address</string>
+    <string name="password">Password</string>
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="privacy_policy_info_login">By logging in, you agree to our Terms &amp; Conditions and Privacy Policy.</string>
+    <string name="privacy_policy_info_sign_up">By signing up, you agree to our Terms &amp; Conditions and Privacy Policy.</string>
+    <string name="privacy_policy_link">Read the full document here.</string>
+    <string name="log_in">Log in</string>
+    <string name="log_in_with_email">Log in with email</string>
+    <string name="don_t_have_an_account">Don’t have an account?</string>
+    <string name="create_one_now">Create one now</string>
+    <string name="sign_up">Sign up</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="or">OR</string>
+    <string name="or_use">OR USE:</string>
+    <string name="error_incorrect_email_address_or_password">Incorrect email address/password.</string>
+    <string name="error_invalid_email_format">Please enter a valid email address.</string>
+    <string name="error_email_max_length">Please use %d characters or less.</string>
+    <string name="error_account_with_this_email_address_already_exists">An account with this email already exists</string>
+    <string name="error_try_logging_with_exists_account">Please try logging in with your existing account.</string>
+    <string name="error_no_account_with_this_email">There isn’t an account registered to that email address yet.</string>
+    <string name="error_email_is_for_socialLogin">Email is for Social Login Only.</string>
+    <string name="error_invalid_password_format">Password is invalid!</string>
+    <string name="error_please_enter_email_password">Please enter email address/password.</string>
+    <string name="error_unable_to_login">Unable to login</string>
+    <string name="error_unable_to_login_with_social">Unable to login with <b><i>%s</i></b></string>
+    <string name="error_unable_to_login_with_social_account_exists">Unable to login with <b><i>%s</i></b> because the email associated with this social account already has existing registration with GlobeOne </string>
+    <string name="forgot_password">Forgot password</string>
+    <string name="keep_going">KEEP GOING…</string>
+    <string name="almost_there">ALMOST THERE…</string>
+    <string name="good_job">GOOD JOB!</string>
+    <string name="strong">STRONG</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="privacy_policy">I agree to the collection and use of the data that I have provided to Globe for the purpose of using GlobeOne. I understand that the collection and use of this data, which may include personal information and sensitive personal information, shall be in accordance with the Data Privacy Act of 2012 and the Privacy Policy of Globe.</string>
+    <string name="data_privacy_act_of_2012">Data Privacy Act of 2012</string>
+    <string name="privacy_policy_of_globe">Privacy Policy of Globe</string>
+    <string name="try_using_another_email">Try using another email</string>
+    <string name="error_wrong_email_or_password_title">There seems to be a problem</string>
+    <string name="error_wrong_email_or_password_description">We couldn’t find a match for the email address and password. Please try again or try logging in with the apps below.</string>
+
+    <string name="verification">Verification</string>
+    <string name="we_sent_a_verification_link">We sent a verification link to your email address:</string>
+    <string name="why_verify_your_email">Why verify your email?</string>
+    <string name="we_can_contact_you_easily">We can contact you easily.</string>
+    <string name="get_updates_from_the_app">Get updates from the app.</string>
+    <string name="provides_security">Provides security.</string>
+
+    <!-- region Social sign in -->
+    <string name="apple_sign_in_button_content_description">Apple sign in</string>
+    <string name="google_sign_in_button_content_description">Google sign in</string>
+    <string name="yahoo_sign_in_button_content_description">Yahoo sign in</string>
+    <string name="facebook_sign_in_button_content_description">Facebook sign in</string>
+    <string name="social_login_exists_description">An account with this email is signed up using an existing email or social account.</string>
+    <string name="log_in_with_your_existing_account">Log in with your existing account</string>
+    <!-- endregion -->
+
+    <!-- region Terms & Conditions dialog -->
+    <string name="you_are_about_to_leave_globeone">You are about to leave GlobeOne</string>
+    <string name="standard_data_charges_will_apply_for_mobile_data">If you\'re not connected to WiFi, standard mobile data charges will apply</string>
+    <!-- endregion -->
+
+    <!-- region Reset password -->
+    <string name="please_enter_your_email_address">Please enter your email address and we’ll send you the reset password link.</string>
+    <string name="send">Send</string>
+    <string name="resend_link">Resend link</string>
+    <string name="didn_t_get_the_link">Didn’t get the link?</string>
+    <string name="reset_password_link_sent">Reset password link sent</string>
+    <string name="reset_password_link_sent_description">Reset password link sent</string>
+    <!-- endregion -->
+
+    <!-- region Create new password -->
+    <string name="password_strength">Password strength</string>
+    <string name="create_new_password">Create new password</string>
+    <string name="set_password">Set password</string>
+    <string name="password_strength_passwords_match">Both passwords match</string>
+    <string name="password_strength_9_alphanumeric_characters">Minimum of nine (9) characters</string>
+    <string name="password_strength_one_uppercase_character">One (1) uppercase character</string>
+    <string name="password_strength_one_lowercase_character">One (1) lowercase character</string>
+    <string name="password_strength_one_special_character">One (1) special character</string>
+    <string name="password_strength_one_number">One (1) number</string>
+    <string name="how_to_create_strong_password">How to create a strong password</string>
+    <!-- endregion -->
+
+    <!-- region Add account -->
+    <string name="logout">Logout</string>
+    <string name="add_account">Add account</string>
+    <string name="add_new_account">Add new account</string>
+    <string name="please_wait_a_moment">Please wait a moment</string>
+    <string name="we_re_preparing_your_security_questions">We’re preparing your security questions.</string>
+    <string name="do_it_later">I’ll do it later</string>
+    <string name="lets_add_accounts">You haven’t added any accounts yet.\nLet’s do that now!</string>
+    <string name="mobile">Mobile</string>
+    <string name="mobile_number">Mobile number</string>
+    <string name="account_number">Account number</string>
+    <string name="broadband">Broadband</string>
+    <string name="account_landline_or_hpw_number">Account, Landline, or Home Prepaid WiFi (HPW) Number</string>
+    <string name="didnt_get_code">Didn’t get the code?</string>
+    <string name="cancel">Cancel</string>
+    <string name="resend">Resend code</string>
+    <string name="sent_code">We sent the code to %1$s.</string>
+    <string name="code_expires">Code expires in <b>5 minutes</b></string>
+    <string name="will_expire">Will expire in <b>5 minutes</b></string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="incorrect_otp_code">Incorrect code</string>
+    <string name="expired_otp_code">Expired code</string>
+    <string name="otp_already_verified">OTP is already verified</string>
+    <string name="account_name_exists">This account name already exists.</string>
+    <string name="account_number_exists">An account for this number already exists.</string>
+    <string name="account_number_empty">Please enter phone number.</string>
+    <string name="account_name_empty">Please enter account name.</string>
+    <string name="confirm_account">Confirm account</string>
+    <string name="account_details">Account details</string>
+    <string name="add_account_default_name">Account 1</string>
+    <string name="add_account_hint_enter_nickname">Enter nickname</string>
+    <string name="prepaid_capital">PREPAID</string>
+    <string name="mobile_capital">MOBILE</string>
+    <string name="broadband_capital">BROADBAND</string>
+    <string name="no_accounts_found">No accounts found.</string>
+    <string name="no_accounts_description_mobile">We couldn’t find any accounts under mobile.\nYou may want to add now.</string>
+    <string name="no_accounts_description_broadband">We couldn’t find any accounts under broadband.\nYou may want to add now.</string>
+    <string name="managing_account">I am managing this account for someone else.</string>
+    <string name="managing_accounts_title">Managing different accounts</string>
+    <string name="managing_accounts_description">If switched on, this account goes to your Other Accounts tab in your home.</string>
+    <string name="skip_adding_account">Are you sure you want to cancel?</string>
+    <string name="add_account_later">You can always add it later if you change your mind.</string>
+    <string name="account_name">Account name</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="cancel_adding_account">Are you sure you want to cancel?</string>
+    <string name="add_later_if_change_mind">You can always add it later if you change your mind.</string>
+    <string name="otp_sent">OTP sent</string>
+    <string name="otp_resent">We resent your OTP!</string>
+    <string name="need_help">Need help?</string>
+    <string name="find_home_prepaid_wifi_number">Find my Home Prepaid WiFi (HPW) number</string>
+    <string name="find_modem_username_password">Find my modem’s username and password</string>
+    <string name="help_capital">HELP</string>
+    <string name="proceed">Proceed</string>
+    <string name="delete_account_question">Are you sure you want to remove this account?</string>
+    <string name="you_can_add_account_later">You can add accounts back later on.</string>
+    <string name="find_your_otp_broadband">You will receive your OTP after logging in to your modem’s inbox.\n\n
+1. Make sure you are connected to your HPW WiFi.\n
+2. Press “Go to my modem inbox” below\n
+3. Log in to your modem dashboard using the user and password information found at the back or bottom of your modem.\n
+4. Retrieve OTP in the modem SMS inbox.</string>
+    <string name="find_username_password">Find my username and password</string>
+    <string name="go_to_modem_inbox">Go to my modem inbox</string>
+    <string name="not_valid_globe_number">That’s not a valid Globe or TM mobile number.</string>
+    <string name="not_valid_globe_number_broadband">Please enter a valid number.</string>
+    <string name="inactive_account_error">This account is inactive.</string>
+    <string name="tap_tap">Tap, tap!</string>
+    <string name="migration_description">You may add Globe Prepaid, Globe Postpaid, Globe at Home Prepaid, and TM accounts to GlobeOne.\n\nWe’ll support Globe at Home Postpaid soon in the app!\n\nIn the meantime, Globe Postpaid accounts can view Rewards points.</string>
+    <string name="no_accounts_for_migration_title">We couldn’t retrieve your accounts!</string>
+    <string name="no_accounts_for_migration_description">It looks like you don’t have any existing accounts yet.\nPlease try enrolling again.</string>
+    <string name="duplicated_name_error">Duplicate nickname. Please change.</string>
+    <string name="too_long_name_error">Nickname too long. Change to proceed.</string>
+    <string name="duplicated_number_error">Duplicate account. Delete one to proceed.</string>
+    <string name="welcome_to_globe_one">Welcome to GlobeOne</string>
+    <string name="surprise_is_coming">Surprise is coming!</string>
+    <string name="surprise_is_coming_description">We noticed that you enrolled a new number. \n\n
+Look for the gift symbol beside the account name to see the surprise!</string>
+    <string name="connect_to_your_modem">Connect to your modem first!</string>
+    <string name="connect_device_to_modem">Connect your device to your HPW modem to add your account.</string>
+    <string name="wifi_status">WIFI STATUS</string>
+    <string name="connected">Connected</string>
+    <string name="not_connected">Not connected</string>
+    <string name="not_hpw_number">That’s not a Home Prepaid WiFi number!</string>
+    <string name="no_longer_in_system">This account is no longer in our system....</string>
+    <string name="not_ghp_tm_number">That’s not a Globe Prepaid, Globe SG, Globe Postpaid or TM number!</string>
+    <string name="choose_your_modem_model">Choose your modem model</string>
+    <string name="connect_to_your_HPW_modem">You are not connected to your HPW modem</string>
+    <string name="check_wifi_settings">Please check your WiFi settings then try connecting to your HPW modem again.</string>
+    <string name="modem_info_incorrect">The modem info you entered is incorrect</string>
+    <string name="modem_info_incorrect_credentials">Your modem credentials are incorrect</string>
+    <string name="double_check_modem_credentials">Please check if you entered the correct modem username and password.</string>
+    <string name="double_check_modem_info">Please double-check and enter your correct modem username and password.</string>
+    <string name="sorry_about_that">We’re sorry about that!</string>
+    <string name="enter_your_modem_info_title">Enter your modem info</string>
+    <string name="enter_your_modem_info_description">Your modem username and password are on the side or the back of your modem.</string>
+    <string name="modem_username">Modem username</string>
+    <string name="try_adding_manually">Try adding manually</string>
+    <string name="we_are_adding_account">We’re adding your account</string>
+    <string name="only_a_moment">This will only take a moment!</string>
+    <string name="havent_added_accounts">You haven’t added any accounts yet. Let’s do that now!</string>
+    <string name="find_number_at_sim">You can find your HPW number on your SIM bed.</string>
+    <string name="find_number_at_modem">You can also find your HPW number at the back of your modem.</string>
+    <string name="check_sides_bottom_modem">Please check the sides or bottom of your modem. </string>
+    <string name="sticke_with_username_password">Your modem will have a sticker with your default WiFi name, Username and Password.</string>
+    <string name="myfi_account_info">For MyFi accounts, please insert your SIM in your device to receive your OTP.</string>
+    <string name="accepted_number_formats">Accepted number formats</string>
+    <string name="_9_or_10_digit_account_number">9 or 10-digit account number\nExample:</string>
+    <string name="account_number_example">0123456789</string>
+    <string name="you_can_find_this_on_your_bill">You can find this on your bill.</string>
+    <string name="for_ncr_2_digit_area_code_8_digit_number">For NCR, 2-digit area code + 8-digit number\nExample:</string>
+    <string name="landline_number_example">02 1234 5678</string>
+    <string name="for_provincial_3_digit_area_code_7_digit_mobile_number">For provincial, 3-digit area code + 7-digit mobile number (e.g. 074 123 4567)\nExample:</string>
+    <string name="provincial_code_landline_example">074 123 4567</string>
+    <string name="you_can_find_this_at_the_back_or_the_bottom_of_your_modem">You can find this at the back or the bottom of your modem.</string>
+    <string name="hpw_number_example">0917 123 4567</string>
+    <string name="landline">Landline</string>
+    <string name="hpw_number">HPW number</string>
+    <string name="_11_digit_mobile_number">11-digit mobile number\nExample:</string>
+
+    <!-- region Security Questions -->
+    <string name="how_would_you_like_to_verify_your_account">How would you like to verify your account?</string>
+    <string name="send_otp_to_number">Send OTP to number</string>
+    <string name="msisdn_place_holder">+63 •••• ••• %s</string>
+    <string name="send_to_email_address">Send to email address</string>
+    <string name="email_address_place_holder">••••••••%s</string>
+    <string name="answer_security_questions">Answer security questions</string>
+    <string name="landline_number">Landline number</string>
+    <string name="try_a_different_verification_option">Try a different verification option</string>
+    <string name="please_answer_at_least_three_questions_correctly">Please answer at least three questions correctly.</string>
+    <string name="where_can_i_find_the_answer_to_the_questions">Where can I find the answer to the questions?</string>
+    <string name="placeholder_example">ex. %s</string>
+    <string name="try_another_verification_method_error">Try another verification method</string>
+    <string name="try_another_verification_method_error_info">You’ve already exhausted your tries for this method. This option will be available again after 24 hours. You may try another verification method.</string>
+    <string name="try_another_method_security_questions_error">Try another verification method</string>
+    <string name="try_another_method_security_questions_error_info">You’ve already exhausted your tries for this method. This option will be available again after 24 hours. You may try another verification method.</string>
+    <string name="here_s_your_guide_to_the_security_questions">Here’s your guide to the security questions:</string>
+    <string name="account_faqs">Account FAQs</string>
+    <string name="where_do_i_find_my_monthly_recurring_fee">Where do I find my monthly recurring fee?</string>
+    <!-- endregion -->
+
+    <!-- region FAQ -->
+    <string name="open_your_last_current_billing_statement">1. Open your last/current billing statement.\n2. In your bill, you will find the monthly service fee under your statement summary.</string>
+    <string name="where_do_i_find_my_monthly_due_date">Where do I find my monthly due date?</string>
+    <string name="your_account_s_monthly_due_date_can_be_found_in_this_part_of_your_bill">Your account’s monthly due date can be found in this part of your bill:</string>
+    <string name="where_do_i_find_the_start_and_end_of_my_billing_period">Where do I find the start and end of my billing period?</string>
+    <string name="your_account_s_billing_period_can_be_found_in_this_part_of_your_bill">Your account’s billing period can be found in this part of your bill:</string>
+    <string name="where_do_i_find_my_latest_bill_number">Where do I find my latest bill number?</string>
+    <string name="your_account_s_bill_number_can_be_found_in_this_part_of_your_bill">Your account’s bill number can be found in this part of your bill:</string>
+    <!-- endregion -->
+    <!-- endregion -->
+    <!-- endregion -->
+
+    <!-- region Landing page -->
+    <string name="everything_you_love_now_in_one_app">Everything you love,\nnow in one app</string>
+    <string name="welcome_to_globeone">Welcome to GlobeOne</string>
+    <string name="you_can_log_in_to_globeone_using_any_existing_globe_account">You can log in to GlobeOne using any existing Globe account.</string>
+    <string name="quick_links">QUICK LINKS</string>
+    <string name="buy_load">Buy load</string>
+    <string name="buy_promo">Buy Promo</string>
+    <string name="get_loan">Get Loan</string>
+    <string name="discover_more">Discover more!</string>
+    <string name="quick_link_shop">Shop</string>
+    <string name="quick_link_get_rewards">Get Rewards</string>
+    <string name="quick_link_discover">Discover</string>
+    <!-- endregion -->
+
+    <!-- region Dashboard -->
+    <string name="dashboard">Home</string>
+    <string name="accounts">Accounts</string>
+    <string name="dashboard_consumption_no_subscriptions">You have no subscriptions yet.</string>
+    <string name="dashboard_consumption_discover_promos">Discover promos</string>
+    <string name="dashboard_consumption_error">We got a bit of a hiccup.</string>
+    <string name="dashboard_consumption_reload">Reload</string>
+    <string name="dashboard_consumption_surprise_is_waiting_for_you">A surprise is waiting for you!</string>
+    <string name="dashboard_consumption_disconnected_title">This account is disconnected</string>
+    <string name="dashboard_consumption_disconnected_description">Pay soon to get reconnected.</string>
+    <string name="dashboard_consumption_inactive_title">This account is no longer with us</string>
+    <string name="dashboard_consumption_inactive_description">You may already remove this account.</string>
+    <string name="dashboard_consumption_postpaid_broadband_title">Exciting things are coming!</string>
+    <string name="dashboard_consumption_postpaid_broadband_description">For the meantime, tap the card to view your bill and rewards points.</string>
+    <string name="dashboard_consumption_platinum_account_description">Your data is UNLI.\nEnjoy worry-free surfing with Platinum!</string>
+    <string name="dashboard_raffle_pending_raffle_tickets">Pending raffle tickets</string>
+    <string name="dashboard_raffle_complete_profile">Complete profile</string>
+    <string name="dashboard_raffle_raffle_ticket">Raffle tickets</string>
+    <string name="dashboard_raffle_view_all">View all</string>
+    <string name="wayfinder_raffle_tickets">TICKETS</string>
+    <string name="raffle_tickets_title">Your raffle tickets</string>
+    <string name="all_set">All set!</string>
+    <string name="amount_to_pay">Amount to pay</string>
+    <string name="prepaid">Prepaid</string>
+    <string name="you_have_promos_expiring_soon">You have %1s promos expiring soon.</string>
+    <string name="data">DATA</string>
+    <string name="text">TEXTS</string>
+    <string name="call">CALLS</string>
+    <string name="res_left">%1s LEFT</string>
+    <string name="data_left">DATA LEFT</string>
+    <string name="included">Included</string>
+    <string name="globe_recommends">Globe recommends</string>
+    <string name="my_accounts">My accounts</string>
+    <string name="other_accounts">Other accounts</string>
+    <string name="no_calls_subs">You have no calls subscriptions.</string>
+    <string name="no_text_subs">You have no text subscriptions.</string>
+    <string name="no_data_subs">You have no data subscriptions.</string>
+    <string name="discover_more_text">Read articles and do fun\nstuff here at GlobeOne.</string>
+    <string name="dashboard_greeting_0">Just keep smiling,</string>
+    <string name="dashboard_greeting_1">Good luck today,</string>
+    <string name="dashboard_greeting_2">Stay safe,</string>
+    <string name="dashboard_greeting_3">Spray safe,</string>
+    <string name="dashboard_greeting_4">Have a nice day,</string>
+    <string name="dashboard_greeting_5">Take care,</string>
+    <string name="dashboard_greeting_6">Spread kindness,</string>
+    <string name="dashboard_greeting_7">Break a leg,</string>
+    <string name="dashboard_greeting_8">Looking amazing,</string>
+    <string name="dashboard_greeting_9">Conquer today,</string>
+    <string name="dashboard_greeting_10">Wishing you well,</string>
+    <string name="dashboard_greeting_11">It’s a new day!</string>
+    <string name="dashboard_greeting_12">You’re doing great,</string>
+    <string name="dashboard_greeting_13">You’ll get through,</string>
+    <string name="dashboard_greeting_14">You can do this,</string>
+    <string name="update_profile_placeholder">Update profile</string>
+    <string name="dashboard_empty_state_title">Hi, anybody home?</string>
+    <string name="dashboard_empty_state_description">Seems like you haven’t added any accounts yet. Start adding one now!</string>
+    <string name="dashboard_error_state_title">Sorry, something slipped through us!</string>
+    <string name="dashboard_error_state_description">We couldn’t load your accounts. Please try reloading.</string>
+    <string name="dashboard_go_create_title">Be in control of your promo with GoCREATE!</string>
+    <string name="dashboard_go_create_text">Customize your promo only here in GlobeOne. For Globe Prepaid users only.</string>
+    <string name="dashboard_go_create_now">GoCREATE now!</string>
+    <!-- endregion -->
+
+    <!-- region GROUP DATA -->
+    <string name="setup_later">Setup later</string>
+    <string name="setup_group_data">Setup group data</string>
+    <string name="just_a_moment">Just a moment</string>
+    <string name="group_data">Group data</string>
+    <string name="members">Members</string>
+    <string name="members_number_limit">/%1$s</string>
+    <string name="no_group_members">You have no members on this group yet. Tap below to add members.</string>
+    <string name="add_a_member">Add a member</string>
+    <string name="use_different_number">Or use a different mobile number</string>
+    <string name="already_member">Already a member!</string>
+    <string name="already_member_error">This number is already a member of your group.</string>
+    <string name="select_from_accounts">Select from accounts</string>
+    <string name="add_new_member">Add new member</string>
+    <string name="add_member">Add member</string>
+    <string name="remove">Remove</string>
+    <string name="group_start_date">As of %1$s</string>
+    <string name="data_used">Data used</string>
+    <string name="set_data_limit">Set data limit</string>
+    <string name="data_limit">Data limit</string>
+    <string name="change_data_limit_anytime">You can change the data limit anytime.</string>
+    <string name="save">Save</string>
+    <string name="group_member_removal_title">Are you sure you want to remove this member?</string>
+    <string name="group_member_removal_description">You can add this member back any time.</string>
+    <string name="expires">Expires %1$s</string>
+    <string name="refreshes_on">Refreshes on %1$s</string>
+    <string name="purchased">Purchased</string>
+    <string name="plan_inclusion">Plan inclusion</string>
+    <string name="limit_gb">%1$s GB</string>
+    <string name="no_limit">No limit</string>
+    <string name="you">You</string>
+    <string name="group_member_note">Please note that you may get less data as the overall group data bucket is consumed.</string>
+    <string name="leave_group">Leave group</string>
+    <string name="group_role_member">member</string>
+    <string name="leave_group_success_message">You have successfully left the group.</string>
+    <string name="leave_group_failure_message">We encountered an error. Please try again.</string>
+    <string name="dialog_leave_group_title">Are you sure you want to leave the group?</string>
+    <string name="dialog_leave_group_description">You can ask your group data owner to add you back anytime.</string>
+    <string name="group_leave_error_title">Oh, snap! </string>
+    <string name="group_leave_error_description">We encountered an error. Please try again.</string>
+    <string name="a_gb_was_set_for_your_usage">A %s cap was set for your usage.</string>
+    <string name="data_used_up">You\'ve used up all your data.</string>
+    <!-- endregion -->
+
+    <!-- region Discover more -->
+    <string name="prepare_for_awesome">Prepare for awesome!</string>
+    <string name="please_wait_while_we_load">Please wait while we load.</string>
+    <string name="loading_will_take_just_a_moment">Loading will only take a moment.</string>
+    <string name="go_back_to_screen">Go back to %1$s</string>
+    <!-- endregion -->
+
+    <!-- region PAYMENT -->
+    <string name="select_payment_method">select payment method</string>
+    <string name="you_are_buying">You\'re buying:</string>
+    <string name="with_booster">%1$s with Booster</string>
+    <string name="g_cash">GCash</string>
+    <string name="credit_or_debit_card">Credit or debit card</string>
+    <string name="charge_to_load">Charge to Load</string>
+    <string name="choose_your_preferred_payment">Choose your preferred payment method.</string>
+    <string name="you_can_only_charge_this">You can only charge this to the promo recipient.</string>
+    <string name="you_are_subscribing_to">You are subscribing to:</string>
+    <string name="enter_the_mobile_number_you_want">Enter the mobile number you want to charge the load amount</string>
+    <string name="additional_booster">Additional Booster</string>
+    <string name="selected_booster_description">(%1$s - %2$s)</string>
+    <string name="will_be_charged_to">This will be charged to %1$s.</string>
+    <string name="activate_later">Activate later</string>
+    <string name="we_re_waiting_for_gcash_respond">We’re waiting for GCash to respond.</string>
+    <string name="we_re_waiting_your_payment_service_respond">We\’re waiting for your payment\n service to respond.</string>
+    <string name="ask_to_charge_to_another_numbers_load">Choose a number to charge this to.</string>
+    <string name="choose_whose_load_you_wish_to_use_to_pay">Choose whose load you wish to use to pay for this purchase.</string>
+    <!-- endregion -->
+
+    <!-- region Success -->
+
+    <!-- region titles -->
+    <string name="success">Success!</string>
+    <string name="we_werent_able_to_register_your_boosters">We weren’t able to register your Boosters</string>
+    <string name="n_of_n_booster_registered">%1$d of %2$d Boosters registered</string>
+    <string name="were_now_processing_your_promo">We’re now processing your promo!</string>
+    <string name="your_promo_is_on_the_way">Your promo is on the way!</string>
+    <string name="your_content_subscription_is_on_the_way">Your content subscription is on the way!</string>
+    <!-- endregion -->
+
+    <!-- region description -->
+    <string name="payment_complete_texted_confirmation">Your payment is complete! We texted you the confirmation.</string>
+    <string name="we_will_text_you_a_confirmation">We will text you a confirmation when you receive your promo.</string>
+    <string name="see_in_the_pocket">You may see your freebie in the <b>Pocket</b> under the Content tab.</string>
+    <string name="when_successful_see_in_the_pocket">When successful, you may see your freebie in the <b>Pocket</b> under the Content tab.</string>
+    <string name="payment_complete_emailed_and_texted_confirmation">Your payment is complete! We emailed and texted you the confirmation. %1$s</string>
+    <string name="payment_complete_none_of_the_boosters">You\'ve successfully subscribed to %1$s, but we weren\'t able to register your Boosters. %2$s \n\nWe sent a confirmation to your registered mobile number. %3$s</string>
+    <string name="payment_complete_n_of_n_boosters">You\'ve successfully subscribed to %1$s, but only %2$d out of %3$d Boosters were registered. %4$s \n\nWe sent a confirmation to your registered mobile number. %5$s</string>
+    <string name="earned_points">\n\nYou\'ve also earned Rewards points with this transaction!</string>
+    <string name="check_by_calling">\n\nYour Retailer balance isn\’t reflected in the app yet. In the meantime, you can check it by dialling *143#.</string>
+    <string name="havent_earned_points" />
+    <string name="gcash_with_refund">Don\'t worry, we\'ve refunded the payment to your GCash account!</string>
+    <string name="gcash_without_refund">Don\'t worry we\'ll issue a refund in 3–5 working days.</string>
+    <string name="credit_card_refund">Don\'t worry we\'ll be refund the payment to your credit card in 7 to 10 working days. Please contact your bank to confirm their reversal period.</string>
+    <string name="exclusive_promo_description">We will text you the confirmation as soon as we give your promo. We’ll deduct the total amount from your load when your promo arrives.</string>
+    <string name="no_refund" />
+    <string name="we_will_text_you_about_the_status">We will text you about the status of your promo purchase.</string>
+    <!-- endregion -->
+    <!-- endregion -->
+
+    <!-- region static UI -->
+    <string name="total">Total</string>
+    <string name="promo">Promo</string>
+    <string name="validity">Validity</string>
+    <string name="amount">Amount</string>
+    <string name="discount">Discount</string>
+    <string name="service_fee_x">Service fee</string>
+    <string name="share_a_load">(Share-A-Load)</string>
+    <string name="share_a_promo">(Share-A-Promo)</string>
+    <string name="image_description_receipt_decorator">Receipt decorator</string>
+    <string name="discount_value">-%s</string>
+    <string name="share_fee">Share fee</string>
+    <string name="subscribe_to">Subscribe to</string>
+    <string name="deducted_from">Deducted from</string>
+    <string name="you_have_copied_the_order_number">You have copied the order number</string>
+    <string name="you_have_copied_the_voucher_code">You have copied the voucher code</string>
+    <string name="you_have_copied_the_code">You have copied the code. Use it in the partner app.</string>
+    <string name="copied_to_clipboard">Copied to clipboard</string>
+    <string name="receipt_downloaded">Receipt downloaded</string>
+    <string name="you_can_find_the_receipt_photo_in_the_gallery">You can find the receipt photo in your gallery</string>
+    <string name="reference_number">Reference number</string>
+    <string name="sign_up_now">Sign up now!</string>
+    <string name="maybe_later">Maybe later</string>
+    <string name="easy_payment">Easy Payment</string>
+    <string name="exclusive_rewards">Exclusive Rewards</string>
+    <string name="vouchers">Vouchers</string>
+    <string name="manage_data">Manage Data</string>
+    <string name="this_may_take_a_while">This may take a while.\n\nPlease don\’t exit the app.</string>
+    <string name="we_re_finishing_your_payment">We\'re finishing up your payment so you can start enjoying your purchase.\n\nPlease don\’t exit the app.</string>
+    <string name="thanks_for_being_patient">Thanks for being patient while we work on your purchase.\n\nPlease wait just a little bit more and don\'t exit the app.</string>
+    <string name="we_ll_send_confirmation">We\’ll send a confirmation to your registered mobile number. \n\nYou can keep waiting or go back to Home and explore other awesome offers.</string>
+    <string name="keep_waiting">Keep waiting</string>
+    <string name="go_back_to_home">Go back to Home</string>
+    <string name="go_back_to_shop">Go back to Shop</string>
+    <string name="we_re_processing_your_payment">We\’re processing your\npayment!</string>
+    <string name="we_re_waiting_your_payment_service">We\’re waiting for your\npayment service…</string>
+    <string name="just_a_moment_three_dots">Just a moment…</string>
+    <string name="hang_in_there">Hang in there!</string>
+    <string name="it_s_taking_longer_than_expected">It\’s taking longer than expected…</string>
+    <string name="voucher_code">Voucher code</string>
+    <string name="use_code_in_partner_app">Use code in partner app</string>
+    <string name="activate_in_partner_app">Activate in partner app</string>
+    <string name="we_sent_a_text_for_voucher_code_title">We sent you a text for the voucher code!</string>
+    <string name="we_sent_a_text_for_voucher_code_description">Seems like you’re not using the code yet. Check your phone’s inbox if you already want to use it.</string>
+    <string name="we_sent_a_text_for_activation_link_title">We sent you a text for the activation link!</string>
+    <string name="we_sent_a_text_for_activation_link_description">Seems like you’re not activating your subscription yet. Check your phone’s inbox if you already want to use it.</string>
+    <string name="would_you_like_to_add_this_number">Would you like to add this number?</string>
+    <string name="add_now_in_the_app_for_faster_transactions">Add %s now in the app for faster transactions. No more verification when purchasing!</string>
+    <string name="add_your_accounts_in_the_app_for_faster_transactions_no_more_verification">Add your accounts in the app for faster transactions—no more verification!</string>
+    <string name="storage_rationale_message">GlobeOne wants to access your phone’s storage. Would you like to continue? </string>
+    <!-- endregion -->
+
+    <!-- region Payment REFUND screen -->
+
+    <!-- region Promo -->
+    <string name="sorry_we_re_unable_to_register_your_promo">Sorry, we weren\’t able to register your Promo</string>
+    <string name="something_went_wrong_with_the_promo_gcash_succeeded">Something went wrong with the Promo. Don\’t worry, we\’ve refunded the payment to your GCash account! \n\nWe sent a confirmation to your registered mobile number.</string>
+    <string name="something_went_wrong_with_the_promo_gcash_failed">Something went wrong with the Promo. Don\'t worry, we\’ll issue a refund in 3–5 working days.</string>
+    <string name="something_went_wrong_with_the_promo_credit_debit_card">Something went wrong with the Promo. Don\’t worry, we\’ll refund your payment to your credit card in 7–10 working days.</string>
+    <!-- endregion -->
+
+    <!-- region Load -->
+    <string name="sorry_we_re_unable_to_process_your_load">Sorry, we weren’t able to process your load</string>
+    <string name="something_went_wrong_with_the_load_gcash_succeeded">Something went wrong with your load purchase. Don\’t worry, we\’ve refunded the payment to your GCash account! \n\nWe sent a confirmation to your registered mobile number.</string>
+    <string name="something_went_wrong_with_the_load_gcash_failed">Something went wrong with your load purchase. Don\'t worry, we\’ll issue a refund in 3 to 5 working days.</string>
+    <string name="something_went_wrong_with_the_load_credit_debit_card">Something went wrong with your load purchase. Don\’t worry, we’ll refund your payment to your credit card in 7–10 working days.</string>
+    <!-- endregion -->
+
+    <!-- region Content -->
+    <string name="sorry_we_were_not_able_to_register_your_content">Sorry, we weren\’t able to register your Content</string>
+    <string name="something_went_wrong_with_the_content_gcash_succeeded">Something went wrong with the content subscription. Don\’t worry, we\’ve refunded the payment to your GCash account!\n\nWe sent a confirmation to your registered mobile number.</string>
+    <string name="something_went_wrong_with_the_content_gcash_failed">Something went wrong with your content subscription.\n\nDon\’t worry, we\’ll refund your payment in 3 to 5 working days.</string>
+    <string name="something_went_wrong_with_the_content_credit_debit_card">Something went wrong with your content subscription.\n\nDon\’t worry, we\’ll refund the payment to your credit card in 7 to 10 working days. Please contact your bank to confirm their reversal period. </string>
+    <!-- endregion -->
+
+    <!-- region Common -->
+    <string name="refunded">Refunded</string>
+    <string name="your_refund">Your refund</string>
+    <!-- endregion -->
+
+    <!-- region Error -->
+    <string name="please_try_again">Please try again.</string>
+    <string name="please_go_back_and_try_again">Please go back and try again.</string>
+    <string name="insufficient_funds">Sorry, you have insufficient funds</string>
+    <string name="insufficient_funds_buy_promo">Sorry, you\'ll need more load to purchase this promo</string>
+    <string name="insufficient_funds_buy_content">Sorry, you\'ll need more load to purchase this content</string>
+    <string name="insufficient_funds_info">Please add funds and try again.</string>
+    <string name="insufficient_funds_buy_promo_info">Please reload, or choose a different payment method.</string>
+    <string name="insufficient_funds_buy_content_info">Please reload, or choose a different payment method.</string>
+    <string name="your_payment_declined">Sorry, your payment was declined</string>
+    <string name="looks_like_you_are_offline">Looks like you’re offline!</string>
+    <string name="you_can_always_try_different_payment_method">Don`t worry, you can always try a different payment method.</string>
+    <string name="you_cannot_charge_the_load">You can’t charge a load to the recipient.</string>
+    <string name="you_cannot_charge_the_load_with_this_brand">You cannot charge the load from this brand</string>
+    <string name="your_purchase_failed">Your purchase failed</string>
+    <string name="your_purchase_failed_info">Your refund is on the way</string>
+    <string name="try_to_make_a_payment_again">Try to make a payment again.</string>
+    <string name="try_again">Try again</string>
+    <string name="try_again_with_another_number">Try again with another number</string>
+    <string name="cancel_transaction">Cancel transaction</string>
+    <string name="try_again_later">Please, try again later.</string>
+    <string name="unknown_error">Unknown error occurred</string>
+    <string name="were_sorry_about_that">We\'re sorry about that.</string>
+    <string name="something_went_wrong">Something went wrong. Please go back and try again.</string>
+    <string name="oh_something_went_wrong">Uh-oh, something went\nwrong</string>
+    <string name="gcash_error_suspended_or_inactive">This account is either suspended or\ninactive.</string>
+    <string name="gcash_error_no_gcash_account">This account doesn’t have GCash.</string>
+    <string name="sorry_something_went_wrong">Sorry, something went wrong</string>
+    <string name="payment_sorry_something_went_wrong">Sorry, we couldn’t link your GCash.\nPlease try again!</string>
+    <string name="credit_card_refused_error">Please try another card, contact your merchant or contact your issuing bank for help in processing this transaction. Thank you!</string>
+    <!-- endregion -->
+    <!-- endregion -->
+
+    <!-- region Email verification -->
+    <string name="email_verified">Email verified!</string>
+    <string name="you_can_now_enjoy_globe_one">You can now enjoy GlobeOne.</string>
+    <string name="sign_in_to_globe_one">Sign in to GlobeOne</string>
+    <string name="resend_in">Resend in %1$s:%2$s</string>
+    <!-- endregion -->
+
+    <!-- region These are temporary -->
+    <string name="good_afternoon">Good afternoon!</string>
+    <string name="toni">Toni!</string>
+    <string name="_500">500</string>
+    <string name="gosurf123">GoSurf123</string>
+    <string name="p_123">P 123</string>
+    <string name="_30_days_temp">30 days (April 31, 2012)</string>
+    <string name="p299_temp">P299</string>
+    <string name="p199">-P199</string>
+    <string name="p200">P200</string>
+    <string name="reference_number_value">GLE- 1234567890</string>
+    <string name="phone_number_example">0906 605 7584</string>
+    <string name="divider_text">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</string>
+    <string name="emergency_loans">Emergency loans</string>
+    <string name="gosurf">GoSURF</string>
+    <string name="gosakto">GoSAKTO</string>
+    <string name="otp_code_is">OTP code: %1$s</string>
+    <!-- endregion -->
+
+    <!-- region Rating -->
+    <string name="rating_what_do_you_think_so_far">What do you think so far?</string>
+    <string name="rating_aw_thats_nice">Aww, that’s nice.</string>
+    <string name="rating_dont_keep_it_to_yourself">Don’t keep it to yourself. You can also drop some feedback for us in the Google Play Store!</string>
+    <string name="rating_rate_us">Rate us on Google Play Store</string>
+    <string name="rating_no_thanks">No, thanks</string>
+    <string name="rating_submit_feedback">Submit feedback</string>
+    <string name="rating_we_hope_youre_loving_g1">We hope you’re loving GlobeOne! \n\nWe\'d appreciate it if you let us know how you feel!</string>
+    <string name="rating_select_items_we_could_improve">Please select the items we could improve. </string>
+    <string name="rating_tell_us_your_feedback">Tell us your feedback.</string>
+    <string name="rating_got_something_else">Got something else in mind?</string>
+    <string name="rating_we_hear_you">We hear you!</string>
+    <string name="rating_thanks_for_feedback">Thanks for the rating! Your feedback will help us make things even better for you.</string>
+    <!-- endregion -->
+
+    <!-- region In-App Update -->
+    <string name="we_have_a_new_update">We have a new update!</string>
+    <string name="get_the_most_out_of_globeone_by_updating">Get the most out of GlobeOne by updating to the latest version! Data charges may apply when updating the app.</string>
+    <string name="update_on_play_store">Update on Play Store</string>
+    <string name="you_re_using_an_old_version_of_the_app">You’re using an old version of the app!</string>
+    <string name="continue_using_globeone_by_updating_to_the_latest_version">Continue using GlobeOne by updating to the latest version. Data charges may apply when updating the app.</string>
+    <!-- endregion -->
+
+    <!-- region GoCreate -->
+    <string name="go_create">GoCREATE</string>
+    <string name="go_create_intro_description">GoCREATE is available for Globe Prepaid users only.</string>
+    <string name="go_create_intro_inclusions_text">Every promo you make with GoCREATE comes with unli texts to all networks!</string>
+    <string name="go_create_you_are_buying_for">You’re buying for:</string>
+    <string name="go_create_lets_go_create">Let’s GoCREATE!</string>
+    <string name="go_create_promo">Create your promo!</string>
+    <string name="go_create_description">Create your own custom promo with GoCREATE. Any promo you make comes with free unli texts to all networks.</string>
+    <string name="taking_you_to_go_create">Taking you to GoCREATE</string>
+    <string name="have_fun_with_mixing_things">Have fun mixing things up!</string>
+    <string name="preparing_your_promo">We’re preparing your promo!</string>
+    <string name="are_you_excited">Are you excited? We’re excited!</string>
+    <string name="review_your_go_create_promo_details">Review your GoCREATE promo details</string>
+    <string name="your_promo_costs">Your promo costs:</string>
+    <string name="apps_of_choice">Apps of choice</string>
+    <string name="will_try_again_next_time">I’ll try again next time</string>
+    <string name="go_create_buy_load">Buy Load</string>
+    <string name="go_create_try_again_next_time_title">Are you sure you want to do this next time?</string>
+    <string name="go_create_try_again_next_time_description">Your progress won’t be saved, but you can always go back here and explore more GoCREATE combinations!</string>
+    <string name="sorry_you_need_more_load_balance">Sorry, you need more load balance. Buy load or choose another account.</string>
+    <string name="selected_access_data_gb">%1$d GB</string>
+    <string name="selected_apps_booster">%1$d GB %2$s</string>
+    <!-- endregion -->
+
+    <!-- region GoCreateSelection -->
+    <string name="let_s_start">Let’s start!</string>
+    <string name="how_many_days_do_you_need_for_your_promo">How many days do you need for your promo?</string>
+    <string name="randomize">Randomize!</string>
+    <string name="all_access_data">All-access data</string>
+    <string name="how_many_gbs_of_data_do_you_need">How many GBs of data do you need?</string>
+    <string name="make_your_promo_even_better">Make your promo even better!</string>
+    <string name="add_these_awesome_options_to_your_gocreate_promo">Add these awesome options to your GoCREATE promo.</string>
+    <string name="your_apps">Your apps</string>
+    <string name="days_sufix">DAYS</string>
+    <string name="data_for_your_apps_of_choice">Data for your apps of choice</string>
+    <string name="add_your_favorite_apps">Add your favorite apps!</string>
+    <string name="how_many_gbs_for_your_apps_of_choice_do_you_need">How many GBs for your apps of choice do you need?</string>
+    <string name="calls">Calls</string>
+    <string name="enjoy_unli_calls_to_all_networks">Enjoy Unli calls to all networks</string>
+    <string name="you_re_getting_this_for_free">You’re getting this for free:</string>
+    <string name="texts">Texts</string>
+    <string name="unli_all_net">Unli all net</string>
+    <string name="freebie">FREEBIE</string>
+    <string name="freebie_word">Freebie</string>
+    <string name="empty_price_text">P--.--</string>
+    <string name="how_to_proceed_with_my_gocreate_promo">How to proceed with my GoCREATE promo?</string>
+    <string name="add_more_inclusions">Add more inclusions!</string>
+    <string name="get_more_out_of_gocreate_by_increasing_your_all_access_data">Get more out of GoCREATE by increasing your all-access data, adding apps, or picking the UNLI All Net Calls option.</string>
+    <!-- endregion -->
+
+    <!-- region Raffle -->
+    <string name="raffle_promo_eligable_for_raffle">This promo is eligible for a raffle draw for HPW/MyFi users!</string>
+    <string name="raffle_promo_buy_hpw_device">Buy an HPW device in our shop, add accounts, or buy promos here in GlobeOne app to earn raffle entries!</string>
+    <string name="raffle_life_changing_prizes">Life-changing prizes await!</string>
+    <string name="learn_more">Learn more</string>
+    <string name="kyc_banner_title">Your raffle entries will be eligible when you complete your profile.</string>
+    <string name="kyc_banner_description">To enter your raffle tickets, fill out all the required fields (*) in the form. \n\nRaffles are open to customers 18 years old and above. You can still enjoy the other features of GlobeOne! </string>
+    <string name="kyc_primary_contact_number">Primary contact number *</string>
+    <string name="profile_kyc_address1_title">Address Line 1 *</string>
+    <string name="profile_kyc_address2_title">Address Line 2</string>
+    <string name="profile_kyc_street_hint">Street *</string>
+    <string name="profile_kyc_state_hint">Province/State *</string>
+    <string name="profile_kyc_city_hint">City/Municipality *</string>
+    <string name="profile_kyc_bangaray_hint">Barangay *</string>
+    <string name="profile_kyc_zipcode_hint">Zip code *</string>
+    <string name="profile_kyc_data_privacy_policy">By giving this information, I consent to the collection and processing of my information. This information will be subject to</string>
+    <string name="profile_kyc_data_policy_url">Globe Data Privacy Policy</string>
+    <string name="profile_kyc_zipcode_error_message">Please enter your location’s 4-digit zip code.</string>
+    <string name="profile_kyc_contact_error_message">Please enter an 11-digit number.\nExample: 0917 123 4567</string>
+    <string name="profile_kyc_certify_authenticity_title">Certify that all statements are true and correct.</string>
+    <string name="profile_kyc_certify_authenticity_description">Winners will be contacted after the raffle draw and will be asked to show proof of identity. To win GCash prizes, please make sure that the number you entered is a valid and verified GCash number. To know if your GCash number is valid and verified, please check here. \n\n In the event that any information were found to be invalid after the raffle draw, it is Globe’s prerogative to disqualify and re-draw a valid winner.</string>
+    <string name="profile_kyc_here_key">here</string>
+    <string name="profile_kyc_confirm_button">Confirm</string>
+    <string name="profile_kyc_confirm_skip_completing_title">Are you sure you want to skip completing your profile?</string>
+    <string name="profile_kyc_confirm_skip_completing_description">Incomplete profiles will not earn raffle entries. Raffle period is from August to October 2021 and raffle draw is done weekly. You might miss your chance to win this week.
+Do you still want to proceed?</string>
+    <string name="earned_tickets">You earned raffle ticket(s)!</string>
+    <string name="credited_to">Credited to</string>
+    <string name="total_tickets_earned">Total tickets earned</string>
+    <string name="tickets_num">%1$d tickets</string>
+    <string name="wait_confirmation_message">We will seed your new tickets in a few minutes. Please wait for a confirmation message.</string>
+    <string name="raffle_profile_status_title">PROFILE STATUS</string>
+    <string name="raffle_profile_status_complete">Complete</string>
+    <string name="raffle_profile_status_incomplete">Incomplete</string>
+    <!-- endregion -->
+
+    <!-- region Wayfinders -->
+    <string name="wayfinder_profile">PROFILE</string>
+    <string name="wayfinder_account_details">ACCOUNT DETAILS</string>
+    <string name="wayfinder_gcash">GCASH</string>
+    <string name="wayfinder_payment_methods">PAYMENT METHODS</string>
+    <string name="wayfinder_get_started">GET STARTED</string>
+    <string name="wayfinder_home">HOME</string>
+    <string name="wayfinder_shop">SHOP</string>
+    <string name="wayfinder_promos">PROMOS</string>
+    <string name="wayfinder_rewards">REWARDS</string>
+    <string name="wayfinder_redeem_rewards">REDEEM REWARDS</string>
+    <string name="wayfinder_rewards_catalog">REWARDS CATALOG</string>
+    <string name="wayfinder_go_create">GOCREATE</string>
+    <string name="wayfinder_add_account">ADD ACCOUNT</string>
+    <string name="wayfinder_history">HISTORY</string>
+    <!-- endregion -->
+
+    <!-- region NoInternetDialog -->
+    <string name="no_internet_error_title">Looks like you\'re offline!</string>
+    <string name="please_check_your_internet_connection_and_try_again">Please reconnect to the internet to continue using GlobeOne.</string>
+    <!-- endregion -->
+
+    <!-- region account activity -->
+    <string name="account_history">History</string>
+    <string name="ask_for_help">Ask for help</string>
+    <string name="showing_transactions_for">Showing transactions for:</string>
+
+    <string name="we_couldn_t_load_your_transactions_please_reload_this_page">We couldn\'t load your transactions. Please reload this page.</string>
+    <string name="you_ve_reached_the_end">You’ve reached the end!</string>
+    <string name="no_more_transactions">No more transactions to see here.</string>
+    <string name="back_to_top">Back to top</string>
+    <string name="nothing_to_see_here">Nothing to see here!</string>
+    <string name="you_didn_t_make_any_transactions_for_this_date">You didn\'t make any transactions for this date.</string>
+    <string name="you_haven_t_made_any_transactions_for_recently">You haven\'t made any transactions recently.</string>
+    <string name="check_out_out_great_promos">Check out our great promos!</string>
+
+    <string name="earned_by">Earned by</string>
+    <string name="redeemed_by">Redeemed by</string>
+    <string name="corrected_from">Corrected from</string>
+    <string name="sent_by">Sent by</string>
+    <string name="earned_on">Earned on</string>
+    <string name="redeemed_on">Redeemed on</string>
+    <string name="corrected_on">Corrected on</string>
+    <string name="expired_on">Expired on</string>
+    <string name="sent_on">Sent on</string>
+    <string name="deducted_on">Deducted on</string>
+
+    <string name="earned_points_title">Earned points</string>
+    <string name="redeemed_reward_title">Redeemed reward</string>
+    <string name="paid_with_points_title">Paid with points</string>
+    <string name="expired_points_title">Expired points</string>
+    <string name="gifted_reward_title">Gifted reward</string>
+    <string name="refunded_points_title">Refunded points</string>
+    <string name="deducted_points_title">Deducted points</string>
+
+    <string name="earned_points_details">These are the points that have been awarded and earned from converting data and purchasing promos and load.</string>
+    <string name="refunded_points_details">These are the points that have been returned to your account due to an error on our end.</string>
+    <string name="deducted_points_details">These are the points that have been deducted from a partner program.</string>
+
+    <string name="bill_payments_empty_title">No bill payments here!</string>
+    <string name="bill_payments_empty_description">You don’t have any bill payments available at  the moment.</string>
+    <!--endregion-->
+
+    <!--region prepaid ledger-->
+    <string name="history_title">History</string>
+
+    <string name="prepaid_ledger_number_called">Number called</string>
+    <string name="prepaid_ledger_call_made_by">Call made by</string>
+    <string name="prepaid_ledger_call_type">Call type</string>
+    <string name="date">Date</string>
+    <string name="prepaid_ledger_caller">Caller</string>
+    <string name="prepaid_ledger_received_by">Received by</string>
+    <string name="prepaid_ledger_number_texted">Number texted</string>
+    <string name="prepaid_ledger_text_type">Text type</string>
+    <string name="prepaid_ledger_received_from">Received from</string>
+    <string name="prepaid_ledger_charged_to_load">Charged to load</string>
+    <string name="prepaid_ledger_bought_by">Bought by</string>
+    <string name="prepaid_ledger_bought_from">Bought from</string>
+    <string name="prepaid_ledger_shared_by">Shared by</string>
+    <string name="prepaid_ledger_shared_to">Shared to</string>
+    <string name="prepaid_ledger_loaned_by">Loaned by</string>
+    <string name="prepaid_ledger_paid_by">Paid by</string>
+    <string name="prepaid_ledger_deducted_from">Deducted from</string>
+    <string name="prepaid_ledger_amount_neutral">P%.2f</string>
+    <string name="prepaid_ledger_amount_deduct">-P%.2f</string>
+    <string name="prepaid_ledger_amount_add">+P%.2f</string>
+    <string name="prepaid_ledger_promo_name">Promo name</string>
+    <string name="prepaid_ledger_channel">Channel</string>
+    <string name="prepaid_ledger_usage_duration">Usage Duration</string>
+    <string name="prepaid_ledger_total_data_used">Total data used</string>
+    <string name="loan_note">This loan will be paid (including the service fee) the next time you buy load.</string>
+    <string name="call_text_received_note">You were charged for this %s because you’re abroad.</string>
+
+    <string name="transaction_title">Transactions</string>
+    <string name="transactions_note">Your latest transactions will reflect in 24 hours.</string>
+    <string name="transactions_note_prepaid_ledger">Your latest transactions may take up to 48 hours to be shown.</string>
+    <string name="load_bought">Load bought %s</string>
+    <string name="load_received">Load received %s</string>
+    <string name="load_loaned">Load loaned %s</string>
+    <string name="load_shared">Load shared %s</string>
+    <string name="loan_paid">Loan paid %s</string>
+    <string name="load_expired">Load expired</string>
+
+    <string name="call_made">Call made %s</string>
+    <string name="call_received">Call received %s</string>
+
+    <string name="data_used_prepaid">Data used</string>
+
+    <string name="promo_received">Promo received %s</string>
+    <string name="promo_bought">Promo bought %s</string>
+    <string name="promo_shared">Promo shared %s</string>
+    <string name="promo_loaned">Promo loaned %s</string>
+
+    <string name="text_sent">Text sent %s</string>
+    <string name="text_received">Text received %s</string>
+    <string name="text_refunded">Text refunded %s</string>
+
+    <string name="positive_amount">+P%s</string>
+    <string name="negative_amount">-P%s</string>
+    <string name="zero_amount">P0.00</string>
+
+    <string name="date_filter_yesterday">Yesterday</string>
+    <string name="date_filter_2_days">Last 48 hours</string>
+    <string name="date_filter_3_days">Last 3 days</string>
+    <string name="date_filter_7_days">Last 7 days</string>
+    <string name="date_filter_30_days">Last 30 days</string>
+
+    <string name="prepaid_ledger_reach_end">There are no other transactions to show.</string>
+
+    <string-array name="rewards_date_filter">
+        <item>@string/date_filter_yesterday</item>
+        <item>@string/date_filter_3_days</item>
+        <item>@string/date_filter_7_days</item>
+        <item>@string/date_filter_30_days</item>
+    </string-array>
+
+    <string-array name="transactions_date_filter">
+        <item>@string/date_filter_2_days</item>
+        <item>@string/date_filter_3_days</item>
+        <item>@string/date_filter_7_days</item>
+        <item>@string/date_filter_30_days</item>
+    </string-array>
+    <!--endregion-->
+
+    <!--region statements -->
+    <string name="bill_statements_title">Bill statements</string>
+    <string name="statements_trouble">Bill statements are displayed for up to 24 months.\n\nHaving trouble?</string>
+    <string name="bill_statements_reach_end_info">We clear bill statements that are older than 24 months.</string>
+    <string name="bill_statements_empty_title">No bill statements here!</string>
+    <string name="bill_statements_empty_description">You don’t have any bill statements available at the moment.</string>
+    <string name="bill_no">Bill no. %d</string>
+
+    <string name="date_filter_last_3_months">Last 3 months</string>
+    <string name="date_filter_last_6_months">Last 6 months</string>
+    <string name="date_filter_last_12_months">Last 12 months</string>
+    <string name="date_filter_last_24_months">Last 24 months</string>
+
+    <string-array name="date_filter_months">
+        <item>@string/date_filter_last_3_months</item>
+        <item>@string/date_filter_last_6_months</item>
+        <item>@string/date_filter_last_12_months</item>
+        <item>@string/date_filter_last_24_months</item>
+    </string-array>
+
+    <string name="bill_statements_details">Having trouble with bill statements?\nWe’re here to help!</string>
+    <string name="date_range">%1$s - %2$s</string>
+    <!--endregion-->
+
+    <!--region bill payment history -->
+    <string name="amount_paid">Amount paid</string>
+    <string name="payment_channel">Payment channel</string>
+    <string name="payment_date">Payment date</string>
+    <string name="posting_date">Posting date</string>
+    <string name="or_number">OR number</string>
+    <string name="view_or">View OR</string>
+    <string name="bill_payments_title">Bill Payments</string>
+    <string name="payments_trouble">Your payment will reflect in the history after 3&#8211;5 days, when the OR becomes available.\n\nHaving trouble?</string>
+    <string name="payment_download_title">You\'ve downloaded your Official Receipt</string>
+    <string name="payment_download_description">You have downloaded your OR. You may find this in your device\'s Downloads folder.</string>
+    <!-- endregion -->
+
+    <!-- region vouchers -->
+    <string name="no_vouchers_here_yet">No vouchers here yet!</string>
+    <string name="use_your_points_vouchers">Use your points to redeem exciting Rewards.</string>
+    <string name="no_more_vouchers">No more vouchers to see here.</string>
+    <string name="we_couldn_t_load_your_vouchers_please_reload_this_page">We couldn\'t load your vouchers. Please reload this page.</string>
+    <string name="no_expiry">No expiry</string>
+    <!-- endregion -->
+
+    <!-- region Spinwheel -->
+    <string name="spinwheel_button_win_vouchers">WIN VOUCHERS!</string>
+    <string name="spinwheel_button_yey_holidays">YEY HOLIDAYS!</string>
+    <string name="spinwheel_hide_dialog_title">Are you sure you want to hide this?</string>
+    <string name="spinwheel_hide_dialog_text">You might miss your chance to win prizes if you haven\'t used it yet!</string>
+    <string name="spinwheel_hide_dialog_negative_button_text">No, keep it</string>
+    <string name="spinwheel_hide_dialog_positive_button_text">Yes, hide it</string>
+    <!-- endregion -->
+
+    <!-- region HPW Frictionless -->
+    <string name="enter_sim_serial_title">Enter your Home Prepaid WiFi (HPW) SIM serial number</string>
+    <string name="enter_hpw_number_title">Enter your Home Prepaid WiFi (HPW) number</string>
+    <string name="home_prepaid_wifi_number_title">HPW number</string>
+    <string name="sim_serial_number">SIM serial number</string>
+    <string name="find_my_sim_serial_number">Find my SIM serial number</string>
+    <string name="find_sim_serial_at_sim">You can find your SIM serial number on your SIM bed.</string>
+    <string name="cant_find_your_sim_serial">Can’t find your SIM serial number?</string>
+    <string name="add_hpw_using_otp">Add HPW using my modem OTP</string>
+    <string name="not_valid_hpw_number">Please enter a valid HPW number.</string>
+    <string name="not_valid_a_number">Please enter a valid number.</string>
+    <string name="broadband_sim_serial_mismatch">The Home Prepaid WiFi (HPW) and SIM serial numbers don’t match</string>
+    <string name="double_check_broadband_sim_serial">Please check your HPW number and SIM serial.</string>
+    <string name="connect_to_wifi_title">Connect to your Home Prepaid WiFi (HPW) first!</string>
+    <string name="connect_to_wifi_description">Please connect to your HPW wifi network to proceed.</string>
+    <string name="connect_wifi">Connect  WiFi</string>
+    <string name="other_ways_to_add_title">Want to try another way to add your HPW?</string>
+    <string name="add_hpw_using_sim_serial">Add HPW using my SIM Serial Number</string>
+    <!-- endregion -->
+
+    <!-- region coming soon -->
+    <string name="coming_soon">Excited? We are too!</string>
+    <string name="coming_soon_title">Exciting things are coming!</string>
+    <string name="coming_soon_description">This feature is in the works, along with other wonderful things for you. Make sure to tune in here for future updates!</string>
+    <string name="voucher_content_coming_soon_description">This feature is in the works, along with other wonderful things for you. Make sure to tune in to our future updates!</string>
+    <!-- endregion -->
+
+    <!-- region help -->
+    <string name="having_trouble">Having trouble?</string>
+    <string name="having_trouble_description">Let us know if you have any concerns.\nWe are always here to help you!</string>
+    <string name="get_help">Get help</string>
+    <!-- endregion -->
+
+    <!-- region mock -->
+    <string name="mock_minimum_x_points">Minimum %s points</string>
+
+    <string name="reward_mock_status">NEW</string>
+    <string name="reward_mock_title_1">Free Doughnut</string>
+    <string name="reward_mock_subtitle">Valid for 10 days</string>
+    <string name="reward_mock_title_2">Voucher</string>
+    <string name="reward_mock_description">Free doughnut when you buy 1 regular sized coffee</string>
+    <string name="reward_mock_cost">-5</string>
+    <string name="reward_mock_points_count">500 points</string>
+
+    <string name="dac_mock_points_count">3</string>
+    <string name="dac_mock_total_points_count">300</string>
+    <string name="dac_mock_msisdn">0917 123 4567</string>
+    <string name="dac_mock_format_msisdn">0927 593 8562</string>
+    <string name="dac_mock_amount">8GB</string>
+    <string name="dac_mock_name">Toni</string>
+    <string name="dac_mock_promo">Home surf 200</string>
+
+    <string name="mock_version_code">Version 0.3.0dev</string>
+    <string name="mock_profile_name">Milojica</string>
+    <string name="mock_profile_description">GlobeOne user, all-around awesome \nhuman being.</string>
+    <string name="mock_brand_userfriendly">Globe postpaid</string>
+    <string name="mock_two_decimal_amount">P200.00</string>
+    <string name="mock_promo_title">GoSakto25</string>
+
+    <string name="mock_data_title">DATA</string>
+    <string name="mock_data_usage">20GB / 50GB</string>
+    <string name="mock_data_expires_on">Expires on March 31, 2021</string>
+    <string name="mock_date">March 31, 2021</string>
+
+    <string name="mock_account_expires_on">200GB expires on Sept 29, 2021</string>
+
+    <string name="mock_member_name">Tony Nicolas Rasmussen</string>
+    <string name="mock_member_role_owner">owner</string>
+    <string name="mock_member_role_member">member</string>
+    <string name="mock_group_name">SURF4ALL249</string>
+    <string name="mock_group_start_date">As of March 31, 2021</string>
+
+    <string name="mock_amount_paid_value">P999.00</string>
+    <string name="mock_payment_channel">Shopee</string>
+    <string name="mock_bill_payment_date">Sept. 23, 2021</string>
+    <string name="mock_bill_payment_or_number">123456890</string>
+
+    <string name="mock_email_address">tony.sanchez@gmail.com</string>
+    <string name="mock_voucher_title">30-day one-time access to Da Vinci Kids</string>
+    <string name="mock_voucher_expires">Expires on August 22, 2021.</string>
+    <string name="mock_voucher_code">ZALORA20</string>
+
+    <string name="mock_time_span">March 31, 2021 to April 7, 2021</string>
+
+    <string name="mock_displaying_results">Displaying 1 result</string>
+    <!-- endregion -->
+
+    <!-- region promo voucher -->
+    <string name="promo_voucher_title">Vouchers</string>
+    <string name="promo_voucher_rewards">Rewards</string>
+    <string name="promo_voucher_content">Content</string>
+    <string name="promo_voucher_empty_description">You don\'t have any content vouchers available.</string>
+    <!-- endregion -->
+
+    <!-- Go+ 2-->
+    <string name="entertainment">Entertainment</string>
+    <string name="health_and_saving">Health &amp; Savings</string>
+
+    <!-- region merge login -->
+    <string name="image">image</string>
+    <string name="link_your_profile">Link your profile</string>
+    <string name="looks_like_already_login">It looks like the email in your %1$s account was already used in a GlobeOne profile.</string>
+    <string name="email_already_connected">The email is connected to %1$s Account.</string>
+    <string name="merge_email_account">To log in via %1$s, please verify your identity by logging in with %2$s.</string>
+    <string name="verify_this_account">Verify this account</string>
+    <string name="login_to_link_account">Log in to link your account</string>
+    <string name="login_first_account">So we know it\'s really you, please log in with your email.</string>
+    <string name="link_account">Link account</string>
+    <string name="link_your_account">Link your account</string>
+    <string name="your_email">your email</string>
+    <string name="a">a</string>
+    <string name="an">an</string>
+    <string name="your_account_now_linked">Your %1$s account is now linked to GlobeOne!</string>
+    <string name="you_can_use_it">You can now log in using this method next time.</string>
+    <string name="too_many_login_attempts">Too many log in attempts</string>
+    <string name="reached_max_tries">You\'ve reached the maximum number of tries, please try again tomorrow.</string>
+    <!-- endregion -->
+
+    <!-- region load discount forever -->
+    <string name="pay_only_when_check_out">Pay only P%1$s when you check out!</string>
+    <string name="use_this_to_enjoy_discount">Use this to enjoy your discount!</string>
+    <!-- endregion -->
+
+    <!-- bill payment history -->
+    <string name="bill_payment_history_title">Your first download of your OR serves as your original copy.</string>
+    <string name="bill_payment_history_description">Downloading the OR after your first download will consider the receipt a reprint.</string>
+    <!-- endregion -->
+
+    <!-- maintenance -->
+    <string name="maintenance_title">We\'ll be back soon!</string>
+    <string name="maintenance_content">This page is under maintenance.It will be up and running in no time!</string>
+    <!-- endregion -->
+
+</resources>

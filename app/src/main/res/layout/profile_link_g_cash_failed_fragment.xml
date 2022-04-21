@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/accentLight"
+    android:padding="@dimen/padding_medium">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/iv_error_icon"
+        android:layout_width="@dimen/something_went_wrong_image_width"
+        android:layout_height="@dimen/something_went_wrong_image_height"
+        app:layout_constraintBottom_toTopOf="@id/tv_error_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/failure" />
+
+    <TextView
+        android:id="@+id/tv_error_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_ssmedium"
+        android:gravity="center_horizontal"
+        android:text="@string/oh_something_went_wrong"
+        android:textAppearance="?sMediumBold"
+        android:textColor="?accentDark"
+        app:layout_constraintBottom_toTopOf="@id/tv_error_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_error_icon" />
+
+    <TextView
+        android:id="@+id/tv_error_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/padding_medium"
+        android:text="@string/sorry_we_were_not_able_to_link_your_gcash_please_try_again"
+        android:textAppearance="?baseRegularContent"
+        android:textColor="?neutralB0"
+        app:layout_constraintBottom_toTopOf="@id/btn_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_error_title" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:text="@string/back_to_my_account"
+        android:textAppearance="?baseAction"
+        android:theme="@style/Widget.App.ClassicButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

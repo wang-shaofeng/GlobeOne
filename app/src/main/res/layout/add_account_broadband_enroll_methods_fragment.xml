@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/TopRoundedBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".addaccount.broadband.verification.AddAccountBroadbandEnrollMethodsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_add_account_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_smedium"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back" />
+
+            <View
+                android:id="@+id/v_header_line_vertical"
+                style="@style/ThemeOverlay.App.HeaderLineTheme"
+                android:layout_width="@dimen/toolbar_line_height"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_smedium"
+                app:layout_constraintStart_toEndOf="@id/iv_back" />
+
+            <TextView
+                style="@style/Widget.App.LightToolbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:text="@string/add_account"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/v_header_line_vertical"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_standard"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_x_icon" />
+
+            <View
+                style="@style/ThemeOverlay.App.HeaderLineTheme"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toolbar_line_height"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_main_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/btn_cancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_add_account_toolbar"
+            app:layout_constraintVertical_bias="0">
+
+            <TextView
+                android:id="@+id/tv_add_account_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:text="@string/verification"
+                android:textAppearance="?mediumBold"
+                android:textColor="?accentDark"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/v_step_line_1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/step_line_height"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_xxsmall"
+                android:background="?primary"
+                app:layout_constraintEnd_toStartOf="@+id/v_step_line_2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_add_account_title" />
+
+            <View
+                android:id="@+id/v_step_line_2"
+                style="@style/ThemeOverlay.App.StepNotCompleted"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/step_line_height"
+                android:layout_marginStart="@dimen/margin_xxsmall"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_xxsmall"
+                app:layout_constraintEnd_toStartOf="@id/v_step_line_3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/v_step_line_1"
+                app:layout_constraintTop_toBottomOf="@id/tv_add_account_title" />
+
+            <View
+                android:id="@+id/v_step_line_3"
+                style="@style/ThemeOverlay.App.StepNotCompleted"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/step_line_height"
+                android:layout_marginStart="@dimen/margin_xxsmall"
+                android:layout_marginTop="@dimen/margin_medium"
+                app:layout_constraintEnd_toStartOf="@id/v_step_line_4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/v_step_line_2"
+                app:layout_constraintTop_toBottomOf="@id/tv_add_account_title" />
+
+            <View
+                android:id="@+id/v_step_line_4"
+                style="@style/ThemeOverlay.App.StepNotCompleted"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/step_line_height"
+                android:layout_marginStart="@dimen/margin_xxsmall"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/v_step_line_3"
+                app:layout_constraintTop_toBottomOf="@id/tv_add_account_title" />
+
+            <TextView
+                android:id="@+id/tv_how_would_you_like"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:text="@string/how_would_you_like_to_verify_your_account"
+                android:textAppearance="?baseRegularContent"
+                android:textColor="?neutralB0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/v_step_line_1" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_send_sms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/padding_medium"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_how_would_you_like"
+                tools:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/iv_send_sms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_smedium"
+                    android:layout_marginTop="@dimen/margin_xmedium"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_confirm_account_phone"
+                    app:tint="?attr/colorOnSecondary" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_send_otp_to_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_standard"
+                    android:text="@string/send_otp_to_number"
+                    android:textAppearance="?xBaseMultiline"
+                    android:textColor="?accentDark"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/iv_send_sms_action"
+                    app:layout_constraintStart_toEndOf="@id/iv_send_sms"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_phone_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="?attr/titleTextColor"
+                    android:textSize="@dimen/text_size_small"
+                    app:layout_constraintEnd_toEndOf="@id/iv_send_sms_action"
+                    app:layout_constraintStart_toStartOf="@id/tv_send_otp_to_number"
+                    app:layout_constraintTop_toBottomOf="@id/tv_send_otp_to_number"
+                    tools:text="@string/msisdn_place_holder" />
+
+                <ImageView
+                    android:id="@+id/iv_send_sms_action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_standard"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_arrow_right"
+                    app:tint="?accentDark" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/v_send_sms"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toolbar_line_height"
+                android:background="?attr/outlineColor"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cl_send_sms"
+                tools:visibility="visible" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_send_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/padding_medium"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/v_send_sms"
+                tools:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/iv_send_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_smedium"
+                    android:layout_marginTop="@dimen/margin_xmedium"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_modem"
+                    app:tint="?attr/colorOnSecondary" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_send_otp_to_email"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_standard"
+                    android:text="@string/send_to_email_address"
+                    android:textAppearance="?xBaseMultiline"
+                    android:textColor="?accentDark"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/iv_send_email_action"
+                    app:layout_constraintStart_toEndOf="@id/iv_send_email"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_email_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="?attr/titleTextColor"
+                    android:textSize="@dimen/text_size_small"
+                    app:layout_constraintEnd_toEndOf="@id/iv_send_email_action"
+                    app:layout_constraintStart_toStartOf="@id/tv_send_otp_to_email"
+                    app:layout_constraintTop_toBottomOf="@id/tv_send_otp_to_email"
+                    tools:text="@string/email_address_place_holder" />
+
+                <ImageView
+                    android:id="@+id/iv_send_email_action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_standard"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_arrow_right"
+                    app:tint="?accentDark" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/v_send_email"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toolbar_line_height"
+                android:background="?attr/outlineColor"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cl_send_email"
+                tools:visibility="visible" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_security_questions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/padding_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/v_send_email">
+
+                <ImageView
+                    android:id="@+id/iv_security_questions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_smedium"
+                    android:layout_marginTop="@dimen/margin_xmedium"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_security_questions"
+                    app:tint="?attr/colorOnSecondary" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_security_questions"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_standard"
+                    android:text="@string/answer_security_questions"
+                    android:textAppearance="?xBaseMultiline"
+                    android:textColor="?accentDark"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/iv_security_questions_action"
+                    app:layout_constraintStart_toEndOf="@id/iv_security_questions"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_security_questions_action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_standard"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_arrow_right"
+                    app:tint="?accentDark" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_cancel"
+            style="@style/Widget.App.ClassicButtonNegative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_standard"
+            android:text="@string/cancel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="1"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

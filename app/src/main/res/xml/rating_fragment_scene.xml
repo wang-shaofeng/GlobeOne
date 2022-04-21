@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<MotionScene
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+       <KeyFrameSet>
+           <KeyAttribute
+               motion:motionTarget="@+id/tv_we_hope_youre_loving_g1"
+               motion:framePosition="30"
+               android:alpha=".03" />
+       </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/tv_we_hope_youre_loving_g1"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_medium"
+            motion:layout_constraintTop_toBottomOf="@id/tv_what_do_you_think"
+            android:layout_marginStart="@dimen/margin_medium"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/margin_standard"
+            android:visibility="visible"
+            android:alpha="1" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/tv_we_hope_youre_loving_g1"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/stroke_width_small"
+            android:layout_marginEnd="@dimen/margin_medium"
+            motion:layout_constraintTop_toBottomOf="@id/tv_what_do_you_think"
+            android:layout_marginStart="@dimen/margin_medium"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/margin_standard"
+            android:visibility="visible"
+            android:alpha="0" />
+    </ConstraintSet>
+</MotionScene>

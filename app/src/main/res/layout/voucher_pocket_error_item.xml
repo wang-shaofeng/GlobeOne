@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lav_receipt"
+        android:layout_width="@dimen/something_went_wrong_image_width"
+        android:layout_height="@dimen/something_went_wrong_image_height"
+        android:layout_marginTop="@dimen/margin_xmedium"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/failure" />
+
+    <TextView
+        android:id="@+id/tv_header_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="@string/sorry_something_went_wrong"
+        android:textAlignment="center"
+        android:textAppearance="?sMediumBold"
+        android:textColor="?accentDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lav_receipt" />
+
+    <TextView
+        android:id="@+id/tv_info_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_xxxlarge"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/we_couldn_t_load_your_vouchers_please_reload_this_page"
+        android:textAppearance="?baseRegularContent"
+        android:textColor="?neutralB0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_header_message" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_reload"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium"
+        android:paddingVertical="@dimen/padding_medium"
+        android:paddingStart="@dimen/padding_xlarge"
+        android:paddingEnd="@dimen/padding_medium"
+        android:text="@string/dashboard_consumption_reload"
+        android:textAllCaps="false"
+        android:textAppearance="?baseAction"
+        android:textColor="?absoluteWhite"
+        app:backgroundTint="?primary"
+        app:cornerRadius="@dimen/corner_radius_xxxsmall"
+        app:elevation="@dimen/standard_elevation"
+        app:icon="@drawable/ic_refresh_white"
+        app:iconGravity="end"
+        app:iconPadding="@dimen/padding_large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_info_message" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

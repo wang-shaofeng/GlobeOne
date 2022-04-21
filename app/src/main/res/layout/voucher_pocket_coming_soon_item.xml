@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2022 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?colorSurface">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lav_coming_soon"
+        android:layout_width="@dimen/lottie_postpaid_broadband_width"
+        android:layout_height="@dimen/lottie_postpaid_broadband_height"
+        android:layout_marginTop="@dimen/margin_xxxlarge"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/hey_you" />
+
+    <TextView
+        android:id="@+id/tv_coming_soon_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:text="@string/coming_soon_title"
+        android:textAppearance="?mediumBold"
+        android:textColor="?accentDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lav_coming_soon" />
+
+    <TextView
+        android:id="@+id/tv_coming_soon_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_standard"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_xxxxlarge"
+        android:text="@string/voucher_content_coming_soon_description"
+        android:textAlignment="center"
+        android:textAppearance="?smallRegularContent"
+        android:textColor="?neutralB0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_coming_soon_title" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

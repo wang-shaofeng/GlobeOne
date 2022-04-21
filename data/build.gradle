@@ -1,0 +1,253 @@
+/*
+ * Copyright (C) 2021 LotusFlare
+ * All Rights Reserved.
+ * Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+ */
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion globeCompileVersion
+    buildToolsVersion globeBuildToolsVersion
+
+    defaultConfig {
+        minSdkVersion globeMinSdkVersion
+        targetSdkVersion globeTargetSdkVersion
+        versionCode globeVersion.versionCode()
+        versionName globeVersion.versionName()
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += [
+                        "room.schemaLocation":"$projectDir/schemas".toString(),
+                        "room.incremental":"true",
+                        "room.expandProjection":"true"
+                ]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            ext.enableCrashlytics = false
+
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            splits.abi.enable = false
+            splits.density.enable = false
+            ext.alwaysUpdateBuildId = false
+            aaptOptions.cruncherEnabled = false
+        }
+    }
+
+    flavorDimensions "servers", "analyticsType"
+
+    productFlavors {
+
+        staging {
+            dimension "servers"
+
+            buildConfigField("String", "OAUTH_CREDENTIALS", "\"N2JvNWRpb2lucmNhOGFwbXJibmpjZjZpdWE6MWtlczMxNGVuMmY3dnFvNHNiOWgxZnVuNmIzdGZtbGpxdGZ0bDRxbjJhMTl1ZXV1dWx0cQ==\"")
+            buildConfigField("String", "CIAM_PUBLIC_KEY", "\"MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAq+375KSFD65rzlI8hJTpzNwZzI65ifJ3QPw0ijoi1FsZsc8GdoTxETxLUZ4+bg/i5yNjbHvUXRIuu8LQYN+tiwTGYPP8L+RMB2xB85UvBTlLhaAnl1+gvhrVTveg4xnTsPSnptTMUKqETLHjprasswue4egk0hJqw3hM4IiFFSZRD7BAciSdKgPjPlYxlXgmXXNVpyCH8r6jQOyC05TvfIuAZFiz257KvO9q3dVl99aHz/ec4fW9OwJK5saCIAbfzbyBYVphubHt3bAffz9Y+35JfkhIVIqGWKn/sOS8J4uVw2fmw98db05GYpg9b0VIrcSfvGTyCzajVpL505xZyc3GmcTsH15Hnw8ZCoMMYABwxfhtETZ8SyLMVXFlLvKYeUzXxnC+Uwn2VqF3bPTTAM+l1lPLkXjXyjQKJbJgLfs5QZbzFtmvjtoagFaalQ0thPs9ooc27VhBQJQtswsuuSmUPXurQjBj+fr9xJaP50LSY+/UDwVeFropwABgwpshzI2gMWr87R1toOlvMHHQ5meJfIjhGRvaHhXgAz5IiEYSonq8jYAzZs+6XUHsat2IFtP9K0J0o3cGpEGmrgzzLZj4M7WzDvX/Uj+bUucXerFjKhyyRHs/LQXgzgslWcHS3gxXUs1269SKa8PuwsLdDxSV8xlSySn6aATQldNhmGcCAwEAAQ==\"")
+            buildConfigField("String", "SESSION_CREDENTIALS", "\"c3VwZXJhcHBfY2xpZW50OnBhc3N3b3JkMQ==\"")
+            buildConfigField("String", "PAYMENT_AUTHORIZATION", "\"\"")
+
+            /**
+             * the staging pin will be expired after 25 Dec 2022, please update it on time.
+             * refer doc: https://medium.com/@anuj.rai2489/ssl-pinning-254fa8ca2109
+             * refer pr: https://github.com/lotusflare/ext-globeone-android/pull/381
+             */
+            buildConfigField("String", "GLOBE_COGNITO_URL", "\"https://euklh3cyvd.execute-api.ap-southeast-1.amazonaws.com/pilot/\"")
+            buildConfigField("String", "GLOBE_BASE_URL", "\"https://test-cxs.globe.com.ph/\"")
+            buildConfigField("String", "GLOBE_SSL_PIN", "\"+ujsnYTiJODaJ4KvbKA97P+sVIedkY//1XGtYP5ddX4=\"")
+            buildConfigField("String", "GLOBE_SSL_PATTERN", "\"test-cxs.globe.com.ph\"")
+
+            buildConfigField("String", "GLOBE_BASE_SIGN_IN_URL", "\"https://wwwdev-globe.rpxnow.com/\"")
+
+            buildConfigField("String", "LF_BASE_URL", "\"https://dew-mtest.lotusflare.com/\"")
+            buildConfigField("String", "LF_SSL_PIN", "\"lkXuOsltxpi2P07F9KIeJaE14VxpPslALbVuuR53l6A=\"")
+            buildConfigField("String", "LF_SSL_PATTERN", "\"dew-mtest.lotusflare.com\"")
+
+            buildConfigField("String", "OCS_BASE_URL", "\"https://ocspstage.globe.com.ph/\"")
+            buildConfigField("String", "OCS_SSL_PIN", "\"O98H+fvJ3nvxg61Q12qTgWN/80NFgkWDuvVUIuHjzmA=\"")
+            buildConfigField("String", "OCS_SSL_PATTERN", "\"ocspstage.globe.com.ph\"")
+            buildConfigField("String", "OCS_AUTHORIZATION", "\"Basic Z2Nhc2g6TDhxWmFZRkJHNW5VNDZVMkxmRHZQYWUySnJ6OThiRG5MWGI2Rnd5Qldxd1ZBWWEz\"")
+            buildConfigField("String", "OCS_G_CHANNEL", "\"GCash\"")
+
+            buildConfigField("String", "RUSH_BASE_URL", "\"https://api.perxtech.io/\"")
+            buildConfigField("String", "RUSH_SSL_PIN", "\"++MBgDH5WGvL9Bcn5Be30cRcL0f5O+NyoXuWtQdX1aI=\"")
+            buildConfigField("String", "RUSH_SSL_PATTERN", "\"api.perxtech.io\"")
+            buildConfigField("String", "RUSH_CLIENT_ID", "\"5ce1956a85ae168c647b67b4c3022383b9c588a95bacea7da5f32b87ad9ee0ce\"")
+            buildConfigField("String", "RUSH_CLIENT_SECRET", "\"567fd8f998b8461ee029794d6bb4a15b241416f7891519abba1a62c9d3f05f41\"")
+
+            buildConfigField("String", "CMS_BASE_URL", "\"https://onlineuat.globe.com.ph/\"")
+
+            buildConfigField("String", "SEND_OTP_SMS_PATTERN_ID", "\"28881\"")
+            buildConfigField("String", "SEND_OTP_EMAIL_PATTERN_ID", "\"49741\"")
+
+            buildConfigField("String", "X_API_KEY", "\"076f6011-30b4-47f3-bf68-3123c5555c35\"")
+
+            buildConfigField("long", "VERSION_CODE", "${defaultConfig.versionCode}")
+            buildConfigField("String", "VERSION_NAME", "\"${defaultConfig.versionName}\"")
+            buildConfigField("String", "HPW_SIMSERIAL_PREFIX", "\"8963\"")
+
+            buildConfigField("String", "G2_BASIC_AUTH", "\"M2ViaXF1c3Y1NWI1cTIwa2tyZmVramg5ZTI6aGY1bXVncXAxbW5tcDIxMHBnMGM1Zjd0dWdxZGY5N2FlZDVjbnM2MzA5N3ZtYjMwNjdw\"")
+            buildConfigField("String", "G2_API_KEY", "\"Bkm1oWbYHV2o9m1n7R3aE7jfGO99hL703LEYPMMF\"")
+            buildConfigField("String", "G2_USER_ID", "\"globeOne-superApp-dev\"")
+            buildConfigField("String", "G2_APP_ID", "\"95435cd7-af5f-4b11-90fa-a9dec5ddeb29\"")
+
+        }
+
+        prod {
+            dimension "servers"
+
+            buildConfigField("String", "OAUTH_CREDENTIALS", "\"Z3Jyc2VxMDdmMWRhcnY0bGVtNWVlMTQyczoxNGM5am9sZ2VkMjAzb2hxcDRucmJ0YWFiNXA0Z3BydGQ2MTJmZDV2ZWVnZWoyM3I1azlq\"")
+            buildConfigField("String", "CIAM_PUBLIC_KEY", "\"MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAq+375KSFD65rzlI8hJTpzNwZzI65ifJ3QPw0ijoi1FsZsc8GdoTxETxLUZ4+bg/i5yNjbHvUXRIuu8LQYN+tiwTGYPP8L+RMB2xB85UvBTlLhaAnl1+gvhrVTveg4xnTsPSnptTMUKqETLHjprasswue4egk0hJqw3hM4IiFFSZRD7BAciSdKgPjPlYxlXgmXXNVpyCH8r6jQOyC05TvfIuAZFiz257KvO9q3dVl99aHz/ec4fW9OwJK5saCIAbfzbyBYVphubHt3bAffz9Y+35JfkhIVIqGWKn/sOS8J4uVw2fmw98db05GYpg9b0VIrcSfvGTyCzajVpL505xZyc3GmcTsH15Hnw8ZCoMMYABwxfhtETZ8SyLMVXFlLvKYeUzXxnC+Uwn2VqF3bPTTAM+l1lPLkXjXyjQKJbJgLfs5QZbzFtmvjtoagFaalQ0thPs9ooc27VhBQJQtswsuuSmUPXurQjBj+fr9xJaP50LSY+/UDwVeFropwABgwpshzI2gMWr87R1toOlvMHHQ5meJfIjhGRvaHhXgAz5IiEYSonq8jYAzZs+6XUHsat2IFtP9K0J0o3cGpEGmrgzzLZj4M7WzDvX/Uj+bUucXerFjKhyyRHs/LQXgzgslWcHS3gxXUs1269SKa8PuwsLdDxSV8xlSySn6aATQldNhmGcCAwEAAQ==\"")
+            buildConfigField("String", "SESSION_CREDENTIALS", "\"c3VwZXJhcHBfY2xpZW50OnBhc3N3b3JkMQ==\"")
+            buildConfigField("String", "PAYMENT_AUTHORIZATION", "\"NDIxYTZjYWEtNTE4OS00ODAzLTg0OWUtODU2ZGU4MTVjM2UyOmY5ZC9SUm9YUktOcU93RmJidkJlbWNkSmpoeE5NVkdkdUQ5RzZDN1JmM1RLcElJPQ==\"")
+
+            buildConfigField("String", "GLOBE_COGNITO_URL", "\"https://w4twqqoyk7.execute-api.ap-southeast-1.amazonaws.com/prod/\"")
+            buildConfigField("String", "GLOBE_BASE_URL", "\"https://cxs.globe.com.ph/\"")
+            buildConfigField("String", "GLOBE_SSL_PIN", "\"sowYuop/H8/KPev8X7C5SHELQ0jdfnL8DJUbw1aJioI=\"")
+            buildConfigField("String", "GLOBE_SSL_PATTERN", "\"myglobe.cx.globe.com.ph\"")
+
+            buildConfigField("String", "GLOBE_BASE_SIGN_IN_URL", "\"https://signin.globe.com.ph/\"")
+
+            buildConfigField("String", "LF_BASE_URL", "\"https://api-g1pc.lotusflare.com/\"")
+            buildConfigField("String", "LF_SSL_PIN", "\"lkXuOsltxpi2P07F9KIeJaE14VxpPslALbVuuR53l6A=\"")
+            buildConfigField("String", "LF_SSL_PATTERN", "\"api-g1pc.lotusflare.com\"")
+
+            buildConfigField("String", "OCS_BASE_URL", "\"https://ocsp.globe.com.ph/\"")
+            buildConfigField("String", "OCS_SSL_PIN", "\"cnNOp7XOG6ru0N1v1E3DTC2nJ+SImFRrIwdhdsrMHrM=\"")
+            buildConfigField("String", "OCS_SSL_PATTERN", "\"ocsp.globe.com.ph\"")
+            buildConfigField("String", "OCS_AUTHORIZATION", "\"Basic c3VwYXBwOnc0NWRURXBGRUNneXJlTXV4YWg2UmdUempYVGRmNDJTd0pIR3B2VWRnWWJzUks4Rg==\"")
+            buildConfigField("String", "OCS_G_CHANNEL", "\"SupApp\"")
+
+            buildConfigField("String", "RUSH_BASE_URL", "\"https://api.perxtech.net/\"")
+            buildConfigField("String", "RUSH_SSL_PIN", "\"lkz9jMVfrLm2pSdIgor//aBU4p8eXGyRQp4T4n6gsJw=\"")
+            buildConfigField("String", "RUSH_SSL_PATTERN", "\"api.perxtech.net\"")
+            buildConfigField("String", "RUSH_CLIENT_ID", "\"c07288d91b6d0ed3fc2313335fd17f755b3b44a72c0cd55623d008c378006611\"")
+            buildConfigField("String", "RUSH_CLIENT_SECRET", "\"0f98bd6648d73d154875f343f2f68ccb93a43b982101ca0a8aec2961812f960b\"")
+
+            buildConfigField("String", "CMS_BASE_URL", "\"https://new.globe.com.ph/\"")
+
+            buildConfigField("String", "SEND_OTP_SMS_PATTERN_ID", "\"60053\"")
+            buildConfigField("String", "SEND_OTP_EMAIL_PATTERN_ID", "\"70453\"")
+
+            buildConfigField("String", "X_API_KEY", "\"15c78228-451d-4856-9e6a-96c13a57fcb7\"")
+
+            buildConfigField("long", "VERSION_CODE", "${defaultConfig.versionCode}")
+            buildConfigField("String", "VERSION_NAME", "\"${defaultConfig.versionName}\"")
+            buildConfigField("String", "HPW_SIMSERIAL_PREFIX", "\"8963\"")
+
+            buildConfigField("String", "G2_BASIC_AUTH", "\"N3BrOWFnZnVua2xsNGl0dnByOWllZTJwZTA6MWx2M3J2NTlmY3R2YWUzYXFxbmFsYXMwMGU3Ymxtc2IwcWo5N3ZtdG5mc20xMGxrZnZidg==\"")
+            buildConfigField("String", "G2_API_KEY", "\"rZ3HxqC64daPBWpuMj6jc5Fl08ZNcUt614uspJmb\"")
+            buildConfigField("String", "G2_USER_ID", "\"globeOne-superApp-prod\"")
+            buildConfigField("String", "G2_APP_ID", "\"0612a0e1-1056-48fb-8ea3-256f1e52a061\"")
+        }
+
+        google {
+            dimension "analyticsType"
+        }
+
+        huawei {
+            dimension "analyticsType"
+        }
+
+        noAnalytics {
+            dimension "analyticsType"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    packagingOptions {
+        exclude 'META-INF/*.kotlin_module'
+        exclude 'META-INF/NOTICE.md'
+        exclude 'META-INF/LICENSE.md'
+    }
+}
+
+dependencies {
+    implementation project(':analytics')
+    implementation project(':model')
+    implementation project(':errors')
+    implementation project(':domain')
+    implementation project(':util')
+    implementation project(':encryption')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "androidx.core:core-ktx:$coreKtxVersion"
+    implementation "androidx.appcompat:appcompat:$appCompatVersion"
+
+    // Tests
+    testImplementation "junit:junit:$junitVersion"
+    testImplementation "org.assertj:assertj-core:$assertJVersion"
+
+    // Dagger
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+    kaptTest "com.google.dagger:dagger-compiler:$daggerVersion"
+
+    // Room
+    kapt "androidx.room:room-compiler:$roomVersion"
+    implementation "androidx.room:room-ktx:$roomVersion"
+
+    // Coroutine
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-scalars:$retrofitVersion"
+
+    // Moshi
+    implementation "com.squareup.moshi:moshi:$moshiVersion"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion"
+
+    // Gson
+    implementation "com.google.code.gson:gson:$gsonVersion"
+
+    implementation "com.squareup.okhttp3:logging-interceptor:$okHttpLoggingInterceptorVersion"
+
+    implementation "com.google.guava:guava:$googleGuavaVersion"
+
+    // Room
+    implementation "androidx.room:room-runtime:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    implementation "androidx.room:room-ktx:$roomVersion"
+
+    // JWT decode
+    implementation "com.auth0.android:jwtdecode:$jwtDecodeVersion"
+
+    // Hilt for tests
+    testImplementation 'com.google.dagger:hilt-android-testing:2.33-beta'
+    kaptTest 'com.google.dagger:hilt-android-compiler:2.33-beta'
+
+    // In app network calls logger
+    implementation "com.github.chuckerteam.chucker:library:$chuckerVersion"
+//    releaseImplementation "com.github.chuckerteam.chucker:library-no-op:$chuckerVersion"
+
+    // See https://www.bouncycastle.org/releasenotes.html for latest revision
+    implementation "org.bouncycastle:bcpkix-jdk15to18:$bouncyCastleVersion"
+    implementation "org.bouncycastle:bcprov-jdk15to18:$bouncyCastleVersion"
+}

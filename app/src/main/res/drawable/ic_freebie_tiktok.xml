@@ -1,0 +1,18 @@
+<!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="20dp"
+    android:height="20dp"
+    android:viewportWidth="20"
+    android:viewportHeight="20">
+  <path
+      android:pathData="M4,0L16,0A4,4 0,0 1,20 4L20,16A4,4 0,0 1,16 20L4,20A4,4 0,0 1,0 16L0,4A4,4 0,0 1,4 0z"
+      android:fillColor="#010101"/>
+  <path
+      android:pathData="M14.375,9.1016V7.4023C14.3555,7.4023 14.3555,7.4023 14.3555,7.4023C13.8867,7.4023 13.4375,7.2656 13.0664,7.0117C12.5195,6.6602 12.1289,6.0938 12.0117,5.4492C11.9727,5.3125 11.9727,5.1758 11.9727,5.0391C11.9727,5.0195 11.9727,5.0195 11.9727,5H10.2539V11.8359C10.2539,12.6367 9.5898,13.3008 8.7891,13.3008C7.9883,13.3008 7.3242,12.6367 7.3242,11.8359C7.3242,11.0352 7.9883,10.3711 8.7891,10.3711C8.9453,10.3711 9.082,10.3906 9.2383,10.4492V8.6914C9.082,8.6719 8.9453,8.6523 8.7891,8.6523C7.0313,8.6523 5.625,10.0781 5.625,11.8359C5.625,13.5938 7.0313,15 8.7891,15C10.5469,15 11.9727,13.5938 11.9727,11.8359V8.3398C12.6367,8.8281 13.457,9.1016 14.3555,9.1016H14.375Z"
+      android:fillColor="#ffffff"/>
+</vector>

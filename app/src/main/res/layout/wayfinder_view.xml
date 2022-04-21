@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?accentLight"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <ImageView
+        android:id="@+id/iv_back_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_smedium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_wayfinder_back_arrow"
+        app:tint="?businessA600" />
+
+    <View
+        android:id="@+id/v_header_line_vertical"
+        style="@style/ThemeOverlay.App.HeaderLineTheme"
+        android:layout_width="@dimen/toolbar_line_height"
+        android:layout_height="@dimen/toolbar_height"
+        app:layout_constraintStart_toEndOf="@id/iv_back_arrow"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_xstandard"
+        android:textAppearance="?xxSmall"
+        android:textColor="?neutralB0"
+        app:layout_constraintBottom_toBottomOf="@id/iv_back_arrow"
+        app:layout_constraintStart_toEndOf="@id/v_header_line_vertical"
+        app:layout_constraintTop_toTopOf="@id/iv_back_arrow"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_xstandard"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_close" />
+
+    <View
+        style="@style/ThemeOverlay.App.HeaderLineTheme"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_line_height"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</merge>

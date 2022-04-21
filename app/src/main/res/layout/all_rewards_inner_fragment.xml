@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ph.com.globe.globeonesuperapp.utils.ui.Wayfinder
+        android:id="@+id/wf_redeem_rewards"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?accentLight"
+        app:label="@string/wayfinder_redeem_rewards" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stateListAnimator="@null">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <LinearLayout
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?colorSecondary"
+                    android:orientation="vertical"
+                    app:layout_collapseMode="parallax"
+                    app:layout_collapseParallaxMultiplier="0.0">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_rewards_sign_up"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="0dp"
+                        app:cardBackgroundColor="?prepaidA500"
+                        app:cardCornerRadius="0dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/padding_medium"
+                            android:paddingTop="@dimen/padding_medium"
+                            android:paddingEnd="@dimen/padding_smedium"
+                            android:paddingBottom="@dimen/padding_medium"
+                            android:visibility="visible">
+
+                            <ImageView
+                                android:id="@+id/iv_sign_in"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/ic_sign_in" />
+
+                            <TextView
+                                android:id="@+id/tv_sign_in_title"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/margin_standard"
+                                android:layout_marginEnd="@dimen/margin_standard"
+                                android:background="@color/transparent"
+                                android:text="@string/rewards_sign_in"
+                                android:textAppearance="?baseRegularContent"
+                                android:textColor="?absoluteWhite"
+                                app:layout_constraintBottom_toTopOf="@id/tv_sing_in_description"
+                                app:layout_constraintEnd_toStartOf="@id/iv_sing_in_arrow"
+                                app:layout_constraintStart_toEndOf="@id/iv_sign_in"
+                                app:layout_constraintTop_toTopOf="@id/iv_sign_in" />
+
+                            <TextView
+                                android:id="@+id/tv_sing_in_description"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_xxsmall"
+                                android:background="@color/transparent"
+                                android:text="@string/rewards_sign_in_description"
+                                android:textAppearance="?xSmallRegularContent"
+                                android:textColor="?absoluteWhite"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@id/tv_sign_in_title"
+                                app:layout_constraintStart_toStartOf="@id/tv_sign_in_title"
+                                app:layout_constraintTop_toBottomOf="@id/tv_sign_in_title" />
+
+                            <ImageView
+                                android:id="@+id/iv_sing_in_arrow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/ic_arrow_right"
+                                app:tint="?absoluteWhite" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingStart="@dimen/margin_standard"
+                            android:paddingTop="@dimen/margin_medium"
+                            android:paddingEnd="@dimen/margin_standard"
+                            android:paddingBottom="@dimen/margin_medium"
+                            android:text="@string/menu_rewrds"
+                            android:textAppearance="?mediumBold"
+                            android:textColor="?accentDark"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_pos"
+                            style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/margin_xsmall"
+                            android:layout_marginEnd="@dimen/margin_small"
+                            android:gravity="center"
+                            android:minWidth="0dp"
+                            android:minHeight="0dp"
+                            app:icon="@drawable/ic_pos"
+                            app:iconPadding="0dp"
+                            app:iconTint="?accentDark" />
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_buying_for"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/margin_standard"
+                            android:paddingEnd="@dimen/margin_standard"
+                            android:text="@string/you_are_redeeming_for"
+                            android:textAppearance="?baseRegularContent"
+                            android:textColor="?neutralA3"
+                            android:textSize="@dimen/text_size_medium"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/til_mobile_number"
+                            style="@style/InputFieldStyle.ShopInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/mobile_number"
+                            android:paddingStart="@dimen/margin_standard"
+                            android:paddingTop="@dimen/margin_small"
+                            android:paddingEnd="@dimen/margin_standard"
+                            android:paddingBottom="@dimen/margin_small"
+                            app:endIconDrawable="@drawable/ic_edit"
+                            app:endIconMode="custom"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_buying_for">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_mobile_number"
+                                style="@style/InputFieldTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:focusable="false"
+                                android:textColor="?colorOnSecondary"
+                                android:textStyle="bold" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_pts"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_xxxxxxlarge"
+                            android:textAppearance="?baseBoldContent"
+                            android:textColor="?colorOnSurface"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="@+id/til_mobile_number"
+                            app:layout_constraintEnd_toEndOf="@+id/til_mobile_number"
+                            app:layout_constraintTop_toTopOf="@+id/til_mobile_number"
+                            tools:text="101 pts" />
+
+                        <ImageView
+                            android:id="@+id/iv_star"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_small"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_pts"
+                            app:layout_constraintEnd_toStartOf="@id/tv_pts"
+                            app:layout_constraintTop_toTopOf="@id/tv_pts"
+                            app:srcCompat="@drawable/ic_star" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?colorSecondary">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_search_button"
+                            style="@style/Widget.App.ShopSearchButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_standard"
+                            android:layout_marginTop="@dimen/margin_small"
+                            android:layout_marginEnd="@dimen/margin_standard"
+                            android:layout_marginBottom="@dimen/margin_standard"
+                            android:drawablePadding="@dimen/padding_standard"
+                            android:gravity="start"
+                            android:padding="@dimen/padding_smedium"
+                            android:text="@string/looking_for"
+                            app:drawableStartCompat="@drawable/ic_search"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/cl_filter_button"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/cl_filter_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_standard"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_search_button"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tv_search_button"
+                            app:layout_constraintTop_toTopOf="@id/tv_search_button">
+
+                            <ImageView
+                                android:id="@+id/iv_filter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/ic_filter_button" />
+
+                            <TextView
+                                android:id="@+id/tv_filter_badge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/filter_badge_shape"
+                                android:paddingStart="@dimen/padding_small"
+                                android:paddingTop="@dimen/padding_xsmall"
+                                android:paddingEnd="@dimen/padding_small"
+                                android:paddingBottom="@dimen/padding_xsmall"
+                                android:textColor="?attr/colorOnPrimary"
+                                android:textSize="@dimen/text_size_small"
+                                android:visibility="gone"
+                                app:layout_constraintBottom_toBottomOf="@id/iv_filter"
+                                app:layout_constraintEnd_toEndOf="@id/iv_filter" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tl_brands"
+                style="@style/TabOnWhiteLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xsmall"
+                android:background="?attr/colorSurface">
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/all" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/raffle" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/promos" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/donations" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/others" />
+
+            </com.google.android.material.tabs.TabLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_sort"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorSurface"
+                android:paddingStart="@dimen/margin_standard"
+                android:paddingTop="@dimen/margin_standard"
+                android:paddingEnd="@dimen/margin_standard"
+                android:paddingBottom="@dimen/margin_standard"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tl_brands">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/sort_layout_background"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_sort_by"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_standard"
+                    android:text="@string/sort_by"
+                    android:textAppearance="?smallAction"
+                    android:textColor="?neutralA3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/v_sort_line_vertical"
+                    android:layout_width="@dimen/toolbar_line_height"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="@dimen/margin_standard"
+                    android:background="?neutralA4"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tv_sort_by"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Spinner
+                    android:id="@+id/sp_sort_dropdown"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_standard"
+                    android:layout_marginEnd="@dimen/margin_standard"
+                    android:dropDownWidth="@dimen/spinner_dropdown_width"
+                    android:popupBackground="@drawable/sort_dropdown_background"
+                    android:spinnerMode="dropdown"
+                    app:backgroundTint="?neutralA3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/v_sort_line_vertical"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_num_of_rewards"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorSurface"
+                android:paddingStart="@dimen/margin_standard"
+                android:paddingEnd="@dimen/margin_standard"
+                android:paddingBottom="@dimen/margin_xxsmall"
+                android:textColor="?neutralA3"
+                android:textSize="@dimen/text_size_standard"
+                tools:text="@string/mock_displaying_results" />
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_rewards"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?absoluteWhite"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/padding_standard"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

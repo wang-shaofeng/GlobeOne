@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimaryDark">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_standard"
+        android:background="@drawable/backdrop_shape_primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_x_icon" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/v_divider"
+            style="@style/Widget.App.Divider"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/stroke_width_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_toolbar" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_toolbar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_medium">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="@string/account_plan_details_title_plan_details"
+                    android:textAppearance="?mediumBold"
+                    android:textColor="?accentDark" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="@string/account_plan_details_label_plan"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?neutralB0" />
+
+                <TextView
+                    android:id="@+id/tv_plan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?baseForm"
+                    android:textColor="?neutralA0"
+                    tools:text="@string/dac_mock_promo" />
+
+                <TextView
+                    android:id="@+id/tv_label_internet_speed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="@string/account_plan_details_label_internet_speed"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?neutralB0"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/tv_internet_speed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?baseForm"
+                    android:textColor="?neutralA0"
+                    android:visibility="gone"
+                    tools:text="@string/dac_mock_promo" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="@string/account_plan_details_label_cutoff_date"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?neutralB0" />
+
+                <TextView
+                    android:id="@+id/tv_cutoff_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?baseForm"
+                    android:textColor="?neutralA0"
+                    tools:text="@string/dac_mock_promo" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="@string/account_plan_details_description_cutoff_date"
+                    android:textAppearance="?smallRegularContent"
+                    android:textColor="?neutralB0" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="@string/account_plan_details_label_bill_due_date"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?neutralB0" />
+
+                <TextView
+                    android:id="@+id/tv_bill_due_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?baseForm"
+                    android:textColor="?neutralA0"
+                    tools:text="@string/dac_mock_promo" />
+
+                <TextView
+                    android:id="@+id/tv_label_contract_end_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="@string/account_plan_details_label_contract_ending_date"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?neutralB0" />
+
+                <TextView
+                    android:id="@+id/tv_contract_end_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?baseForm"
+                    android:textColor="?neutralA0"
+                    tools:text="@string/dac_mock_promo" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_spending_limit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_standard"
+                    android:background="@drawable/outlined_primary_shape"
+                    android:padding="@dimen/padding_smedium">
+
+                    <TextView
+                        android:id="@+id/tv_label_spending_limit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/account_plan_details_spending_limit"
+                        android:textAppearance="?labelCaption"
+                        android:textColor="?neutralA3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_spending_limit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:textAppearance="?sMediumBoldNum"
+                        android:textColor="?neutralA0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_label_spending_limit"
+                        tools:text="@string/mock_two_decimal_amount" />
+
+                    <ImageView
+                        android:id="@+id/iv_arrow_learn_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_xs_standard"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_arrow_button_gray" />
+
+                    <TextView
+                        android:id="@+id/tv_description_spending_limit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_standard"
+                        android:text="@string/account_plan_details_spending_limit_description"
+                        android:textAppearance="?smallRegularContent"
+                        android:textColor="?neutralB0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_spending_limit" />
+
+                    <TextView
+                        android:id="@+id/tv_learn_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="@dimen/padding_medium"
+                        android:text="@string/learn_more"
+                        android:textAppearance="?smallAction"
+                        android:textColor="?primary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_description_spending_limit" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.legacy.widget.Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_medium" />
+
+                <TextView
+                    android:id="@+id/tv_title_personal_information"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="@string/account_plan_details_title_personal_information"
+                    android:textAppearance="?mediumBold"
+                    android:textColor="?accentDark" />
+
+                <TextView
+                    android:id="@+id/tv_label_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="@string/account_plan_details_label_name"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?neutralB0" />
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?baseForm"
+                    android:textColor="?neutralA0"
+                    tools:text="@string/dac_mock_promo" />
+
+                <TextView
+                    android:id="@+id/tv_label_birthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="@string/account_plan_details_label_birthday"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?neutralB0" />
+
+                <TextView
+                    android:id="@+id/tv_birthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?baseForm"
+                    android:textColor="?neutralA0"
+                    tools:text="@string/dac_mock_promo" />
+
+                <TextView
+                    android:id="@+id/tv_label_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="@string/account_plan_details_label_email"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?neutralB0" />
+
+                <TextView
+                    android:id="@+id/tv_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?baseForm"
+                    android:textColor="?neutralA0"
+                    tools:text="@string/dac_mock_promo" />
+
+                <TextView
+                    android:id="@+id/tv_description_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="@string/account_plan_details_description_email"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?neutralB0" />
+
+                <androidx.legacy.widget.Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_medium" />
+
+                <TextView
+                    android:id="@+id/tv_title_adddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="@string/account_plan_details_title_address"
+                    android:textAppearance="?mediumBold"
+                    android:textColor="?accentDark" />
+
+                <TextView
+                    android:id="@+id/tv_label_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="@string/account_plan_details_label_address"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?neutralB0" />
+
+                <TextView
+                    android:id="@+id/tv_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?baseForm"
+                    android:textColor="?neutralA0"
+                    tools:text="@string/dac_mock_promo" />
+
+                <androidx.legacy.widget.Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_large" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

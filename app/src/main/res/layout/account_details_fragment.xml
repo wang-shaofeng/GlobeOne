@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?absoluteWhite"
+    tools:context=".account.AccountDetailsFragment">
+
+    <ph.com.globe.globeonesuperapp.utils.ui.Wayfinder
+        android:id="@+id/wf_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?accentLight"
+        app:label="@string/wayfinder_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ph.com.globe.globeonesuperapp.utils.ui.RefreshLayout
+        android:id="@+id/srl_account_details"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wf_home">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/sv_account_details"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?colorSurface">
+
+                <include
+                    android:id="@+id/inc_inactive_account_header"
+                    layout="@layout/account_details_inactive_header"
+                    android:visibility="gone" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/inc_inactive_account_header">
+
+                    <TextView
+                        android:id="@+id/tv_account_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_standard"
+                        android:layout_marginTop="@dimen/margin_xs_medium"
+                        android:textAppearance="?largeBold"
+                        android:textColor="?attr/colorOnSecondary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="@string/mock_profile_name" />
+
+                    <ImageView
+                        android:id="@+id/iv_mobile_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_standard"
+                        android:layout_marginTop="@dimen/margin_xstandard"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_account_name"
+                        app:srcCompat="@drawable/ic_mobile"
+                        app:tint="?accentDark"
+                        tools:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/tv_mobile_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_xs_standard"
+                        android:textAppearance="?labelSmall"
+                        android:textColor="?neutralA3"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_mobile_number"
+                        app:layout_constraintStart_toEndOf="@id/iv_mobile_number"
+                        app:layout_constraintTop_toTopOf="@id/iv_mobile_number"
+                        app:tint="?accentDark"
+                        tools:text="@string/dac_mock_msisdn"
+                        tools:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/iv_landline_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_standard"
+                        android:layout_marginTop="@dimen/margin_xstandard"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/iv_mobile_number"
+                        app:srcCompat="@drawable/ic_phone"
+                        app:tint="?accentDark"
+                        tools:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/tv_landline_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_standard"
+                        android:textAppearance="?labelSmall"
+                        android:textColor="?neutralA3"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_landline_number"
+                        app:layout_constraintStart_toEndOf="@id/iv_landline_number"
+                        app:layout_constraintTop_toTopOf="@id/iv_landline_number"
+                        tools:text="@string/dac_mock_msisdn"
+                        tools:visibility="visible" />
+
+                    <androidx.constraintlayout.widget.Barrier
+                        android:id="@+id/ba_account_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:barrierDirection="bottom"
+                        app:constraint_referenced_ids="tv_landline_number, iv_landline_number, tv_mobile_number, iv_mobile_number" />
+
+                    <TextView
+                        android:id="@+id/tv_account_number_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_standard"
+                        android:layout_marginTop="@dimen/margin_xxstandard"
+                        android:text="@string/account_details_account_number"
+                        android:textAppearance="?labelSmall"
+                        android:textColor="?accentDark"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ba_account_number"
+                        app:srcCompat="@drawable/ic_mobile"
+                        tools:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/tv_account_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_standard"
+                        android:layout_marginTop="@dimen/margin_xxstandard"
+                        android:textAppearance="?labelSmall"
+                        android:textColor="?neutralA3"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toEndOf="@id/tv_account_number_label"
+                        app:layout_constraintTop_toBottomOf="@id/ba_account_number"
+                        tools:text="@string/dac_mock_msisdn"
+                        tools:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/tv_view_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_standard"
+                        android:layout_marginTop="@dimen/margin_xxstandard"
+                        android:text="@string/account_details_view_details"
+                        android:textAppearance="?smallAction"
+                        android:textColor="?primary"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toEndOf="@id/tv_account_number"
+                        app:layout_constraintTop_toBottomOf="@id/ba_account_number" />
+
+                    <androidx.constraintlayout.widget.Barrier
+                        android:id="@+id/ba_brand_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:barrierDirection="bottom"
+                        app:constraint_referenced_ids="tv_account_number, tv_view_details" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_pos"
+                        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="@dimen/margin_small"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        app:icon="@drawable/ic_pos"
+                        app:iconPadding="0dp"
+                        app:iconSize="@dimen/icon_dimen_standard"
+                        app:iconTint="?primary"
+                        app:layout_constraintBottom_toBottomOf="@id/ivEditAccount"
+                        app:layout_constraintEnd_toStartOf="@id/ivEditAccount"
+                        app:layout_constraintTop_toTopOf="@id/ivEditAccount" />
+
+                    <ImageView
+                        android:id="@+id/ivEditAccount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_standard"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_account_name"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_account_name"
+                        app:srcCompat="@drawable/ic_edit_account" />
+
+                    <TextView
+                        android:id="@+id/tv_brand_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_medium"
+                        android:layout_marginStart="@dimen/margin_standard"
+                        android:background="@drawable/outlined_primary_shape_dark"
+                        android:padding="@dimen/padding_standard"
+                        android:textAllCaps="true"
+                        android:textAppearance="?chip"
+                        android:textColor="?neutralA2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ba_brand_label"
+                        tools:text="@string/mock_brand_userfriendly" />
+
+                    <ImageView
+                        android:id="@+id/iv_account_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_small"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_brand_label"
+                        app:layout_constraintStart_toEndOf="@id/tv_brand_label"
+                        app:layout_constraintTop_toTopOf="@id/tv_brand_label"
+                        tools:src="@drawable/ic_status_active" />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/lav_brand_loading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_standard"
+                        android:adjustViewBounds="true"
+                        android:background="?absoluteWhite"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_brand_label"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_brand_label"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/brand_loading" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_activity"
+                        style="@style/Widget.App.TextIconButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_xxstandard"
+                        android:layout_marginEnd="@dimen/margin_smedium"
+                        android:text="@string/activity"
+                        android:textAppearance="?baseAction"
+                        android:textColor="?primary"
+                        app:icon="@drawable/ic_activity"
+                        app:iconGravity="start"
+                        app:iconSize="@dimen/account_details_icon_size"
+                        app:layout_constraintEnd_toStartOf="@id/btn_pocket"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_brand_label" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_pocket"
+                        style="@style/Widget.App.TextIconButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_smedium"
+                        android:text="@string/view_pocket_account"
+                        android:textAppearance="?baseAction"
+                        android:textColor="?primary"
+                        app:icon="@drawable/ic_pocket"
+                        app:iconGravity="start"
+                        app:iconSize="@dimen/account_details_icon_size"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toEndOf="@id/btn_activity"
+                        app:layout_constraintTop_toBottomOf="@id/btn_activity"
+                        app:layout_constraintTop_toTopOf="@id/btn_activity" />
+
+                    <View
+                        android:id="@+id/v_horizontal_line_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/gray_horizontal_line_height"
+                        android:layout_marginTop="@dimen/margin_xxstandard"
+                        android:background="?neutralA5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/btn_pocket" />
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/vp2_personalized_campaigns"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="@dimen/personalized_campaign_card_height"
+                        android:orientation="horizontal"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/v_horizontal_line_1"
+                        tools:visibility="gone" />
+
+                    <ph.com.globe.globeonesuperapp.utils.ui.DotsIndicator2
+                        android:id="@+id/di2_personalized_campaigns"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dots_indicator_height"
+                        app:dot_drawable="@drawable/active_dot"
+                        app:dot_drawable_unselected="@drawable/inactive_dot"
+                        app:dot_height="@dimen/dots_indicator_dot_radius"
+                        app:dot_width="@dimen/dots_indicator_dot_radius"
+                        app:dots_gravity="center"
+                        app:layout_constraintBottom_toBottomOf="@id/vp2_personalized_campaigns"
+                        app:layout_constraintEnd_toEndOf="@id/vp2_personalized_campaigns"
+                        app:layout_constraintStart_toStartOf="@id/vp2_personalized_campaigns" />
+
+                    <androidx.constraintlayout.widget.Barrier
+                        android:id="@+id/ba_balances"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:orientation="horizontal"
+                        app:barrierDirection="bottom"
+                        app:constraint_referenced_ids="v_horizontal_line_1, vp2_personalized_campaigns, balance_postpaid_view" />
+
+                    <ph.com.globe.globeonesuperapp.utils.ui.BalancePostpaidView
+                        android:id="@+id/balance_postpaid_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/vp2_personalized_campaigns" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_balances_prepaid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?accentLight"
+                        android:paddingHorizontal="@dimen/padding_smedium"
+                        android:paddingTop="@dimen/padding_standard"
+                        android:paddingBottom="@dimen/padding_smedium"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ba_balances"
+                        app:layout_constraintVertical_bias="0.0"
+                        tools:visibility="visible">
+
+                        <LinearLayout
+                            android:id="@+id/ll_first_row"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintHeight_min="@dimen/account_details_card_height"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ph.com.globe.globeonesuperapp.utils.ui.BalanceView
+                                android:id="@+id/balance_view_load"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginHorizontal="@dimen/margin_xxsmall"
+                                android:layout_weight="1.0"
+                                app:balanceTitle="@string/load_balance" />
+
+                            <ph.com.globe.globeonesuperapp.utils.ui.BalanceView
+                                android:id="@+id/balance_view_rewards_prepaid"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginHorizontal="@dimen/margin_xxsmall"
+                                android:layout_weight="1.0"
+                                app:balanceTitle="@string/rewards_points" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_small"
+                            android:orientation="horizontal"
+                            app:layout_constraintHeight_min="@dimen/account_details_card_height"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/ll_first_row"
+                            app:layout_goneMarginTop="0dp">
+
+                            <ph.com.globe.globeonesuperapp.utils.ui.BalanceView
+                                android:id="@+id/balance_view_g_cash_prepaid"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginHorizontal="@dimen/margin_xxsmall"
+                                android:layout_weight="1.0"
+                                android:visibility="gone"
+                                app:balanceTitle="@string/gcash_balance"
+                                tools:visibility="visible" />
+
+                            <ph.com.globe.globeonesuperapp.utils.ui.BalanceView
+                                android:id="@+id/balance_view_loan"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginHorizontal="@dimen/margin_xxsmall"
+                                android:layout_weight="1.0"
+                                app:balanceTitle="@string/loan_balance" />
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_balances_postpaid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?accentLight"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="@dimen/padding_smedium"
+                        android:paddingTop="@dimen/padding_standard"
+                        android:paddingBottom="@dimen/padding_smedium"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHeight_min="@dimen/account_details_card_height_with_padding"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ba_balances"
+                        app:layout_constraintVertical_bias="0.0"
+                        tools:visibility="gone">
+
+                        <ph.com.globe.globeonesuperapp.utils.ui.BalanceView
+                            android:id="@+id/balance_view_rewards_postpaid"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="@dimen/margin_xxsmall"
+                            android:layout_weight="1.0"
+                            app:balanceTitle="@string/rewards_points" />
+
+                        <ph.com.globe.globeonesuperapp.utils.ui.BalanceView
+                            android:id="@+id/balance_view_g_cash_postpaid"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="@dimen/margin_xxsmall"
+                            android:layout_weight="1.0"
+                            android:visibility="gone"
+                            app:balanceTitle="@string/gcash_balance"
+                            tools:visibility="visible" />
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tv_your_subscriptions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_standard"
+                    android:layout_marginTop="@dimen/margin_standard"
+                    android:text="@string/your_subscriptions"
+                    android:textAppearance="?xBaseBold"
+                    android:textColor="?accentDark"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cl_details" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tl_account_details"
+                    style="@style/TabOnWhiteLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tab_layout_height"
+                    android:layout_marginTop="@dimen/margin_small"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_your_subscriptions">
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/account_details_data_tab" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/account_details_content_tab" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/account_details_calls_tab" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/account_details_text_tab" />
+                </com.google.android.material.tabs.TabLayout>
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/vp_account_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tl_account_details" />
+
+                <include
+                    android:id="@+id/inc_postpaid_broadband"
+                    layout="@layout/account_details_postpaid_broadband"
+                    android:visibility="gone" />
+
+                <include
+                    android:id="@+id/inc_inactive_account"
+                    layout="@layout/account_details_inactive_layout"
+                    android:visibility="gone" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </ph.com.globe.globeonesuperapp.utils.ui.RefreshLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

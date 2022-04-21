@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/credit_card_item_height"
+    android:layout_margin="@dimen/margin_small"
+    app:cardCornerRadius="@dimen/corner_radius_xxxsmall"
+    app:cardElevation="0dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <ph.com.globe.globeonesuperapp.utils.ui.SwipeLayout
+        android:id="@+id/sl_swipeable_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:draggedItem="@id/cl_profile_g_cash_item"
+        app:isEnabledSwipe="true"
+        app:rightItem="@id/fl_delete_view"
+        app:swipeDirection="left">
+
+        <FrameLayout
+            android:id="@+id/fl_delete_view"
+            android:layout_width="@dimen/credit_card_item_height"
+            android:layout_height="@dimen/credit_card_item_height"
+            android:layout_gravity="end|center"
+            android:background="@color/error_red">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/ic_bin" />
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_profile_g_cash_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/select_account_item_background">
+
+            <TextView
+                android:id="@+id/tv_account_name"
+                style="@style/Widget.App.AccountNameItem"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_standard"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tool:text="@string/mock_profile_name" />
+
+            <TextView
+                android:id="@+id/tv_phone_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_xxsmall"
+                android:layout_marginBottom="@dimen/margin_standard"
+                android:textAppearance="?smallRegularContent"
+                android:textColor="?neutralB0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_account_name"
+                tool:text="@string/dac_mock_format_msisdn" />
+
+            <TextView
+                android:id="@+id/tv_g_cash_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:textAppearance="?sMediumBoldNum"
+                android:textColor="?neutralA0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tool:text="@string/mock_two_decimal_amount" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ph.com.globe.globeonesuperapp.utils.ui.SwipeLayout>
+</androidx.cardview.widget.CardView>

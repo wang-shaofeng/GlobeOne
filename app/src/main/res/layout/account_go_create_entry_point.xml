@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/margin_standard"
+    android:layout_marginVertical="@dimen/margin_small"
+    app:cardCornerRadius="@dimen/corner_radius_xxxsmall">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_background"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_gocreate_banner" />
+
+        <View
+            android:id="@+id/v_stripe"
+            android:layout_width="@dimen/stroke_width_medium"
+            android:layout_height="0dp"
+            android:background="?prepaidA500"
+            app:layout_constraintBottom_toBottomOf="@id/iv_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_background" />
+
+        <TextView
+            android:id="@+id/tv_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_standard"
+            android:text="@string/type_new"
+            android:textAllCaps="true"
+            android:textAppearance="?chip"
+            android:textColor="?primary"
+            app:layout_constraintStart_toEndOf="@id/v_stripe"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_go_create"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/go_create"
+            android:textAppearance="?largeBold"
+            android:textColor="?accentDark"
+            app:layout_constraintStart_toStartOf="@id/tv_new"
+            app:layout_constraintTop_toBottomOf="@id/tv_new" />
+
+        <TextView
+            android:id="@+id/tv_go_create_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_xxxxxxxxlarge"
+            android:text="@string/go_create_description"
+            android:textAppearance="?xSmallRegularContent"
+            android:textColor="?neutralA3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_go_create"
+            app:layout_constraintTop_toBottomOf="@id/tv_go_create" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/stroke_width_small"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_standard"
+            android:background="?neutralB1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/v_stripe"
+            app:layout_constraintTop_toBottomOf="@id/tv_go_create_description" />
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/tv_create_your_promo"
+            app:layout_constraintStart_toStartOf="@id/divider"
+            app:layout_constraintTop_toTopOf="@id/tv_create_your_promo"
+            app:srcCompat="@drawable/ic_charge_to_load" />
+
+        <TextView
+            android:id="@+id/tv_create_your_promo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_xstandard"
+            android:layout_marginBottom="@dimen/margin_xstandard"
+            android:text="@string/go_create_promo"
+            android:textAppearance="?mediumBoldContent"
+            android:textColor="?neutralA0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_icon"
+            app:layout_constraintTop_toBottomOf="@id/divider" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,412 @@
+[
+  {
+    "id": 12800000,
+    "prov_code": "PH012800000",
+    "prov_name": "ILOCOS NORTE"
+  },
+  {
+    "id": 12900000,
+    "prov_code": "PH012900000",
+    "prov_name": "ILOCOS SUR"
+  },
+  {
+    "id": 13300000,
+    "prov_code": "PH013300000",
+    "prov_name": "LA UNION"
+  },
+  {
+    "id": 15500000,
+    "prov_code": "PH015500000",
+    "prov_name": "PANGASINAN"
+  },
+  {
+    "id": 20900000,
+    "prov_code": "PH020900000",
+    "prov_name": "BATANES"
+  },
+  {
+    "id": 21500000,
+    "prov_code": "PH021500000",
+    "prov_name": "CAGAYAN"
+  },
+  {
+    "id": 23100000,
+    "prov_code": "PH023100000",
+    "prov_name": "ISABELA"
+  },
+  {
+    "id": 25000000,
+    "prov_code": "PH025000000",
+    "prov_name": "NUEVA VIZCAYA"
+  },
+  {
+    "id": 25700000,
+    "prov_code": "PH025700000",
+    "prov_name": "QUIRINO"
+  },
+  {
+    "id": 30800000,
+    "prov_code": "PH030800000",
+    "prov_name": "BATAAN"
+  },
+  {
+    "id": 31400000,
+    "prov_code": "PH031400000",
+    "prov_name": "BULACAN"
+  },
+  {
+    "id": 34900000,
+    "prov_code": "PH034900000",
+    "prov_name": "NUEVA ECIJA"
+  },
+  {
+    "id": 35400000,
+    "prov_code": "PH035400000",
+    "prov_name": "PAMPANGA"
+  },
+  {
+    "id": 36900000,
+    "prov_code": "PH036900000",
+    "prov_name": "TARLAC"
+  },
+  {
+    "id": 37100000,
+    "prov_code": "PH037100000",
+    "prov_name": "ZAMBALES"
+  },
+  {
+    "id": 37700000,
+    "prov_code": "PH037700000",
+    "prov_name": "AURORA"
+  },
+  {
+    "id": 41000000,
+    "prov_code": "PH041000000",
+    "prov_name": "BATANGAS"
+  },
+  {
+    "id": 42100000,
+    "prov_code": "PH042100000",
+    "prov_name": "CAVITE"
+  },
+  {
+    "id": 43400000,
+    "prov_code": "PH043400000",
+    "prov_name": "LAGUNA"
+  },
+  {
+    "id": 45600000,
+    "prov_code": "PH045600000",
+    "prov_name": "QUEZON"
+  },
+  {
+    "id": 45800000,
+    "prov_code": "PH045800000",
+    "prov_name": "RIZAL"
+  },
+  {
+    "id": 50500000,
+    "prov_code": "PH050500000",
+    "prov_name": "ALBAY"
+  },
+  {
+    "id": 51600000,
+    "prov_code": "PH051600000",
+    "prov_name": "CAMARINES NORTE"
+  },
+  {
+    "id": 51700000,
+    "prov_code": "PH051700000",
+    "prov_name": "CAMARINES SUR"
+  },
+  {
+    "id": 52000000,
+    "prov_code": "PH052000000",
+    "prov_name": "CATANDUANES"
+  },
+  {
+    "id": 54100000,
+    "prov_code": "PH054100000",
+    "prov_name": "MASBATE"
+  },
+  {
+    "id": 56200000,
+    "prov_code": "PH056200000",
+    "prov_name": "SORSOGON"
+  },
+  {
+    "id": 60400000,
+    "prov_code": "PH060400000",
+    "prov_name": "AKLAN"
+  },
+  {
+    "id": 60600000,
+    "prov_code": "PH060600000",
+    "prov_name": "ANTIQUE"
+  },
+  {
+    "id": 61900000,
+    "prov_code": "PH061900000",
+    "prov_name": "CAPIZ"
+  },
+  {
+    "id": 63000000,
+    "prov_code": "PH063000000",
+    "prov_name": "ILOILO"
+  },
+  {
+    "id": 67900000,
+    "prov_code": "PH067900000",
+    "prov_name": "GUIMARAS"
+  },
+  {
+    "id": 71200000,
+    "prov_code": "PH071200000",
+    "prov_name": "BOHOL"
+  },
+  {
+    "id": 72200000,
+    "prov_code": "PH072200000",
+    "prov_name": "CEBU"
+  },
+  {
+    "id": 76100000,
+    "prov_code": "PH076100000",
+    "prov_name": "SIQUIJOR"
+  },
+  {
+    "id": 82600000,
+    "prov_code": "PH082600000",
+    "prov_name": "EASTERN SAMAR"
+  },
+  {
+    "id": 83700000,
+    "prov_code": "PH083700000",
+    "prov_name": "LEYTE"
+  },
+  {
+    "id": 84800000,
+    "prov_code": "PH084800000",
+    "prov_name": "NORTHERN SAMAR"
+  },
+  {
+    "id": 86000000,
+    "prov_code": "PH086000000",
+    "prov_name": "SAMAR (WESTERN SAMAR)"
+  },
+  {
+    "id": 86400000,
+    "prov_code": "PH086400000",
+    "prov_name": "SOUTHERN LEYTE"
+  },
+  {
+    "id": 87800000,
+    "prov_code": "PH087800000",
+    "prov_name": "BILIRAN"
+  },
+  {
+    "id": 97200000,
+    "prov_code": "PH097200000",
+    "prov_name": "ZAMBOANGA DEL NORTE"
+  },
+  {
+    "id": 97300000,
+    "prov_code": "PH097300000",
+    "prov_name": "ZAMBOANGA DEL SUR"
+  },
+  {
+    "id": 98300000,
+    "prov_code": "PH098300000",
+    "prov_name": "ZAMBOANGA SIBUGAY"
+  },
+  {
+    "id": 101300000,
+    "prov_code": "PH101300000",
+    "prov_name": "BUKIDNON"
+  },
+  {
+    "id": 101800000,
+    "prov_code": "PH101800000",
+    "prov_name": "CAMIGUIN"
+  },
+  {
+    "id": 103500000,
+    "prov_code": "PH103500000",
+    "prov_name": "LANAO DEL NORTE"
+  },
+  {
+    "id": 104200000,
+    "prov_code": "PH104200000",
+    "prov_name": "MISAMIS OCCIDENTAL"
+  },
+  {
+    "id": 104300000,
+    "prov_code": "PH104300000",
+    "prov_name": "MISAMIS ORIENTAL"
+  },
+  {
+    "id": 112300000,
+    "prov_code": "PH112300000",
+    "prov_name": "DAVAO DEL NORTE"
+  },
+  {
+    "id": 112400000,
+    "prov_code": "PH112400000",
+    "prov_name": "DAVAO DEL SUR"
+  },
+  {
+    "id": 112500000,
+    "prov_code": "PH112500000",
+    "prov_name": "DAVAO ORIENTAL"
+  },
+  {
+    "id": 118200000,
+    "prov_code": "PH118200000",
+    "prov_name": "COMPOSTELA VALLEY"
+  },
+  {
+    "id": 118600000,
+    "prov_code": "PH118600000",
+    "prov_name": "DAVAO OCCIDENTAL"
+  },
+  {
+    "id": 124700000,
+    "prov_code": "PH124700000",
+    "prov_name": "COTABATO (NORTH COTABATO)"
+  },
+  {
+    "id": 126300000,
+    "prov_code": "PH126300000",
+    "prov_name": "SOUTH COTABATO"
+  },
+  {
+    "id": 126500000,
+    "prov_code": "PH126500000",
+    "prov_name": "SULTAN KUDARAT"
+  },
+  {
+    "id": 128000000,
+    "prov_code": "PH128000000",
+    "prov_name": "SARANGANI"
+  },
+  {
+    "id": 137400000,
+    "prov_code": "PH137400000",
+    "prov_name": "METRO MANILA"
+  },
+  {
+    "id": 140100000,
+    "prov_code": "PH140100000",
+    "prov_name": "ABRA"
+  },
+  {
+    "id": 141100000,
+    "prov_code": "PH141100000",
+    "prov_name": "BENGUET"
+  },
+  {
+    "id": 142700000,
+    "prov_code": "PH142700000",
+    "prov_name": "IFUGAO"
+  },
+  {
+    "id": 143200000,
+    "prov_code": "PH143200000",
+    "prov_name": "KALINGA"
+  },
+  {
+    "id": 144400000,
+    "prov_code": "PH144400000",
+    "prov_name": "MOUNTAIN PROVINCE"
+  },
+  {
+    "id": 148100000,
+    "prov_code": "PH148100000",
+    "prov_name": "APAYAO"
+  },
+  {
+    "id": 150700000,
+    "prov_code": "PH150700000",
+    "prov_name": "BASILAN"
+  },
+  {
+    "id": 153600000,
+    "prov_code": "PH153600000",
+    "prov_name": "LANAO DEL SUR"
+  },
+  {
+    "id": 153800000,
+    "prov_code": "PH153800000",
+    "prov_name": "MAGUINDANAO"
+  },
+  {
+    "id": 156600000,
+    "prov_code": "PH156600000",
+    "prov_name": "SULU"
+  },
+  {
+    "id": 157000000,
+    "prov_code": "PH157000000",
+    "prov_name": "TAWI-TAWI"
+  },
+  {
+    "id": 160200000,
+    "prov_code": "PH160200000",
+    "prov_name": "AGUSAN DEL NORTE"
+  },
+  {
+    "id": 160300000,
+    "prov_code": "PH160300000",
+    "prov_name": "AGUSAN DEL SUR"
+  },
+  {
+    "id": 166700000,
+    "prov_code": "PH166700000",
+    "prov_name": "SURIGAO DEL NORTE"
+  },
+  {
+    "id": 166800000,
+    "prov_code": "PH166800000",
+    "prov_name": "SURIGAO DEL SUR"
+  },
+  {
+    "id": 168500000,
+    "prov_code": "PH168500000",
+    "prov_name": "DINAGAT ISLANDS"
+  },
+  {
+    "id": 174000000,
+    "prov_code": "PH174000000",
+    "prov_name": "MARINDUQUE"
+  },
+  {
+    "id": 175100000,
+    "prov_code": "PH175100000",
+    "prov_name": "OCCIDENTAL MINDORO"
+  },
+  {
+    "id": 175200000,
+    "prov_code": "PH175200000",
+    "prov_name": "ORIENTAL MINDORO"
+  },
+  {
+    "id": 175300000,
+    "prov_code": "PH175300000",
+    "prov_name": "PALAWAN"
+  },
+  {
+    "id": 175900000,
+    "prov_code": "PH175900000",
+    "prov_name": "ROMBLON"
+  },
+  {
+    "id": 184500000,
+    "prov_code": "PH184500000",
+    "prov_name": "NEGROS OCCIDENTAL"
+  },
+  {
+    "id": 184600000,
+    "prov_code": "PH184600000",
+    "prov_name": "NEGROS ORIENTAL"
+  }
+]

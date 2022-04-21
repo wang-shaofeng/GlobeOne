@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mcv_account"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/margin_standard"
+    android:layout_marginVertical="@dimen/margin_small"
+    android:elevation="0dp"
+    app:cardCornerRadius="@dimen/corner_radius_xxxxsmall"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/tv_charging"
+    app:strokeColor="?neutralA5"
+    app:strokeWidth="@dimen/stroke_width_small">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/padding_medium">
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cb_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:gravity="center"
+            android:minWidth="@dimen/check_box_size"
+            android:minHeight="@dimen/check_box_size"
+            app:buttonCompat="@drawable/selector_checkbox"
+            app:layout_constraintBottom_toBottomOf="@id/tv_account_number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_account_name" />
+
+        <TextView
+            android:id="@+id/tv_account_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:textAppearance="?xBaseMultiline"
+            android:textColor="?accentDark"
+            app:layout_constraintEnd_toStartOf="@id/tv_brand"
+            app:layout_constraintStart_toEndOf="@id/cb_account"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/dac_mock_name" />
+
+        <TextView
+            android:id="@+id/tv_account_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_xxsmall"
+            android:textAppearance="?smallRegularContent"
+            android:textColor="?neutralB0"
+            app:layout_constraintEnd_toStartOf="@id/tv_brand"
+            app:layout_constraintStart_toEndOf="@id/cb_account"
+            app:layout_constraintTop_toBottomOf="@id/tv_account_name"
+            tools:text="@string/dac_mock_msisdn" />
+
+        <TextView
+            android:id="@+id/tv_brand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/pos_brand_chip_shape"
+            android:paddingHorizontal="@dimen/padding_smedium"
+            android:paddingVertical="@dimen/padding_standard"
+            android:textAllCaps="true"
+            android:textAppearance="?chip"
+            android:textColor="?neutralA2"
+            app:layout_constraintBottom_toBottomOf="@id/tv_account_number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_account_name"
+            tools:text="@string/mock_brand_userfriendly" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_user_pts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_small"
+            android:textAppearance="?comfyData"
+            android:textColor="?neutralA0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_user_star"
+            app:layout_constraintTop_toBottomOf="@id/tv_account_number"
+            app:layout_constraintVertical_bias="1.0"
+            tools:text="101 pts" />
+
+        <TextView
+            android:id="@+id/tv_exp_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            android:textSize="@dimen/text_size_xsmall"
+            app:layout_constraintBottom_toBottomOf="@id/tv_user_pts"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_user_pts"
+            app:layout_constraintTop_toTopOf="@id/tv_user_pts"
+            app:layout_constraintVertical_bias="1.0"
+            tools:text="expires on Sept. 29" />
+
+        <ImageView
+            android:id="@+id/iv_user_star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_smedium"
+            app:layout_constraintBottom_toBottomOf="@id/tv_user_pts"
+            app:layout_constraintEnd_toStartOf="@id/tv_user_pts"
+            app:layout_constraintStart_toEndOf="@id/cb_account"
+            app:layout_constraintTop_toTopOf="@id/tv_user_pts"
+            app:srcCompat="@drawable/ic_star" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/g_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="iv_user_star, tv_user_pts, tv_exp_date"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

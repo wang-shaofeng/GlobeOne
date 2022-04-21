@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dashboard_account_card_height"
+    android:layout_marginHorizontal="@dimen/margin_medium"
+    android:layout_marginVertical="@dimen/margin_small"
+    android:background="@drawable/dashboard_consumption_background"
+    app:cardCornerRadius="@dimen/corner_radius_xxsmall"
+    app:cardElevation="@dimen/small_elevation">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_title"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/v_divider_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lav_gift"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_xstandard"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginStart="@dimen/margin_xstandard"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/gift" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_nickname"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_xstandard"
+                android:textAppearance="?xBaseMultiline"
+                android:textColor="?absoluteBlack"
+                app:layout_constraintStart_toEndOf="@+id/lav_gift"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Toni" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/ba_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="tv_nickname, lav_gift" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_xsmall"
+                android:textAppearance="?labelCaption"
+                android:textColor="?neutralA2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ba_number"
+                tools:text="@string/dac_mock_msisdn" />
+
+            <TextView
+                android:id="@+id/tv_balance_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xstandard"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:textAppearance="?labelCaption"
+                android:textColor="?neutralA3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/load_balance" />
+
+            <TextView
+                android:id="@+id/tv_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:layout_marginBottom="@dimen/margin_xs_standard"
+                android:text="@string/balance_placeholder"
+                android:textAppearance="?mediumBoldNum"
+                android:textColor="?neutralA0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_postpaid_bill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxstandard"
+                app:layout_constraintEnd_toEndOf="@id/tv_balance"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@drawable/ic_postpaid_due_soon" />
+
+            <TextView
+                android:id="@+id/tv_remove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_xstandard"
+                android:padding="@dimen/padding_small"
+                android:text="@string/remove"
+                android:textAppearance="?smallAction"
+                android:textColor="?colorOnError"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="gone" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="tv_balance_title,tv_balance" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/v_divider_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/stroke_width_small"
+            android:layout_marginTop="@dimen/margin_xstandard"
+            android:background="?neutralA5"
+            app:layout_constraintBottom_toTopOf="@id/rl_content_views"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/rl_content_views"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/consumption_height"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <include
+                android:id="@+id/v_no_subscriptions"
+                layout="@layout/dashboard_consumption_item_no_subscriptions"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/consumption_height"
+                android:visibility="gone" />
+
+            <include
+                android:id="@+id/v_consumption"
+                layout="@layout/dashboard_consumption_item_content"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/consumption_height"
+                android:visibility="gone" />
+
+            <include
+                android:id="@+id/v_error"
+                layout="@layout/dashboard_consumption_item_error"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/consumption_height"
+                android:visibility="gone" />
+
+            <include
+                android:id="@+id/v_loading"
+                layout="@layout/dashboard_consumption_item_loading"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/consumption_height"
+                android:visibility="gone" />
+
+            <include
+                android:id="@+id/v_disconnected"
+                layout="@layout/dashboard_consumption_item_disconnected"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/consumption_height"
+                android:visibility="gone" />
+
+            <include
+                android:id="@+id/v_inactive"
+                layout="@layout/dashboard_consumption_item_inactive"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/consumption_height"
+                android:visibility="gone" />
+
+            <include
+                android:id="@+id/v_postpaid_broadband"
+                layout="@layout/dashboard_consumption_item_postpaid_broadband"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/consumption_height"
+                android:visibility="gone" />
+
+            <include
+                android:id="@+id/v_platinum_account"
+                layout="@layout/dashboard_consumption_item_platinum_account"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/consumption_height"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

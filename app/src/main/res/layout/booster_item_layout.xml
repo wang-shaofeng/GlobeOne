@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_booster_item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_xxstandard">
+
+    <ImageView
+        android:id="@+id/iv_booster_checkbox"
+        android:layout_width="@dimen/booster_checkbox_dimen"
+        android:layout_height="@dimen/booster_checkbox_dimen"
+        app:srcCompat="@drawable/booster_checkbox_shape"
+        app:layout_constraintBottom_toBottomOf="@id/tv_booster_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_booster_name" />
+
+    <TextView
+        android:id="@+id/tv_booster_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_xstandard"
+        android:layout_marginEnd="@dimen/margin_xstandard"
+        android:textColor="@drawable/booster_text_color_changer"
+        android:textAppearance="?baseBoldContent"
+        app:layout_constraintEnd_toStartOf="@id/tv_booster_price"
+        app:layout_constraintStart_toEndOf="@id/iv_booster_checkbox"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_booster_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?xBaseBoldNum"
+        android:textColor="@drawable/booster_text_color_changer"
+        app:layout_constraintBottom_toBottomOf="@id/tv_booster_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_booster_name" />
+
+    <TextView
+        android:id="@+id/tv_booster_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_xsmall"
+        android:layout_marginEnd="@dimen/margin_standard"
+        android:textAppearance="?xSmallRegularContent"
+        android:textColor="?neutralB0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tv_booster_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_booster_name" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/cg_apps_images"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_standard"
+        android:layout_marginBottom="@dimen/margin_xxstandard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tv_booster_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_booster_description" />
+
+    <View
+        android:id="@+id/v_booster_item_bottom_line"
+        style="@style/ThemeOverlay.App.HeaderLineTheme"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_line_height"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

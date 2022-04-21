@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rating_subgraph"
+    app:startDestination="@id/ratingFragment">
+
+    <fragment
+        android:id="@+id/ratingFragment"
+        android:name="ph.com.globe.globeonesuperapp.rating.RatingFragment"
+        android:label="RatingFragment"
+        tools:layout="@layout/rating_fragment">
+        <action
+            android:id="@+id/action_ratingFragment_to_ratingFeedbackSuccessFragment"
+            app:destination="@id/ratingFeedbackSuccessFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ratingFeedbackSuccessFragment"
+        android:name="ph.com.globe.globeonesuperapp.rating.RatingFeedbackSuccessFragment"
+        android:label="RatingFeedbackSuccessFragment"
+        tools:layout="@layout/rating_feedback_success_fragment"/>
+</navigation>

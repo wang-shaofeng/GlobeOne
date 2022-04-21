@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vouchers_subgraph"
+    app:startDestination="@id/voucherPocketFragment">
+
+    <fragment
+        android:id="@+id/voucherPocketFragment"
+        android:name="ph.com.globe.globeonesuperapp.account.voucher_pocket.VoucherPocketFragment"
+        android:label="VoucherPocketFragment"
+        tools:layout="@layout/voucher_pocket_fragment">
+        <action
+            android:id="@+id/action_voucherPocketFragment_to_selectAccountVouchersFragment"
+            app:destination="@id/selectAccountVouchersFragment" />
+        <action
+            android:id="@+id/action_voucherPocketFragment_to_rewards_subgraph"
+            app:destination="@id/rewards_subgraph" />
+        <argument
+            android:name="enrolledAccount"
+            app:argType="ph.com.globe.model.profile.domain_models.EnrolledAccount" />
+        <argument
+            android:name="isShowContentTab"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectAccountVouchersFragment"
+        android:name="ph.com.globe.globeonesuperapp.account.voucher_pocket.SelectAccountVouchersFragment"
+        android:label="SelectAccountVouchersFragment"
+        tools:layout="@layout/select_account_vouchers_fragment" />
+    <include app:graph="@navigation/rewards_subgraph" />
+</navigation>

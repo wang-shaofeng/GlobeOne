@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile_subgraph"
+    app:startDestination="@id/profile_fragment">
+
+    <fragment
+        android:id="@+id/profile_fragment"
+        android:name="ph.com.globe.globeonesuperapp.profile.ProfileMainFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/profile_fragment">
+
+        <argument
+            android:name="proceedForRaffle"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+        <action
+            android:id="@+id/profile_to_profile_details"
+            app:destination="@id/profileDetailsFragment">
+
+            <argument
+                android:name="proceedForRaffle"
+                app:argType="boolean" />
+        </action>
+
+        <action
+            android:id="@+id/action_profile_fragment_to_payment_methods_subgraph"
+            app:destination="@id/payment_methods_subgraph" />
+        <action
+            android:id="@+id/action_profile_fragment_to_privacy_policy_fragment"
+            app:destination="@id/termsAndPrivacyPolicyFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_gameVouchersWebViewFragment"
+            app:destination="@id/gameVouchersWebViewFragment">
+            <argument
+                android:name="gameVouchersUrl"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileDetailsFragment"
+        android:name="ph.com.globe.globeonesuperapp.profile.details.ProfileDetailsFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/profile_details_fragment" >
+
+        <argument
+            android:name="proceedForRaffle"
+            app:argType="boolean"
+            android:defaultValue="false"/>
+
+        <action
+            android:id="@+id/action_profileDetailsFragment_to_authenticityConfirmationFragment"
+            app:destination="@id/authenticityConfirmationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/termsAndPrivacyPolicyFragment"
+        android:name="ph.com.globe.globeonesuperapp.termsandprivacypolicy.TermsAndPrivacyPolicyFragment"
+        android:label="TermsAndPrivacyPolicyFragment"
+        tools:layout="@layout/terms_and_privacy_policy_fragment" />
+
+    <include app:graph="@navigation/payment_methods_subgraph" />
+    <fragment
+        android:id="@+id/authenticityConfirmationFragment"
+        android:name="ph.com.globe.globeonesuperapp.profile.details.kyc.AuthenticityConfirmationFragment"
+        android:label="AuthenticityConfirmationFragment"
+        tools:layout="@layout/profile_authenticity_confirmation_fragment"/>
+
+    <fragment
+        android:id="@+id/gameVouchersWebViewFragment"
+        android:name="ph.com.globe.globeonesuperapp.profile.GameVouchersWebViewFragment"
+        android:label="GameVouchersWebViewFragment"
+        tools:layout="@layout/web_view_fragment">
+        <argument
+            android:name="gameVouchersUrl"
+            app:argType="string"
+            app:nullable="false" />
+    </fragment>
+
+</navigation>

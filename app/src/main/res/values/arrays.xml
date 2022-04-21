@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<resources>
+    <string-array name="profile_details_suffix_options">
+        <item>@string/profile_details_suffix_jr</item>
+        <item>@string/profile_details_suffix_II</item>
+        <item>@string/profile_details_suffix_III</item>
+        <item>@string/profile_details_suffix_IV</item>
+        <item>@string/profile_details_suffix_V</item>
+        <item>@string/profile_details_suffix_VI</item>
+        <item>@string/profile_details_suffix_VII</item>
+        <item>@string/profile_details_suffix_VIII</item>
+        <item>@string/profile_details_suffix_IX</item>
+        <item>@string/profile_details_suffix_X</item>
+    </string-array>
+
+    <string-array name="dashboard_greetings">
+        <item>@string/dashboard_greeting_0</item>
+        <item>@string/dashboard_greeting_1</item>
+        <item>@string/dashboard_greeting_2</item>
+        <item>@string/dashboard_greeting_3</item>
+        <item>@string/dashboard_greeting_4</item>
+        <item>@string/dashboard_greeting_5</item>
+        <item>@string/dashboard_greeting_6</item>
+        <item>@string/dashboard_greeting_7</item>
+        <item>@string/dashboard_greeting_8</item>
+        <item>@string/dashboard_greeting_9</item>
+        <item>@string/dashboard_greeting_10</item>
+        <item>@string/dashboard_greeting_11</item>
+        <item>@string/dashboard_greeting_12</item>
+        <item>@string/dashboard_greeting_13</item>
+        <item>@string/dashboard_greeting_14</item>
+    </string-array>
+
+    <string-array name="rewards_sort_array">
+        <item>Lowest to Highest</item>
+        <item>Highest to Lowest</item>
+    </string-array>
+
+    <string-array name="days_in_a_month">
+        <item>1st of the month</item>
+        <item>2nd of the month</item>
+        <item>3rd of the month</item>
+        <item>4th of the month</item>
+        <item>5th of the month</item>
+        <item>6th of the month</item>
+        <item>7th of the month</item>
+        <item>8th of the month</item>
+        <item>9th of the month</item>
+        <item>10th of the month</item>
+        <item>11th of the month</item>
+        <item>12th of the month</item>
+        <item>13th of the month</item>
+        <item>14th of the month</item>
+        <item>15th of the month</item>
+        <item>16th of the month</item>
+        <item>17th of the month</item>
+        <item>18th of the month</item>
+        <item>19th of the month</item>
+        <item>20th of the month</item>
+        <item>21st of the month</item>
+        <item>22nd of the month</item>
+        <item>23rd of the month</item>
+        <item>24th of the month</item>
+        <item>25th of the month</item>
+        <item>26th of the month</item>
+        <item>27th of the month</item>
+        <item>28th of the month</item>
+        <item>29th of the month</item>
+        <item>30th of the month</item>
+        <item>31st of the month</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_standard"
+    app:cardCornerRadius="@dimen/corner_radius_xxxxsmall"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_select_other_account_item_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/select_account_item_background">
+
+        <ImageView
+            android:id="@+id/iv_select_account_start_drawable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_smedium"
+            app:layout_constraintTop_toTopOf="@id/tv_account_name"
+            app:layout_constraintBottom_toTopOf="@id/tv_number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/radio_button_start_drawable" />
+
+        <TextView
+            android:id="@+id/tv_account_name"
+            style="@style/Widget.App.AccountNameItem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_standard"
+            app:layout_constraintStart_toEndOf="@id/iv_select_account_start_drawable"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/toni" />
+
+        <TextView
+            android:id="@+id/tv_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_xxsmall"
+            android:layout_marginBottom="@dimen/margin_standard"
+            android:textAppearance="?smallRegularContent"
+            android:textColor="?neutralB0"
+            app:layout_constraintBottom_toTopOf="@id/space_account_number"
+            app:layout_constraintStart_toEndOf="@id/iv_select_account_start_drawable"
+            app:layout_constraintTop_toBottomOf="@id/tv_account_name"
+            tools:text="0123456789" />
+
+        <TextView
+            android:id="@+id/tv_brand"
+            style="@style/Widget.App.SelectAccountBrandChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_standard"
+            android:background="@drawable/select_account_brand_type_shape"
+            app:layout_constraintBottom_toTopOf="@id/fl_cant_redeem"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/globe_prepaid" />
+
+        <androidx.legacy.widget.Space
+            android:id="@+id/space_account_number"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/margin_standard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_number" />
+
+        <FrameLayout
+            android:id="@+id/fl_cant_redeem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?neutralA4"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingVertical="@dimen/padding_standard"
+            app:layout_constraintTop_toBottomOf="@id/space_account_number">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_xxxsmall"
+                android:text="@string/this_account_cant_redeem_this_reward"
+                android:textAppearance="?xSmallRegularContent"
+                android:textColor="?absoluteWhite" />
+
+        </FrameLayout>
+
+        <View
+            android:id="@+id/v_not_eligible_account"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:alpha="0.5"
+            android:background="?neutralA5"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintBottom_toTopOf="@id/fl_cant_redeem"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_not_eligible_account"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:constraint_referenced_ids="fl_cant_redeem,v_not_eligible_account"
+            tools:visibility="gone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

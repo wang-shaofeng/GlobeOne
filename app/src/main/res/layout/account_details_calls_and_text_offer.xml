@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/postpaid_plan_usage_view_height"
+    android:layout_marginHorizontal="@dimen/margin_ssmedium"
+    android:layout_marginTop="@dimen/margin_standard"
+    app:cardBackgroundColor="?prepaidE600"
+    app:cardCornerRadius="@dimen/corner_radius_xxxsmall"
+    app:cardElevation="0dp"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/v_bottom_background"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="?accentLight"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_refresh_date" />
+
+        <TextView
+            android:id="@+id/tv_refresh_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:paddingVertical="@dimen/padding_standard"
+            android:textAppearance="?xxSmallRegularContent"
+            android:textColor="?neutralB0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Refreshes on March 31, 2021" />
+
+        <TextView
+            android:id="@+id/tv_offer_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_standard"
+            android:layout_marginBottom="@dimen/margin_standard"
+            android:textAppearance="?comfyData"
+            android:textColor="?absoluteWhite"
+            app:layout_constraintBottom_toTopOf="@id/v_bottom_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="@string/mock_promo_title" />
+
+        <TextView
+            android:id="@+id/tv_plan_inclusion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginBottom="@dimen/margin_xxsmall"
+            android:text="@string/plan_inclusion"
+            android:textAllCaps="true"
+            android:textAppearance="?compactCallSms"
+            android:textColor="?prepaidE100"
+            app:layout_constraintBottom_toTopOf="@id/tv_offer_description"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

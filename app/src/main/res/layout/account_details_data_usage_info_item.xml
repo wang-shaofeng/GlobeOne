@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorPrimary">
+
+    <TextView
+        android:id="@+id/tv_usage_item_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_xmedium"
+        android:layout_marginTop="@dimen/margin_xmedium"
+        android:layout_marginEnd="@dimen/margin_standard"
+        android:textAppearance="?xBaseMultiline"
+        android:textColor="?accentDark"
+        app:layout_constraintEnd_toStartOf="@id/tv_data_left"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="GoSURF" />
+
+    <TextView
+        android:id="@+id/tv_expiration_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_xmedium"
+        android:layout_marginTop="@dimen/margin_xxsmall"
+        android:textAppearance="?smallRegularContent"
+        android:textColor="?neutralB0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_usage_item_title"
+        tools:text="@string/mock_data_expires_on" />
+
+    <TextView
+        android:id="@+id/tv_data_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_xmedium"
+        android:textAppearance="?mediumBoldNum"
+        android:textColor="?neutralA0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="5 GB left" />
+
+    <TextView
+        android:id="@+id/tv_data_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_xmedium"
+        android:textAppearance="?xBaseBoldNum"
+        android:textColor="?neutralA3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_data_left"
+        tools:text="/ 5 GB" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/stroke_width_small"
+        android:layout_marginHorizontal="@dimen/margin_standard"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:background="?neutralA5"
+        app:layout_constraintTop_toBottomOf="@id/tv_expiration_date" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

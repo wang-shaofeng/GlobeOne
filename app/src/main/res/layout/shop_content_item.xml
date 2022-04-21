@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/margin_standard"
+    android:layout_marginTop="@dimen/margin_standard"
+    app:cardCornerRadius="@dimen/corner_radius_xxxsmall"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/content_card_background">
+
+        <View
+            android:id="@+id/v_promo_color"
+            android:layout_width="@dimen/stroke_width_medium"
+            android:layout_height="0dp"
+            android:background="?prepaidD400"
+            app:layout_constraintBottom_toBottomOf="@id/ll_promo_info"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ll_promo_info" />
+
+        <ImageView
+            android:id="@+id/iv_promo_icon"
+            android:layout_width="@dimen/content_promo_icon_size"
+            android:layout_height="@dimen/content_promo_icon_size"
+            android:layout_marginStart="@dimen/margin_xstandard"
+            app:layout_constraintBottom_toBottomOf="@id/ll_promo_info"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ll_promo_info"
+            tools:background="@tools:sample/backgrounds/scenic" />
+
+        <ImageView
+            android:id="@+id/iv_circle_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_xxsmall"
+            app:layout_constraintStart_toEndOf="@id/iv_promo_icon"
+            app:layout_constraintTop_toTopOf="@id/ll_promo_info"
+            app:srcCompat="@drawable/content_item_shape_circles" />
+
+        <ImageView
+            android:id="@+id/iv_circle_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rotation="180"
+            app:layout_constraintBottom_toBottomOf="@id/ll_promo_info"
+            app:layout_constraintStart_toStartOf="@id/iv_circle_top"
+            app:srcCompat="@drawable/content_item_shape_circles" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="@drawable/content_item_shape_line"
+            app:layout_constraintBottom_toTopOf="@id/iv_circle_bottom"
+            app:layout_constraintEnd_toEndOf="@id/iv_circle_top"
+            app:layout_constraintStart_toStartOf="@id/iv_circle_top"
+            app:layout_constraintTop_toBottomOf="@id/iv_circle_top" />
+
+        <LinearLayout
+            android:id="@+id/ll_promo_info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_xstandard"
+            android:gravity="center_vertical"
+            android:minHeight="@dimen/content_catalog_item_min_height"
+            android:orientation="vertical"
+            android:paddingVertical="@dimen/padding_medium"
+            app:layout_constraintEnd_toStartOf="@id/tv_promo_price"
+            app:layout_constraintStart_toEndOf="@id/iv_circle_top"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_promo_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_xsmall"
+                android:textAllCaps="true"
+                android:textAppearance="?chip"
+                android:textColor="?neutralA3"
+                tools:text="@string/type_new" />
+
+            <TextView
+                android:id="@+id/tv_promo_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_xsmall"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:textAllCaps="true"
+                android:textAppearance="?xBaseBold"
+                android:textColor="?neutralA0"
+                tools:text="@string/mock_promo_title" />
+
+            <TextView
+                android:id="@+id/tv_valid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:textAppearance="?xSmallRegularContent"
+                android:textColor="?neutralA4"
+                tools:text="Valid for 30 days" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_promo_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_xstandard"
+            android:textAppearance="?xBaseBoldNum"
+            android:textColor="?neutralA0"
+            app:layout_constraintBottom_toTopOf="@id/tv_promo_price_old"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="P100" />
+
+        <TextView
+            android:id="@+id/tv_promo_price_old"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_xstandard"
+            android:textColor="?neutralA3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_promo_price"
+            tools:text="P10" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

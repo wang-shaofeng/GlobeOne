@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<ph.com.globe.globeonesuperapp.utils.ui.RefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/srl_rewards"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/sv_rewards"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorPrimary"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_rewards_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:text="@string/rewards"
+                android:textAppearance="?mediumBold"
+                android:textColor="?accentDark"
+                app:layout_constraintBottom_toTopOf="@id/cl_subsections"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_pos"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                app:icon="@drawable/ic_pos"
+                app:iconPadding="0dp"
+                app:iconTint="?accentDark"
+                app:layout_constraintBottom_toBottomOf="@id/tv_rewards_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_rewards_title" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_subsections"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_standard"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_rewards_title">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/iv_redeem"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_standard"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:text="@string/redeem"
+                    android:textAllCaps="false"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?accentDark"
+                    android:theme="@style/Theme.MaterialComponents"
+                    app:icon="@drawable/ic_redeem"
+                    app:iconGravity="top"
+                    app:iconTint="@null"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/iv_donate"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/iv_donate"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_small"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:text="@string/donate"
+                    android:textAllCaps="false"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?accentDark"
+                    app:icon="@drawable/ic_donate"
+                    app:iconGravity="top"
+                    app:iconTint="@null"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/iv_redeem_pay_with_points"
+                    app:layout_constraintStart_toEndOf="@id/iv_redeem"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/iv_redeem_pay_with_points"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_small"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:text="@string/pay_with_points"
+                    android:textAllCaps="false"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?accentDark"
+                    app:icon="@drawable/ic_pay_with_points"
+                    app:iconGravity="top"
+                    app:iconTint="@null"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/iv_convert_data"
+                    app:layout_constraintStart_toEndOf="@id/iv_donate"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/iv_convert_data"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:layout_marginEnd="@dimen/margin_standard"
+                    android:text="@string/convert_data"
+                    android:textAllCaps="false"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?accentDark"
+                    app:icon="@drawable/ic_convert_data"
+                    app:iconGravity="top"
+                    app:iconTint="@null"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/iv_redeem_pay_with_points"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/ic_convert_data" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/iv_explore_raffles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_standard"
+                android:adjustViewBounds="true"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/cl_subsections"
+                app:srcCompat="@drawable/explore_rewards" />
+
+            <View
+                android:id="@+id/v_rewards_background"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="?accentLight"
+                app:layout_constraintBottom_toTopOf="@id/cl_coming_soon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_use_your_points" />
+
+            <TextView
+                android:id="@+id/tv_use_your_points"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:paddingTop="@dimen/padding_large"
+                android:text="@string/use_your_points"
+                android:textAppearance="?sMediumBold"
+                android:textColor="?accentDark"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_explore_raffles" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_rewards"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toTopOf="@id/cl_explore"
+                app:layout_constraintTop_toBottomOf="@id/tv_use_your_points"
+                tools:itemCount="1"
+                tools:listitem="@layout/reward_item_new" />
+
+            <include
+                android:id="@+id/inc_loading"
+                layout="@layout/rewards_loading_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@id/cl_explore"
+                app:layout_constraintTop_toBottomOf="@id/tv_use_your_points" />
+
+            <include
+                android:id="@+id/inc_error"
+                layout="@layout/rewards_loading_error_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="@id/tv_use_your_points" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_explore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@id/cl_coming_soon">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/mcv_explore"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_standard"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:layout_marginEnd="@dimen/margin_standard"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:layout_goneMarginTop="@dimen/margin_medium">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_explore_rewards"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/image_reward_explore" />
+
+                        <TextView
+                            android:id="@+id/tv_explore"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_medium"
+                            android:layout_marginTop="@dimen/margin_medium"
+                            android:layout_marginEnd="@dimen/margin_xxlarge"
+                            android:text="@string/explore_more_rewards"
+                            android:textAppearance="?sMediumBold"
+                            android:textColor="?accentDark"
+                            app:layout_constraintBottom_toTopOf="@id/tv_food_entertainmanet"
+                            app:layout_constraintEnd_toStartOf="@id/iv_explore"
+                            app:layout_constraintStart_toStartOf="@id/iv_explore_rewards"
+                            app:layout_constraintTop_toTopOf="@id/iv_explore_rewards"
+                            app:layout_constraintVertical_chainStyle="packed" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_explore"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_xmedium"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_food_entertainmanet"
+                            app:layout_constraintEnd_toEndOf="@id/iv_explore_rewards"
+                            app:layout_constraintTop_toTopOf="@id/tv_explore"
+                            app:srcCompat="@drawable/ic_next" />
+
+                        <TextView
+                            android:id="@+id/tv_food_entertainmanet"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_xxlarge"
+                            android:layout_marginBottom="@dimen/margin_medium"
+                            android:text="@string/we_ve_got_rewards_for_food_entertainment_and_more"
+                            android:textAppearance="?smallRegularContent"
+                            android:textColor="?titleTextColor"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/iv_explore"
+                            app:layout_constraintStart_toStartOf="@id/tv_explore"
+                            app:layout_constraintTop_toBottomOf="@id/tv_explore"
+                            app:layout_constraintVertical_bias="0.0" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_coming_soon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?absoluteBlack"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_rewards"
+                app:layout_constraintVertical_bias="1.0">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_coming_soon"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/image_earn_points_coming_soon" />
+
+                <TextView
+                    android:id="@+id/tv_coming_soon_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:layout_marginEnd="@dimen/margin_xxxxxxlarge"
+                    android:text="@string/more_ways_to_earn_points_coming_soon"
+                    android:textAppearance="?wideBold"
+                    android:textColor="?absoluteWhite"
+                    android:textSize="@dimen/text_size_large"
+                    app:layout_constraintBottom_toTopOf="@id/tv_coming_soon_description"
+                    app:layout_constraintEnd_toEndOf="@id/iv_coming_soon"
+                    app:layout_constraintStart_toStartOf="@id/iv_coming_soon"
+                    app:layout_constraintTop_toTopOf="@id/iv_coming_soon" />
+
+                <TextView
+                    android:id="@+id/tv_coming_soon_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_xxsmall"
+                    android:layout_marginEnd="@dimen/margin_xxxxxxxlarge"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    android:text="@string/find_more"
+                    android:textAppearance="?smallRegularContent"
+                    android:textColor="?highlight"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_coming_soon"
+                    app:layout_constraintEnd_toEndOf="@id/iv_coming_soon"
+                    app:layout_constraintStart_toStartOf="@id/iv_coming_soon"
+                    app:layout_constraintTop_toBottomOf="@id/tv_coming_soon_title" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group_more_rewards"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="cl_explore,cl_coming_soon" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</ph.com.globe.globeonesuperapp.utils.ui.RefreshLayout>

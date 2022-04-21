@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/payment_methods_subgraph"
+    app:startDestination="@id/payment_methods_fragment">
+    <fragment
+        android:id="@+id/payment_methods_fragment"
+        android:name="ph.com.globe.globeonesuperapp.profile.payment_methods.PaymentMethodsFragment"
+        android:label="profile_payment_methods_fragment"
+        tools:layout="@layout/profile_payment_methods_fragment">
+        <action
+            android:id="@+id/action_payment_methods_fragment_to_manageCreditCardsMethod"
+            app:destination="@id/manageCreditCardsMethod" />
+        <action
+            android:id="@+id/action_payment_methods_fragment_to_linkGCashFragment"
+            app:destination="@id/linkGCashFragment" />
+        <action
+            android:id="@+id/action_payment_methods_fragment_to_manageGCashMethodFragment"
+            app:destination="@id/manageGCashMethodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/manageCreditCardsMethod"
+        android:name="ph.com.globe.globeonesuperapp.profile.payment_methods.credit_card.ManageCreditCardsMethodFragment"
+        android:label="ManageCreditCardsMethod"
+        tools:layout="@layout/profile_manage_credit_cards_fragment"/>
+    <fragment
+        android:id="@+id/linkGCashOtpFragment"
+        android:name="ph.com.globe.globeonesuperapp.profile.payment_methods.gcash.LinkGCashOtpFragment"
+        android:label="LinkGCashOtpFragment"
+        tools:layout="@layout/profile_link_g_cash_otp_fragment">
+        <argument
+            android:name="sentOtpArgs"
+            app:argType="ph.com.globe.globeonesuperapp.verify_otp.VerifyOtpViewModel$SendOtpResult$SentOtpSuccess" />
+        <argument
+            android:name="accountAlias"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_linkGCashOtpFragment_to_linkGCashAccountProcessingFragment"
+            app:destination="@id/linkGCashAccountProcessingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/linkGCashFragment"
+        android:name="ph.com.globe.globeonesuperapp.profile.payment_methods.gcash.LinkGCashFragment"
+        android:label="LinkGCashFragment"
+        tools:layout="@layout/profile_link_g_cash_fragment">
+        <action
+            android:id="@+id/action_linkGCashFragment_to_linkGCashOtpFragment"
+            app:destination="@id/linkGCashOtpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/linkGCashAccountProcessingFragment"
+        android:name="ph.com.globe.globeonesuperapp.profile.payment_methods.gcash.LinkGCashAccountProcessingFragment"
+        android:label="LinkGCashAccountProcessingFragment"
+        tools:layout="@layout/profile_g_cash_linking_processing_fragment">
+        <action
+            android:id="@+id/action_linkGCashAccountProcessingFragment_to_linkGCashAccountSuccessfulFragment"
+            app:destination="@id/linkGCashAccountSuccessfulFragment"
+            app:popUpTo="@id/payment_methods_fragment" />
+        <action
+            android:id="@+id/action_linkGCashAccountProcessingFragment_to_gCashAccountErrorFragment"
+            app:destination="@id/gCashAccountErrorFragment"
+            app:popUpTo="@id/payment_methods_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/linkGCashAccountSuccessfulFragment"
+        android:name="ph.com.globe.globeonesuperapp.profile.payment_methods.gcash.LinkGCashAccountSuccessfulFragment"
+        android:label="LinkGCashAccountSuccessfulFragment"
+        tools:layout="@layout/profile_link_g_cash_successful_fragment"/>
+    <fragment
+        android:id="@+id/manageGCashMethodFragment"
+        android:name="ph.com.globe.globeonesuperapp.profile.payment_methods.gcash.ManageGCashMethodFragment"
+        android:label="ManageGCashMethodFragment"
+        tools:layout="@layout/profile_g_cash_fragment">
+        <action
+            android:id="@+id/action_manageGCashMethodFragment_to_linkGCashFragment"
+            app:destination="@id/linkGCashFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gCashAccountErrorFragment"
+        android:name="ph.com.globe.globeonesuperapp.profile.payment_methods.gcash.GCashAccountErrorFragment"
+        android:label="GCashAccountErrorFragment"
+        tools:layout="@layout/profile_gcash_account_error_fragment">
+        <argument
+            android:name="errorDescription"
+            app:argType="string" />
+    </fragment>
+</navigation>

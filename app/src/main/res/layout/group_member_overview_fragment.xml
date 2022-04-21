@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_group_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_smedium"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back" />
+
+            <View
+                android:id="@+id/v_header_line_vertical"
+                style="@style/ThemeOverlay.App.HeaderLineTheme"
+                android:layout_width="@dimen/toolbar_line_height"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_smedium"
+                app:layout_constraintStart_toEndOf="@id/iv_back" />
+
+            <TextView
+                android:id="@+id/tv_group_name"
+                style="@style/Widget.App.LightToolbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/v_header_line_vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/mock_group_name" />
+
+            <View
+                style="@style/ThemeOverlay.App.HeaderLineTheme"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toolbar_line_height"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginEnd="@dimen/margin_standard"
+            app:layout_constraintTop_toBottomOf="@id/cl_group_toolbar">
+
+            <TextView
+                android:id="@+id/tv_member_role"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:background="@drawable/add_account_info_chip_shape"
+                android:padding="@dimen/padding_standard"
+                android:textAllCaps="true"
+                android:textAppearance="?chip"
+                android:textColor="@color/black_70"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/mock_member_role_member" />
+
+            <TextView
+                android:id="@+id/tv_member_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:textAppearance="?xBaseBold"
+                android:textColor="?corporateA700"
+                app:layout_constraintEnd_toStartOf="@id/tv_remove_member"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_member_role"
+                tools:text="@string/mock_member_name" />
+
+            <TextView
+                android:id="@+id/tv_member_mobile_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xsmall"
+                android:textAppearance="?semiBold"
+                android:textColor="?attr/neutralB0"
+                app:layout_constraintEnd_toStartOf="@id/tv_remove_member"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_member_name"
+                tools:text="@string/dac_mock_msisdn" />
+
+            <TextView
+                android:id="@+id/tv_remove_member"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/remove"
+                android:textAppearance="?baseAction"
+                android:textColor="?attr/colorOnError"
+                app:layout_constraintBottom_toBottomOf="@id/tv_member_mobile_number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_member_name" />
+
+            <View
+                android:id="@+id/v_horizontal_line"
+                style="@style/ThemeOverlay.App.HeaderLineTheme"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toolbar_line_height"
+                android:layout_marginTop="@dimen/margin_medium"
+                app:layout_constraintTop_toBottomOf="@id/tv_member_mobile_number" />
+
+            <TextView
+                android:id="@+id/tv_group_start_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:textAppearance="?baseRegularContent"
+                android:textColor="?attr/neutralB0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/v_horizontal_line"
+                tools:text="@string/mock_group_start_date" />
+
+            <LinearLayout
+                android:id="@+id/ll_data_used"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:background="@drawable/group_member_data_used_background"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_group_start_date">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_xmedium"
+                    android:alpha="0.5"
+                    android:text="@string/data_used"
+                    android:textAllCaps="true"
+                    android:textAppearance="?chip"
+                    android:textColor="?attr/neutralB0" />
+
+                <TextView
+                    android:id="@+id/tv_member_usage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    android:textAppearance="?defaultData"
+                    android:textColor="?primary" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_set_data_limit_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:text="@string/set_data_limit"
+                android:textAppearance="?baseRegularContent"
+                android:textColor="?attr/neutralB0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_data_used" />
+
+            <com.skydoves.expandablelayout.ExpandableLayout
+                android:id="@+id/ex_data_limit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xstandard"
+                app:expandable_isExpanded="false"
+                app:expandable_parentLayout="@layout/set_data_limit_parent_layout"
+                app:expandable_secondLayout="@layout/set_data_limit_child_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_set_data_limit_title" />
+
+            <TextView
+                android:id="@+id/tv_set_data_limit_anytime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/change_data_limit_anytime"
+                android:textAppearance="?xSmallRegularContent"
+                android:textColor="?attr/neutralA3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ex_data_limit" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_save"
+                style="@style/Widget.App.ClassicButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:enabled="false"
+                android:text="@string/save"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_set_data_limit_anytime" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
+

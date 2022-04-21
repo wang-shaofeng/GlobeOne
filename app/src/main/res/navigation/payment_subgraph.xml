@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/payment_subgraph"
+    app:startDestination="@id/paymentLandingFragment">
+
+    <fragment
+        android:id="@+id/paymentLandingFragment"
+        android:name="ph.com.globe.globeonesuperapp.payment.PaymentLandingFragment"
+        android:label="paymentLandingFragment"
+        tools:layout="@layout/payment_landing_fragment">
+        <argument
+            android:name="paymentParameter"
+            app:argType="ph.com.globe.globeonesuperapp.payment.PaymentParameters" />
+        <action
+            android:id="@+id/action_paymentLandingFragment_to_chargeToLoadFragment"
+            app:destination="@id/chargeToLoadFragment" />
+        <action
+            android:id="@+id/action_paymentLandingFragment_to_customerDetailsOtpFragment"
+            app:destination="@id/customerDetailsOtpFragment" />
+        <action
+            android:id="@+id/action_paymentLandingFragment_to_selectOtherAccountFragmentPayment"
+            app:destination="@id/selectOtherAccountFragmentPayment" />
+        <action
+            android:id="@+id/action_paymentLandingFragment_to_paymentProcessingFragment"
+            app:destination="@id/paymentProcessingFragment" />
+        <action
+            android:id="@+id/action_paymentLandingFragment_to_paymentFailedFragment"
+            app:destination="@id/paymentFailedFragment" />
+        <action
+            android:id="@+id/action_paymentLandingFragment_to_paymentSuccessfulFragment"
+            app:destination="@id/paymentSuccessfulFragment" />
+        <action
+            android:id="@+id/action_paymentLandingFragment_to_paymentLoadingSessionFragment"
+            app:destination="@id/paymentLoadingSessionFragment" />
+    </fragment>
+
+    <include app:graph="@navigation/vouchers_subgraph" />
+    <fragment
+        android:id="@+id/paymentSuccessfulFragment"
+        android:name="ph.com.globe.globeonesuperapp.payment.payment_successful.PaymentSuccessfulFragment"
+        android:label="PaymentSuccessfulFragment"
+        tools:layout="@layout/payment_successful_fragment">
+        <argument
+            android:name="isShareFlow"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <argument
+            android:name="deductedFrom"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="isHpwAndChargeToLoad"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_paymentSuccessfulFragment_to_group_subgraph"
+            app:destination="@id/group_subgraph" />
+        <action
+            android:id="@+id/action_paymentSuccessfulFragment_to_paymentSignUpPromptFragment"
+            app:destination="@id/paymentSignUpPromptFragment" />
+        <action
+            android:id="@+id/action_paymentSuccessfulFragment_to_paymentHpwSignUpPromptFragment"
+            app:destination="@id/paymentHpwSignUpPromptFragment" />
+        <action
+            android:id="@+id/action_paymentSuccessfulFragment_to_paymentHpwEnrollPromptFragment"
+            app:destination="@id/paymentHpwEnrollPromptFragment" />
+        <action
+            android:id="@+id/action_paymentSuccessfulFragment_to_vouchers_subgraph"
+            app:destination="@id/vouchers_subgraph">
+            <argument
+                android:name="enrolledAccount"
+                app:argType="ph.com.globe.model.profile.domain_models.EnrolledAccount" />
+            <argument
+                android:name="isShowContentTab"
+                android:defaultValue="false"
+                app:argType="boolean" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/adyenPaymentFragment"
+        android:name="ph.com.globe.globeonesuperapp.payment.adyen.AdyenPaymentFragment"
+        android:label="adyen_payment_fragment"
+        tools:layout="@layout/payment_adyen_fragment">
+        <action
+            android:id="@+id/action_adyenPaymentFragment_to_paymentSuccessfulFragment"
+            app:destination="@id/paymentSuccessfulFragment" />
+        <action
+            android:id="@+id/action_adyenPaymentFragment_to_paymentFailedFragment"
+            app:destination="@id/paymentFailedFragment" />
+        <action
+            android:id="@+id/action_adyenPaymentFragment_to_paymentRefundFragment"
+            app:destination="@id/paymentRefundFragment"
+            app:popUpTo="@id/paymentLandingFragment" />
+        <action
+            android:id="@+id/action_adyenPaymentFragment_to_paymentProcessingFragment"
+            app:destination="@id/paymentProcessingFragment" />
+        <argument
+            android:name="paymentMethodJson"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/paymentFailedFragment"
+        android:name="ph.com.globe.globeonesuperapp.payment.payment_failed.PaymentFailedFragment"
+        android:label="PaymentFailedFragment"
+        tools:layout="@layout/payment_failed_fragment">
+        <argument
+            android:name="message"
+            app:argType="string" />
+        <argument
+            android:name="message_info"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="message_debug"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_paymentFailedFragment_to_comingSoonFragment"
+            app:destination="@id/comingSoonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chargeToLoadFragment"
+        android:name="ph.com.globe.globeonesuperapp.payment.charge_to_load.ChargeToLoadFragment"
+        android:label="ChargeToLoadFragment"
+        tools:layout="@layout/payment_charge_to_load_otp">
+        <argument
+            android:name="sentOtpArgs"
+            app:argType="ph.com.globe.globeonesuperapp.verify_otp.VerifyOtpViewModel$SendOtpResult$SentOtpSuccess" />
+        <argument
+            android:name="isSharing"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_chargeToLoadFragment_to_paymentSuccessfulFragment"
+            app:destination="@id/paymentSuccessfulFragment" />
+        <action
+            android:id="@+id/action_chargeToLoadFragment_to_paymentFailedFragment"
+            app:destination="@id/paymentFailedFragment" />
+        <action
+            android:id="@+id/action_chargeToLoadFragment_to_broadbandModemInboxWebViewFragment"
+            app:destination="@id/broadbandModemInboxWebViewFragment" />
+        <action
+            android:id="@+id/action_chargeToLoadFragment_to_findModemUsernamePasswordFragment"
+            app:destination="@id/findModemUsernamePasswordFragment" />
+        <action
+            android:id="@+id/action_chargeToLoadFragment_to_paymentProcessingFragment"
+            app:destination="@id/paymentProcessingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/GCashPaymentFragment"
+        android:name="ph.com.globe.globeonesuperapp.payment.gcash.GCashPaymentFragment"
+        android:label="payment_gcash_fragment"
+        tools:layout="@layout/payment_gcash_fragment">
+        <action
+            android:id="@+id/action_GCashPaymentFragment_to_paymentSuccessfulFragment"
+            app:destination="@id/paymentSuccessfulFragment" />
+        <action
+            android:id="@+id/action_GCashPaymentFragment_to_paymentFailedFragment"
+            app:destination="@id/paymentFailedFragment" />
+        <action
+            android:id="@+id/action_GCashPaymentFragment_to_paymentRefundFragment"
+            app:destination="@id/paymentRefundFragment"
+            app:popUpTo="@id/paymentLandingFragment" />
+        <action
+            android:id="@+id/action_GCashPaymentFragment_to_paymentProcessingFragment"
+            app:destination="@id/paymentProcessingFragment" />
+        <argument
+            android:name="checkoutUrl"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectOtherAccountFragmentPayment"
+        android:name="ph.com.globe.globeonesuperapp.shop.select_other_account.SelectOtherAccountFragment"
+        android:label="SelectOtherAccountFragmentPayment"
+        tools:layout="@layout/select_other_account_fragment">
+        <action
+            android:id="@+id/action_selectOtherAccountFragmentPayment_to_contactsFragment"
+            app:destination="@id/contactsFragmentPayment" />
+    </fragment>
+    <fragment
+        android:id="@+id/comingSoonFragment"
+        android:name="ph.com.globe.globeonesuperapp.coming_soon.ComingSoonFragment"
+        android:label="ComingSoonFragment"
+        tools:layout="@layout/coming_soon_fragment" />
+    <include app:graph="@navigation/group_subgraph" />
+    <fragment
+        android:id="@+id/broadbandModemInboxWebViewFragment"
+        android:name="ph.com.globe.globeonesuperapp.addaccount.enterotp.BroadbandModemInboxWebViewFragment"
+        android:label="BroadbandModemInboxWebViewFragment" />
+    <fragment
+        android:id="@+id/findModemUsernamePasswordFragment"
+        android:name="ph.com.globe.globeonesuperapp.addaccount.broadband.AddAccountFindModemNumberFragment"
+        android:label="FindModemUsernamePasswordFragment"
+        tools:layout="@layout/add_account_find_modem_number_fragment" />
+    <fragment
+        android:id="@+id/paymentRefundFragment"
+        android:name="ph.com.globe.globeonesuperapp.payment.payment_refund.PaymentRefundFragment"
+        android:label="payment_refund_fragment"
+        tools:layout="@layout/payment_refund_fragment">
+        <argument
+            android:name="paymentType"
+            app:argType="ph.com.globe.model.payment.GlobePaymentMethod" />
+        <argument
+            android:name="purchaseType"
+            app:argType="string" />
+        <argument
+            android:name="isSuccessful"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentProcessingFragment"
+        android:name="ph.com.globe.globeonesuperapp.payment.payment_processing.PaymentProcessingFragment"
+        android:label="PaymentProcessingFragment"
+        tools:layout="@layout/payment_processing_fragment">
+        <argument
+            android:name="entryPoint"
+            app:argType="ph.com.globe.globeonesuperapp.payment.payment_processing.ProcessingEntryPoint" />
+        <action
+            android:id="@+id/action_paymentProcessingFragment_to_chargeToLoadFragment"
+            app:destination="@id/chargeToLoadFragment"
+            app:popUpTo="@id/paymentLandingFragment" />
+        <action
+            android:id="@+id/action_paymentProcessingFragment_to_paymentSuccessfulFragment"
+            app:destination="@id/paymentSuccessfulFragment"
+            app:popUpTo="@id/paymentLandingFragment" />
+        <action
+            android:id="@+id/action_paymentProcessingFragment_to_paymentFailedFragment"
+            app:destination="@id/paymentFailedFragment"
+            app:popUpTo="@id/paymentLandingFragment" />
+        <action
+            android:id="@+id/action_paymentProcessingFragment_to_paymentRefundFragment"
+            app:destination="@id/paymentRefundFragment"
+            app:popUpTo="@id/paymentLandingFragment" />
+        <action
+            android:id="@+id/action_paymentProcessingFragment_to_paymentProcessingFinalFragment"
+            app:destination="@id/paymentProcessingFinalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentSignUpPromptFragment"
+        android:name="ph.com.globe.globeonesuperapp.payment.sign_up_prompt.PaymentSignUpPromptFragment"
+        android:label="payment_sign_up_prompt_fragment"
+        tools:layout="@layout/payment_sign_up_prompt_fragment" />
+    <fragment
+        android:id="@+id/paymentProcessingFinalFragment"
+        android:name="ph.com.globe.globeonesuperapp.payment.payment_processing.PaymentProcessingFinalFragment"
+        android:label="payment_processing_final_fragment"
+        tools:layout="@layout/payment_processing_final_fragment" />
+    <fragment
+        android:id="@+id/customerDetailsOtpFragment"
+        android:name="ph.com.globe.globeonesuperapp.payment.customer_details.CustomerDetailsOtpFragment"
+        android:label="CustomerDetailsOtpFragment"
+        tools:layout="@layout/customer_details_otp_fragment">
+        <argument
+            android:name="sentOtpArgs"
+            app:argType="ph.com.globe.globeonesuperapp.verify_otp.VerifyOtpViewModel$SendOtpResult$SentOtpSuccess" />
+        <action
+            android:id="@+id/action_customerDetailsOtpFragment_to_paymentLoadingSessionFragment"
+            app:destination="@id/paymentLoadingSessionFragment"
+            app:popUpTo="@id/paymentLandingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentHpwSignUpPromptFragment"
+        android:name="ph.com.globe.globeonesuperapp.payment.sign_up_prompt.PaymentHpwSignUpPromptFragment"
+        android:label="payment_hpw_sign_up_prompt_fragment"
+        tools:layout="@layout/payment_hpw_sign_up_prompt_fragment" />
+    <fragment
+        android:id="@+id/paymentHpwEnrollPromptFragment"
+        android:name="ph.com.globe.globeonesuperapp.payment.sign_up_prompt.PaymentHpwEnrollPromptFragment"
+        android:label="payment_hpw_enroll_prompt_fragment"
+        tools:layout="@layout/payment_hpw_enroll_prompt_fragment">
+        <argument
+            android:name="numberToEnroll"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactsFragmentPayment"
+        android:name="ph.com.globe.globeonesuperapp.shop.util.ContactsFragment"
+        android:label="ContactsFragment" />
+    <fragment
+        android:id="@+id/paymentLoadingSessionFragment"
+        android:name="ph.com.globe.globeonesuperapp.payment.payment_loading_session.PaymentLoadingSessionFragment"
+        android:label="PaymentLoadingSessionFragment">
+        <argument
+            android:name="paymentType"
+            app:argType="ph.com.globe.model.payment.GlobePaymentMethod" />
+        <action
+            android:id="@+id/action_paymentLoadingSessionFragment_to_GCashPaymentFragment"
+            app:destination="@id/GCashPaymentFragment"
+            app:popUpTo="@id/paymentLandingFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_paymentLoadingSessionFragment_to_paymentFailedFragment"
+            app:destination="@id/paymentFailedFragment"
+            app:popUpTo="@id/paymentLandingFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_paymentLoadingSessionFragment_to_adyenPaymentFragment"
+            app:destination="@id/adyenPaymentFragment"
+            app:popUpTo="@id/paymentLandingFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+</navigation>

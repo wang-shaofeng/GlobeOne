@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:dither="true"
+    android:shape="oval"
+    android:useLevel="true">
+    <size
+        android:width="@dimen/dots_indicator_dot_radius"
+        android:height="@dimen/dots_indicator_dot_radius" />
+    <solid android:color="@color/functional_primary" />
+</shape>

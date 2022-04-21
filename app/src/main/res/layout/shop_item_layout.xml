@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv_shop_item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/shop_item_height"
+    android:layout_marginHorizontal="@dimen/margin_standard"
+    android:layout_marginBottom="@dimen/margin_xsmall"
+    app:cardCornerRadius="@dimen/corner_radius_xxxsmall"
+    app:cardElevation="@dimen/small_elevation">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/outlined_primary_shape">
+
+        <View
+            android:id="@+id/v_vertical_line"
+            android:layout_width="@dimen/shop_item_vertical_line"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="?prepaidA500" />
+
+        <TextView
+            android:id="@+id/tv_shop_item_attribute"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_standard"
+            android:layout_marginEnd="@dimen/margin_standard"
+            android:gravity="start"
+            android:textAllCaps="true"
+            android:textAppearance="?chip"
+            android:textColor="?neutralA4"
+            app:layout_constraintBottom_toTopOf="@+id/tv_shop_item_name"
+            app:layout_constraintEnd_toStartOf="@id/tv_shop_item_price"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread"
+            tools:text="discounted" />
+
+        <TextView
+            android:id="@+id/tv_shop_item_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_standard"
+            android:textAppearance="?xBaseBold"
+            android:textColor="?neutralA0"
+            app:layout_constraintBottom_toTopOf="@+id/cg_app_images"
+            app:layout_constraintEnd_toStartOf="@id/tv_shop_item_price"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_shop_item_attribute"
+            tools:text="Go50" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/cg_app_images"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_standard"
+            app:chipSpacing="@dimen/margin_xxsmall"
+            app:layout_constraintBottom_toTopOf="@id/v_horizontal_line"
+            app:layout_constraintEnd_toStartOf="@id/tv_shop_item_price"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_shop_item_name" />
+
+        <View
+            android:id="@+id/v_horizontal_line"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/toolbar_line_height"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_xstandard"
+            android:layout_marginEnd="@dimen/margin_xstandard"
+            android:background="?neutralA4"
+            app:layout_constraintBottom_toTopOf="@id/cl_allocation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cg_app_images" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_allocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_xstandard"
+            android:layout_marginBottom="@dimen/margin_smedium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_shop_item_validity"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v_horizontal_line">
+
+            <ImageView
+                android:id="@+id/iv_shop_item_allocation_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/tv_data_for"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_shop_item_allocation_size" />
+
+            <TextView
+                android:id="@+id/tv_shop_item_allocation_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:textColor="?neutralA0"
+                android:textSize="@dimen/text_size_xxlarge"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tv_data_for"
+                app:layout_constraintStart_toEndOf="@id/iv_shop_item_allocation_icon"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginStart="0dp"
+                tools:text="1 GB" />
+
+            <TextView
+                android:id="@+id/tv_data_for"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:textColor="?neutralA3"
+                android:textSize="@dimen/text_size_small"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_shop_item_allocation_icon"
+                app:layout_constraintTop_toBottomOf="@id/tv_shop_item_allocation_size"
+                tools:text="For Facebook"
+                tools:visibility="visible" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_shop_item_validity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginEnd="@dimen/margin_xstandard"
+            android:textAppearance="?xSmallRegularContent"
+            android:textColor="?neutralA3"
+            app:layout_constraintBottom_toBottomOf="@id/cl_allocation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/cl_allocation"
+            app:layout_constraintTop_toTopOf="@+id/cl_allocation"
+            tools:text="Valid for 5 days." />
+
+        <TextView
+            android:id="@+id/tv_shop_item_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_xstandard"
+            android:textAppearance="?comfyData"
+            android:textColor="?neutralA0"
+            app:layout_constraintBottom_toTopOf="@id/tv_shop_item_discount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="P50" />
+
+        <TextView
+            android:id="@+id/tv_shop_item_discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_xstandard"
+            android:layout_marginBottom="@dimen/margin_large"
+            android:gravity="start"
+            android:textColor="?neutralA3"
+            android:textSize="@dimen/text_size_standard"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/v_horizontal_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_shop_item_price"
+            tools:text="P10" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

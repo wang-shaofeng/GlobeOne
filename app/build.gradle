@@ -1,0 +1,287 @@
+/*
+ * Copyright (C) 2021 LotusFlare
+ * All Rights Reserved.
+ * Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+ */
+
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-parcelize'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+    id 'com.google.firebase.firebase-perf'
+    id 'adeum'
+}
+
+android {
+    compileSdkVersion globeCompileVersion
+    buildToolsVersion globeBuildToolsVersion
+
+    defaultConfig {
+        applicationId "ph.com.globe.globeonesuperapp"
+        minSdkVersion globeMinSdkVersion
+        targetSdkVersion globeTargetSdkVersion
+        versionCode globeVersion.versionCode()
+        versionName globeVersion.versionName()
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        vectorDrawables.useSupportLibrary = true
+
+        setProperty("archivesBaseName", applicationId + "-" + versionCode + "(" + versionName + ")")
+    }
+
+    signingConfigs {
+        release {
+            keyAlias "upload"
+            keyPassword "geBT4!u77&ewcMe"
+            storeFile file('../upload_keystore.jks')
+            storePassword "geBT4!u77&ewcMe"
+        }
+        debug {
+            keyAlias "development"
+            keyPassword "re674!u#7&eoutp"
+            storeFile file('../debug_keystore.jks')
+            storePassword "re674!u#7&eoutp"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            firebaseCrashlytics {
+                mappingFileUploadEnabled true
+            }
+
+            signingConfig signingConfigs.release
+            versionNameSuffix '-release'
+        }
+        debug {
+            //TODO add debug signing config here so that all debug builds are signed with the same key
+            minifyEnabled false
+            shrinkResources false
+
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            splits.abi.enable = false
+            splits.density.enable = false
+            ext.alwaysUpdateBuildId = false
+            aaptOptions.cruncherEnabled = false
+
+            firebaseCrashlytics {
+                mappingFileUploadEnabled false
+            }
+
+            signingConfig signingConfigs.debug
+            versionNameSuffix '-debug'
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+    }
+
+    flavorDimensions "servers", "analyticsType"
+
+    productFlavors {
+
+        staging {
+            dimension "servers"
+
+            buildConfigField("String", "SOCIAL_LOGIN_URL", "\"https://wwwdev-globe.rpxnow.com\"")
+
+            buildConfigField("String", "ADYEN_DROPIN_CLIENT_KEY", "\"test_43DCFLKLMVAULAR6XLOM42EFZEYNZYEY\"")
+
+            resValue "string", "facebook_app_id", '1249403145217324'
+            resValue "string", "fb_login_protocol_scheme", 'fb1249403145217324'
+
+            matchingFallbacks = ["staging"]
+
+            versionNameSuffix '-staging'
+        }
+
+//        prod {
+//            dimension "servers"
+//
+//            buildConfigField("String", "SOCIAL_LOGIN_URL", "\"https://signin.globe.com.ph\"")
+//
+//            buildConfigField("String", "ADYEN_DROPIN_CLIENT_KEY", "\"live_UWD73W44MJCV7N5W5CS6HKMK74VWWSPJ\"")
+//
+//            resValue "string", "facebook_app_id", '320406792232310'
+//            resValue "string", "fb_login_protocol_scheme", 'fb320406792232310'
+//
+//            matchingFallbacks = ["prod"]
+//
+//            versionNameSuffix '-prod'
+//        }
+
+        google {
+            dimension "analyticsType"
+
+            buildConfigField("boolean", "CRASH_COLLECTION_ENABLED", "true")
+            manifestPlaceholders = [crashCollectionEnabled: "true"]
+        }
+
+        huawei {
+            dimension "analyticsType"
+
+            buildConfigField("boolean", "CRASH_COLLECTION_ENABLED", "true")
+            manifestPlaceholders = [crashCollectionEnabled: "true"]
+        }
+
+        noAnalytics {
+            dimension "analyticsType"
+            manifestPlaceholders = [crashCollectionEnabled: "false"]
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+
+    packagingOptions {
+        exclude 'META-INF/*.kotlin_module'
+        exclude 'META-INF/NOTICE.md'
+        exclude 'META-INF/LICENSE.md'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    kapt {
+        javacOptions {
+            // These options are normally set automatically via the Hilt Gradle plugin, but we
+            // set them manually to workaround a bug in the Kotlin 1.5.20
+            option("-Adagger.fastInit=ENABLED")
+            option("-Adagger.hilt.android.internal.disableAndroidSuperclassValidation=true")
+        }
+    }
+}
+
+kapt {
+    correctErrorTypes true
+}
+
+dependencies {
+    implementation project(':model')
+    implementation project(':domain')
+    implementation project(':data')
+    implementation project(':analytics')
+    implementation project(':util')
+    implementation project(':errors')
+    implementation project(':encryption')
+    implementation project(':inAppUpdate')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation "androidx.core:core-ktx:$coreKtxVersion"
+    implementation "androidx.appcompat:appcompat:$appCompatVersion"
+    implementation "androidx.savedstate:savedstate-ktx:$saveStateVersion"
+    implementation "androidx.exifinterface:exifinterface:$exifinterfaceVersion"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation "junit:junit:$junitVersion"
+    testImplementation "org.robolectric:robolectric:$robolectricVersion"
+
+    // UI
+    implementation "com.google.android.material:material:$materialDesignVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swipeRefreshLayoutVersion"
+    implementation "androidx.recyclerview:recyclerview:$recyclerViewVersion"
+    implementation "androidx.viewpager2:viewpager2:$viewPager2Version"
+    implementation "com.github.skydoves:expandablelayout:$expandableLayoutVersion"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+
+    implementation "androidx.activity:activity-ktx:$activityVersion"
+    implementation "androidx.fragment:fragment-ktx:$fragmentVersion"
+
+    // Lifecycle
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion"
+    // alternately - if using Java8, use the following instead of lifecycle-compiler
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$navVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navVersion"
+    implementation "androidx.navigation:navigation-runtime-ktx:$navVersion"
+
+    // Hilt
+    implementation "com.google.dagger:hilt-android:$hiltDaggerVersion"
+    kapt "com.google.dagger:hilt-compiler:$hiltDaggerVersion"
+    implementation "androidx.hilt:hilt-navigation-fragment:$hiltNavigationVersion"
+
+    // Firebase
+    implementation platform("com.google.firebase:firebase-bom:$firebaseBomVersion")
+    implementation "com.google.firebase:firebase-auth-ktx"
+    implementation "com.google.firebase:firebase-analytics-ktx"
+    implementation 'com.google.firebase:firebase-dynamic-links-ktx'
+    implementation "com.google.firebase:firebase-crashlytics-ktx"
+    implementation "com.google.firebase:firebase-perf-ktx"
+
+    implementation "com.google.mlkit:barcode-scanning:$firebaseBarcodeScannerVersion"
+
+    // Google tag manager
+    implementation "com.google.android.gms:play-services-tagmanager:$gmsPlayService"
+
+    // Coroutine
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion"
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    kapt "com.github.bumptech.glide:compiler:$glideVersion"
+    implementation "com.github.bumptech.glide:okhttp3-integration:$glideVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okHttpLoggingInterceptorVersion"
+
+    // Adyen DropIn SDK implementation
+    implementation "com.adyen.checkout:drop-in:$adyenSDKVersion"
+
+    // Google Play
+    implementation "com.google.android.play:core-ktx:$googlePlayCoreVersion"
+
+    // Google and Facebook Auth
+    implementation "com.google.android.gms:play-services-auth:$googleAuthVersion"
+    implementation "com.facebook.android:facebook-login:$facebookAuthVersion"
+
+//    debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakCanaryVersion"
+
+    // CameraX
+    implementation "androidx.camera:camera-core:$cameraXVersion"
+    implementation "androidx.camera:camera-camera2:$cameraXVersion"
+    implementation "androidx.camera:camera-lifecycle:$cameraXVersion"
+    implementation "androidx.camera:camera-view:$cameraXPreviewVersion"
+    implementation "com.google.guava:guava:30.1.1-android"
+
+    // Gson
+    implementation "com.google.code.gson:gson:$gsonVersion"
+
+    implementation "com.dmitryborodin:pdfview-android:1.1.0"
+}
+
+adeum {
+    account {
+        name 'GlobeTelecom-a0Q3400000EpbteEAB'
+        licenseKey 'ec7fb733-e5a1-4806-af51-5c9ac06cddb5'
+    }
+    proguardMappingFileUpload {
+        failBuildOnUploadFailure true
+        enabled true
+    }
+}

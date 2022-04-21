@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_booster_item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/v_item_top_line"
+        style="@style/ThemeOverlay.App.HeaderLineTheme"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_line_height"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_freebie_radio_button"
+        android:layout_width="@dimen/freebie_radio_button_width"
+        android:layout_height="@dimen/freebie_radio_button_width"
+        app:layout_constraintBottom_toBottomOf="@id/tv_freebie_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_freebie_name"
+        app:srcCompat="@drawable/radio_button_start_drawable" />
+
+    <TextView
+        android:id="@+id/tv_freebie_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_xstandard"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:textAppearance="?baseBoldContent"
+        android:textColor="?neutralB0"
+        app:layout_constraintEnd_toStartOf="@id/tv_freebie_quota_allocation"
+        app:layout_constraintStart_toEndOf="@id/iv_freebie_radio_button"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_freebie_quota_allocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_standard"
+        android:text="@string/freebie_single_select_item_1gb_validity"
+        android:textAppearance="?xBaseBoldNum"
+        android:textColor="?neutralA3"
+        app:layout_constraintBottom_toBottomOf="@id/tv_freebie_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_freebie_name" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/cg_freebie_images"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_standard"
+        android:layout_marginBottom="@dimen/margin_xstandard"
+        app:chipSpacing="@dimen/margin_xxsmall"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tv_freebie_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_freebie_quota_allocation" />
+
+    <View
+        android:id="@+id/v_item_bottom_line"
+        style="@style/ThemeOverlay.App.HeaderLineTheme"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_line_height"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

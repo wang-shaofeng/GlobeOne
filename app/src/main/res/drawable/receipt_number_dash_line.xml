@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <solid android:color="?absoluteWhite" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="line">
+            <stroke
+                android:width="@dimen/stroke_width_small"
+                android:color="?neutralA4"
+                android:dashWidth="@dimen/receipt_number_line_dash_width"
+                android:dashGap="@dimen/receipt_number_line_dash_gap" />
+        </shape>
+    </item>
+</layer-list>

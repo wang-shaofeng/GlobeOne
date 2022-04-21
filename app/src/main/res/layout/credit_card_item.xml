@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/credit_card_item_height"
+    android:layout_margin="@dimen/margin_small"
+    android:theme="@style/ThemeOverlay.App.Light"
+    app:cardCornerRadius="@dimen/corner_radius_xxxsmall"
+    app:cardElevation="0dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <ph.com.globe.globeonesuperapp.utils.ui.SwipeLayout
+        android:id="@+id/sl_swipeable_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:draggedItem="@id/cl_main_content"
+        app:isEnabledSwipe="true"
+        app:rightItem="@id/fl_delete_view"
+        app:swipeDirection="left">
+
+        <FrameLayout
+            android:id="@+id/fl_delete_view"
+            android:layout_width="@dimen/credit_card_item_height"
+            android:layout_height="@dimen/credit_card_item_height"
+            android:layout_gravity="end|center"
+            android:background="@color/error_red">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/error_red"
+                app:srcCompat="@drawable/ic_bin" />
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_main_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/padding_xmedium"
+            android:paddingTop="@dimen/padding_smedium"
+            android:paddingEnd="@dimen/padding_xmedium"
+            android:paddingBottom="@dimen/padding_smedium"
+            android:background="@drawable/select_account_item_background">
+
+            <ImageView
+                android:id="@+id/iv_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_credit_card_large" />
+
+            <TextView
+                android:id="@+id/tv_card_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_smedium"
+                android:textAppearance="?comfyCallSms"
+                android:textColor="?accentDark"
+                app:layout_constraintBottom_toTopOf="@id/tv_card_expiration_date"
+                app:layout_constraintStart_toEndOf="@id/iv_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_card_expiration_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_smedium"
+                android:textAppearance="?xSmallRegularContent"
+                android:textColor="?neutralA2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_icon"
+                app:layout_constraintTop_toBottomOf="@id/tv_card_number" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ph.com.globe.globeonesuperapp.utils.ui.SwipeLayout>
+</androidx.cardview.widget.CardView>

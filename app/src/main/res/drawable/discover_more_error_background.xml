@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/two_button_dialog_top_line" />
+            <corners
+                android:topLeftRadius="@dimen/corner_radius_xxxsmall"
+                android:topRightRadius="@dimen/corner_radius_xxxsmall" />
+        </shape>
+    </item>
+    <item android:top="@dimen/margin_xsmall">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/two_button_dialog_background" />
+        </shape>
+    </item>
+</layer-list>

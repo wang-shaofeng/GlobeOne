@@ -1,0 +1,15 @@
+/*
+ * Copyright (C) 2021 LotusFlare
+ * All Rights Reserved.
+ * Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+ */
+include ':app'
+include ':data'
+include ':domain'
+include ':encryption'
+include ':analytics'
+include ':inAppUpdate'
+include ':errors'
+include ':model'
+include ':util'
+rootProject.name = "GlobeOne"

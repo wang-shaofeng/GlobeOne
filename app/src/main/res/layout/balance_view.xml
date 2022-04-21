@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/outlined_primary_shape"
+    android:paddingHorizontal="@dimen/padding_smedium"
+    android:paddingVertical="@dimen/padding_smedium">
+
+    <TextView
+        android:id="@+id/tv_balance_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?labelCaption"
+        android:textColor="?neutralA3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/load_balance" />
+
+    <LinearLayout
+        android:id="@+id/ll_balance_amount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_xsmall"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toStartOf="@id/iv_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_balance_title">
+
+        <ImageView
+            android:id="@+id/iv_star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_xxxsmall"
+            android:layout_marginEnd="@dimen/margin_xsmall"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_orange_star"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_balance_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?sMediumBoldNum"
+            android:textColor="?accentDark"
+            tools:text="@string/dac_mock_amount" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_expiration_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_xxsmall"
+        android:layout_marginEnd="@dimen/margin_xxlarge"
+        android:textAppearance="?xSmallRegularContent"
+        android:textColor="?neutralA4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_balance_amount"
+        tools:text="@string/mock_account_expires_on" />
+
+    <TextView
+        android:id="@+id/tv_link_g_cash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gcash_link"
+        android:textColor="?primary"
+        android:textSize="@dimen/text_size_small"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/tv_expiration_date"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_load_to_pay_balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/load_to_pay_balance"
+        android:textColor="?primary"
+        android:textSize="@dimen/text_size_small"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/tv_expiration_date"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/ll_balance_amount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ll_balance_amount"
+        app:srcCompat="@drawable/ic_arrow_button_gray" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lav_balance_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_ssmedium"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintWidth="true"
+        app:layout_constraintEnd_toStartOf="@id/iv_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_loop="true" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

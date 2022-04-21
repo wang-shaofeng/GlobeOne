@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_splash"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="ph.com.globe.globeonesuperapp.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/splash_fragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_recommendedUpdatePromptFragment"
+            app:destination="@id/recommendedUpdatePromptFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_mandatoryUpdatePromptFragment"
+            app:destination="@id/mandatoryUpdatePromptFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recommendedUpdatePromptFragment"
+        android:name="ph.com.globe.globeonesuperapp.in_app_update.RecommendedUpdatePromptFragment"
+        android:label="RecommendedUpdatePromptFragment" />
+    <fragment
+        android:id="@+id/mandatoryUpdatePromptFragment"
+        android:name="ph.com.globe.globeonesuperapp.in_app_update.MandatoryUpdatePromptFragment"
+        android:label="MandatoryUpdatePromptFragment" />
+</navigation>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_consumption"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/consumption_height"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <ph.com.globe.globeonesuperapp.utils.ui.RectangleUsageView
+        android:id="@+id/ruv_data"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:adjustedTextColor="?corporateA100"
+        app:backgroundRectangleColor="?corporateA900"
+        app:emptyMessage="@string/no_data_subs"
+        app:foregroundRectangleColor="?corporateA500"
+        app:rectangleFillStyle="0"
+        app:textTitleStyle="@style/Widget.App.ConsumptionTitleStyle"
+        app:usageType="@string/data" />
+
+    <ph.com.globe.globeonesuperapp.utils.ui.RectangleUsageView
+        android:id="@+id/ruv_call"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:adjustedTextColor="?corporateD100"
+        app:backgroundRectangleColor="?corporateD900"
+        app:emptyMessage="@string/no_calls_subs"
+        app:foregroundRectangleColor="?corporateD600"
+        app:includedIcon="@drawable/ic_included_call"
+        app:rectangleFillStyle="0"
+        app:textTitleStyle="@style/Widget.App.ConsumptionTitleStyle"
+        app:usageType="@string/call" />
+
+    <ph.com.globe.globeonesuperapp.utils.ui.RectangleUsageView
+        android:id="@+id/ruv_text"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:adjustedTextColor="?prepaidE100"
+        app:backgroundRectangleColor="?prepaidE1000"
+        app:emptyMessage="@string/no_text_subs"
+        app:foregroundRectangleColor="?prepaidE600"
+        app:includedIcon="@drawable/ic_included_text"
+        app:rectangleFillStyle="0"
+        app:textTitleStyle="@style/Widget.App.ConsumptionTitleStyle"
+        app:usageType="@string/text" />
+
+</LinearLayout>

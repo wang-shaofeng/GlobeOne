@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<resources>
+    <!-- MARGINS -->
+    <dimen name="margin_xxxsmall">2dp</dimen>
+    <dimen name="margin_xxsmall">4dp</dimen>
+    <dimen name="margin_xsmall">6dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_xxstandard">10dp</dimen>
+    <dimen name="margin_xstandard">12dp</dimen>
+    <dimen name="margin_xs_standard">14dp</dimen>
+    <dimen name="margin_standard">16dp</dimen>
+    <dimen name="margin_ssmedium">18dp</dimen>
+    <dimen name="margin_smedium">20dp</dimen>
+    <dimen name="margin_medium">24dp</dimen>
+    <dimen name="margin_xs_medium">28dp</dimen>
+    <dimen name="margin_xmedium">32dp</dimen>
+    <dimen name="margin_large">36dp</dimen>
+    <dimen name="margin_xlarge">38dp</dimen>
+    <dimen name="margin_xxlarge">42dp</dimen>
+    <dimen name="margin_xxxlarge">48dp</dimen>
+    <dimen name="margin_xxxxlarge">56dp</dimen>
+    <dimen name="margin_xxxxxlarge">62dp</dimen>
+    <dimen name="margin_xxxxxxlarge">80dp</dimen>
+    <dimen name="margin_xxxxxxxlarge">100dp</dimen>
+    <dimen name="margin_xxxxxxxxlarge">140dp</dimen>
+
+    <!-- PADDINGS -->
+    <dimen name="padding_xxsmall">1dp</dimen>
+    <dimen name="padding_xsmall">2dp</dimen>
+    <dimen name="padding_small">4dp</dimen>
+    <dimen name="padding_xstandard">6dp</dimen>
+    <dimen name="padding_standard">8dp</dimen>
+    <dimen name="padding_ssmedium">10dp</dimen>
+    <dimen name="padding_smedium">12dp</dimen>
+    <dimen name="padding_medium">16dp</dimen>
+    <dimen name="padding_xmedium">20dp</dimen>
+    <dimen name="padding_large">24dp</dimen>
+    <dimen name="padding_xlarge">32dp</dimen>
+    <dimen name="padding_xxlarge">40dp</dimen>
+    <dimen name="padding_xxxlarge">42dp</dimen>
+    <dimen name="padding_xxxxlarge">48dp</dimen>
+    <dimen name="padding_xxxxxlarge">56dp</dimen>
+
+    <!-- TEXT SIZE -->
+    <dimen name="text_size_xxsmall">9sp</dimen>
+    <dimen name="text_size_xsmall">10sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_standard">14sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_xmedium">18sp</dimen>
+    <dimen name="text_size_large">20sp</dimen>
+    <dimen name="text_size_xlarge">22sp</dimen>
+    <dimen name="text_size_xxlarge">24sp</dimen>
+    <dimen name="text_size_xxxlarge">28sp</dimen>
+    <dimen name="text_size_xxxxlarge">32sp</dimen>
+
+    <!-- RADIUS -->
+    <dimen name="corner_radius_xxxxxsmall">2dp</dimen>
+    <dimen name="corner_radius_xxxxsmall">4dp</dimen>
+    <dimen name="corner_radius_xxxsmall">6dp</dimen>
+    <dimen name="corner_radius_xxsmall">8dp</dimen>
+    <dimen name="corner_radius_xhsmall">10dp</dimen>
+    <dimen name="corner_radius_xsmall">14dp</dimen>
+    <dimen name="corner_radius_small">16dp</dimen>
+    <dimen name="corner_radius_xstandard">18dp</dimen>
+    <dimen name="corner_radius_standard">24dp</dimen>
+    <dimen name="corner_radius_medium">30dp</dimen>
+    <dimen name="corner_radius_xmedium">32dp</dimen>
+    <dimen name="corner_radius_large">38dp</dimen>
+    <dimen name="corner_radius_xxlarge">48dp</dimen>
+
+    <!-- Stroke width -->
+    <dimen name="stroke_width_none">0dp</dimen>
+    <dimen name="stroke_width_xsmall">0.5dp</dimen>
+    <dimen name="stroke_width_small">1dp</dimen>
+    <dimen name="stroke_width_standard">2dp</dimen>
+    <dimen name="stroke_width_medium">4dp</dimen>
+    <dimen name="stroke_width_large">8dp</dimen>
+
+    <!-- Inset -->
+    <dimen name="inset_negative">-10dp</dimen>
+
+    <!--Refresh layout-->
+    <dimen name="refresh_layout_drag_distance">115dp</dimen>
+    <dimen name="refresh_layout_animation_height">60dp</dimen>
+
+    <!-- Account details -->
+    <dimen name="account_carousel_height">270dp</dimen>
+    <dimen name="account_details_card_height">95dp</dimen>
+    <dimen name="account_details_card_height_with_padding">115dp</dimen>
+    <dimen name="account_details_card_width">168dp</dimen>
+    <dimen name="account_details_bill_bottom_offset">160dp</dimen>
+    <dimen name="account_details_icon_size">32dp</dimen>
+
+    <!--Profile-->
+    <dimen name="profile_main_subsection_item_badge_diameter">24dp</dimen>
+    <dimen name="profile_details_avatar_width">66dp</dimen>
+    <dimen name="profile_details_avatar_height">80dp</dimen>
+    <dimen name="profile_toolbar_height">56dp</dimen>
+    <dimen name="profile_interest_card_height">136dp</dimen>
+    <dimen name="profile_divider_height">8dp</dimen>
+    <dimen name="profile_chip_height">41dp</dimen>
+    <dimen name="profile_chip_stroke_width">2dp</dimen>
+    <dimen name="profile_verification_email_box_height">56dp</dimen>
+    <dimen name="profile_underline_height">2dp</dimen>
+
+    <!--Payment methods-->
+    <dimen name="credit_card_item_height">72dp</dimen>
+    <dimen name="something_went_wrong_image_width">176dp</dimen>
+    <dimen name="something_went_wrong_image_height">90dp</dimen>
+    <dimen name="title_background_height">64dp</dimen>
+
+    <!--Shop-->
+    <dimen name="shop_load_option_width">88dp</dimen>
+    <dimen name="shop_load_option_height">72dp</dimen>
+    <dimen name="shop_load_option_diameter">72dp</dimen>
+    <dimen name="shop_wallet_height">64dp</dimen>
+    <dimen name="shop_item_height">150dp</dimen>
+    <dimen name="freebie_radio_button_width">22dp</dimen>
+
+    <!--Rewards-->
+    <dimen name="reward_item_halfheight">100dp</dimen>
+    <dimen name="reward_icon_height">42dp</dimen>
+    <dimen name="amount_edit_text_height">40dp</dimen>
+    <dimen name="points_section_height">64dp</dimen>
+    <dimen name="dac_amount_width">248dp</dimen>
+    <dimen name="dac_amount_height">64dp</dimen>
+    <dimen name="dac_amount_input_min_width">42dp</dimen>
+    <dimen name="dac_amount_input_button_size">48dp</dimen>
+    <dimen name="dac_conversion_rules_margin">120dp</dimen>
+
+    <!--Bottom Navigation View-->
+    <dimen name="navbar_elevation">8dp</dimen>
+
+    <!-- Animation -->
+    <integer name="screen_transition_duration">300</integer>
+
+    <dimen name="social_button_margin_horizontal">5dp</dimen>
+    <dimen name="social_button_width_height">55dp</dimen>
+    <dimen name="social_button_icon_size">21dp</dimen>
+
+    <dimen name="dashboard_status_height">68dp</dimen>
+
+    <dimen name="quick_links_height">110dp</dimen>
+    <dimen name="quick_links_padding_end">118dp</dimen>
+    <dimen name="classic_button_height">60dp</dimen>
+    <dimen name="input_field_height">68dp</dimen>
+
+    <dimen name="appbar_height">56dp</dimen>
+
+    <dimen name="toolbar_height">48dp</dimen>
+    <dimen name="toolbar_line_height">1dp</dimen>
+    <dimen name="tab_layout_height">44dp</dimen>
+    <dimen name="tab_layout_prominent_height">56dp</dimen>
+    <dimen name="sort_layout_toolbar_height">70dp</dimen>
+    <dimen name="sort_reward_layout_toolbar_height">50dp</dimen>
+
+    <dimen name="consumption_height">108dp</dimen>
+    <dimen name="consumption_tag_height">28dp</dimen>
+    <dimen name="dashboard_account_card_height">185dp</dimen>
+    <dimen name="dashboard_recommendation_item_height">168dp</dimen>
+    <dimen name="dashboard_recommendation_item_width">327dp</dimen>
+    <dimen name="dashboard_profile_image_size">66dp</dimen>
+    <dimen name="dashboard_top_view_height">600dp</dimen>
+    <dimen name="dashboard_view_pager_height">350dp</dimen>
+    <dimen name="dashboard_go_create_button_width">170dp</dimen>
+    <dimen name="dashboard_go_create_description_margin">182dp</dimen>
+    <dimen name="dashboard_bubble_margin">28dp</dimen>
+
+    <dimen name="error_card_view_height">38dp</dimen>
+
+    <dimen name="box_code_width">51dp</dimen>
+    <dimen name="box_code_stroke_width">2dp</dimen>
+
+    <!--Add Account-->
+    <dimen name="main_background_top_margin">70dp</dimen>
+    <dimen name="step_line_height">4dp</dimen>
+
+    <!--Two Button Dialog-->
+    <dimen name="two_button_dialog_top_gray_line_height">6dp</dimen>
+    <dimen name="spinner_size">16dp</dimen>
+
+    <!--Select account-->
+    <dimen name="select_account_start_drawable_radius">22dp</dimen>
+    <dimen name="select_account_start_drawable_inner_radius">5dp</dimen>
+    <dimen name="select_account_start_drawable_thickness_unselected">2dp</dimen>
+    <dimen name="select_account_start_drawable_thickness_selected">5dp</dimen>
+
+    <dimen name="progress_bar_size">65dp</dimen>
+    <dimen name="progress_bar_thickness">6dp</dimen>
+
+    <dimen name="spinner_dropdown_width">250dp</dimen>
+
+    <dimen name="no_promos_image_size">200dp</dimen>
+
+    <dimen name="no_transaction_image_size">220dp</dimen>
+    <dimen name="no_transaction_horizontal_size">78dp</dimen>
+    <dimen name="no_transaction_margin_size">16dp</dimen>
+
+    <dimen name="small_elevation">1dp</dimen>
+    <dimen name="standard_elevation">3dp</dimen>
+    <dimen name="medium_elevation">6dp</dimen>
+
+    <dimen name="indicator_size">60dp</dimen>
+    <dimen name="indicator_height_big">3dp</dimen>
+
+    <dimen name="processing_line_height">32dp</dimen>
+
+    <dimen name="coming_soon_image_top_margin">156dp</dimen>
+
+    <dimen name="booster_checkbox_dimen">24dp</dimen>
+    <dimen name="booster_image_size">20dp</dimen>
+
+    <dimen name="gray_horizontal_line_height">8dp</dimen>
+
+    <dimen name="icon_dimen_xsmall">18dp</dimen>
+    <dimen name="icon_dimen_standard">24dp</dimen>
+    <dimen name="icon_dimen_medium">32dp</dimen>
+
+    <dimen name="data_consumption_view_height">186dp</dimen>
+    <dimen name="promos_consumption_view_height">200dp</dimen>
+    <dimen name="promos_expiration_circle_size">16dp</dimen>
+    <dimen name="postpaid_plan_usage_view_height">168dp</dimen>
+
+    <!--Content-->
+    <dimen name="content_catalog_item_min_height">104dp</dimen>
+    <dimen name="content_promo_icon_size">44dp</dimen>
+    <dimen name="content_promo_details_icon_size">48dp</dimen>
+    <dimen name="content_promo_circle_outside_radius">16dp</dimen>
+    <dimen name="content_promo_circle_outside_half_radius">8dp</dimen>
+    <dimen name="content_promo_circle_inside_radius">14dp</dimen>
+    <dimen name="content_promo_circle_inside_half_radius">7dp</dimen>
+    <dimen name="content_promo_line_dash_gap">3dp</dimen>
+    <dimen name="content_promo_line_dash_width">5dp</dimen>
+
+    <dimen name="logo_size">112dp</dimen>
+
+    <dimen name="broken_circle_button_min_width">100dp</dimen>
+
+    <dimen name="group_member_icon_size">32dp</dimen>
+
+    <dimen name="text_icon_button_min_width">100dp</dimen>
+
+    <dimen name="account_migration_image_size">200dp</dimen>
+
+    <dimen name="rating_animation_size">44dp</dimen>
+
+    <dimen name="default_animation_size">200dp</dimen>
+    <dimen name="large_animation_size">300dp</dimen>
+
+    <dimen name="surprise_is_coming_image_size">200dp</dimen>
+
+    <dimen name="dots_indicator_height">52dp</dimen>
+    <dimen name="dots_indicator_dot_radius">12dp</dimen>
+
+    <dimen name="add_account_find_info_image_size">300dp</dimen>
+    <dimen name="add_account_find_info_image_width">150dp</dimen>
+
+    <dimen name="sign_up_prompt_img_height">256dp</dimen>
+
+    <dimen name="personalized_campaign_card_height">260dp</dimen>
+
+    <dimen name="star_small">15dp</dimen>
+    <dimen name="check_box_size">24dp</dimen>
+
+    <dimen name="no_accounts_image_size">200dp</dimen>
+
+    <dimen name="shop_item_vertical_line">4dp</dimen>
+
+    <dimen name="in_app_update_anim_width">215dp</dimen>
+    <dimen name="in_app_update_anim_height">150dp</dimen>
+
+    <dimen name="no_internet_lottie_width">280dp</dimen>
+    <dimen name="no_internet_lottie_height">170dp</dimen>
+
+    <dimen name="lottie_success_width">200dp</dimen>
+    <dimen name="lottie_success_height">180dp</dimen>
+
+    <dimen name="lottie_postpaid_broadband_height">210dp</dimen>
+    <dimen name="lottie_postpaid_broadband_width">160dp</dimen>
+
+    <dimen name="lottie_postpaid_inactive_state_height">200dp</dimen>
+    <dimen name="lottie_postpaid_inactive_state_width">265dp</dimen>
+
+    <dimen name="receipt_number_line_dash_gap">5dp</dimen>
+    <dimen name="receipt_number_line_dash_width">6dp</dimen>
+
+    <dimen name="height_button">48dp</dimen>
+
+    <dimen name="tap_tap_animation_height">206dp</dimen>
+    <dimen name="tap_tap_animation_width">160dp</dimen>
+
+    <item name="enabled_view_alpha" format="float" type="dimen">1.0</item>
+    <item name="disabled_view_alpha" format="float" type="dimen">0.4</item>
+
+    <!--Maintenance pages-->
+    <dimen name="imageview_maintenance_width">320dp</dimen>
+    <dimen name="imageview_maintenance_height_large">320dp</dimen>
+    <dimen name="maintenance_content_margin_top">9dp</dimen>
+</resources>

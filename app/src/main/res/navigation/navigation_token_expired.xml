@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_token_expired.xml"
+    app:startDestination="@id/tokenExpiredFragment">
+
+    <fragment
+        android:id="@+id/tokenExpiredFragment"
+        android:name="ph.com.globe.globeonesuperapp.TokenExpiredFragment"
+        android:label="TokenExpiredFragment" />
+</navigation>

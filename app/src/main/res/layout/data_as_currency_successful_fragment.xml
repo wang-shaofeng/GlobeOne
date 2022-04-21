@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?accentLight">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_receipt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_xmedium"
+            android:background="@drawable/receipt_main_background"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/receipt_circles_shape" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lav_receipt"
+                android:layout_width="@dimen/something_went_wrong_image_width"
+                android:layout_height="@dimen/something_went_wrong_image_height"
+                android:layout_marginTop="@dimen/margin_xmedium"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/success" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_ssmedium"
+                android:textAppearance="?sMediumBold"
+                android:textColor="?accentDark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lav_receipt"
+                tools:text="@string/data_conversion_success_title" />
+
+            <TextView
+                android:id="@+id/tv_success_description"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:textAlignment="center"
+                android:textAppearance="?smallRegularContent"
+                android:textColor="?neutralB0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title"
+                tools:text="@string/data_conversion_success_description" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_points"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_medium"
+                android:background="@drawable/profile_interest_overlay"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_success_description">
+
+                <ImageView
+                    android:id="@+id/iv_points"
+                    android:layout_width="@dimen/icon_dimen_standard"
+                    android:layout_height="@dimen/icon_dimen_standard"
+                    android:layout_marginTop="@dimen/margin_xsmall"
+                    app:layout_constraintEnd_toStartOf="@id/iv_plus"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_reward_points_highlighted"
+                    app:srcCompat="@drawable/ic_star" />
+
+                <ImageView
+                    android:id="@+id/iv_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_points"
+                    app:layout_constraintEnd_toStartOf="@id/tv_reward_points_highlighted"
+                    app:layout_constraintStart_toEndOf="@+id/iv_points"
+                    app:layout_constraintTop_toTopOf="@+id/iv_points"
+                    app:srcCompat="@drawable/ic_plus"
+                    app:tint="?primary" />
+
+                <TextView
+                    android:id="@+id/tv_reward_points_highlighted"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_xxsmall"
+                    android:layout_marginTop="@dimen/margin_xstandard"
+                    android:textAppearance="?mediumBoldNum"
+                    android:textColor="?primary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/iv_plus"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="10 pts" />
+
+                <View
+                    android:id="@+id/v_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/stroke_width_small"
+                    android:layout_marginTop="@dimen/margin_standard"
+                    android:background="@color/functional_neutral_2_gray"
+                    app:layout_constraintTop_toBottomOf="@id/tv_reward_points_highlighted" />
+
+                <TextView
+                    android:id="@+id/tv_valid_until"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_marginBottom="@dimen/margin_xstandard"
+                    android:textAlignment="center"
+                    android:textAppearance="?xSmallRegularContent"
+                    android:textColor="?neutralA3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/v_divider"
+                    tools:text="Valid until March 31, 2021" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tv_you_have_total_of"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:text="@string/you_have_now_total_of"
+                android:textAppearance="?labelCaption"
+                android:textColor="?neutralA3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cl_points" />
+
+            <LinearLayout
+                android:id="@+id/ll_reward_points"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/tv_you_have_total_of"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_you_have_total_of">
+
+                <TextView
+                    android:id="@+id/tv_reward_points"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_xxxsmall"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:textAppearance="?smallRegularContent"
+                    android:textColor="?primary"
+                    tools:text="500 pts" />
+
+                <ImageView
+                    android:layout_width="@dimen/icon_dimen_standard"
+                    android:layout_height="@dimen/icon_dimen_standard"
+                    android:padding="@dimen/padding_xstandard"
+                    app:srcCompat="@drawable/ic_arrow_right"
+                    app:tint="?primary" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_remaining_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_xxlarge"
+                android:text="@string/remaining_data"
+                android:textAppearance="?labelCaption"
+                android:textColor="?neutralA3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_you_have_total_of" />
+
+            <TextView
+                android:id="@+id/tv_after_conversion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:text="@string/after_conversion"
+                android:textAppearance="?xxSmallRegularContent"
+                android:textColor="?neutralA3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_remaining_data" />
+
+            <LinearLayout
+                android:id="@+id/ll_remaining_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/tv_remaining_data"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_remaining_data">
+
+                <TextView
+                    android:id="@+id/tv_remaining_data_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_xxxsmall"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:textAppearance="?smallRegularContent"
+                    android:textColor="?primary"
+                    tools:text="18.75 GB" />
+
+                <ImageView
+                    android:layout_width="@dimen/icon_dimen_standard"
+                    android:layout_height="@dimen/icon_dimen_standard"
+                    android:padding="@dimen/padding_xstandard"
+                    app:srcCompat="@drawable/ic_arrow_right"
+                    app:tint="?primary" />
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.Group
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:constraint_referenced_ids="tv_remaining_data,tv_after_conversion,ll_remaining_data" />
+
+            <View
+                android:id="@+id/v_divider_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/stroke_width_small"
+                android:layout_marginHorizontal="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:background="@color/functional_neutral_2_gray"
+                app:layout_constraintTop_toBottomOf="@id/tv_after_conversion" />
+
+            <TextView
+                android:id="@+id/tv_deducted_from"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:text="@string/deducted_from"
+                android:textAppearance="?labelCaption"
+                android:textColor="?neutralA3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/v_divider_bottom" />
+
+            <TextView
+                android:id="@+id/tv_account_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:textAppearance="?baseRegularContent"
+                android:textColor="?neutralA0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/v_divider_bottom"
+                tools:text="@string/dac_mock_name" />
+
+            <TextView
+                android:id="@+id/tv_account_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:layout_marginBottom="@dimen/margin_large"
+                android:textAppearance="?smallRegularContent"
+                android:textColor="?neutralA2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_account_name"
+                tools:text="@string/dac_mock_msisdn" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:rotation="180"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/receipt_circles_shape" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_view_all"
+            style="@style/Widget.App.ClassicButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/view_all_rewards"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_receipt" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_donate"
+            style="@style/Widget.App.ClassicButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/donate"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_view_all" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_go_to_home"
+            style="@style/Widget.App.ClassicButtonNegative"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:text="@string/go_to_dashboard"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_donate" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

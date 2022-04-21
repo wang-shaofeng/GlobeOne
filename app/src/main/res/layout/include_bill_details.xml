@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/wf_bill_details">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_overdue_warning"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_xmedium"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/red"
+                app:cardCornerRadius="@dimen/corner_radius_xxsmall"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/iv_missed_payment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_standard"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_missed_payment" />
+
+                    <TextView
+                        android:id="@+id/tv_missed_payment_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_large"
+                        android:text="@string/account_details_bill_missed_payment_title"
+                        android:textAppearance="?xBaseBold"
+                        android:textColor="?absoluteWhite"
+                        app:layout_constraintStart_toEndOf="@id/iv_missed_payment"
+                        app:layout_constraintTop_toTopOf="@id/iv_missed_payment" />
+
+                    <TextView
+                        android:id="@+id/tv_missed_payment_description"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_large"
+                        android:layout_marginBottom="@dimen/margin_standard"
+                        android:text="@string/account_details_bill_missed_payment_description_connected_state"
+                        android:textColor="?absoluteWhite"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/iv_missed_payment"
+                        app:layout_constraintTop_toBottomOf="@id/tv_missed_payment_title" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/iv_receipt_decoration"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cv_overdue_warning"
+                app:layout_goneMarginTop="@dimen/margin_xmedium"
+                app:srcCompat="@drawable/ic_receipt_decoration" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_total_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?absoluteWhite"
+                android:paddingBottom="@dimen/padding_medium"
+                app:layout_constraintEnd_toEndOf="@id/iv_receipt_decoration"
+                app:layout_constraintStart_toStartOf="@id/iv_receipt_decoration"
+                app:layout_constraintTop_toBottomOf="@id/iv_receipt_decoration">
+
+                <TextView
+                    android:id="@+id/tv_label_total_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/account_details_bill_total_amount_to_pay"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?neutralA3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_total_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?largeMultiline"
+                    android:textColor="?accentDark"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_label_total_amount"
+                    tools:text="@string/mock_two_decimal_amount" />
+
+                <TextView
+                    android:id="@+id/tv_description_total_amount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_standard"
+                    android:text="@string/account_details_bill_this_amount_can_be_different"
+                    android:textAlignment="center"
+                    android:textAppearance="?smallRegularContent"
+                    android:textColor="?neutralB0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_total_amount" />
+
+                <ph.com.globe.globeonesuperapp.utils.ui.BillStatusChip
+                    android:id="@+id/bsc_bill_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/margin_standard"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    app:biggerPadding="true"
+                    app:layout_constraintEnd_toStartOf="@id/tv_due_date"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_description_total_amount"
+                    tools:text="OVERDUE" />
+
+                <TextView
+                    android:id="@+id/tv_due_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:textAppearance="?smallBoldContent"
+                    android:textColor="?neutralA0"
+                    app:layout_constraintBottom_toBottomOf="@id/bsc_bill_status"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@id/bsc_bill_status"
+                    app:layout_constraintTop_toTopOf="@id/bsc_bill_status"
+                    tools:text="Due last Sept 10" />
+
+                <TextView
+                    android:id="@+id/tv_warning"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_xxxxxxlarge"
+                    android:layout_marginTop="@dimen/margin_standard"
+                    android:text="@string/account_details_bill_missed_payment_warning_connected_state"
+                    android:textAlignment="center"
+                    android:textAppearance="?xSmallRegularContent"
+                    android:textColor="?colorError"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bsc_bill_status" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_note"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_medium"
+                    android:background="@drawable/outline_neutral"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_warning">
+
+                    <ImageView
+                        android:id="@+id/iv_if_you_already_paid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_standard"
+                        android:layout_marginTop="@dimen/margin_standard"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_activity_help" />
+
+                    <View
+                        android:id="@+id/v_vertical_line"
+                        android:layout_width="@dimen/stroke_width_small"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="@dimen/margin_standard"
+                        android:alpha="0.2"
+                        android:background="?neutralB1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tv_if_you_already_paid"
+                        app:layout_constraintStart_toEndOf="@id/iv_if_you_already_paid"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_if_you_already_paid"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_standard"
+                        android:layout_marginEnd="@dimen/margin_xstandard"
+                        android:layout_marginBottom="@dimen/margin_standard"
+                        android:text="@string/account_details_bill_if_you_already_paid"
+                        android:textAppearance="?smallRegularContent"
+                        android:textColor="?neutralB0"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/v_vertical_line"
+                        app:layout_constraintTop_toTopOf="@id/iv_if_you_already_paid" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_all_set"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?absoluteWhite"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/iv_receipt_decoration"
+                app:layout_constraintStart_toStartOf="@id/iv_receipt_decoration"
+                app:layout_constraintTop_toBottomOf="@id/iv_receipt_decoration">
+
+                <ImageView
+                    android:id="@+id/iv_all_set"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_all_set" />
+
+                <TextView
+                    android:id="@+id/tv_you_are_all_set"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/account_details_bill_you_are_all_set_for_this_month"
+                    android:textAlignment="center"
+                    android:textAppearance="?mediumBold"
+                    android:textColor="?accentDark"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_all_set" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_large"
+                    android:text="@string/account_details_bill_all_set_description"
+                    android:textAlignment="center"
+                    android:textAppearance="?baseRegularContent"
+                    android:textColor="?neutralB0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_you_are_all_set" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/ba_receipt_decoration_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="cl_all_set, cl_total_amount" />
+
+            <ImageView
+                android:id="@+id/iv_receipt_decoration_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:rotation="180"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ba_receipt_decoration_2"
+                app:srcCompat="@drawable/ic_receipt_decoration" />
+
+            <ImageView
+                android:id="@+id/iv_receipt_decoration_3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_medium"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_receipt_decoration_2"
+                app:srcCompat="@drawable/ic_receipt_decoration" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?absoluteWhite"
+                android:paddingBottom="@dimen/padding_large"
+                app:layout_constraintEnd_toEndOf="@id/iv_receipt_decoration_3"
+                app:layout_constraintStart_toStartOf="@id/iv_receipt_decoration_3"
+                app:layout_constraintTop_toBottomOf="@id/iv_receipt_decoration_3">
+
+                <TextView
+                    android:id="@+id/tv_account_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_xxsmall"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textAppearance="?mediumBold"
+                    android:textColor="?accentDark"
+                    app:layout_constraintEnd_toStartOf="@id/tv_view_pdf_bill"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/mock_member_name" />
+
+                <TextView
+                    android:id="@+id/tv_view_pdf_bill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_xxsmall"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    android:text="@string/account_details_bill_view_pdf_bill"
+                    android:textAppearance="?smallAction"
+                    android:textColor="?primary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/pb_current_loading"
+                    style="@style/Widget.MaterialComponents.CircularProgressIndicator.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    app:indicatorColor="?primary"
+                    app:indicatorSize="@dimen/progress_bar_size"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_time_span"
+                    app:trackColor="@color/black_10"
+                    app:trackCornerRadius="@dimen/corner_radius_xxsmall"
+                    app:trackThickness="@dimen/progress_bar_thickness"
+                    tools:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_time_span"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?neutralB0"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="@id/tv_account_name"
+                    app:layout_constraintTop_toBottomOf="@id/tv_account_name"
+                    tools:text="@string/mock_time_span"
+                    tools:visibility="visible" />
+
+                <View
+                    android:id="@+id/v_divider"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/stroke_width_small"
+                    android:layout_margin="@dimen/margin_medium"
+                    android:background="?neutralB2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_time_span" />
+
+                <TextView
+                    android:id="@+id/tv_label_bill_amount_due"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:text="@string/account_details_bill_amount_due"
+                    android:textAlignment="center"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?neutralA3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/v_divider" />
+
+                <TextView
+                    android:id="@+id/tv_bill_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textAppearance="?largeMultiline"
+                    android:textColor="?accentDark"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_label_bill_amount_due"
+                    tools:text="@string/mock_two_decimal_amount" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/group_data_load_success"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    app:constraint_referenced_ids="v_divider, tv_label_bill_amount_due, tv_bill_amount"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tv_label_calls"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_standard"
+                    android:text="@string/account_details_bill_calls"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?neutralA3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_bill_amount" />
+
+                <TextView
+                    android:id="@+id/tv_amount_calls"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_standard"
+                    android:textAppearance="?smallRegularContent"
+                    android:textColor="?neutralA2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_label_calls" />
+
+                <TextView
+                    android:id="@+id/tv_label_texts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_standard"
+                    android:text="@string/account_details_bill_texts"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?neutralA3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_label_calls" />
+
+                <TextView
+                    android:id="@+id/tv_amount_texts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_standard"
+                    android:textAppearance="?smallRegularContent"
+                    android:textColor="?neutralA2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_label_texts" />
+
+                <TextView
+                    android:id="@+id/tv_label_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_standard"
+                    android:text="@string/account_details_bill_data"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?neutralA3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_label_texts" />
+
+                <TextView
+                    android:id="@+id/tv_amount_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_standard"
+                    android:textAppearance="?smallRegularContent"
+                    android:textColor="?neutralA2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_label_data" />
+
+                <TextView
+                    android:id="@+id/tv_label_value_added_services"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_standard"
+                    android:text="@string/account_details_bill_value_added_services"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?neutralA3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_label_data" />
+
+                <TextView
+                    android:id="@+id/tv_amount_value_added_services"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_standard"
+                    android:textAppearance="?smallRegularContent"
+                    android:textColor="?neutralA2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_label_value_added_services" />
+
+                <TextView
+                    android:id="@+id/tv_label_others"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_standard"
+                    android:text="@string/account_details_bill_others"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?neutralA3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_label_value_added_services" />
+
+                <TextView
+                    android:id="@+id/tv_amount_others"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_standard"
+                    android:textAppearance="?smallRegularContent"
+                    android:textColor="?neutralA2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_label_others" />
+
+                <TextView
+                    android:id="@+id/tv_label_excess_charges"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_standard"
+                    android:text="@string/account_details_bill_excess_charges"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?accentDark"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_label_others" />
+
+                <TextView
+                    android:id="@+id/tv_amount_excess_charges"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_standard"
+                    android:textAppearance="?xBaseMultiline"
+                    android:textColor="?accentDark"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_label_excess_charges" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/group_extra_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:constraint_referenced_ids="tv_label_calls, tv_amount_calls, tv_label_texts,
+                     tv_amount_texts, tv_label_data, tv_amount_data, tv_label_value_added_services,
+                     tv_amount_value_added_services, tv_label_others, tv_amount_others,
+                     tv_label_excess_charges, tv_amount_excess_charges" />
+
+                <TextView
+                    android:id="@+id/tv_label_device_cashout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_standard"
+                    android:text="@string/account_details_bill_device_cashout"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?accentDark"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_label_excess_charges" />
+
+                <TextView
+                    android:id="@+id/tv_amount_device_cashout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_standard"
+                    android:textAppearance="?smallRegularContent"
+                    android:textColor="?neutralA2"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_label_device_cashout" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/iv_pdf_bubble"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_xxxlarge"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@id/cl_details"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/ic_pdf_bubble" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_details_allset"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?absoluteWhite"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/iv_receipt_decoration_3"
+                app:layout_constraintStart_toStartOf="@id/iv_receipt_decoration_3"
+                app:layout_constraintTop_toBottomOf="@id/iv_receipt_decoration_3">
+
+                <TextView
+                    android:id="@+id/tv_you_paid_in_excess"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_standard"
+                    android:text="@string/account_details_bill_you_paid_in_excess"
+                    android:textAppearance="?mediumBold"
+                    android:textColor="?accentDark"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_excess_payment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:text="@string/account_details_bill_excess_payment"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?neutralB0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_you_paid_in_excess" />
+
+                <TextView
+                    android:id="@+id/tv_excess_payment_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_xstandard"
+                    android:textAppearance="?largeMultiline"
+                    android:textColor="?accentDark"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_excess_payment" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/ba_receipt_decoration_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="cl_details, cl_details_allset" />
+
+            <ImageView
+                android:id="@+id/iv_receipt_decoration_4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_medium"
+                android:layout_marginBottom="@dimen/account_details_bill_bottom_offset"
+                android:rotation="180"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ba_receipt_decoration_4"
+                app:srcCompat="@drawable/ic_receipt_decoration" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group_lower_decorations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="iv_receipt_decoration_3, iv_receipt_decoration_4" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_pay"
+        style="@style/Widget.App.ClassicButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_standard"
+        android:text="@string/account_details_bill_pay_now"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

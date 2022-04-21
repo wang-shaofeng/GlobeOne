@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_shop_booster_item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/margin_standard"
+    android:layout_marginTop="@dimen/margin_small"
+    android:background="@drawable/shop_booster_item_shape"
+    android:paddingStart="@dimen/padding_medium"
+    android:paddingEnd="@dimen/padding_smedium"
+    android:elevation="@dimen/small_elevation">
+
+    <TextView
+        android:id="@+id/tv_booster_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="@string/booster"
+        android:textAppearance="?chip"
+        android:textColor="?neutralA4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_booster_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:textAppearance="?xBaseBold"
+        android:textColor="?neutralA0"
+        app:layout_constraintEnd_toStartOf="@+id/tv_booster_price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_booster_title"
+        tools:text="GoSHARE10" />
+
+    <TextView
+        android:id="@+id/tv_booster_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?comfyData"
+        android:textColor="?neutralA0"
+        app:layout_constraintBottom_toBottomOf="@id/tv_booster_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_booster_title"
+        tools:text="P10" />
+
+    <View
+        android:id="@+id/v_horizontal_line"
+        style="@style/ThemeOverlay.App.HeaderLineTheme"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_line_height"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintTop_toBottomOf="@id/tv_booster_name" />
+
+    <ImageView
+        android:id="@+id/iv_booster_data_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/tv_booster_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_booster_description"
+        app:srcCompat="@drawable/ic_booster_data_icon" />
+
+    <TextView
+        android:id="@+id/tv_booster_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_xxsmall"
+        android:layout_marginTop="@dimen/margin_small"
+        android:textAppearance="?xSmallRegularContent"
+        android:textColor="?neutralA3"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_booster_data_icon"
+        app:layout_constraintTop_toBottomOf="@id/v_horizontal_line"
+        tools:text="1 GB for shopping apps" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/cg_apps_images"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_booster_description" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_standard"
+        android:textAppearance="?xSmallRegularContent"
+        android:textColor="?neutralA3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cg_apps_images"
+        tools:text="Valid for 1 day" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

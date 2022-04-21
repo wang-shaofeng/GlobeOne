@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_small"
+    android:layout_marginBottom="@dimen/margin_small"
+    android:layout_marginStart="@dimen/margin_standard"
+    android:layout_marginEnd="@dimen/margin_standard"
+    app:cardCornerRadius="@dimen/corner_radius_xxsmall">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_reward_upper_half"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/reward_item_halfheight"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="?prepaidB300">
+
+            <TextView
+                android:id="@+id/tv_overline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:textColor="?attr/colorOnPrimary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/reward_mock_status" />
+
+            <TextView
+                android:id="@+id/tv_reward_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:textColor="?attr/colorOnPrimary"
+                android:textAppearance="?sMediumBold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_overline"
+                tools:text="@string/reward_mock_title_1" />
+
+            <TextView
+                android:id="@+id/tv_reward_validity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/colorOnPrimary"
+                android:layout_marginStart="@dimen/margin_standard"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_reward_title"
+                tools:text="@string/reward_mock_subtitle" />
+
+            <ImageView
+                android:id="@+id/iv_reward_icon"
+                android:layout_width="@dimen/reward_icon_height"
+                android:layout_height="@dimen/reward_icon_height"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_standard"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@drawable/ic_apple_logo" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_reward_lower_half"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/reward_item_halfheight"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_reward_upper_half">
+
+            <TextView
+                android:id="@+id/tv_reward_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:textAppearance="?sMediumBold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/reward_mock_title_2"
+                tools:textColor="?prepaidB300" />
+
+            <ImageView
+                android:id="@+id/iv_star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:layout_marginEnd="@dimen/margin_standard"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_star" />
+
+            <TextView
+                android:id="@+id/tv_reward_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_xxxxxxxlarge"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/iv_star"
+                app:layout_constraintStart_toStartOf="@id/tv_reward_category"
+                app:layout_constraintTop_toBottomOf="@id/tv_reward_category"
+                tools:text="@string/reward_mock_description" />
+
+            <TextView
+                android:id="@+id/tv_reward_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                android:textColor="@color/reward_cost_yellow"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/tv_reward_description"
+                app:layout_constraintEnd_toEndOf="@id/iv_star"
+                app:layout_constraintStart_toStartOf="@id/iv_star"
+                app:layout_constraintTop_toTopOf="@id/tv_reward_description"
+                tools:text="@string/reward_mock_cost" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

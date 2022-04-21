@@ -1,0 +1,16 @@
+<!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="16dp"
+    android:height="18dp"
+    android:viewportWidth="16"
+    android:viewportHeight="18">
+  <path
+      android:pathData="M0,3C0,1.3432 1.3432,0 3,0H8C9.6568,0 11,1.3432 11,3V3.5C11,4.0523 10.5523,4.5 10,4.5C9.4477,4.5 9,4.0523 9,3.5V3C9,2.4477 8.5523,2 8,2H3C2.4477,2 2,2.4477 2,3V15C2,15.5523 2.4477,16 3,16H8C8.5523,16 9,15.5523 9,15V14.5C9,13.9477 9.4477,13.5 10,13.5C10.5523,13.5 11,13.9477 11,14.5V15C11,16.6569 9.6568,18 8,18H3C1.3432,18 0,16.6569 0,15V3ZM12,7C10.8954,7 10,7.8954 10,9C10,10.1046 10.8954,11 12,11C13.1046,11 14,10.1046 14,9C14,7.8954 13.1046,7 12,7ZM8,9C8,6.7909 9.7909,5 12,5C14.2091,5 16,6.7909 16,9C16,11.2091 14.2091,13 12,13C9.7909,13 8,11.2091 8,9ZM4.5,14C4.2239,14 4,14.2239 4,14.5C4,14.7761 4.2239,15 4.5,15H6.5C6.7761,15 7,14.7761 7,14.5C7,14.2239 6.7761,14 6.5,14H4.5Z"
+      android:fillColor="?attr/colorOnSecondary"
+      android:fillType="evenOdd"/>
+</vector>

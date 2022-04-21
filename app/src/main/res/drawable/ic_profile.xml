@@ -1,0 +1,31 @@
+<!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+  <path
+      android:pathData="M12,11C13.1046,11 14,10.1046 14,9C14,7.8954 13.1046,7 12,7C10.8954,7 10,7.8954 10,9C10,10.1046 10.8954,11 12,11ZM12,13C14.2091,13 16,11.2091 16,9C16,6.7909 14.2091,5 12,5C9.7909,5 8,6.7909 8,9C8,11.2091 9.7909,13 12,13Z"
+      android:strokeAlpha="0.8"
+      android:fillColor="#8EA4CA"
+      android:fillType="evenOdd"
+      android:fillAlpha="0.8"/>
+  <path
+      android:pathData="M11.9999,16C9.0401,16 6.4543,17.6069 5.0696,20.0007L3.3384,18.9993C5.0659,16.0129 8.2973,14 11.9999,14C15.8713,14 19.2271,16.2001 20.8883,19.4136L19.1116,20.332C17.7804,17.7568 15.0945,16 11.9999,16Z"
+      android:strokeAlpha="0.8"
+      android:fillColor="#8EA4CA"
+      android:fillType="evenOdd"
+      android:fillAlpha="0.8"/>
+  <path
+      android:pathData="M12,12m-11,0a11,11 0,1 1,22 0a11,11 0,1 1,-22 0"
+      android:strokeAlpha="0.8"
+      android:strokeWidth="2"
+      android:fillColor="#00000000"
+      android:strokeColor="#8EA4CA"
+      android:fillAlpha="0.8"/>
+</vector>

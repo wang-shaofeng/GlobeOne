@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true">
+        <shape>
+            <solid android:color="?accentLight" />
+        </shape>
+    </item>
+    <item android:state_selected="false">
+        <shape>
+            <solid android:color="?attr/colorPrimary" />
+        </shape>
+    </item>
+</selector>

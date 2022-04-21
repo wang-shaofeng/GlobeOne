@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<resources>
+    <integer name="max_email_input_length">128</integer>
+    <integer name="max_password_input_length">130</integer>
+    <integer name="phone_number_length">11</integer>
+    <integer name="load_amount_max_length">5</integer>
+    <integer name="account_alias_max_length">15</integer>
+    <integer name="first_name_max_length">35</integer>
+    <integer name="middle_name_max_length">35</integer>
+    <integer name="last_name_max_length">35</integer>
+    <integer name="zipcode_length">4</integer>
+    <integer name="expandable_animation_length_millis">300</integer>
+    <integer name="sim_serial_length">20</integer>
+</resources>

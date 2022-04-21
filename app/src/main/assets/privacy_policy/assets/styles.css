@@ -1,0 +1,52 @@
+:root {
+    --color-primary: #2274E5;
+    --color-accent-light: #F5F9FC;
+    --color-accent-dark: #1A458B;
+    --color-neutral-b0: #637282;
+    --color-functional-neutral: #637282;
+}
+html,body {
+    background-color: var(--color-accent-light);
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 70px;
+}
+p,li {
+    color: var(--color-functional-neutral);
+    font-size: 16px;
+    line-height: 24px;
+    font-family:textRegular;
+}
+ol {
+    padding-left: 1.2em;
+}
+a {
+    font-size: 16px;
+    color: var(--color-primary);
+    font-weight: bold;
+    text-decoration: none;
+}
+.page-title {
+    color: var(--color-accent-dark);
+    font-size: 24px;
+    font-weight: bold;
+}
+.paragraph-title {
+    color: var(--color-accent-dark);
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 20px;
+}
+.paragraph-sub-title {
+    color: var(--color-neutral-b0);
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+@font-face{
+    font-family:textRegular;
+    src:url("Neue Plak Text Regular.otf") format("truetype");
+}
+ul{
+    list-style-type: disc;
+}

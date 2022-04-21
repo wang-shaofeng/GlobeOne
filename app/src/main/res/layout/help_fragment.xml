@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/absoluteWhite"
+        android:orientation="vertical">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/iv_need_help"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/margin_xxxxxlarge"
+            android:layout_marginTop="@dimen/margin_xxxlarge"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/help" />
+
+        <TextView
+            android:id="@+id/tv_having_trouble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/margin_xlarge"
+            android:layout_marginTop="@dimen/margin_xxstandard"
+            android:text="@string/having_trouble"
+            android:textAlignment="center"
+            android:textAppearance="?mediumBold"
+            android:textColor="?accentDark"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_having_trouble_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_xlarge"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/having_trouble_description"
+            android:textAlignment="center"
+            android:textAppearance="?baseRegularContent"
+            android:textColor="?neutralB0" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_get_help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_xxlarge"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:paddingStart="@dimen/padding_xmedium"
+            android:paddingTop="@dimen/padding_medium"
+            android:paddingEnd="@dimen/padding_xlarge"
+            android:paddingBottom="@dimen/padding_xmedium"
+            android:text="@string/get_help"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textAppearance="?baseAction"
+            app:backgroundTint="?primary"
+            app:icon="@drawable/ic_messenger"
+            app:iconPadding="@dimen/margin_large"
+            app:iconSize="@dimen/icon_dimen_xsmall" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</ScrollView>

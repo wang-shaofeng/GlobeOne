@@ -1,0 +1,498 @@
+<!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">?absoluteWhite</item>
+        <item name="colorPrimaryDark">@color/corporate_A_800</item>
+        <item name="colorPrimaryVariant">?corporateA900</item>
+        <item name="colorOnPrimary">?absoluteWhite</item>
+        <item name="colorSecondary">@color/light_blue</item>
+        <item name="colorSecondaryVariant">?corporateA900</item>
+        <item name="colorOnSecondary">?corporateA600</item>
+        <item name="colorError">@color/red</item>
+        <item name="colorOnError">@color/error_text_red</item>
+        <item name="colorSurface">?absoluteWhite</item>
+        <item name="colorOnSurface">?neutralA0</item>
+        <item name="android:windowBackground">@color/corporate_A_800</item>
+        <item name="colorOnBackground">?highlight</item>
+        <item name="android:colorControlActivated">?primary</item>
+
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">false</item>
+
+        <item name="titleTextColor">?neutralB0</item>
+
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.App.SmallComponent</item>
+        <item name="chipStyle">@style/Widget.App.Chip</item>
+
+        <item name="materialAlertDialogTheme">@style/AlertDialogMaterialTheme</item>
+
+        <item name="primary">@color/primary</item>
+        <item name="accentDark">@color/accent_dark</item>
+        <item name="accentLight">@color/accent_light</item>
+        <item name="highlight">@color/highlight</item>
+        <item name="neutralA0">@color/neutral_A_0</item>
+        <item name="neutralA1">@color/neutral_A_1</item>
+        <item name="neutralA2">@color/neutral_A_2</item>
+        <item name="neutralA3">@color/neutral_A_3</item>
+        <item name="neutralA4">@color/neutral_A_4</item>
+        <item name="neutralA5">@color/neutral_A_5</item>
+        <item name="neutralB0">@color/neutral_B_0</item>
+        <item name="neutralB1">@color/neutral_B_1</item>
+        <item name="neutralB2">@color/neutral_B_2</item>
+        <item name="absoluteBlack">@color/absolute_black</item>
+        <item name="absoluteWhite">@color/absolute_white</item>
+
+        <item name="globeblue">@color/globeblue</item>
+        <item name="caution">@color/caution</item>
+        <item name="success">@color/success</item>
+        <item name="outlineColor">@color/functional_neutral_2_gray</item>
+
+        <item name="businessA100">@color/business_A_100</item>
+        <item name="businessA1000">@color/business_A_1000</item>
+        <item name="businessA200">@color/business_A_200</item>
+        <item name="businessA300">@color/business_A_300</item>
+        <item name="businessA400">@color/business_A_400</item>
+        <item name="businessA500">@color/business_A_500</item>
+        <item name="businessA600">@color/business_A_600</item>
+        <item name="businessA700">@color/business_A_700</item>
+        <item name="businessA800">@color/business_A_800</item>
+        <item name="businessA900">@color/business_A_900</item>
+        <item name="businessB100">@color/business_B_100</item>
+        <item name="businessB1000">@color/business_B_1000</item>
+        <item name="businessB200">@color/business_B_200</item>
+        <item name="businessB300">@color/business_B_300</item>
+        <item name="businessB400">@color/business_B_400</item>
+        <item name="businessB500">@color/business_B_500</item>
+        <item name="businessB600">@color/business_B_600</item>
+        <item name="businessB700">@color/business_B_700</item>
+        <item name="businessB800">@color/business_B_800</item>
+        <item name="businessB900">@color/business_B_900</item>
+        <item name="businessC100">@color/business_C_100</item>
+        <item name="businessC1000">@color/business_C_1000</item>
+        <item name="businessC200">@color/business_C_200</item>
+        <item name="businessC300">@color/business_C_300</item>
+        <item name="businessC400">@color/business_C_400</item>
+        <item name="businessC500">@color/business_C_500</item>
+        <item name="businessC600">@color/business_C_600</item>
+        <item name="businessC700">@color/business_C_700</item>
+        <item name="businessC800">@color/business_C_800</item>
+        <item name="businessC900">@color/business_C_900</item>
+        <item name="businessD100">@color/business_D_100</item>
+        <item name="businessD1000">@color/business_D_1000</item>
+        <item name="businessD200">@color/business_D_200</item>
+        <item name="businessD300">@color/business_D_300</item>
+        <item name="businessD400">@color/business_D_400</item>
+        <item name="businessD500">@color/business_D_500</item>
+        <item name="businessD600">@color/business_D_600</item>
+        <item name="businessD700">@color/business_D_700</item>
+        <item name="businessD800">@color/business_D_800</item>
+        <item name="businessD900">@color/business_D_900</item>
+        <item name="businessE100">@color/business_E_100</item>
+        <item name="businessE1000">@color/business_E_1000</item>
+        <item name="businessE200">@color/business_E_200</item>
+        <item name="businessE300">@color/business_E_300</item>
+        <item name="businessE400">@color/business_E_400</item>
+        <item name="businessE500">@color/business_E_500</item>
+        <item name="businessE600">@color/business_E_600</item>
+        <item name="businessE700">@color/business_E_700</item>
+        <item name="businessE800">@color/business_E_800</item>
+        <item name="businessE900">@color/business_E_900</item>
+        <item name="corporateA100">@color/corporate_A_100</item>
+        <item name="corporateA1000">@color/corporate_A_1000</item>
+        <item name="corporateA200">@color/corporate_A_200</item>
+        <item name="corporateA300">@color/corporate_A_300</item>
+        <item name="corporateA400">@color/corporate_A_400</item>
+        <item name="corporateA500">@color/corporate_A_500</item>
+        <item name="corporateA600">@color/corporate_A_600</item>
+        <item name="corporateA700">@color/corporate_A_700</item>
+        <item name="corporateA800">@color/corporate_A_800</item>
+        <item name="corporateA900">@color/corporate_A_900</item>
+        <item name="corporateB100">@color/corporate_B_100</item>
+        <item name="corporateB1000">@color/corporate_B_1000</item>
+        <item name="corporateB200">@color/corporate_B_200</item>
+        <item name="corporateB300">@color/corporate_B_300</item>
+        <item name="corporateB400">@color/corporate_B_400</item>
+        <item name="corporateB500">@color/corporate_B_500</item>
+        <item name="corporateB600">@color/corporate_B_600</item>
+        <item name="corporateB700">@color/corporate_B_700</item>
+        <item name="corporateB800">@color/corporate_B_800</item>
+        <item name="corporateB900">@color/corporate_B_900</item>
+        <item name="corporateC100">@color/corporate_C_100</item>
+        <item name="corporateC1000">@color/corporate_C_1000</item>
+        <item name="corporateC200">@color/corporate_C_200</item>
+        <item name="corporateC300">@color/corporate_C_300</item>
+        <item name="corporateC400">@color/corporate_C_400</item>
+        <item name="corporateC500">@color/corporate_C_500</item>
+        <item name="corporateC600">@color/corporate_C_600</item>
+        <item name="corporateC700">@color/corporate_C_700</item>
+        <item name="corporateC800">@color/corporate_C_800</item>
+        <item name="corporateC900">@color/corporate_C_900</item>
+        <item name="corporateD100">@color/corporate_D_100</item>
+        <item name="corporateD1000">@color/corporate_D_1000</item>
+        <item name="corporateD200">@color/corporate_D_200</item>
+        <item name="corporateD300">@color/corporate_D_300</item>
+        <item name="corporateD400">@color/corporate_D_400</item>
+        <item name="corporateD500">@color/corporate_D_500</item>
+        <item name="corporateD600">@color/corporate_D_600</item>
+        <item name="corporateD700">@color/corporate_D_700</item>
+        <item name="corporateD800">@color/corporate_D_800</item>
+        <item name="corporateD900">@color/corporate_D_900</item>
+        <item name="corporateE1000">@color/corporate_E_1000</item>
+        <item name="corporateE500">@color/corporate_E_500</item>
+        <item name="corporateE600">@color/corporate_E_600</item>
+        <item name="corporateE700">@color/corporate_E_700</item>
+        <item name="corporateE800">@color/corporate_E_800</item>
+        <item name="corporateE900">@color/corporate_E_900</item>
+        <item name="corpshadeA100">@color/corpshade_A_100</item>
+        <item name="corpshadeA300">@color/corpshade_A_300</item>
+        <item name="corpshadeA500">@color/corpshade_A_500</item>
+        <item name="corpshadeB100">@color/corpshade_B_100</item>
+        <item name="corpshadeB1000">@color/corpshade_B_1000</item>
+        <item name="corpshadeB500">@color/corpshade_B_500</item>
+        <item name="corpshadeC1000">@color/corpshade_C_1000</item>
+        <item name="corpshadeC500">@color/corpshade_C_500</item>
+        <item name="corpshadeC800">@color/corpshade_C_800</item>
+        <item name="platinumA100">@color/platinum_A_100</item>
+        <item name="platinumA1000">@color/platinum_A_1000</item>
+        <item name="platinumA200">@color/platinum_A_200</item>
+        <item name="platinumA300">@color/platinum_A_300</item>
+        <item name="platinumA400">@color/platinum_A_400</item>
+        <item name="platinumA500">@color/platinum_A_500</item>
+        <item name="platinumA600">@color/platinum_A_600</item>
+        <item name="platinumA700">@color/platinum_A_700</item>
+        <item name="platinumA800">@color/platinum_A_800</item>
+        <item name="platinumA900">@color/platinum_A_900</item>
+        <item name="platinumB100">@color/platinum_B_100</item>
+        <item name="platinumB1000">@color/platinum_B_1000</item>
+        <item name="platinumB200">@color/platinum_B_200</item>
+        <item name="platinumB300">@color/platinum_B_300</item>
+        <item name="platinumB400">@color/platinum_B_400</item>
+        <item name="platinumB500">@color/platinum_B_500</item>
+        <item name="platinumB600">@color/platinum_B_600</item>
+        <item name="platinumB700">@color/platinum_B_700</item>
+        <item name="platinumB800">@color/platinum_B_800</item>
+        <item name="platinumB900">@color/platinum_B_900</item>
+        <item name="platinumC100">@color/platinum_C_100</item>
+        <item name="platinumC1000">@color/platinum_C_1000</item>
+        <item name="platinumC200">@color/platinum_C_200</item>
+        <item name="platinumC300">@color/platinum_C_300</item>
+        <item name="platinumC500">@color/platinum_C_500</item>
+        <item name="platinumC600">@color/platinum_C_600</item>
+        <item name="platinumC700">@color/platinum_C_700</item>
+        <item name="platinumC800">@color/platinum_C_800</item>
+        <item name="platinumC900">@color/platinum_C_900</item>
+        <item name="platinumD100">@color/platinum_D_100</item>
+        <item name="platinumD1000">@color/platinum_D_1000</item>
+        <item name="platinumD200">@color/platinum_D_200</item>
+        <item name="platinumD300">@color/platinum_D_300</item>
+        <item name="platinumD400">@color/platinum_D_400</item>
+        <item name="platinumD500">@color/platinum_D_500</item>
+        <item name="platinumD600">@color/platinum_D_600</item>
+        <item name="platinumD700">@color/platinum_D_700</item>
+        <item name="platinumD800">@color/platinum_D_800</item>
+        <item name="platinumD900">@color/platinum_D_900</item>
+        <item name="postpaidA100">@color/postpaid_A_100</item>
+        <item name="postpaidA1000">@color/postpaid_A_1000</item>
+        <item name="postpaidA200">@color/postpaid_A_200</item>
+        <item name="postpaidA300">@color/postpaid_A_300</item>
+        <item name="postpaidA400">@color/postpaid_A_400</item>
+        <item name="postpaidA500">@color/postpaid_A_500</item>
+        <item name="postpaidA600">@color/postpaid_A_600</item>
+        <item name="postpaidA700">@color/postpaid_A_700</item>
+        <item name="postpaidA800">@color/postpaid_A_800</item>
+        <item name="postpaidA900">@color/postpaid_A_900</item>
+        <item name="postpaidB100">@color/postpaid_B_100</item>
+        <item name="postpaidB1000">@color/postpaid_B_1000</item>
+        <item name="postpaidB200">@color/postpaid_B_200</item>
+        <item name="postpaidB300">@color/postpaid_B_300</item>
+        <item name="postpaidB400">@color/postpaid_B_400</item>
+        <item name="postpaidB500">@color/postpaid_B_500</item>
+        <item name="postpaidB600">@color/postpaid_B_600</item>
+        <item name="postpaidB700">@color/postpaid_B_700</item>
+        <item name="postpaidB800">@color/postpaid_B_800</item>
+        <item name="postpaidB900">@color/postpaid_B_900</item>
+        <item name="postpaidC100">@color/postpaid_C_100</item>
+        <item name="postpaidC1000">@color/postpaid_C_1000</item>
+        <item name="postpaidC200">@color/postpaid_C_200</item>
+        <item name="postpaidC300">@color/postpaid_C_300</item>
+        <item name="postpaidC400">@color/postpaid_C_400</item>
+        <item name="postpaidC500">@color/postpaid_C_500</item>
+        <item name="postpaidC600">@color/postpaid_C_600</item>
+        <item name="postpaidC700">@color/postpaid_C_700</item>
+        <item name="postpaidC800">@color/postpaid_C_800</item>
+        <item name="postpaidC900">@color/postpaid_C_900</item>
+        <item name="postpaidD100">@color/postpaid_D_100</item>
+        <item name="postpaidD1000">@color/postpaid_D_1000</item>
+        <item name="postpaidD200">@color/postpaid_D_200</item>
+        <item name="postpaidD300">@color/postpaid_D_300</item>
+        <item name="postpaidD400">@color/postpaid_D_400</item>
+        <item name="postpaidD500">@color/postpaid_D_500</item>
+        <item name="postpaidD600">@color/postpaid_D_600</item>
+        <item name="postpaidD700">@color/postpaid_D_700</item>
+        <item name="postpaidD800">@color/postpaid_D_800</item>
+        <item name="postpaidD900">@color/postpaid_D_900</item>
+        <item name="postpaidE100">@color/postpaid_E_100</item>
+        <item name="postpaidE1000">@color/postpaid_E_1000</item>
+        <item name="postpaidE200">@color/postpaid_E_200</item>
+        <item name="postpaidE300">@color/postpaid_E_300</item>
+        <item name="postpaidE400">@color/postpaid_E_400</item>
+        <item name="postpaidE500">@color/postpaid_E_500</item>
+        <item name="postpaidE600">@color/postpaid_E_600</item>
+        <item name="postpaidE700">@color/postpaid_E_700</item>
+        <item name="postpaidE800">@color/postpaid_E_800</item>
+        <item name="postpaidE900">@color/postpaid_E_900</item>
+        <item name="prepaidA100">@color/prepaid_A_100</item>
+        <item name="prepaidA1000">@color/prepaid_A_1000</item>
+        <item name="prepaidA200">@color/prepaid_A_200</item>
+        <item name="prepaidA300">@color/prepaid_A_300</item>
+        <item name="prepaidA400">@color/prepaid_A_400</item>
+        <item name="prepaidA500">@color/prepaid_A_500</item>
+        <item name="prepaidA600">@color/prepaid_A_600</item>
+        <item name="prepaidA700">@color/prepaid_A_700</item>
+        <item name="prepaidA800">@color/prepaid_A_800</item>
+        <item name="prepaidA900">@color/prepaid_A_900</item>
+        <item name="prepaidB100">@color/prepaid_B_100</item>
+        <item name="prepaidB1000">@color/prepaid_B_1000</item>
+        <item name="prepaidB200">@color/prepaid_B_200</item>
+        <item name="prepaidB300">@color/prepaid_B_300</item>
+        <item name="prepaidB400">@color/prepaid_B_400</item>
+        <item name="prepaidB500">@color/prepaid_B_500</item>
+        <item name="prepaidB600">@color/prepaid_B_600</item>
+        <item name="prepaidB700">@color/prepaid_B_700</item>
+        <item name="prepaidB800">@color/prepaid_B_800</item>
+        <item name="prepaidB900">@color/prepaid_B_900</item>
+        <item name="prepaidC100">@color/prepaid_C_100</item>
+        <item name="prepaidC1000">@color/prepaid_C_1000</item>
+        <item name="prepaidC200">@color/prepaid_C_200</item>
+        <item name="prepaidC300">@color/prepaid_C_300</item>
+        <item name="prepaidC400">@color/prepaid_C_400</item>
+        <item name="prepaidC500">@color/prepaid_C_500</item>
+        <item name="prepaidC600">@color/prepaid_C_600</item>
+        <item name="prepaidC700">@color/prepaid_C_700</item>
+        <item name="prepaidC800">@color/prepaid_C_800</item>
+        <item name="prepaidC900">@color/prepaid_C_900</item>
+        <item name="prepaidD100">@color/prepaid_D_100</item>
+        <item name="prepaidD1000">@color/prepaid_D_1000</item>
+        <item name="prepaidD200">@color/prepaid_D_200</item>
+        <item name="prepaidD300">@color/prepaid_D_300</item>
+        <item name="prepaidD400">@color/prepaid_D_400</item>
+        <item name="prepaidD500">@color/prepaid_D_500</item>
+        <item name="prepaidD600">@color/prepaid_D_600</item>
+        <item name="prepaidD700">@color/prepaid_D_700</item>
+        <item name="prepaidD800">@color/prepaid_D_800</item>
+        <item name="prepaidD900">@color/prepaid_D_900</item>
+        <item name="prepaidE100">@color/prepaid_E_100</item>
+        <item name="prepaidE1000">@color/prepaid_E_1000</item>
+        <item name="prepaidE200">@color/prepaid_E_200</item>
+        <item name="prepaidE300">@color/prepaid_E_300</item>
+        <item name="prepaidE400">@color/prepaid_E_400</item>
+        <item name="prepaidE500">@color/prepaid_E_500</item>
+        <item name="prepaidE600">@color/prepaid_E_600</item>
+        <item name="prepaidE700">@color/prepaid_E_700</item>
+        <item name="prepaidE800">@color/prepaid_E_800</item>
+        <item name="prepaidE900">@color/prepaid_E_900</item>
+        <item name="text_on_white">@color/text_on_white</item>
+
+        <!-- Font styles -->
+        <item name="bold">@style/TextAppearance.AppTheme.Bold</item>
+        <item name="extendedBold">@style/TextAppearance.AppTheme.ExtendedBold</item>
+        <item name="narrowBold">@style/TextAppearance.AppTheme.NarrowBold</item>
+        <item name="semiBold">@style/TextAppearance.AppTheme.SemiBold</item>
+        <item name="textBold">@style/TextAppearance.AppTheme.Text.Bold</item>
+        <item name="textRegular">@style/TextAppearance.AppTheme.Text.Regular</item>
+        <item name="textSemiBold">@style/TextAppearance.AppTheme.Text.SemiBold</item>
+        <item name="wideBlack">@style/TextAppearance.AppTheme.WideBlack</item>
+        <item name="wideBold">@style/TextAppearance.AppTheme.WideBold</item>
+        <item name="largeBold">@style/TextAppearance.AppTheme.LargeBold</item>
+        <item name="largeMultiline">@style/TextAppearance.AppTheme.LargeMultiline</item>
+        <item name="mediumBold">@style/TextAppearance.AppTheme.MediumBold</item>
+        <item name="mediumMultiline">@style/TextAppearance.AppTheme.MediumMultiline</item>
+        <item name="sMediumBold">@style/TextAppearance.AppTheme.SMediumBold</item>
+        <item name="sMediumMultiline">@style/TextAppearance.AppTheme.SMediumMultiline</item>
+        <item name="xBaseBold">@style/TextAppearance.AppTheme.XBaseBold</item>
+        <item name="xBaseMultiline">@style/TextAppearance.AppTheme.XBaseMultiline</item>
+        <item name="mediumBoldContent">@style/TextAppearance.AppTheme.MediumBoldContent</item>
+        <item name="mediumRegularContent">@style/TextAppearance.AppTheme.MediumRegularContent</item>
+        <item name="xBaseBoldContent">@style/TextAppearance.AppTheme.XBaseBoldContent</item>
+        <item name="xBaseRegularContent">@style/TextAppearance.AppTheme.XBaseRegularContent</item>
+        <item name="baseBoldContent">@style/TextAppearance.AppTheme.BaseBoldContent</item>
+        <item name="baseRegularContent">@style/TextAppearance.AppTheme.BaseRegularContent</item>
+        <item name="smallBoldContent">@style/TextAppearance.AppTheme.SmallBoldContent</item>
+        <item name="smallRegularContent">@style/TextAppearance.AppTheme.SmallRegularContent</item>
+        <item name="xSmallRegularContent">@style/TextAppearance.AppTheme.XSmallRegularContent</item>
+        <item name="xxSmallRegularContent">@style/TextAppearance.AppTheme.XXSmallRegularContent</item>
+        <item name="xxSmall">@style/TextAppearance.AppTheme.XXSmall</item>
+        <item name="mediumBoldNum">@style/TextAppearance.AppTheme.MediumBoldNum</item>
+        <item name="sMediumBoldNum">@style/TextAppearance.AppTheme.SMediumBoldNum</item>
+        <item name="xBaseBoldNum">@style/TextAppearance.AppTheme.XBaseBoldNum</item>
+        <item name="baseForm">@style/TextAppearance.AppTheme.BaseForm</item>
+        <item name="labelCaption">@style/TextAppearance.AppTheme.LabelCaption</item>
+        <item name="labelSmall">@style/TextAppearance.AppTheme.LabelSmall</item>
+        <item name="chip">@style/TextAppearance.AppTheme.Chip</item>
+        <item name="baseAction">@style/TextAppearance.AppTheme.BaseAction</item>
+        <item name="smallAction">@style/TextAppearance.AppTheme.SmallAction</item>
+        <item name="defaultCallSms">@style/TextAppearance.AppTheme.DefaultCallSms</item>
+        <item name="comfyCallSms">@style/TextAppearance.AppTheme.ComfyCallSms</item>
+        <item name="compactCallSms">@style/TextAppearance.AppTheme.CompactCallSms</item>
+        <item name="defaultData">@style/TextAppearance.AppTheme.DefaultData</item>
+        <item name="comfyData">@style/TextAppearance.AppTheme.ComfyData</item>
+        <item name="compactData">@style/TextAppearance.AppTheme.CompactData</item>
+
+    </style>
+
+    <!--Activity theme-->
+
+    <style name="AppTheme" parent="Base.AppTheme" />
+
+    <!-- Launcher theme -->
+    <style name="AppTheme.Launcher">
+        <item name="android:windowBackground">@drawable/globe_splash_screen</item>
+        <!-- use for splash screen when we get -->
+    </style>
+
+    <!-- Calendar theme -->
+    <style name="AppTheme.Calendar" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="colorAccent">?primary</item>
+        <item name="colorSecondary">?primary</item>
+        <item name="android:buttonBarPositiveButtonStyle">@style/DatePickerButtonStyle</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/DatePickerButtonStyle</item>
+    </style>
+
+    <style name="DatePickerButtonStyle" parent="Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">?primary</item>
+        <item name="android:backgroundTint">?absoluteWhite</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Light" parent="">
+        <item name="android:background">?absoluteWhite</item>
+        <item name="android:textColorPrimary">?corporateA700</item>
+        <item name="colorOnBackground">?corporateA700</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Light.Badge" parent="">
+        <item name="android:background">@drawable/profile_subsection_item_badge_circle</item>
+    </style>
+
+    <style name="ThemeOverlay.App.TabLayout" parent="">
+        <item name="colorPrimary">?primary</item>
+        <item name="colorSurface">?absoluteWhite</item>
+        <item name="colorOnSurface">?primary</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Light.Badge.Text" parent="">
+        <item name="android:background">@color/transparent</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:textColor">?absoluteWhite</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Blue button theme -->
+    <style name="ThemeOverlay.App.ClassicButton" parent="">
+        <item name="colorPrimary">?primary</item>
+        <item name="colorOnPrimary">?absoluteWhite</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!-- Transparent button theme -->
+    <style name="ThemeOverlay.App.ClassicButtonNegative" parent="">
+        <item name="colorPrimary">@android:color/transparent</item>
+        <item name="colorOnPrimary">?primary</item>
+    </style>
+
+    <!-- Blue text style -->
+    <style name="ThemeOverlay.App.BlueTextOnBackground" parent="">
+        <item name="android:textColor">@color/blue_secondary</item>
+    </style>
+
+    <style name="ThemeOverlay.App.InputFieldTextTheme" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:textColorHighlight">@color/input_text_stroke_blue_2</item>
+    </style>
+
+    <!-- Error auth CardView theme overlay -->
+    <style name="ThemeOverlay.AuthErrorCardView" parent="CardView">
+        <item name="android:textColor">?absoluteWhite</item>
+        <item name="android:background">?colorError</item>
+    </style>
+
+    <style name="ThemeOverlay.App.LogoutTitle" parent="">
+        <item name="android:textColor">?neutralA3</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">@dimen/text_size_xsmall</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ThemeOverlay.App.StepNotCompleted" parent="">
+        <item name="android:background">@color/black_10</item>
+    </style>
+
+    <style name="ThemeOverlay.App.HeaderLineTheme" parent="">
+        <item name="android:background">?neutralB1</item>
+    </style>
+
+    <style name="ThemeOverlay.App.AuthHeaderLineTheme" parent="">
+        <item name="android:background">@color/white_30</item>
+    </style>
+
+    <style name="ThemeOverlay.App.TwoButtonDialogLineTop" parent="">
+        <item name="android:background">@color/two_button_dialog_top_line</item>
+    </style>
+
+    <style name="ThemeOverlay.App.ErrorTextStyle" parent="">
+        <item name="android:textColor">?colorError</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Black70TextColor" parent="">
+        <item name="android:textColor">@color/black_70</item>
+    </style>
+
+    <style name="ThemeOverlay.App.SkyBlue" parent="">
+        <item name="colorAccent">?primary</item>
+        <item name="colorPrimary">?neutralA0</item>
+        <item name="colorSurface">?accentLight</item>
+        <item name="colorOnSurface">?neutralA0</item>
+    </style>
+
+    <style name="ThemeOverlay.App.DarkBlueAccountNameTheme" parent="">
+        <item name="android:textColor">?accentDark</item>
+        <item name="colorPrimary">@color/dark_blue</item>
+        <item name="colorSecondary">?neutralB0</item>
+    </style>
+
+    <style name="ThemeOverlay.App.SnackbarTheme" parent="">
+        <item name="colorOnPrimary">?absoluteWhite</item>
+        <item name="colorPrimary">?corporateA600</item>
+        <item name="colorOnBackground">?neutralA4</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ThemeOverlay.App.GoCreateSnackbarTheme" parent="">
+        <item name="colorOnPrimary">?absoluteWhite</item>
+        <item name="colorPrimary">?corporateA600</item>
+        <item name="colorOnBackground">?neutralA4</item>
+        <item name="android:background">?attr/accentDark</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ThemeOverlay.App.SuccessTextColor" parent="">
+        <item name="android:textColor">@color/success</item>
+    </style>
+
+    <style name="AlertDialogMaterialTheme" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="buttonBarPositiveButtonStyle">@style/Alert.Button.Positive</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Alert.Button.Negative</item>
+    </style>
+
+    <style name="Alert.Button.Positive" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">?primary</item>
+    </style>
+
+    <style name="Alert.Button.Negative" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">?primary</item>
+    </style>
+</resources>

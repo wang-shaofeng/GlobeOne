@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile_subgraph"
+    app:startDestination="@id/earnedRaffleTicketsFragment">
+
+    <fragment
+        android:id="@+id/earnedRaffleTicketsFragment"
+        android:name="ph.com.globe.globeonesuperapp.dashboard.EarnedRaffleTicketsFragment"
+        android:label="EarnedRaffleTicketsFragment"
+        tools:layout="@layout/earned_raffle_tickets_fragment" >
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="creditedTo"
+            app:argType="string" />
+        <argument
+            android:name="ticketsEarned"
+            app:argType="integer" />
+    </fragment>
+
+</navigation>

@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?accentLight">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:padding="@dimen/padding_xlarge">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_main_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/receipt_main_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/receipt_circles_shape" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_receipt_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding_large"
+                android:paddingEnd="@dimen/padding_large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_download_receipt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_xmedium"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_download" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lav_receipt"
+                    android:layout_width="@dimen/something_went_wrong_image_width"
+                    android:layout_height="@dimen/something_went_wrong_image_height"
+                    android:layout_marginTop="@dimen/margin_xxxxlarge"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/success" />
+
+                <TextView
+                    android:id="@+id/tv_success_receipt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:text="@string/borrow_request_sent"
+                    android:textAppearance="?sMediumBold"
+                    android:textColor="?accentDark"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lav_receipt" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:gravity="center"
+                    android:text="@string/borrow_request_description"
+                    android:textAppearance="?baseRegularContent"
+                    android:textColor="?neutralA2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_success_receipt" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_receipt_articles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding_large"
+                android:paddingTop="@dimen/padding_medium"
+                android:paddingEnd="@dimen/padding_large"
+                android:paddingBottom="@dimen/padding_large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cl_receipt_header">
+
+                <TextView
+                    android:id="@+id/tv_sent_to"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sent_to"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?neutralA3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_sent_to_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?smallRegularContent"
+                    android:textColor="?neutralA2"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_sent_to"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_sent_to"
+                    tools:text="0917 894 2112" />
+
+                <TextView
+                    android:id="@+id/tv_loan_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_xstandard"
+                    android:text="@string/promo"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?neutralA3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_sent_to" />
+
+                <TextView
+                    android:id="@+id/tv_loan_name_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?smallRegularContent"
+                    android:textColor="?neutralA2"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_loan_name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_loan_name"
+                    tools:text="GoSURF50" />
+
+                <TextView
+                    android:id="@+id/tv_validity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_xstandard"
+                    android:text="@string/validity"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?neutralA3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_loan_name" />
+
+                <TextView
+                    android:id="@+id/tv_validity_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?smallRegularContent"
+                    android:textColor="?neutralA2"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_validity"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_validity"
+                    tools:text="1 day" />
+
+                <View
+                    android:id="@+id/v_horizontal_dash_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/toolbar_line_height"
+                    android:layout_marginTop="@dimen/margin_xstandard"
+                    android:background="?neutralB2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_validity" />
+
+                <TextView
+                    android:id="@+id/tv_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_xstandard"
+                    android:text="@string/amount"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?neutralA3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/v_horizontal_dash_1" />
+
+                <TextView
+                    android:id="@+id/tv_amount_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?smallRegularContent"
+                    android:textColor="?neutralA2"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_amount"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_amount"
+                    tools:text="P10" />
+
+                <TextView
+                    android:id="@+id/tv_service_fee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_xstandard"
+                    android:text="@string/service_fee"
+                    android:textAppearance="?labelCaption"
+                    android:textColor="?neutralA3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_amount" />
+
+                <TextView
+                    android:id="@+id/tv_service_fee_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?smallRegularContent"
+                    android:textColor="?neutralA2"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_service_fee"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_service_fee"
+                    tools:text="P5" />
+
+                <View
+                    android:id="@+id/v_horizontal_dash_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/toolbar_line_height"
+                    android:layout_marginTop="@dimen/margin_xstandard"
+                    android:background="?neutralB2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_service_fee" />
+
+                <TextView
+                    android:id="@+id/tv_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:text="@string/total"
+                    android:textAppearance="?sMediumMultiline"
+                    android:textColor="?accentDark"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/v_horizontal_dash_2" />
+
+                <TextView
+                    android:id="@+id/tv_total_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?mediumMultiline"
+                    android:textColor="?accentDark"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_total"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_total"
+                    tools:text="P15" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                style="@style/BottomReceiptStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/cl_receipt_articles">
+
+                <View
+                    android:id="@+id/v_receipt_id_dash_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/stroke_width_medium"
+                    android:layout_marginHorizontal="@dimen/stroke_width_small"
+                    android:background="@drawable/receipt_number_dash_line"
+                    android:layerType="software"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:rotation="180"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/receipt_circles_shape" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_done"
+            style="@style/Widget.App.ClassicButtonNegative"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_xmedium"
+            android:layout_marginBottom="@dimen/margin_xmedium"
+            android:text="@string/done"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_main_content" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

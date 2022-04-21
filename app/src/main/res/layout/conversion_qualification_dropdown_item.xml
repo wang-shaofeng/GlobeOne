@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:background="?absoluteWhite">
+
+    <TextView
+        android:id="@+id/tv_convert_data_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_xmedium"
+        android:layout_marginTop="@dimen/margin_standard"
+        android:gravity="center"
+        android:text="@string/we_are_displaying_the_data_allowed_to_convert"
+        android:textAppearance="?smallRegularContent"
+        android:textColor="?neutralB0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_account_brand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_standard"
+        app:layout_constraintBottom_toBottomOf="@id/tv_account_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_number"
+        app:tint="?accentDark"
+        tools:srcCompat="@drawable/ic_mobile_icon" />
+
+    <TextView
+        android:id="@+id/tv_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_standard"
+        android:layout_marginTop="@dimen/margin_ssmedium"
+        android:background="@drawable/dac_account_number_background"
+        android:paddingHorizontal="@dimen/padding_standard"
+        android:paddingVertical="@dimen/padding_xsmall"
+        android:textAppearance="?xSmallRegularContent"
+        android:textColor="?neutralB0"
+        app:layout_constraintStart_toEndOf="@id/iv_account_brand"
+        app:layout_constraintTop_toBottomOf="@id/tv_convert_data_info"
+        tools:text="@string/dac_mock_msisdn" />
+
+    <TextView
+        android:id="@+id/tv_account_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_xxxsmall"
+        android:textAppearance="?sMediumBold"
+        android:textColor="?accentDark"
+        app:layout_constraintStart_toStartOf="@id/tv_number"
+        app:layout_constraintTop_toBottomOf="@id/tv_number"
+        tools:text="@string/dac_mock_name" />
+
+    <TextView
+        android:id="@+id/tv_promo_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?xSmallRegularContent"
+        android:textColor="?neutralB0"
+        app:layout_constraintBottom_toTopOf="@id/tv_amount"
+        app:layout_constraintEnd_toEndOf="@id/tv_amount"
+        app:layout_constraintTop_toTopOf="@id/tv_number"
+        tools:text="@string/dac_mock_promo" />
+
+    <TextView
+        android:id="@+id/tv_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:textAppearance="?sMediumBold"
+        android:textColor="?accentDark"
+        app:layout_constraintBottom_toBottomOf="@id/tv_account_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_promo_name"
+        tools:text="@string/dac_mock_amount" />
+
+    <TextView
+        android:id="@+id/tv_error"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_standard"
+        android:layout_marginTop="@dimen/margin_small"
+        android:background="@drawable/dac_account_number_background"
+        android:backgroundTint="?neutralB2"
+        android:gravity="center"
+        android:paddingVertical="@dimen/padding_small"
+        android:textAppearance="?xSmallRegularContent"
+        android:textColor="?colorOnError"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/v_bottom_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_account_name"
+        tools:text="@string/no_data"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/v_bottom_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/stroke_width_small"
+        android:layout_marginTop="@dimen/margin_xs_standard"
+        android:background="?neutralA5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_error" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas
+    .android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?accentLight"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/padding_xxxxxlarge"
+        tools:context=".payment.payment_processing.PaymentProcessingFragment">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lav_processing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_xxxlarge"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/processing" />
+
+        <TextView
+            android:id="@+id/tv_header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_xmedium"
+            android:layout_marginEnd="@dimen/margin_large"
+            android:gravity="center_horizontal"
+            android:text="@string/we_re_processing_your_payment"
+            android:textAlignment="center"
+            android:textAppearance="?sMediumBold"
+            android:textColor="?accentDark" />
+
+        <TextView
+            android:id="@+id/tv_header_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_xstandard"
+            android:layout_marginEnd="@dimen/margin_large"
+            android:text="@string/this_will_only_take_a_moment"
+            android:textAlignment="center"
+            android:textAppearance="?baseRegularContent"
+            android:textColor="?neutralB0" />
+
+    </LinearLayout>
+
+</ScrollView>

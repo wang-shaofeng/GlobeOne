@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pos_subgraph"
+    app:startDestination="@id/payWithPointsFragment">
+
+    <fragment
+        android:id="@+id/payWithPointsFragment"
+        android:name="ph.com.globe.globeonesuperapp.rewards.pos.PayWithPointsFragment"
+        android:label="PayWithPointsFragment"
+        tools:layout="@layout/pay_with_points_fragment">
+        <action
+            android:id="@+id/action_payWithPointsFragment_to_whichEnrolledAccountFragment"
+            app:destination="@id/whichEnrolledAccountFragment" />
+        <action
+            android:id="@+id/action_payWithPointsFragment_to_enterMerchantCodeFragment"
+            app:destination="@id/enterMerchantCodeFragment" />
+        <argument
+            android:name="enrolledAccountWithPoints"
+            android:defaultValue="@null"
+            app:argType="ph.com.globe.globeonesuperapp.rewards.pos.EnrolledAccountWithPoints"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_payWithPointsFragment_to_payPointsFragment"
+            app:destination="@id/payPointsFragment" />
+        <action
+            android:id="@+id/action_payWithPointsFragment_to_POSRedeemPointsUnsuccessfulFragment"
+            app:destination="@id/POSRedeemPointsUnsuccessfulFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/whichEnrolledAccountFragment"
+        android:name="ph.com.globe.globeonesuperapp.rewards.pos.WhichEnrolledAccountFragment"
+        android:label="WhichEnrolledAccountFragment"
+        tools:layout="@layout/which_enrolled_account_fragment">
+        <action
+            android:id="@+id/action_whichEnrolledAccountFragment_to_payPointsFragment"
+            app:destination="@id/payPointsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/payPointsFragment"
+        android:name="ph.com.globe.globeonesuperapp.rewards.pos.PayPointsFragment"
+        android:label="PayPointsFragment"
+        tools:layout="@layout/pay_points_fragment">
+        <action
+            android:id="@+id/action_payPointsFragment_to_POSRedeemPointsSuccessfulFragment"
+            app:destination="@id/POSRedeemPointsSuccessfulFragment" />
+        <action
+            android:id="@+id/action_payPointsFragment_to_POSRedeemPointsUnsuccessfulFragment"
+            app:destination="@id/POSRedeemPointsUnsuccessfulFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/enterMerchantCodeFragment"
+        android:name="ph.com.globe.globeonesuperapp.rewards.pos.EnterMerchantCodeFragment"
+        android:label="EnterMerchantCodeFragment"
+        tools:layout="@layout/enter_merchant_code_fragment">
+        <action
+            android:id="@+id/action_enterMerchantCodeFragment_to_whichEnrolledAccountFragment"
+            app:destination="@id/whichEnrolledAccountFragment" />
+        <action
+            android:id="@+id/action_enterMerchantCodeFragment_to_payPointsFragment"
+            app:destination="@id/payPointsFragment" />
+        <action
+            android:id="@+id/action_enterMerchantCodeFragment_to_POSRedeemPointsUnsuccessfulFragment"
+            app:destination="@id/POSRedeemPointsUnsuccessfulFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/POSRedeemPointsSuccessfulFragment"
+        android:name="ph.com.globe.globeonesuperapp.rewards.pos.POSRedeemPointsSuccessfulFragment"
+        android:label="POSRedeemPointsSuccessfulFragment">
+        <argument
+            android:name="transactionId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/POSRedeemPointsUnsuccessfulFragment"
+        android:name="ph.com.globe.globeonesuperapp.rewards.pos.POSRedeemPointsUnsuccessfulFragment"
+        android:label="POSRedeemPointsUnsuccessfulFragment">
+        <argument
+            android:name="state"
+            android:defaultValue="SOMETHING_WENT_WRONG"
+            app:argType="ph.com.globe.globeonesuperapp.rewards.pos.State" />
+        <action
+            android:id="@+id/action_POSRedeemPointsUnsuccessfulFragment_to_enterMerchantCodeFragment"
+            app:destination="@id/enterMerchantCodeFragment" />
+    </fragment>
+
+</navigation>

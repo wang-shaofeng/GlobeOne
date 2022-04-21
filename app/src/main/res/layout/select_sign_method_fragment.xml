@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical"
+    tools:context=".select_sign_method.SelectSignMethodFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_auth_toolbar"
+        style="@style/AuthToolbarLandingStyle"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_get_started"
+            style="@style/Widget.App.LandingToolbarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:text="@string/get_started"
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/v_promo_wallet_line_bottom"
+            style="@style/ThemeOverlay.App.AuthHeaderLineTheme"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_line_height"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/v_quick_links_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_auth_toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_globe_one_logo" />
+
+            <ImageView
+                android:id="@+id/tv_welcome_text"
+                style="@style/WelcomeHeaderStyle"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_logo"
+                app:srcCompat="@drawable/ic_text_vector_everything_you_love" />
+
+            <ImageView
+                android:id="@+id/tv_welcome_text_small"
+                style="@style/WelcomeTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_standard"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_welcome_text"
+                app:srcCompat="@drawable/ic_text_vector_welcome_to_globeone" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_login"
+                style="@style/Widget.App.ClassicButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_xmedium"
+                android:text="@string/log_in_with_email"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_welcome_text_small" />
+
+            <View
+                android:id="@+id/v_left_dash"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/toolbar_line_height"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:background="?corporateA300"
+                app:layout_constraintBottom_toBottomOf="@id/tv_or_use"
+                app:layout_constraintEnd_toStartOf="@id/tv_or_use"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_or_use" />
+
+            <TextView
+                android:id="@+id/tv_or_use"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_ssmedium"
+                android:layout_marginTop="@dimen/margin_xmedium"
+                android:layout_marginRight="@dimen/margin_ssmedium"
+                android:text="@string/or"
+                android:textAppearance="?wideBold"
+                android:textColor="?corporateA300"
+                android:textSize="@dimen/text_size_xsmall"
+                app:layout_constraintEnd_toStartOf="@id/v_right_dash"
+                app:layout_constraintStart_toEndOf="@id/v_left_dash"
+                app:layout_constraintTop_toBottomOf="@id/btn_login" />
+
+            <View
+                android:id="@+id/v_right_dash"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/toolbar_line_height"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:background="?corporateA300"
+                app:layout_constraintBottom_toBottomOf="@id/tv_or_use"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_or_use"
+                app:layout_constraintTop_toTopOf="@id/tv_or_use" />
+
+            <include
+                android:id="@+id/inc_social_buttons"
+                layout="@layout/social_buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_xmedium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_or_use" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_sign_up"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_medium"
+                android:layout_marginVertical="@dimen/margin_xxxxlarge"
+                android:text="@string/don_t_have_an_account"
+                android:textAppearance="?baseRegularContent"
+                android:textColor="?accentLight"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/inc_social_buttons"
+                app:layout_constraintVertical_bias="1.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <View
+        android:id="@+id/v_quick_links_background"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/quick_links_height"
+        android:background="@color/corporate_A_900"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_shop"
+        style="@style/Widget.App.LandingPageQuickLinks"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/margin_xxstandard"
+        android:text="@string/quick_link_shop"
+        app:icon="@drawable/ic_shop_quick_link"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_get_rewards"
+        app:layout_constraintTop_toTopOf="@id/v_quick_links_background" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_get_rewards"
+        style="@style/Widget.App.LandingPageQuickLinks"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="@string/quick_link_get_rewards"
+        app:icon="@drawable/ic_rewards_quick_link"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/v_quick_links_background" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_discover"
+        style="@style/Widget.App.LandingPageQuickLinks"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_xxstandard"
+        android:text="@string/quick_link_discover"
+        app:icon="@drawable/ic_discover_quick_link"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_get_rewards"
+        app:layout_constraintTop_toTopOf="@id/v_quick_links_background" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_quick_links"
+        style="@style/Widget.App.LandingPageSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:background="@drawable/quick_links_title_background"
+        android:paddingStart="@dimen/padding_xstandard"
+        android:paddingTop="@dimen/padding_xsmall"
+        android:paddingEnd="@dimen/padding_xstandard"
+        android:paddingBottom="@dimen/padding_small"
+        android:text="@string/quick_links"
+        app:layout_constraintBottom_toTopOf="@id/v_quick_links_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/v_quick_links_background" />
+
+    <View
+        android:id="@+id/v_bubble_pointer"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_standard"
+        app:layout_constraintEnd_toEndOf="@id/btn_shop"
+        app:layout_constraintStart_toStartOf="@id/btn_shop"
+        app:layout_constraintTop_toTopOf="@id/btn_shop" />
+
+    <ImageView
+        android:id="@+id/iv_quick_links_bubble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/v_bubble_pointer"
+        app:layout_constraintStart_toStartOf="@id/v_bubble_pointer"
+        app:srcCompat="@drawable/ic_quick_links_bubble"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

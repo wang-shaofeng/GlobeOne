@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/padding_xxxlarge"
+    android:theme="@style/ThemeOverlay.App.Light"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <LinearLayout
+        android:id="@+id/ll_option_view_0"
+        style="@style/Widget.App.FrameLayout.SelectItemOption"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@id/ll_option_view_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/tv_option_view_0"
+            style="@style/Widget.App.TextView.SelectItemOption"
+            tools:text="0" />
+
+        <TextView
+            android:id="@+id/tv_option_view_0_description"
+            style="@style/Widget.App.TextView.SelectItemOptionDescription"
+            tools:text="DAYS" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_option_view_1"
+        style="@style/Widget.App.FrameLayout.SelectItemOption"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@id/ll_option_view_2"
+        app:layout_constraintStart_toEndOf="@id/ll_option_view_0"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/tv_option_view_1"
+            style="@style/Widget.App.TextView.SelectItemOption"
+            tools:text="1" />
+
+        <TextView
+            android:id="@+id/tv_option_view_1_description"
+            style="@style/Widget.App.TextView.SelectItemOptionDescription"
+            tools:text="DAYS" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_option_view_2"
+        style="@style/Widget.App.FrameLayout.SelectItemOption"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ll_option_view_1"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/tv_option_view_2"
+            style="@style/Widget.App.TextView.SelectItemOption"
+            tools:text="2" />
+
+        <TextView
+            android:id="@+id/tv_option_view_2_description"
+            style="@style/Widget.App.TextView.SelectItemOptionDescription"
+            tools:text="DAYS" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_option_view_3"
+        style="@style/Widget.App.FrameLayout.SelectItemOption"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@id/ll_option_view_4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_option_view_0"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/tv_option_view_3"
+            style="@style/Widget.App.TextView.SelectItemOption"
+            tools:text="3" />
+
+        <TextView
+            android:id="@+id/tv_option_view_3_description"
+            style="@style/Widget.App.TextView.SelectItemOptionDescription"
+            tools:text="DAYS" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_option_view_4"
+        style="@style/Widget.App.FrameLayout.SelectItemOption"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@id/ll_option_view_5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/ll_option_view_3"
+        app:layout_constraintTop_toBottomOf="@id/ll_option_view_1"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/tv_option_view_4"
+            style="@style/Widget.App.TextView.SelectItemOption"
+            tools:text="4" />
+
+        <TextView
+            android:id="@+id/tv_option_view_4_description"
+            style="@style/Widget.App.TextView.SelectItemOptionDescription"
+            tools:text="DAYS" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_option_view_5"
+        style="@style/Widget.App.FrameLayout.SelectItemOption"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/ll_option_view_4"
+        app:layout_constraintTop_toBottomOf="@id/ll_option_view_2"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/tv_option_view_5"
+            style="@style/Widget.App.TextView.SelectItemOption"
+            tools:text="5" />
+
+        <TextView
+            android:id="@+id/tv_option_view_5_description"
+            style="@style/Widget.App.TextView.SelectItemOptionDescription"
+            tools:text="DAYS" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_option_view_6"
+        style="@style/Widget.App.FrameLayout.SelectItemOption"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ll_option_view_7"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_option_view_3"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/tv_option_view_6"
+            style="@style/Widget.App.TextView.SelectItemOption"
+            tools:text="6"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_option_view_6_description"
+            style="@style/Widget.App.TextView.SelectItemOptionDescription"
+            tools:text="DAYS" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_option_view_7"
+        style="@style/Widget.App.FrameLayout.SelectItemOption"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ll_option_view_8"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/ll_option_view_6"
+        app:layout_constraintTop_toBottomOf="@id/ll_option_view_4"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/tv_option_view_7"
+            style="@style/Widget.App.TextView.SelectItemOption"
+            tools:text="7" />
+
+        <TextView
+            android:id="@+id/tv_option_view_7_description"
+            style="@style/Widget.App.TextView.SelectItemOptionDescription"
+            tools:text="DAYS" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_option_view_8"
+        style="@style/Widget.App.FrameLayout.SelectItemOption"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/ll_option_view_7"
+        app:layout_constraintTop_toBottomOf="@id/ll_option_view_5"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/tv_option_view_8"
+            style="@style/Widget.App.TextView.SelectItemOption"
+            tools:text=" 8" />
+
+        <TextView
+            android:id="@+id/tv_option_view_8_description"
+            style="@style/Widget.App.TextView.SelectItemOptionDescription"
+            tools:text="DAYS" />
+
+    </LinearLayout>
+</merge>

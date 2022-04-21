@@ -1,0 +1,649 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 9,
+    "identityHash": "928cb7486e45ac9cfa00855d87c36816",
+    "entities": [
+      {
+        "tableName": "last_query_write_time",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`table_name` TEXT NOT NULL, `row_name` TEXT NOT NULL, `timeInMs` INTEGER NOT NULL, PRIMARY KEY(`table_name`, `row_name`))",
+        "fields": [
+          {
+            "fieldPath": "tableName",
+            "columnName": "table_name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "row",
+            "columnName": "row_name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timeInMs",
+            "columnName": "timeInMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "table_name",
+            "row_name"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "enrolled_accounts",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`primaryMsisdn` TEXT NOT NULL, `mobileNumber` TEXT, `accountNumber` TEXT, `landlineNumber` TEXT, `accountAlias` TEXT NOT NULL, `brandType` TEXT NOT NULL, `segment` TEXT NOT NULL, `channel` TEXT NOT NULL, `isGcashLinked` INTEGER NOT NULL, PRIMARY KEY(`primaryMsisdn`))",
+        "fields": [
+          {
+            "fieldPath": "primaryMsisdn",
+            "columnName": "primaryMsisdn",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mobileNumber",
+            "columnName": "mobileNumber",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "accountNumber",
+            "columnName": "accountNumber",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "landlineNumber",
+            "columnName": "landlineNumber",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "accountAlias",
+            "columnName": "accountAlias",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "brandType",
+            "columnName": "brandType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "segment",
+            "columnName": "segment",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "channel",
+            "columnName": "channel",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isGcashLinked",
+            "columnName": "isGcashLinked",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "primaryMsisdn"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "registered_user",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`emailVerificationDate` TEXT, `email` TEXT NOT NULL, `firstName` TEXT, `middleName` TEXT, `lastName` TEXT, `nickname` TEXT, `suffix` TEXT, `birthdate` TEXT, `salutation` TEXT, `contactNumber` TEXT, `address` TEXT, PRIMARY KEY(`email`))",
+        "fields": [
+          {
+            "fieldPath": "emailVerificationDate",
+            "columnName": "emailVerificationDate",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "email",
+            "columnName": "email",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "firstName",
+            "columnName": "firstName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "middleName",
+            "columnName": "middleName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lastName",
+            "columnName": "lastName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nickname",
+            "columnName": "nickname",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "suffix",
+            "columnName": "suffix",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "birthdate",
+            "columnName": "birthdate",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "salutation",
+            "columnName": "salutation",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "contactNumber",
+            "columnName": "contactNumber",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "address",
+            "columnName": "address",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "email"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "account_groups",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`primaryMsisdn` TEXT NOT NULL, `usageItems` TEXT, PRIMARY KEY(`primaryMsisdn`))",
+        "fields": [
+          {
+            "fieldPath": "primaryMsisdn",
+            "columnName": "primaryMsisdn",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "usageItems",
+            "columnName": "usageItems",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "primaryMsisdn"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "shop_items",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`chargePromoId` TEXT NOT NULL, `nonChargePromoId` TEXT NOT NULL, `chargeServiceParam` TEXT NOT NULL, `nonChargeServiceParam` TEXT NOT NULL, `name` TEXT NOT NULL, `description` TEXT NOT NULL, `displayColor` TEXT NOT NULL, `price` TEXT NOT NULL, `discount` TEXT, `fee` TEXT NOT NULL, `promoType` TEXT NOT NULL, `use` TEXT NOT NULL, `functions` TEXT NOT NULL, `popularity` INTEGER NOT NULL, `loanable` INTEGER NOT NULL, `isContent` INTEGER NOT NULL, `isVoucher` INTEGER NOT NULL, `shareable` INTEGER NOT NULL, `isTM` INTEGER NOT NULL, `isTMMyFi` INTEGER NOT NULL, `isHomePrepaidWifi` INTEGER NOT NULL, `isGlobePrepaid` INTEGER NOT NULL, `isPrepaid` INTEGER NOT NULL, `isPostpaid` INTEGER NOT NULL, `apiSubscribe` TEXT NOT NULL, `apiProvisioningKeyword` TEXT NOT NULL, `mobileDataSize` TEXT NOT NULL, `mobileDataDescription` TEXT NOT NULL, `homeDataSize` TEXT NOT NULL, `homeDataDescription` TEXT NOT NULL, `appDataSize` TEXT NOT NULL, `appDataDescription` TEXT NOT NULL, `boosterAllocation` TEXT, `maximumDataAllocation` INTEGER NOT NULL, `smsSize` TEXT NOT NULL, `smsDescription` TEXT NOT NULL, `callSize` TEXT NOT NULL, `callDescription` TEXT NOT NULL, `loadAllocation` TEXT NOT NULL, `types` TEXT NOT NULL, `sections` TEXT NOT NULL, `boosters` TEXT, `applicationService` TEXT, `freebie` TEXT, `includedApps` TEXT NOT NULL, `shareKeyword` TEXT, `shareFee` TEXT, `skelligKeyword` TEXT, `skelligWallet` TEXT, `skelligCategory` TEXT, `visibleOnMainCatalog` INTEGER NOT NULL, `asset` TEXT, `method` TEXT, `partnerName` TEXT, `partnerRedirectionLink` TEXT, `denomCategory` TEXT, `monitoredInApp` INTEGER NOT NULL, `isBooster` INTEGER NOT NULL, `isFreebie` INTEGER NOT NULL, `isGoCreate` INTEGER NOT NULL, `isAnyAppService` INTEGER NOT NULL, `days` INTEGER, `hours` INTEGER, PRIMARY KEY(`name`, `chargePromoId`, `nonChargePromoId`, `chargeServiceParam`, `nonChargeServiceParam`))",
+        "fields": [
+          {
+            "fieldPath": "chargePromoId",
+            "columnName": "chargePromoId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nonChargePromoId",
+            "columnName": "nonChargePromoId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "chargeServiceParam",
+            "columnName": "chargeServiceParam",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nonChargeServiceParam",
+            "columnName": "nonChargeServiceParam",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "displayColor",
+            "columnName": "displayColor",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "price",
+            "columnName": "price",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "discount",
+            "columnName": "discount",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "fee",
+            "columnName": "fee",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "promoType",
+            "columnName": "promoType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "use",
+            "columnName": "use",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "functions",
+            "columnName": "functions",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "popularity",
+            "columnName": "popularity",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "loanable",
+            "columnName": "loanable",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isContent",
+            "columnName": "isContent",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isVoucher",
+            "columnName": "isVoucher",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "shareable",
+            "columnName": "shareable",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isTM",
+            "columnName": "isTM",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isTMMyFi",
+            "columnName": "isTMMyFi",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isHomePrepaidWifi",
+            "columnName": "isHomePrepaidWifi",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isGlobePrepaid",
+            "columnName": "isGlobePrepaid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isPrepaid",
+            "columnName": "isPrepaid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isPostpaid",
+            "columnName": "isPostpaid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "apiSubscribe",
+            "columnName": "apiSubscribe",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "apiProvisioningKeyword",
+            "columnName": "apiProvisioningKeyword",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mobileDataSize",
+            "columnName": "mobileDataSize",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mobileDataDescription",
+            "columnName": "mobileDataDescription",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "homeDataSize",
+            "columnName": "homeDataSize",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "homeDataDescription",
+            "columnName": "homeDataDescription",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "appDataSize",
+            "columnName": "appDataSize",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "appDataDescription",
+            "columnName": "appDataDescription",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "boosterAllocation",
+            "columnName": "boosterAllocation",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "maximumDataAllocation",
+            "columnName": "maximumDataAllocation",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "smsSize",
+            "columnName": "smsSize",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "smsDescription",
+            "columnName": "smsDescription",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "callSize",
+            "columnName": "callSize",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "callDescription",
+            "columnName": "callDescription",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "loadAllocation",
+            "columnName": "loadAllocation",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "types",
+            "columnName": "types",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sections",
+            "columnName": "sections",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "boosters",
+            "columnName": "boosters",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "applicationService",
+            "columnName": "applicationService",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "freebie",
+            "columnName": "freebie",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "includedApps",
+            "columnName": "includedApps",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "shareKeyword",
+            "columnName": "shareKeyword",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "shareFee",
+            "columnName": "shareFee",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "skelligKeyword",
+            "columnName": "skelligKeyword",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "skelligWallet",
+            "columnName": "skelligWallet",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "skelligCategory",
+            "columnName": "skelligCategory",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "visibleOnMainCatalog",
+            "columnName": "visibleOnMainCatalog",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "asset",
+            "columnName": "asset",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "method",
+            "columnName": "method",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "partnerName",
+            "columnName": "partnerName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "partnerRedirectionLink",
+            "columnName": "partnerRedirectionLink",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "denomCategory",
+            "columnName": "denomCategory",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "monitoredInApp",
+            "columnName": "monitoredInApp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isBooster",
+            "columnName": "isBooster",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isFreebie",
+            "columnName": "isFreebie",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isGoCreate",
+            "columnName": "isGoCreate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isAnyAppService",
+            "columnName": "isAnyAppService",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "validity.days",
+            "columnName": "days",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "validity.hours",
+            "columnName": "hours",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "name",
+            "chargePromoId",
+            "nonChargePromoId",
+            "chargeServiceParam",
+            "nonChargeServiceParam"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "subscription_usages",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`msisdn` TEXT NOT NULL, `mainData` TEXT, `appData` TEXT, PRIMARY KEY(`msisdn`))",
+        "fields": [
+          {
+            "fieldPath": "msisdn",
+            "columnName": "msisdn",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mainData",
+            "columnName": "mainData",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "appData",
+            "columnName": "appData",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "msisdn"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '928cb7486e45ac9cfa00855d87c36816')"
+    ]
+  }
+}

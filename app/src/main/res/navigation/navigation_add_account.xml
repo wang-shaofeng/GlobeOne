@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_add_account"
+    app:startDestination="@id/addAccountFragment">
+
+    <fragment
+        android:id="@+id/addAccountFragment"
+        android:name="ph.com.globe.globeonesuperapp.addaccount.AddAccountFragment"
+        android:label="AddAccountFragment"
+        tools:layout="@layout/add_account_fragment">
+        <action
+            android:id="@+id/action_addAccountFragment_to_addAccountNumberFragment"
+            app:destination="@id/addAccountNumberFragment" />
+        <argument
+            android:name="newUser"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <argument
+            android:name="dacFlow"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_addAccountFragment_to_addAccountFinishFragment"
+            app:destination="@id/addAccountFinishFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addAccountNumberFragment"
+        android:name="ph.com.globe.globeonesuperapp.addaccount.AddAccountNumberFragment"
+        android:label="AddAccountNumberFragment"
+        tools:layout="@layout/add_account_number_fragment">
+        <action
+            android:id="@+id/action_addAccountNumberFragment_to_addAccountEnterOtpFragment"
+            app:destination="@id/addAccountEnterOtpFragment" />
+        <action
+            android:id="@+id/action_addAccountNumberFragment_to_addAccountConfirmFragment"
+            app:destination="@id/addAccountConfirmFragment" />
+        <action
+            android:id="@+id/action_addAccountNumberFragment_to_addAccountFindModemNumberFragment"
+            app:destination="@id/addAccountFindModemNumberFragment"
+            app:enterAnim="@anim/anim_enter_from_right"
+            app:exitAnim="@anim/anim_exit_to_left"
+            app:popEnterAnim="@anim/anim_enter_from_left"
+            app:popExitAnim="@anim/anim_exit_to_right" />
+        <action
+            android:id="@+id/action_addAccountNumberFragment_to_addAccountChooseModemFragment"
+            app:destination="@id/addAccountChooseModemFragment" />
+        <argument
+            android:name="addManually"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_addAccountNumberFragment_to_addAccountBroadbandEnrollMethodsFragment"
+            app:destination="@id/addAccountBroadbandEnrollMethodsFragment" />
+        <action
+            android:id="@+id/action_addAccountNumberFragment_to_addAccountBroadbandNumberWithSimSerialFragment"
+            app:destination="@id/addAccountBroadbandNumberWithSimSerialFragment" />
+        <action
+            android:id="@+id/action_addAccountNumberFragment_to_addAccountBroadbandWifiCheckFragment"
+            app:destination="@id/addAccountBroadbandWifiCheckFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addAccountEnterOtpFragment"
+        android:name="ph.com.globe.globeonesuperapp.addaccount.enterotp.AddAccountEnterOtpFragment"
+        android:label="AddAccountEnterOtpFragment"
+        tools:layout="@layout/add_account_enter_otp_fragment">
+        <action
+            android:id="@+id/action_addAccountEnterOtpFragment_to_addAccountConfirmFragment"
+            app:destination="@id/addAccountConfirmFragment"
+            app:popUpTo="@id/addAccountNumberFragment" />
+        <argument
+            android:name="msisdn"
+            app:argType="string" />
+        <argument
+            android:name="referenceId"
+            app:argType="string" />
+        <argument
+            android:name="brand"
+            app:argType="ph.com.globe.model.util.brand.AccountBrand" />
+        <argument
+            android:name="brandType"
+            app:argType="ph.com.globe.model.util.brand.AccountBrandType" />
+        <argument
+            android:name="segment"
+            app:argType="ph.com.globe.model.util.brand.AccountSegment" />
+        <argument
+            android:name="targetEmailAddressString"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="targetMobileNumber"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_addAccountEnterOtpFragment_to_broadbandModemInboxWebViewFragment"
+            app:destination="@id/broadbandModemInboxWebViewFragment" />
+        <action
+            android:id="@+id/action_addAccountEnterOtpFragment_to_addAccountFindUsernamePasswordFragment"
+            app:destination="@id/addAccountFindUsernamePasswordFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addAccountConfirmFragment"
+        android:name="ph.com.globe.globeonesuperapp.addaccount.confirmaccount.AddAccountConfirmFragment"
+        android:label="AddAccountConfirmFragment"
+        tools:layout="@layout/add_account_confirm_fragment">
+        <argument
+            android:name="confirmAccountArgs"
+            app:argType="ph.com.globe.globeonesuperapp.addaccount.confirmaccount.ConfirmAccountArgs" />
+        <action
+            android:id="@+id/action_addAccountConfirmFragment_to_addAccountMoreAccountsFragment"
+            app:destination="@id/addAccountMoreAccountsFragment" />
+        <argument
+            android:name="enrollWithoutOtp"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addAccountFindModemNumberFragment"
+        android:name="ph.com.globe.globeonesuperapp.addaccount.broadband.AddAccountFindModemNumberFragment"
+        android:label="AddAccountFindModemNumberFragment"
+        tools:layout="@layout/add_account_find_modem_number_fragment" />
+
+    <fragment
+        android:id="@+id/addAccountMoreAccountsFragment"
+        android:name="ph.com.globe.globeonesuperapp.addaccount.addmoreaccounts.AddAccountMoreAccountsFragment"
+        android:label="AddAccountMoreAccountsFragment"
+        tools:layout="@layout/add_account_more_accounts_fragment">
+        <action
+            android:id="@+id/action_addAccountMoreAccountsFragment_to_addAccountNumberFragment"
+            app:destination="@id/addAccountNumberFragment" />
+        <action
+            android:id="@+id/action_addAccountMoreAccountsFragment_to_addAccountDetailsFragment"
+            app:destination="@id/addAccountDetailsFragment" />
+        <action
+            android:id="@+id/action_addAccountMoreAccountsFragment_to_addAccountFinishFragment"
+            app:destination="@id/addAccountFinishFragment" />
+        <action
+            android:id="@+id/action_addAccountMoreAccountsFragment_to_surpriseIsComingFragment"
+            app:destination="@id/surpriseIsComingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/broadbandModemInboxWebViewFragment"
+        android:name="ph.com.globe.globeonesuperapp.addaccount.enterotp.BroadbandModemInboxWebViewFragment"
+        android:label="BroadbandModemInboxWebViewFragment"
+        tools:layout="@layout/web_view_fragment" />
+
+    <fragment
+        android:id="@+id/addAccountFindUsernamePasswordFragment"
+        android:name="ph.com.globe.globeonesuperapp.addaccount.broadband.AddAccountFindUsernamePasswordFragment"
+        android:label="AddAccountFindUsernamePasswordFragment"
+        tools:layout="@layout/add_account_find_username_password_fragment" />
+
+    <fragment
+        android:id="@+id/accountMigrationInitialFragment"
+        android:name="ph.com.globe.globeonesuperapp.addaccount.migration.AccountMigrationInitialFragment"
+        android:label="AccountMigrationInitialFragment"
+        tools:layout="@layout/add_account_migration_initial_fragment">
+        <action
+            android:id="@+id/action_accountMigrationInitialFragment_to_addAccountMoreAccountsFragment"
+            app:destination="@id/addAccountMoreAccountsFragment" />
+        <argument
+            android:name="user_email"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_accountMigrationInitialFragment_to_noAccountsForMigrationFragment"
+            app:destination="@id/noAccountsForMigrationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addAccountDetailsFragment"
+        android:name="ph.com.globe.globeonesuperapp.addaccount.addmoreaccounts.AddAccountDetailsFragment"
+        android:label="AddAccountDetailsFragment"
+        tools:layout="@layout/add_account_details_fragment">
+        <argument
+            android:name="account"
+            app:argType="ph.com.globe.globeonesuperapp.addaccount.addmoreaccounts.AddAccountMoreAccountsViewModel$EnrollAccountUI" />
+        <argument
+            android:name="currentTab"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/noAccountsForMigrationFragment"
+        android:name="ph.com.globe.globeonesuperapp.addaccount.migration.NoAccountsForMigrationFragment"
+        android:label="NoAccountsForMigrationFragment"
+        tools:layout="@layout/no_accounts_for_migration_fragment">
+        <action
+            android:id="@+id/action_noAccountsForMigrationFragment_to_addAccountMoreAccountsFragment"
+            app:destination="@id/addAccountMoreAccountsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addAccountFinishFragment"
+        android:name="ph.com.globe.globeonesuperapp.addaccount.addmoreaccounts.AddAccountFinishFragment"
+        android:label="AddAccountFinishFragment"
+        tools:layout="@layout/add_account_finish_fragment">
+        <action
+            android:id="@+id/action_addAccountFinishFragment_to_surpriseIsComingFragment"
+            app:destination="@id/surpriseIsComingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/surpriseIsComingFragment"
+        android:name="ph.com.globe.globeonesuperapp.addaccount.addmoreaccounts.SurpriseIsComingFragment"
+        android:label="SurpriseIsComingFragment" />
+    <fragment
+        android:id="@+id/addAccountChooseModemFragment"
+        android:name="ph.com.globe.globeonesuperapp.addaccount.broadband.choosemodem.AddAccountChooseModemFragment"
+        android:label="AddAccountChooseModemFragment"
+        tools:layout="@layout/add_account_choose_modem_fragment">
+        <action
+            android:id="@+id/action_addAccountChooseModemFragment_to_addAccountEnrollBroadbandFailureFragment"
+            app:destination="@id/addAccountEnrollBroadbandFailureFragment" />
+        <action
+            android:id="@+id/action_addAccountChooseModemFragment_to_addAccountEnterUsernamePasswordFragment"
+            app:destination="@id/addAccountEnterUsernamePasswordFragment" />
+        <argument
+            android:name="phoneNumber"
+            app:argType="string" />
+        <argument
+            android:name="brand"
+            app:argType="ph.com.globe.model.util.brand.AccountBrand" />
+        <argument
+            android:name="brandType"
+            app:argType="ph.com.globe.model.util.brand.AccountBrandType" />
+        <argument
+            android:name="segment"
+            app:argType="ph.com.globe.model.util.brand.AccountSegment" />
+        <action
+            android:id="@+id/action_addAccountChooseModemFragment_to_addAccountBroadbandNumberWithSimSerialFragment"
+            app:destination="@id/addAccountBroadbandNumberWithSimSerialFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAccountEnrollBroadbandFailureFragment"
+        android:name="ph.com.globe.globeonesuperapp.addaccount.broadband.failurescreen.AddAccountEnrollBroadbandFailureFragment"
+        android:label="AddAccountEnrollBroadbandFailureFragment"
+        tools:layout="@layout/add_account_enroll_broadband_failure_fragment">
+        <argument
+            android:name="errorType"
+            app:argType="ph.com.globe.globeonesuperapp.addaccount.broadband.failurescreen.HpwBroadBandEnrollmentError" />
+        <action
+            android:id="@+id/action_addAccountEnrollBroadbandFailureFragment_to_addAccountNumberFragment"
+            app:destination="@id/addAccountNumberFragment" />
+        <action
+            android:id="@+id/action_addAccountEnrollBroadbandFailureFragment_to_addAccountBroadbandNumberWithOtpFragment"
+            app:destination="@id/addAccountBroadbandNumberWithOtpFragment" />
+        <argument
+            android:name="hpwNumber"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_addAccountEnrollBroadbandFailureFragment_to_addAccountBroadbandNumberWithSimSerialFragment"
+            app:destination="@id/addAccountBroadbandNumberWithSimSerialFragment" />
+        <argument
+            android:name="brand"
+            app:argType="ph.com.globe.model.util.brand.AccountBrand"
+            android:defaultValue="@null"
+            app:nullable="true" />
+        <argument
+            android:name="segment"
+            app:argType="ph.com.globe.model.util.brand.AccountSegment"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAccountEnterUsernamePasswordFragment"
+        android:name="ph.com.globe.globeonesuperapp.addaccount.broadband.enterusernamepassword.AddAccountEnterUsernamePasswordFragment"
+        android:label="AddAccountEnterUsernamePasswordFragment"
+        tools:layout="@layout/add_account_enter_username_password_fragment">
+        <action
+            android:id="@+id/action_addAccountEnterUsernamePasswordFragment_to_addAccountEnrollBroadbandFailureFragment"
+            app:destination="@id/addAccountEnrollBroadbandFailureFragment" />
+        <argument
+            android:name="selectedModem"
+            app:argType="ph.com.globe.globeonesuperapp.addaccount.broadband.choosemodem.ModemItem" />
+        <action
+            android:id="@+id/action_addAccountEnterUsernamePasswordFragment_to_addAccountFindUsernamePasswordFragment"
+            app:destination="@id/addAccountFindUsernamePasswordFragment" />
+        <argument
+            android:name="phoneNumber"
+            app:argType="string" />
+        <argument
+            android:name="referenceId"
+            app:argType="string" />
+        <argument
+            android:name="brand"
+            app:argType="ph.com.globe.model.util.brand.AccountBrand" />
+        <argument
+            android:name="brandType"
+            app:argType="ph.com.globe.model.util.brand.AccountBrandType" />
+        <argument
+            android:name="segment"
+            app:argType="ph.com.globe.model.util.brand.AccountSegment" />
+        <action
+            android:id="@+id/action_addAccountEnterUsernamePasswordFragment_to_addAccountConfirmFragment"
+            app:destination="@id/addAccountConfirmFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAccountBroadbandEnrollMethodsFragment"
+        android:name="ph.com.globe.globeonesuperapp.addaccount.broadband.verification.AddAccountBroadbandEnrollMethodsFragment"
+        android:label="add_account_broadband_enroll_methods_fragment"
+        tools:layout="@layout/add_account_broadband_enroll_methods_fragment">
+        <argument
+            android:name="msisdn"
+            app:argType="string" />
+        <argument
+            android:name="alternativeMobileNumber"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="accountNumber"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="emailAddress"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="brand"
+            app:argType="ph.com.globe.model.util.brand.AccountBrand" />
+        <action
+            android:id="@+id/action_addAccountBroadbandEnrollMethodsFragment_to_addAccountEnterOtpFragment"
+            app:destination="@id/addAccountEnterOtpFragment" />
+        <action
+            android:id="@+id/action_addAccountBroadbandEnrollMethodsFragment_to_addAccountSecurityQuestionsProcessingFragment"
+            app:destination="@id/addAccountProcessingFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/addAccountProcessingFragment"
+        android:name="ph.com.globe.globeonesuperapp.addaccount.broadband.verification.AddAccountProcessingFragment"
+        android:label="AddAccountProcessingFragment">
+        <argument
+            android:name="entryPoint"
+            app:argType="ph.com.globe.globeonesuperapp.addaccount.broadband.verification.AddAccountProcessingFragmentEntryPoint" />
+        <action
+            android:id="@+id/action_addAccountProcessingFragment_to_addAccountSecurityQuestionsFragment"
+            app:destination="@id/addAccountSecurityQuestionsFragment"
+            app:popUpTo="@id/addAccountBroadbandEnrollMethodsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAccountSecurityQuestionsFragment"
+        android:name="ph.com.globe.globeonesuperapp.addaccount.broadband.verification.AddAccountSecurityQuestionsFragment"
+        android:label="add_account_security_questions_fragment_layout"
+        tools:layout="@layout/add_account_security_questions_fragment_layout">
+        <action
+            android:id="@+id/action_addAccountSecurityQuestionsFragment_to_addAccountConfirmFragment"
+            app:destination="@id/addAccountConfirmFragment"
+            app:popUpTo="@id/addAccountNumberFragment" />
+        <argument
+            android:name="securityQuestions"
+            app:argType="ph.com.globe.globeonesuperapp.addaccount.broadband.verification.SecurityQuestions" />
+        <argument
+            android:name="referenceId"
+            app:argType="string" />
+        <argument
+            android:name="msisdn"
+            app:argType="string" />
+        <argument
+            android:name="brand"
+            app:argType="ph.com.globe.model.util.brand.AccountBrand" />
+        <action
+            android:id="@+id/action_addAccountSecurityQuestionsFragment_to_securityQuestionsFAQFragment"
+            app:destination="@id/securityQuestionsFAQFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/securityQuestionsFAQFragment"
+        android:name="ph.com.globe.globeonesuperapp.addaccount.broadband.verification.SecurityQuestionsFAQFragment"
+        android:label="security_questions_faq_fragment"
+        tools:layout="@layout/security_questions_faq_fragment" />
+    <fragment
+        android:id="@+id/addAccountBroadbandNumberWithSimSerialFragment"
+        android:name="ph.com.globe.globeonesuperapp.addaccount.broadband.simserial.AddAccountBroadbandNumberWithSimSerialFragment"
+        android:label="AddAccountBroadbandNumberWithSimSerialFragment"
+        tools:layout="@layout/add_account_broadband_number_with_sim_serial_fragment">
+        <argument
+            android:name="msisdn"
+            app:argType="string" />
+        <argument
+            android:name="brand"
+            app:argType="ph.com.globe.model.util.brand.AccountBrand" />
+        <argument
+            android:name="segment"
+            app:argType="ph.com.globe.model.util.brand.AccountSegment" />
+        <action
+            android:id="@+id/action_addAccountBroadbandNumberWithSimSerialFragment_to_addAccountFindSimSerialFragment"
+            app:destination="@id/addAccountFindSimSerialFragment" />
+        <action
+            android:id="@+id/action_addAccountBroadbandNumberWithSimSerialFragment_to_addAccountBroadbandNumberWithOtpFragment"
+            app:destination="@id/addAccountBroadbandNumberWithOtpFragment" />
+        <action
+            android:id="@+id/action_addAccountBroadbandNumberWithSimSerialFragment_to_addAccountEnrollBroadbandFailureFragment"
+            app:destination="@id/addAccountEnrollBroadbandFailureFragment" />
+        <action
+            android:id="@+id/action_addAccountBroadbandNumberWithSimSerialFragment_to_addAccountConfirmFragment"
+            app:destination="@id/addAccountConfirmFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAccountBroadbandNumberWithOtpFragment"
+        android:name="ph.com.globe.globeonesuperapp.addaccount.broadband.otp.AddAccountBroadbandNumberWithOtpFragment"
+        android:label="AddAccountBroadbandNumberWithOtpFragment"
+        tools:layout="@layout/add_account_broadband_number_with_otp_fragment">
+        <action
+            android:id="@+id/action_addAccountBroadbandNumberWithOtpFragment_to_addAccountFindModemNumberFragment"
+            app:destination="@id/addAccountFindModemNumberFragment" />
+        <action
+            android:id="@+id/action_addAccountBroadbandNumberWithOtpFragment_to_addAccountEnterOtpFragment"
+            app:destination="@id/addAccountEnterOtpFragment" />
+        <action
+            android:id="@+id/action_addAccountBroadbandNumberWithOtpFragment_to_addAccountEnrollBroadbandFailureFragment"
+            app:destination="@id/addAccountEnrollBroadbandFailureFragment" />
+        <argument
+            android:name="hpwNumber"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAccountFindSimSerialFragment"
+        android:name="ph.com.globe.globeonesuperapp.addaccount.broadband.simserial.AddAccountFindSimSerialFragment"
+        android:label="AddAccountFindSimSerialFragment"
+        tools:layout="@layout/add_account_find_sim_serial_fragment">
+        <action
+            android:id="@+id/action_addAccountFindSimSerialFragment_to_addAccountBroadbandNumberWithOtpFragment"
+            app:destination="@id/addAccountBroadbandNumberWithOtpFragment" />
+        <argument
+            android:name="hpwNumber"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAccountBroadbandWifiCheckFragment"
+        android:name="ph.com.globe.globeonesuperapp.addaccount.broadband.wificheck.AddAccountBroadbandWifiCheckFragment"
+        android:label="fragment_add_account_broadband_wifi_check"
+        tools:layout="@layout/add_account_broadband_wifi_check_fragment" >
+        <argument
+            android:name="msisdn"
+            app:argType="string" />
+        <argument
+            android:name="brand"
+            app:argType="ph.com.globe.model.util.brand.AccountBrand" />
+        <argument
+            android:name="segment"
+            app:argType="ph.com.globe.model.util.brand.AccountSegment" />
+        <action
+            android:id="@+id/action_addAccountBroadbandWifiCheckFragment_to_addAccountBroadbandNumberWithSimSerialFragment"
+            app:destination="@id/addAccountBroadbandNumberWithSimSerialFragment" />
+        <action
+            android:id="@+id/action_addAccountBroadbandWifiCheckFragment_to_addAccountBroadbandNumberWithOtpFragment"
+            app:destination="@id/addAccountBroadbandNumberWithOtpFragment" />
+        <action
+            android:id="@+id/action_addAccountBroadbandWifiCheckFragment_to_addAccountChooseModemFragment"
+            app:destination="@id/addAccountChooseModemFragment" />
+    </fragment>
+
+</navigation>

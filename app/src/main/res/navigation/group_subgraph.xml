@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/group_subgraph"
+    app:startDestination="@id/groupProcessingFragment">
+
+    <fragment
+        android:id="@+id/groupProcessingFragment"
+        android:name="ph.com.globe.globeonesuperapp.group.GroupProcessingFragment"
+        android:label="GroupProcessingFragment"
+        tools:layout="@layout/group_processing_fragment">
+        <action
+            android:id="@+id/action_groupProcessingFragment_to_groupOverviewFragment"
+            app:destination="@id/groupOverviewFragment"
+            app:popUpTo="@id/groupProcessingFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="accountNumber"
+            app:argType="string" />
+        <argument
+            android:name="accountAlias"
+            app:argType="string" />
+        <argument
+            android:name="skelligWallet"
+            app:argType="string" />
+        <argument
+            android:name="skelligCategory"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/groupOverviewFragment"
+        android:name="ph.com.globe.globeonesuperapp.group.group_overview.GroupOverviewFragment"
+        android:label="GroupOverviewFragment"
+        tools:layout="@layout/group_overview_fragment">
+        <action
+            android:id="@+id/action_groupOverviewFragment_to_addGroupMemberFragment"
+            app:destination="@id/addGroupMemberFragment" />
+        <action
+            android:id="@+id/action_groupOverviewFragment_to_groupMemberOverviewFragment"
+            app:destination="@id/groupMemberOverviewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addGroupMemberFragment"
+        android:name="ph.com.globe.globeonesuperapp.group.add_member.AddGroupMemberFragment"
+        android:label="AddGroupMemberFragment"
+        tools:layout="@layout/add_group_member_fragment" />
+    <fragment
+        android:id="@+id/groupMemberOverviewFragment"
+        android:name="ph.com.globe.globeonesuperapp.group.member_overview.GroupMemberOverviewFragment"
+        android:label="GroupMemberOverviewFragment"
+        tools:layout="@layout/group_member_overview_fragment">
+        <argument
+            android:name="groupMember"
+            app:argType="ph.com.globe.globeonesuperapp.group.group_overview.GroupMemberItem" />
+        <action
+            android:id="@+id/action_groupMemberOverviewFragment_to_groupApiFailureFragment"
+            app:destination="@id/groupApiFailureFragment"
+            app:popUpTo="@id/groupMemberOverviewFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/groupApiFailureFragment"
+        android:name="ph.com.globe.globeonesuperapp.group.GroupApiFailureFragment"
+        android:label="GroupApiFailureFragment"
+        tools:layout="@layout/group_api_failure_fragment"/>
+</navigation>

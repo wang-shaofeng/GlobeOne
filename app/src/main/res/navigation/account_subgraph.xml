@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/account_subgraph"
+    app:startDestination="@id/accountDetailsFragment">
+
+    <fragment
+        android:id="@+id/accountDetailsFragment"
+        android:name="ph.com.globe.globeonesuperapp.account.AccountDetailsFragment"
+        android:label="AccountDetailsFragment"
+        tools:layout="@layout/account_details_fragment">
+        <action
+            android:id="@+id/action_accountDetailsFragment_to_shop_subgraph"
+            app:destination="@id/shop_subgraph">
+            <argument
+                android:name="tabToSelect"
+                app:argType="integer" />
+            <argument
+                android:name="mobileNumber"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+            <argument
+                android:name="toolbarTab"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+            <argument
+                android:name="isToShopItemDetails"
+                app:argType="boolean"
+                android:defaultValue="false" />
+            <argument
+                android:name="shopItem"
+                app:argType="ph.com.globe.model.shop.domain_models.ShopItem"
+                app:nullable="true"
+                android:defaultValue="@null" />
+            <argument
+                android:name="isToShopPromoInner"
+                app:argType="boolean"
+                android:defaultValue="false" />
+        </action>
+        <action
+            android:id="@+id/action_accountDetailsFragment_to_accountDetailsEditFragment"
+            app:destination="@id/accountDetailsEditFragment" />
+        <action
+            android:id="@+id/action_accountDetailsFragment_to_rewards_subgraph"
+            app:destination="@id/rewards_subgraph" />
+        <action
+            android:id="@+id/action_accountDetailsFragment_to_group_subgraph"
+            app:destination="@id/group_subgraph" />
+        <action
+            android:id="@+id/action_accountDetailsFragment_to_groupMemberViewFragment"
+            app:destination="@id/groupMemberViewFragment" />
+        <action
+            android:id="@+id/action_accountDetailsFragment_to_personalizedCampaignsLoadingFragment"
+            app:destination="@id/personalizedCampaignsLoadingFragment" />
+        <action
+            android:id="@+id/action_accountDetailsFragment_to_contentUnsubscribeFragment"
+            app:destination="@id/contentUnsubscribeFragment" />
+        <action
+            android:id="@+id/action_accountDetailsFragment_to_exclusivePromoFragment"
+            app:destination="@id/exclusivePromoFragment" />
+        <action
+            android:id="@+id/action_accountDetailsFragment_to_pos_subgraph"
+            app:destination="@id/pos_subgraph">
+            <argument
+                android:name="enrolledAccountWithPoints"
+                android:defaultValue="@null"
+                app:argType="ph.com.globe.globeonesuperapp.rewards.pos.EnrolledAccountWithPoints"
+                app:nullable="true" />
+        </action>
+        <action
+            android:id="@+id/action_accountDetailsFragment_to_linkGCashOtpFragment"
+            app:destination="@id/linkGCashOtpFragment" />
+        <action
+            android:id="@+id/action_accountDetailsFragment_to_go_create_subgraph"
+            app:destination="@id/go_create_subgraph">
+            <argument
+                android:name="entryPoint"
+                app:argType="string" />
+            <argument
+                android:name="mobileNumber"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_accountDetailsFragment_to_rewards_points_history_subgraph"
+            app:destination="@id/account_activities_subgraph">
+            <argument
+                android:name="enrolledAccount"
+                app:argType="ph.com.globe.model.profile.domain_models.EnrolledAccount" />
+        </action>
+        <action
+            android:id="@+id/action_accountDetailsFragment_to_vouchers_subgraph"
+            app:destination="@id/vouchers_subgraph">
+            <argument
+                android:name="enrolledAccount"
+                app:argType="ph.com.globe.model.profile.domain_models.EnrolledAccount" />
+            <argument
+                android:name="isShowContentTab"
+                android:defaultValue="false"
+                app:argType="boolean" />
+        </action>
+        <action
+            android:id="@+id/action_accountDetailsFragment_to_billDetailsFragment"
+            app:destination="@id/billDetailsFragment" />
+        <action
+            android:id="@+id/action_accountDetailsFragment_to_accountPlanDetailsFragment"
+            app:destination="@id/accountPlanDetailsFragment" />
+        <action
+            android:id="@+id/action_accountDetailsFragment_to_billingsChooseAmountFragment"
+            app:destination="@id/billingsChooseAmountFragment" />
+        <action
+            android:id="@+id/action_accountDetailsFragment_to_dataUsageInfoFragment"
+            app:destination="@id/dataUsageInfoFragment" />
+    </fragment>
+
+    <include app:graph="@navigation/shop_subgraph" />
+    <fragment
+        android:id="@+id/accountDetailsEditFragment"
+        android:name="ph.com.globe.globeonesuperapp.account.AccountDetailsEditFragment"
+        android:label="AccountDetailsEditFragment"
+        tools:layout="@layout/account_details_edit_fragment" />
+
+    <include app:graph="@navigation/rewards_subgraph" />
+    <include app:graph="@navigation/group_subgraph" />
+    <fragment
+        android:id="@+id/groupMemberViewFragment"
+        android:name="ph.com.globe.globeonesuperapp.group.group_member_view.GroupMemberViewFragment"
+        android:label="GroupMemberViewFragment"
+        tools:layout="@layout/group_member_view_fragment">
+        <argument
+            android:name="groupOwnerNumber"
+            app:argType="string" />
+        <argument
+            android:name="skelligWallet"
+            app:argType="string" />
+        <argument
+            android:name="skelligCategory"
+            app:argType="string" />
+        <argument
+            android:name="accountMobileNumber"
+            app:argType="string" />
+        <argument
+            android:name="accountAlias"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_groupMemberViewFragment_to_leaveGroupSuccessfulFragment"
+            app:destination="@id/leaveGroupSuccessfulFragment" />
+        <action
+            android:id="@+id/action_groupMemberViewFragment_to_leaveGroupUnsuccessfulFragment"
+            app:destination="@id/leaveGroupUnsuccessfulFragment" />
+        <action
+            android:id="@+id/action_groupMemberViewFragment_to_groupApiFailureFragment"
+            app:destination="@id/groupApiFailureFragment"
+            app:popUpTo="@id/groupMemberViewFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/leaveGroupSuccessfulFragment"
+        android:name="ph.com.globe.globeonesuperapp.group.group_member_view.LeaveGroupSuccessfulFragment"
+        android:label="LeaveGroupSuccessfulFragment"
+        tools:layout="@layout/leave_group_successful_fragment" />
+
+    <fragment
+        android:id="@+id/leaveGroupUnsuccessfulFragment"
+        android:name="ph.com.globe.globeonesuperapp.group.group_member_view.LeaveGroupUnsuccessfulFragment"
+        android:label="LeaveGroupUnsuccessfulFragment"
+        tools:layout="@layout/leave_group_unsuccessful_fragment" />
+    <fragment
+        android:id="@+id/personalizedCampaignsLoadingFragment"
+        android:name="ph.com.globe.globeonesuperapp.account.personalized_campaigns.PersonalizedCampaignsLoadingFragment"
+        android:label="PersonalizedCampaignsLoadingFragment"
+        tools:layout="@layout/personalized_campaigns_loading_fragment">
+        <argument
+            android:name="availableCampaignPromosModel"
+            app:argType="ph.com.globe.model.account.AvailableCampaignPromosModel" />
+
+        <action
+            android:id="@+id/action_personalizedCampaignsLoadingFragment_to_pullAFreebieSuccessFragment"
+            app:destination="@id/pullAFreebieSuccessFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pullAFreebieSuccessFragment"
+        android:name="ph.com.globe.globeonesuperapp.account.personalized_campaigns.PullAFreebieSuccessFragment"
+        android:label="PullAFreebieSuccessFragment"
+        tools:layout="@layout/pull_a_freebie_success_fragment" />
+    <fragment
+        android:id="@+id/exclusivePromoFragment"
+        android:name="ph.com.globe.globeonesuperapp.account.personalized_campaigns.ExclusivePromoFragment"
+        android:label="ExclusivePromoFragment"
+        tools:layout="@layout/exclusive_promo_fragment">
+        <argument
+            android:name="availableCampaignPromosModels"
+            app:argType="ph.com.globe.globeonesuperapp.account.AvailableCampaignPromosModelParcelable[]" />
+        <argument
+            android:name="offerType"
+            app:argType="ph.com.globe.globeonesuperapp.account.personalized_campaigns.OfferType" />
+        <action
+            android:id="@+id/action_exclusivePromoFragment_to_exclusivePromoDetailsFragment"
+            app:destination="@id/exclusivePromoDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/contentUnsubscribeFragment"
+        android:name="ph.com.globe.globeonesuperapp.account.content.unsubscribe.ContentUnsubscribeFragment"
+        android:label="ContentUnsubscribeFragment"
+        tools:layout="@layout/account_details_content_unsubscribe_fragment">
+        <argument
+            android:name="mobileNumber"
+            app:argType="string" />
+        <argument
+            android:name="contentSubscription"
+            app:argType="ph.com.globe.model.shop.ContentSubscriptionUIModel" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/exclusivePromoDetailsFragment"
+        android:name="ph.com.globe.globeonesuperapp.account.personalized_campaigns.ExclusivePromoDetailsFragment"
+        android:label="ExclusivePromoDetailsFragment"
+        tools:layout="@layout/exclusive_promo_details_fragment">
+        <argument
+            android:name="availableCampaignPromosModel"
+            app:argType="ph.com.globe.model.account.AvailableCampaignPromosModel" />
+        <argument
+            android:name="shopItem"
+            app:argType="ph.com.globe.model.shop.domain_models.ShopItem" />
+        <action
+            android:id="@+id/action_exclusivePromoDetailsFragment_to_payment_subgraph"
+            app:destination="@id/payment_subgraph">
+            <argument
+                android:name="paymentParameter"
+                app:argType="ph.com.globe.globeonesuperapp.payment.PaymentParameters" />
+        </action>
+        <argument
+            android:name="offerType"
+            app:argType="ph.com.globe.globeonesuperapp.account.personalized_campaigns.OfferType" />
+        <action
+            android:id="@+id/action_exclusivePromoDetailsFragment_to_personalizedCampaignsLoadingFragment"
+            app:destination="@id/personalizedCampaignsLoadingFragment" />
+    </fragment>
+
+    <include app:graph="@navigation/payment_subgraph" />
+    <include app:graph="@navigation/pos_subgraph" />
+    <include app:graph="@navigation/go_create_subgraph" />
+    <fragment
+        android:id="@+id/linkGCashOtpFragment"
+        android:name="ph.com.globe.globeonesuperapp.profile.payment_methods.gcash.LinkGCashOtpFragment"
+        android:label="LinkGCashOtpFragment"
+        tools:layout="@layout/profile_link_g_cash_otp_fragment">
+        <argument
+            android:name="sentOtpArgs"
+            app:argType="ph.com.globe.globeonesuperapp.verify_otp.VerifyOtpViewModel$SendOtpResult$SentOtpSuccess" />
+        <argument
+            android:name="accountAlias"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_linkGCashOtpFragment_to_linkGCashAccountProcessingFragment"
+            app:destination="@id/linkGCashAccountProcessingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/linkGCashAccountSuccessfulFragment"
+        android:name="ph.com.globe.globeonesuperapp.profile.payment_methods.gcash.LinkGCashAccountSuccessfulFragment"
+        android:label="LinkGCashAccountSuccessfulFragment"
+        tools:layout="@layout/profile_link_g_cash_successful_fragment" />
+    <fragment
+        android:id="@+id/linkGCashAccountProcessingFragment"
+        android:name="ph.com.globe.globeonesuperapp.profile.payment_methods.gcash.LinkGCashAccountProcessingFragment"
+        android:label="LinkGCashAccountProcessingFragment"
+        tools:layout="@layout/profile_g_cash_linking_processing_fragment">
+        <action
+            android:id="@+id/action_linkGCashAccountProcessingFragment_to_linkGCashAccountSuccessfulFragment"
+            app:destination="@id/linkGCashAccountSuccessfulFragment"
+            app:popUpTo="@id/accountDetailsFragment" />
+        <action
+            android:id="@+id/action_linkGCashAccountProcessingFragment_to_gCashAccountErrorFragment"
+            app:destination="@id/GCashAccountErrorFragment"
+            app:popUpTo="@id/accountDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/GCashAccountErrorFragment"
+        android:name="ph.com.globe.globeonesuperapp.profile.payment_methods.gcash.GCashAccountErrorFragment"
+        android:label="GCashAccountErrorFragment"
+        tools:layout="@layout/profile_gcash_account_error_fragment">
+        <argument
+            android:name="errorDescription"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/billDetailsFragment"
+        android:name="ph.com.globe.globeonesuperapp.account.bill.BillDetailsFragment"
+        android:label="AccountPlanDetailsFragment"
+        tools:layout="@layout/bill_details_fragment">
+        <action
+            android:id="@+id/action_billDetailsFragment_to_billingsChooseAmountFragment"
+            app:destination="@id/billingsChooseAmountFragment" />
+        <action
+            android:id="@+id/action_billDetailsFragment_to_oRStatementFragment"
+            app:destination="@id/oRStatementFragment" />
+        <action
+            android:id="@+id/action_billDetailsFragment_to_account_activities_subgraph"
+            app:destination="@id/account_activities_subgraph">
+            <argument
+                android:name="enrolledAccount"
+                app:argType="ph.com.globe.model.profile.domain_models.EnrolledAccount" />
+        </action>
+
+    </fragment>
+
+    <include app:graph="@navigation/account_activities_subgraph" />
+
+    <include app:graph="@navigation/vouchers_subgraph" />
+    <fragment
+        android:id="@+id/accountPlanDetailsFragment"
+        android:name="ph.com.globe.globeonesuperapp.account.plan_details.AccountPlanDetailsFragment"
+        android:label="AccountPlanDetailsFragment"
+        tools:layout="@layout/account_plan_details_fragment" />
+    <fragment
+        android:id="@+id/billingsChooseAmountFragment"
+        android:name="ph.com.globe.globeonesuperapp.account.bill.BillingsChooseAmountFragment"
+        android:label="BillingsChooseAmountFragment"
+        tools:layout="@layout/billings_choose_amount_fragment">
+        <action
+            android:id="@+id/action_billingsChooseAmountFragment_to_payment_subgraph"
+            app:destination="@id/payment_subgraph">
+            <argument
+                android:name="paymentParameter"
+                app:argType="ph.com.globe.globeonesuperapp.payment.PaymentParameters" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/dataUsageInfoFragment"
+        android:name="ph.com.globe.globeonesuperapp.account.data.info.DataUsageInfoFragment"
+        android:label="DataUsageInfoFragment"
+        tools:layout="@layout/account_details_data_usage_info_fragment">
+        <argument
+            android:name="usageItem"
+            app:argType="ph.com.globe.model.group.domain_models.UsageItem" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/oRStatementFragment"
+        android:name="ph.com.globe.globeonesuperapp.account.or.ORStatementFragment"
+        android:label="oRStatementFragment"
+        tools:layout="@layout/or_statement_fragment">
+        <argument
+            android:name="enrolledAccount"
+            app:argType="ph.com.globe.model.profile.domain_models.EnrolledAccount" />
+        <argument
+            android:name="receiptId"
+            app:argType="string" />
+        <argument
+            android:name="verificationToken"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/groupApiFailureFragment"
+        android:name="ph.com.globe.globeonesuperapp.group.GroupApiFailureFragment"
+        android:label="GroupApiFailureFragment"
+        tools:layout="@layout/group_api_failure_fragment" />
+</navigation>

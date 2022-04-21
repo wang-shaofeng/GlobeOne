@@ -1,0 +1,102 @@
+<!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="318dp"
+    android:height="10dp"
+    android:viewportWidth="318"
+    android:viewportHeight="10">
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M-0.263,0.215L318.125,0.215"
+        android:strokeWidth="1"
+        android:strokeColor="#e9ebee" />
+    <path
+        android:fillColor="#f5f9fc"
+        android:pathData="M1,1a6,6 0,1 0,12 0a6,6 0,1 0,-12 0z"
+        android:strokeWidth="1"
+        android:strokeColor="#e9ebee" />
+    <path
+        android:fillColor="#f5f9fc"
+        android:pathData="M20,1a6,6 0,1 0,12 0a6,6 0,1 0,-12 0z"
+        android:strokeWidth="1"
+        android:strokeColor="#e9ebee" />
+    <path
+        android:fillColor="#f5f9fc"
+        android:pathData="M39,1a6,6 0,1 0,12 0a6,6 0,1 0,-12 0z"
+        android:strokeWidth="1"
+        android:strokeColor="#e9ebee" />
+    <path
+        android:fillColor="#f5f9fc"
+        android:pathData="M58,1a6,6 0,1 0,12 0a6,6 0,1 0,-12 0z"
+        android:strokeWidth="1"
+        android:strokeColor="#e9ebee" />
+    <path
+        android:fillColor="#f5f9fc"
+        android:pathData="M77,1a6,6 0,1 0,12 0a6,6 0,1 0,-12 0z"
+        android:strokeWidth="1"
+        android:strokeColor="#e9ebee" />
+    <path
+        android:fillColor="#f5f9fc"
+        android:pathData="M96,1a6,6 0,1 0,12 0a6,6 0,1 0,-12 0z"
+        android:strokeWidth="1"
+        android:strokeColor="#e9ebee" />
+    <path
+        android:fillColor="#f5f9fc"
+        android:pathData="M115,1a6,6 0,1 0,12 0a6,6 0,1 0,-12 0z"
+        android:strokeWidth="1"
+        android:strokeColor="#e9ebee" />
+    <path
+        android:fillColor="#f5f9fc"
+        android:pathData="M134,1a6,6 0,1 0,12 0a6,6 0,1 0,-12 0z"
+        android:strokeWidth="1"
+        android:strokeColor="#e9ebee" />
+    <path
+        android:fillColor="#f5f9fc"
+        android:pathData="M153,1a6,6 0,1 0,12 0a6,6 0,1 0,-12 0z"
+        android:strokeWidth="1"
+        android:strokeColor="#e9ebee" />
+    <path
+        android:fillColor="#f5f9fc"
+        android:pathData="M172,1a6,6 0,1 0,12 0a6,6 0,1 0,-12 0z"
+        android:strokeWidth="1"
+        android:strokeColor="#e9ebee" />
+    <path
+        android:fillColor="#f5f9fc"
+        android:pathData="M191,0.847a6,6 0,1 0,12 0a6,6 0,1 0,-12 0z"
+        android:strokeWidth="1"
+        android:strokeColor="#e9ebee" />
+    <path
+        android:fillColor="#f5f9fc"
+        android:pathData="M210,0.847a6,6 0,1 0,12 0a6,6 0,1 0,-12 0z"
+        android:strokeWidth="1"
+        android:strokeColor="#e9ebee" />
+    <path
+        android:fillColor="#f5f9fc"
+        android:pathData="M229,0.847a6,6 0,1 0,12 0a6,6 0,1 0,-12 0z"
+        android:strokeWidth="1"
+        android:strokeColor="#e9ebee" />
+    <path
+        android:fillColor="#f5f9fc"
+        android:pathData="M248,0.847a6,6 0,1 0,12 0a6,6 0,1 0,-12 0z"
+        android:strokeWidth="1"
+        android:strokeColor="#e9ebee" />
+    <path
+        android:fillColor="#f5f9fc"
+        android:pathData="M267,0.847a6,6 0,1 0,12 0a6,6 0,1 0,-12 0z"
+        android:strokeWidth="1"
+        android:strokeColor="#e9ebee" />
+    <path
+        android:fillColor="#f5f9fc"
+        android:pathData="M286,0.847a6,6 0,1 0,12 0a6,6 0,1 0,-12 0z"
+        android:strokeWidth="1"
+        android:strokeColor="#e9ebee" />
+    <path
+        android:fillColor="#f5f9fc"
+        android:pathData="M305,0.847a6,6 0,1 0,12 0a6,6 0,1 0,-12 0z"
+        android:strokeWidth="1"
+        android:strokeColor="#e9ebee" />
+</vector>

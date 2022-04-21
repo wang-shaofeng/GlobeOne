@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ph.com.globe.globeonesuperapp.utils.ui.Wayfinder
+        android:id="@+id/wf_reward_confirmation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?accentLight"
+        app:label="@string/wayfinder_rewards_catalog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/absoluteWhite"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_confirmation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?attr/accentLight"
+                android:padding="@dimen/padding_medium"
+                android:text="@string/confirmation"
+                android:textAppearance="?mediumBold"
+                android:textColor="?accentDark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_you_are_redeeming"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:text="@string/you_are_redeeming"
+                android:textAppearance="?xBaseMultiline"
+                android:textColor="?neutralA3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_confirmation" />
+
+            <TextView
+                android:id="@+id/tv_reward_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:textAllCaps="true"
+                android:textAppearance="?chip"
+                android:textColor="?neutralA4"
+                app:layout_constraintEnd_toStartOf="@id/iv_star"
+                app:layout_constraintStart_toStartOf="@id/tv_you_are_redeeming"
+                app:layout_constraintTop_toBottomOf="@id/tv_you_are_redeeming"
+                tools:text="@string/promo" />
+
+            <TextView
+                android:id="@+id/tv_reward_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxsmall"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:textAllCaps="true"
+                android:textAppearance="?xBaseBold"
+                android:textColor="?neutralA0"
+                app:layout_constraintEnd_toStartOf="@id/iv_star"
+                app:layout_constraintStart_toStartOf="@id/tv_you_are_redeeming"
+                app:layout_constraintTop_toBottomOf="@id/tv_reward_type"
+                tools:text="@string/reward_mock_title_1" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_pts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?comfyData"
+                android:textColor="?neutralA0"
+                app:layout_constraintBottom_toBottomOf="@id/tv_reward_name"
+                app:layout_constraintEnd_toEndOf="@id/tv_you_are_redeeming"
+                app:layout_constraintTop_toTopOf="@id/tv_reward_type"
+                tools:text="101 pts" />
+
+            <ImageView
+                android:id="@+id/iv_star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_small"
+                app:layout_constraintBottom_toBottomOf="@id/tv_pts"
+                app:layout_constraintEnd_toStartOf="@id/tv_pts"
+                app:layout_constraintTop_toTopOf="@id/tv_pts"
+                app:srcCompat="@drawable/ic_star" />
+
+            <View
+                android:id="@+id/v_kr"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/gray_horizontal_line_height"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:background="?neutralA5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_reward_name" />
+
+            <TextView
+                android:id="@+id/tv_charging"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:text="@string/you_are_charging"
+                android:textAppearance="?xBaseMultiline"
+                android:textColor="?neutralA3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/v_kr" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mcv_account"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_standard"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_charging"
+                app:strokeColor="?neutralA5"
+                app:strokeWidth="@dimen/stroke_width_small">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/padding_medium">
+
+                    <TextView
+                        android:id="@+id/tv_account_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?xBaseMultiline"
+                        android:textColor="?accentDark"
+                        app:layout_constraintEnd_toStartOf="@id/tv_brand"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="@string/dac_mock_name" />
+
+                    <TextView
+                        android:id="@+id/tv_account_number"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_xxsmall"
+                        android:textAppearance="?smallRegularContent"
+                        android:textColor="?neutralB0"
+                        app:layout_constraintEnd_toStartOf="@id/tv_brand"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_account_name"
+                        tools:text="@string/dac_mock_msisdn" />
+
+                    <TextView
+                        android:id="@+id/tv_brand"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/add_account_brand_chip_shape"
+                        android:paddingHorizontal="@dimen/padding_smedium"
+                        android:paddingVertical="@dimen/padding_standard"
+                        android:textAllCaps="true"
+                        android:textAppearance="?chip"
+                        android:textColor="?neutralA2"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_account_number"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_account_name"
+                        tools:text="@string/mock_brand_userfriendly" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_user_pts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_small"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:textAppearance="?comfyData"
+                        android:textColor="?neutralA0"
+                        app:layout_constraintStart_toEndOf="@id/iv_user_star"
+                        app:layout_constraintTop_toBottomOf="@id/tv_account_number"
+                        tools:text="101 pts" />
+
+                    <ImageView
+                        android:id="@+id/iv_user_star"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_xxsmall"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_user_pts"
+                        app:layout_constraintEnd_toStartOf="@id/tv_user_pts"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_user_pts"
+                        app:srcCompat="@drawable/ic_star" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_redeem"
+                style="@style/Widget.App.ClassicButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:layout_marginBottom="@dimen/margin_standard"
+                android:text="@string/redeem"
+                android:theme="@style/ThemeOverlay.App.ClassicButton"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mcv_account"
+                app:layout_constraintVertical_bias="1.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</LinearLayout>

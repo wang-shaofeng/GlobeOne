@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?absoluteWhite">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?accentLight"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back" />
+
+        <View
+            android:id="@+id/v_header_line_vertical"
+            style="@style/ThemeOverlay.App.HeaderLineTheme"
+            android:layout_width="@dimen/stroke_width_small"
+            android:layout_height="@dimen/appbar_height"
+            android:layout_marginStart="@dimen/margin_standard"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_back"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/Widget.App.LightToolbarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:text="@string/account_details"
+            app:layout_constraintBottom_toBottomOf="@id/iv_back"
+            app:layout_constraintStart_toEndOf="@id/v_header_line_vertical"
+            app:layout_constraintTop_toTopOf="@id/iv_back" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/v_promo_info_background"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="?prepaidD400"
+        app:layout_constraintBottom_toBottomOf="@id/tv_expiration_date"
+        app:layout_constraintTop_toBottomOf="@id/cl_toolbar" />
+
+    <ImageView
+        android:id="@+id/iv_promo_icon"
+        android:layout_width="@dimen/content_promo_details_icon_size"
+        android:layout_height="@dimen/content_promo_details_icon_size"
+        android:layout_marginStart="@dimen/margin_standard"
+        android:layout_marginTop="@dimen/margin_xstandard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_toolbar"
+        tools:background="@tools:sample/backgrounds/scenic" />
+
+    <TextView
+        android:id="@+id/tv_promo_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_standard"
+        android:layout_marginTop="@dimen/margin_xs_standard"
+        android:textAppearance="?xBaseBold"
+        android:textColor="?absoluteWhite"
+        app:layout_constraintStart_toEndOf="@id/iv_promo_icon"
+        app:layout_constraintTop_toBottomOf="@id/cl_toolbar"
+        tools:text="HBO Go" />
+
+    <TextView
+        android:id="@+id/tv_expiration_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_standard"
+        android:paddingBottom="@dimen/padding_smedium"
+        android:textAppearance="?xSmallRegularContent"
+        android:textColor="?accentLight"
+        app:layout_constraintStart_toStartOf="@id/tv_promo_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_promo_name"
+        tools:text="@string/mock_data_expires_on" />
+
+    <TextView
+        android:id="@+id/tv_promo_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_standard"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:textAppearance="?baseRegularContent"
+        android:textColor="?neutralB0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v_promo_info_background"
+        tools:text="Description text" />
+
+    <TextView
+        android:id="@+id/tv_unsubscribe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_xxxxlarge"
+        android:padding="@dimen/padding_standard"
+        android:text="@string/content_promo_unsubscribe"
+        android:textAppearance="?baseAction"
+        android:textColor="?colorOnError"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

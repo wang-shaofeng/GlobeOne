@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dashboard_subgraph"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="ph.com.globe.globeonesuperapp.dashboard.DashboardFragment"
+        android:label="DashboardFragment"
+        tools:layout="@layout/dashboard_fragment">
+        <action
+            android:id="@+id/action_dashboardFragment_to_shop_subgraph"
+            app:destination="@id/shop_subgraph">
+            <argument
+                android:name="tabToSelect"
+                app:argType="integer" />
+            <argument
+                android:name="mobileNumber"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+            <argument
+                android:name="toolbarTab"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true"/>
+        </action>
+        <action
+            android:id="@+id/action_dashboardFragment_to_profile_subgraph"
+            app:destination="@id/profile_subgraph">
+            <argument
+                android:name="proceedForRaffle"
+                app:argType="boolean" />
+        </action>
+
+        <action
+            android:id="@+id/action_dashboardFragment_to_comingSoonFragment"
+            app:destination="@id/comingSoonFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_account_subgraph"
+            app:destination="@id/account_subgraph" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_discoverMoreFragment"
+            app:destination="@id/discoverMoreFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_pos_subgraph"
+            app:destination="@id/pos_subgraph" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_rating_subgraph"
+            app:destination="@id/rating_subgraph" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_go_create_subgraph"
+            app:destination="@id/go_create_subgraph">
+            <argument
+                android:name="entryPoint"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_dashboardFragment_to_raffleFragment"
+            app:destination="@id/raffleFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_spinwheelWebViewFragment"
+            app:destination="@id/spinwheelWebViewFragment">
+            <argument
+                android:name="spinwheelUrl"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <include app:graph="@navigation/profile_subgraph" />
+
+    <fragment
+        android:id="@+id/comingSoonFragment"
+        android:name="ph.com.globe.globeonesuperapp.coming_soon.ComingSoonFragment"
+        android:label="ComingSoonFragment"
+        tools:layout="@layout/coming_soon_fragment" />
+    <include app:graph="@navigation/account_subgraph" />
+
+    <include app:graph="@navigation/shop_subgraph" />
+
+    <fragment
+        android:id="@+id/discoverMoreFragment"
+        android:name="ph.com.globe.globeonesuperapp.discover.DiscoverMoreFragment"
+        android:label="DiscoverMoreFragment"
+        tools:layout="@layout/discover_more_fragment">
+        <argument
+            android:name="previousScreenTitle"
+            app:argType="string" />
+    </fragment>
+
+    <include app:graph="@navigation/rating_subgraph" />
+
+    <include app:graph="@navigation/pos_subgraph" />
+
+    <include app:graph="@navigation/go_create_subgraph" />
+
+    <fragment
+        android:id="@+id/raffleFragment"
+        android:name="ph.com.globe.globeonesuperapp.dashboard.raffle.RaffleFragment"
+        android:label="RaffleFragment"
+        tools:layout="@layout/raffle_fragment" />
+
+    <fragment
+        android:id="@+id/spinwheelWebViewFragment"
+        android:name="ph.com.globe.globeonesuperapp.dashboard.SpinwheelWebViewFragment"
+        android:label="SpinwheelWebViewFragment"
+        tools:layout="@layout/web_view_fragment">
+        <argument
+            android:name="spinwheelUrl"
+            app:argType="string"
+            app:nullable="false" />
+    </fragment>
+
+    <include app:graph="@navigation/vouchers_subgraph" />
+</navigation>

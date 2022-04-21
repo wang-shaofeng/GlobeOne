@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<resources>
+
+    <!-- Common font styles -->
+
+    <style name="TextAppearance.AppTheme.Bold" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/neue_plak_bold</item>
+        <item name="android:fontFamily">@font/neue_plak_bold</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.ExtendedBold" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/neue_plak_extended_bold</item>
+        <item name="android:fontFamily">@font/neue_plak_extended_bold</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.NarrowBold" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/neue_plak_narrow_bold</item>
+        <item name="android:fontFamily">@font/neue_plak_narrow_bold</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.SemiBold" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/neue_plak_semi_bold</item>
+        <item name="android:fontFamily">@font/neue_plak_semi_bold</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Text.Bold" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/neue_plak_text_bold</item>
+        <item name="android:fontFamily">@font/neue_plak_text_bold</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Text.Regular" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/neue_plak_text_regular</item>
+        <item name="android:fontFamily">@font/neue_plak_text_regular</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Text.SemiBold" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/neue_plak_text_semi_bold</item>
+        <item name="android:fontFamily">@font/neue_plak_text_semi_bold</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.WideBlack" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/neue_plak_wide_black</item>
+        <item name="android:fontFamily">@font/neue_plak_wide_black</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.WideBold" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/neue_plak_wide_bold</item>
+        <item name="android:fontFamily">@font/neue_plak_wide_bold</item>
+    </style>
+
+    <!-- Design system font styles -->
+
+    <style name="TextAppearance.AppTheme.LargeBold" parent="TextAppearance.AppTheme.Bold">
+        <item name="android:textSize">@dimen/text_size_xxxxlarge</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.LargeMultiline" parent="TextAppearance.AppTheme.SemiBold">
+        <item name="android:textSize">@dimen/text_size_xxxxlarge</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.MediumBold" parent="TextAppearance.AppTheme.Text.Bold">
+        <item name="android:textSize">@dimen/text_size_xxlarge</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.MediumMultiline" parent="TextAppearance.AppTheme.SemiBold">
+        <item name="android:textSize">@dimen/text_size_xxlarge</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.SMediumBold" parent="TextAppearance.AppTheme.Bold">
+        <item name="android:textSize">@dimen/text_size_large</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.SMediumMultiline" parent="TextAppearance.AppTheme.SemiBold">
+        <item name="android:textSize">@dimen/text_size_large</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.XBaseBold" parent="TextAppearance.AppTheme.Text.Bold">
+        <item name="android:textSize">@dimen/text_size_xmedium</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.XBaseMultiline" parent="TextAppearance.AppTheme.SemiBold">
+        <item name="android:textSize">@dimen/text_size_xmedium</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.MediumBoldContent" parent="TextAppearance.AppTheme.Text.SemiBold">
+        <item name="android:textSize">@dimen/text_size_xxlarge</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.MediumRegularContent" parent="TextAppearance.AppTheme.Text.Regular">
+        <item name="android:textSize">@dimen/text_size_xxlarge</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.XBaseBoldContent" parent="TextAppearance.AppTheme.Text.Bold">
+        <item name="android:textSize">@dimen/text_size_xmedium</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.XBaseRegularContent" parent="TextAppearance.AppTheme.Text.Regular">
+        <item name="android:textSize">@dimen/text_size_xmedium</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.BaseBoldContent" parent="TextAppearance.AppTheme.Text.Bold">
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.BaseRegularContent" parent="TextAppearance.AppTheme.Text.Regular">
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.SmallBoldContent" parent="TextAppearance.AppTheme.Text.Bold">
+        <item name="android:textSize">@dimen/text_size_standard</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.SmallRegularContent" parent="TextAppearance.AppTheme.Text.Regular">
+        <item name="android:textSize">@dimen/text_size_standard</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.XSmallRegularContent" parent="TextAppearance.AppTheme.Text.Regular">
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.XXSmallRegularContent" parent="TextAppearance.AppTheme.Text.Regular">
+        <item name="android:textSize">@dimen/text_size_xsmall</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.XXSmall" parent="TextAppearance.AppTheme.ExtendedBold">
+        <item name="android:textSize">@dimen/text_size_xsmall</item>
+        <item name="android:letterSpacing">0.2</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.MediumBoldNum" parent="TextAppearance.AppTheme.NarrowBold">
+        <item name="android:textSize">@dimen/text_size_xxlarge</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.SMediumBoldNum" parent="TextAppearance.AppTheme.NarrowBold">
+        <item name="android:textSize">@dimen/text_size_large</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.XBaseBoldNum" parent="TextAppearance.AppTheme.NarrowBold">
+        <item name="android:textSize">@dimen/text_size_xmedium</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.BaseForm" parent="TextAppearance.AppTheme.Text.SemiBold">
+        <item name="android:textSize">@dimen/text_size_xmedium</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.LabelCaption" parent="TextAppearance.AppTheme.SemiBold">
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.LabelSmall" parent="TextAppearance.AppTheme.SemiBold">
+        <item name="android:textSize">@dimen/text_size_standard</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Chip" parent="TextAppearance.AppTheme.Bold">
+        <item name="android:textSize">@dimen/text_size_xsmall</item>
+        <item name="android:letterSpacing">0.1</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.BaseAction" parent="TextAppearance.AppTheme.Bold">
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.SmallAction" parent="TextAppearance.AppTheme.Bold">
+        <item name="android:textSize">@dimen/text_size_standard</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.DefaultCallSms" parent="TextAppearance.AppTheme.NarrowBold">
+        <item name="android:textSize">@dimen/text_size_large</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.ComfyCallSms" parent="TextAppearance.AppTheme.NarrowBold">
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.CompactCallSms" parent="TextAppearance.AppTheme.Bold">
+        <item name="android:textSize">@dimen/text_size_xsmall</item>
+        <item name="android:letterSpacing">0.1</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.DefaultData" parent="TextAppearance.AppTheme.NarrowBold">
+        <item name="android:textSize">@dimen/text_size_xxxxlarge</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.ComfyData" parent="TextAppearance.AppTheme.NarrowBold">
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.CompactData" parent="TextAppearance.AppTheme.Bold">
+        <item name="android:textSize">@dimen/text_size_xsmall</item>
+        <item name="android:letterSpacing">0.1</item>
+    </style>
+
+</resources>

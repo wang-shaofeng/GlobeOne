@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/promos_consumption_view_height"
+    android:layout_marginHorizontal="@dimen/margin_xsmall"
+    android:layout_marginTop="@dimen/margin_xstandard"
+    app:cardBackgroundColor="?corporateC600"
+    app:cardCornerRadius="@dimen/corner_radius_xxxsmall"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_promo_icon"
+            android:layout_width="@dimen/icon_dimen_standard"
+            android:layout_height="@dimen/icon_dimen_standard"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_standard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@tools:sample/backgrounds/scenic" />
+
+        <View
+            android:id="@+id/v_bottom_background"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="?accentLight"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_expiration_date" />
+
+        <TextView
+            android:id="@+id/tv_expiration_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:paddingVertical="@dimen/padding_smedium"
+            android:textAppearance="?xxSmallRegularContent"
+            android:textColor="?neutralB0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="@string/mock_data_expires_on" />
+
+        <TextView
+            android:id="@+id/tv_not_activated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginBottom="@dimen/margin_standard"
+            android:background="@drawable/content_not_activated_background"
+            android:padding="@dimen/padding_standard"
+            android:text="@string/account_details_content_not_activated"
+            android:textAllCaps="true"
+            android:textAppearance="?chip"
+            android:textColor="?absoluteWhite"
+            app:layout_constraintBottom_toTopOf="@id/v_bottom_background"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_promo_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_standard"
+            android:layout_marginBottom="@dimen/margin_xstandard"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textAppearance="?comfyData"
+            android:textColor="?absoluteWhite"
+            app:layout_constraintBottom_toTopOf="@id/tv_not_activated"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Spotify" />
+
+        <TextView
+            android:id="@+id/tv_purchased"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginBottom="@dimen/margin_xxsmall"
+            android:text="@string/purchased"
+            android:textAllCaps="true"
+            android:textAppearance="?compactCallSms"
+            android:textColor="?corporateD100"
+            app:layout_constraintBottom_toTopOf="@id/tv_promo_name"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/account_activities_subgraph"
+    app:startDestination="@id/accountActivityFragment">
+
+    <fragment
+        android:id="@+id/accountActivityFragment"
+        android:name="ph.com.globe.globeonesuperapp.account_activities.AccountActivitiesFragment"
+        android:label="AccountActivityFragment"
+        tools:layout="@layout/account_activities_fragment">
+        <action
+            android:id="@+id/action_accountActivityFragment_to_selectEnrolledAccountFragment2"
+            app:destination="@id/selectEnrolledAccountFragment2" />
+        <action
+            android:id="@+id/action_accountActivityFragment_to_accountPrepaidLedgerDetailsFragment"
+            app:destination="@id/accountPrepaidLedgerDetailsFragment" />
+        <action
+            android:id="@+id/action_accountActivityFragment_to_paymentDetailsAccount"
+            app:destination="@id/paymentDetailsFragment" />
+        <action
+            android:id="@+id/action_accountActivityFragment_to_accountRewardDetailsFragment"
+            app:destination="@id/accountRewardDetailsFragment" />
+        <action
+            android:id="@+id/action_accountActivityFragment_to_accountBillStatementsDetailFragment"
+            app:destination="@id/accountBillStatementsDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/accountRewardDetailsFragment"
+        android:name="ph.com.globe.globeonesuperapp.account_activities.rewards.AccountRewardDetailsFragment"
+        android:label="AccountActivityDetailsFragment"
+        tools:layout="@layout/account_activity_details_fragment">
+        <argument
+            android:name="transaction"
+            app:argType="ph.com.globe.model.account_activities.AccountRewardsTransaction" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/selectEnrolledAccountFragment2"
+        android:name="ph.com.globe.globeonesuperapp.rewards.allrewards.enrolled_accounts.SelectEnrolledAccountFragment"
+        android:label="SelectEnrolledAccountFragment"
+        tools:layout="@layout/select_enrolled_account_fragment">
+        <argument
+            android:name="entryPoint"
+            app:argType="ph.com.globe.globeonesuperapp.rewards.allrewards.enrolled_accounts.EntryPoint" />
+        <argument
+            android:name="eligibleBrands"
+            android:defaultValue="@null"
+            app:argType="ph.com.globe.globeonesuperapp.rewards.AccountBrandParcelable[]"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountPrepaidLedgerDetailsFragment"
+        android:name="ph.com.globe.globeonesuperapp.account_activities.prepaid_transaction.PrepaidLedgerDetailsFragment"
+        android:label="AccountPrepaidLedgerDetailsFragment"
+        tools:layout="@layout/account_prepaid_ledger_details_fragment">
+        <argument
+            android:name="prepaidLedgerItem"
+            app:argType="ph.com.globe.model.prepaid.PrepaidLedgerTransactionItem" />
+        <argument
+            android:name="msisdn"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="alias"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/paymentDetailsFragment"
+        android:name="ph.com.globe.globeonesuperapp.account_activities.payments.PaymentDetailsFragment"
+        android:label="PaymentDetailsFragment"
+        tools:layout="@layout/payment_details_fragment">
+        <argument
+            android:name="payment"
+            app:argType="ph.com.globe.model.payment.Payment" />
+        <argument
+            android:name="token"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_paymentDetailsFragment_to_orPaymentFragment"
+            app:destination="@id/orPaymentFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/orPaymentFragment"
+        android:name="ph.com.globe.globeonesuperapp.account.or.ORPaymentFragment"
+        android:label="ORPaymentFragment"
+        tools:layout="@layout/or_payment_fragment">
+        <argument
+            android:name="payment"
+            app:argType="ph.com.globe.model.payment.Payment" />
+        <argument
+            android:name="token"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountBillStatementsDetailFragment"
+        android:name="ph.com.globe.globeonesuperapp.account_activities.bill_statements.AccountBillStatementsDetailFragment"
+        android:label="BillStatementsDetailFragment"
+        tools:layout="@layout/account_bill_statements_detail_fragment">
+        <argument
+            android:name="billingStatement"
+            app:argType="ph.com.globe.model.billings.domain_models.BillingStatement" />
+        <action
+            android:id="@+id/action_accountBillStatementsDetailFragment_to_ORStatementFragment"
+            app:destination="@id/ORStatementFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ORStatementFragment"
+        android:name="ph.com.globe.globeonesuperapp.account.or.ORStatementFragment"
+        android:label="ORStatementFragment"
+        tools:layout="@layout/or_statement_fragment">
+        <argument
+            android:name="enrolledAccount"
+            app:argType="ph.com.globe.model.profile.domain_models.EnrolledAccount" />
+        <argument
+            android:name="receiptId"
+            app:argType="string" />
+        <argument
+            android:name="verificationToken"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+
+</navigation>

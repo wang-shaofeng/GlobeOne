@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?accentLight">
+
+        <TextView
+            android:id="@+id/tv_broadband_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_xstandard"
+            android:layout_marginEnd="@dimen/margin_standard"
+            android:text="@string/connect_to_your_modem"
+            android:textAppearance="?xBaseMultiline"
+            android:textColor="?accentDark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_broadband_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_standard"
+            android:text="@string/connect_device_to_modem"
+            android:textAppearance="?baseRegularContent"
+            android:textColor="?neutralB0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_broadband_title" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_add_account"
+            style="@style/InputFieldStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_standard"
+            android:hint="@string/account_landline_or_hpw_number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_broadband_description">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_add_account"
+                style="@style/InputFieldTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number"
+                android:maxLength="@integer/phone_number_length"
+                android:textSize="@dimen/text_size_xmedium" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_modem_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_xstandard"
+            android:layout_marginEnd="@dimen/margin_standard"
+            android:layout_marginBottom="@dimen/margin_xxxxlarge"
+            android:background="@drawable/modem_status_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_add_account"
+            app:layout_constraintVertical_chainStyle="spread_inside">
+
+            <ImageView
+                android:id="@+id/iv_modem_status_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                app:layout_constraintBottom_toBottomOf="@id/tv_wifi_status"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_wifi_status_title"
+                app:srcCompat="@drawable/ic_green_modem" />
+
+            <TextView
+                android:id="@+id/tv_wifi_status_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_smedium"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:text="@string/wifi_status"
+                android:textAppearance="?chip"
+                android:textColor="?neutralA3"
+                app:layout_constraintBottom_toTopOf="@+id/tv_wifi_status"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@id/iv_modem_status_icon"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/tv_wifi_status"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:layout_marginBottom="@dimen/margin_smedium"
+                android:textAppearance="?smallAction"
+                android:textColor="?success"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@id/iv_modem_status_icon"
+                app:layout_constraintTop_toBottomOf="@+id/tv_wifi_status_title"
+                tools:text="Connected" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_accepted_number_formats"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_standard"
+            android:layout_marginEnd="@dimen/margin_standard"
+            android:text="@string/accepted_number_formats"
+            android:textAppearance="?baseAction"
+            android:textColor="?accentDark"
+            app:layout_constraintBottom_toTopOf="@id/el_account_number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_modem_status"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <com.skydoves.expandablelayout.ExpandableLayout
+            android:id="@+id/el_account_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_standard"
+            android:layout_marginEnd="@dimen/margin_standard"
+            app:expandable_animation="normal"
+            app:expandable_duration="@integer/expandable_animation_length_millis"
+            app:expandable_isExpanded="false"
+            app:expandable_parentLayout="@layout/account_number_title_layout"
+            app:expandable_secondLayout="@layout/account_number_description_layout"
+            app:expandable_showSpinner="true"
+            app:expandable_spinner="@drawable/ic_arrow_down"
+            app:expandable_spinner_animate="true"
+            app:expandable_spinner_color="@color/blue_secondary"
+            app:expandable_spinner_gravity="end"
+            app:expandable_spinner_margin="@dimen/margin_xs_standard"
+            app:expandable_spinner_size="@dimen/spinner_size"
+            app:layout_constraintBottom_toTopOf="@id/el_landline_number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_accepted_number_formats"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <com.skydoves.expandablelayout.ExpandableLayout
+            android:id="@+id/el_landline_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_standard"
+            android:layout_marginEnd="@dimen/margin_standard"
+            app:expandable_animation="normal"
+            app:expandable_duration="@integer/expandable_animation_length_millis"
+            app:expandable_isExpanded="false"
+            app:expandable_parentLayout="@layout/landline_number_title_layout"
+            app:expandable_secondLayout="@layout/landline_number_description_layout"
+            app:expandable_showSpinner="true"
+            app:expandable_spinner="@drawable/ic_arrow_down"
+            app:expandable_spinner_animate="true"
+            app:expandable_spinner_color="@color/blue_secondary"
+            app:expandable_spinner_gravity="end"
+            app:expandable_spinner_margin="@dimen/margin_xs_standard"
+            app:expandable_spinner_size="@dimen/spinner_size"
+            app:layout_constraintBottom_toTopOf="@id/el_hpw_number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/el_account_number"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <com.skydoves.expandablelayout.ExpandableLayout
+            android:id="@+id/el_hpw_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_standard"
+            android:layout_marginEnd="@dimen/margin_standard"
+            android:layout_marginBottom="@dimen/margin_standard"
+            app:expandable_animation="normal"
+            app:expandable_duration="@integer/expandable_animation_length_millis"
+            app:expandable_isExpanded="false"
+            app:expandable_parentLayout="@layout/hpw_number_title_layout"
+            app:expandable_secondLayout="@layout/hpw_number_description_layout"
+            app:expandable_showSpinner="true"
+            app:expandable_spinner="@drawable/ic_arrow_down"
+            app:expandable_spinner_animate="true"
+            app:expandable_spinner_color="@color/blue_secondary"
+            app:expandable_spinner_gravity="end"
+            app:expandable_spinner_margin="@dimen/margin_xs_standard"
+            app:expandable_spinner_size="@dimen/spinner_size"
+            app:layout_constraintBottom_toTopOf="@id/btn_next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/el_landline_number"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_next"
+            style="@style/Widget.App.ClassicButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:enabled="false"
+            android:text="@string/button_next"
+            app:layout_constraintBottom_toTopOf="@id/btn_do_it_later"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_do_it_later"
+            style="@style/Widget.App.ClassicButtonNegative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_xmedium"
+            android:text="@string/do_it_later"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

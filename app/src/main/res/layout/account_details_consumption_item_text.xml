@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/promos_consumption_view_height"
+    android:layout_marginHorizontal="@dimen/margin_xsmall"
+    android:layout_marginTop="@dimen/margin_xstandard"
+    app:cardCornerRadius="@dimen/corner_radius_xxxsmall"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/ll_remaining"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="?prepaidE1000"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:weightSum="100"
+            app:layout_constraintBottom_toTopOf="@id/v_bottom_background"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:id="@+id/v_remaining"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="?prepaidE600"
+                tools:layout_weight="70" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_unlimited"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_smedium"
+            android:layout_marginEnd="@dimen/margin_standard"
+            app:srcCompat="@drawable/ic_unlimited"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?prepaidE100" />
+
+        <View
+            android:id="@+id/v_bottom_background"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="?accentLight"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_circle" />
+
+        <ImageView
+            android:id="@+id/iv_circle"
+            android:layout_width="@dimen/promos_expiration_circle_size"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:paddingVertical="@dimen/padding_standard"
+            app:srcCompat="@drawable/ic_gray_broken_circle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tint="?neutralA4" />
+
+        <TextView
+            android:id="@+id/tv_expiration_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            android:textAppearance="?xxSmallRegularContent"
+            android:textColor="?neutralB0"
+            app:layout_constraintBottom_toBottomOf="@id/iv_circle"
+            app:layout_constraintStart_toEndOf="@id/iv_circle"
+            app:layout_constraintTop_toTopOf="@id/iv_circle"
+            tools:text="@string/mock_data_expires_on" />
+
+        <TextView
+            android:id="@+id/tv_usage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginBottom="@dimen/margin_standard"
+            android:textAppearance="?comfyData"
+            android:textColor="?absoluteWhite"
+            app:layout_constraintBottom_toTopOf="@id/v_bottom_background"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="10 / 12 hrs" />
+
+        <TextView
+            android:id="@+id/tv_network_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginBottom="@dimen/margin_standard"
+            android:textAppearance="?comfyData"
+            android:textColor="?absoluteWhite"
+            app:layout_constraintBottom_toTopOf="@id/tv_usage"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="@string/mock_promo_title" />
+
+        <TextView
+            android:id="@+id/tv_limitation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginBottom="@dimen/margin_xxsmall"
+            android:textAllCaps="true"
+            android:textAppearance="?compactCallSms"
+            android:textColor="?prepaidE100"
+            app:layout_constraintBottom_toTopOf="@id/tv_network_type"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="@string/account_details_consumption_texts_left" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

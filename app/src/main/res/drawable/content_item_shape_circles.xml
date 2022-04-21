@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:gravity="top">
+        <shape android:shape="rectangle">
+            <size
+                android:width="@dimen/content_promo_circle_outside_radius"
+                android:height="@dimen/content_promo_circle_outside_half_radius" />
+            <solid android:color="?neutralA5" />
+            <corners
+                android:bottomLeftRadius="@dimen/content_promo_circle_outside_half_radius"
+                android:bottomRightRadius="@dimen/content_promo_circle_outside_half_radius" />
+        </shape>
+    </item>
+    <item
+        android:gravity="top"
+        android:left="@dimen/stroke_width_small"
+        android:right="@dimen/stroke_width_small">
+        <shape android:shape="rectangle">
+            <size
+                android:width="@dimen/content_promo_circle_inside_radius"
+                android:height="@dimen/content_promo_circle_inside_half_radius" />
+            <solid android:color="?neutralB2" />
+            <corners
+                android:bottomLeftRadius="@dimen/content_promo_circle_inside_half_radius"
+                android:bottomRightRadius="@dimen/content_promo_circle_inside_half_radius" />
+        </shape>
+    </item>
+</layer-list>

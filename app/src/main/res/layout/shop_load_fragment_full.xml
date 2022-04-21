@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?accentLight">
+
+        <TextView
+            android:id="@+id/tv_youre_buying_for"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_standard"
+            android:text="@string/you_are_buying_for"
+            android:textAppearance="?baseRegularContent"
+            android:textColor="?neutralA3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_mobile_number"
+            style="@style/InputFieldStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_standard"
+            android:layout_marginEnd="@dimen/margin_standard"
+            android:hint="@string/mobile_number"
+            app:endIconDrawable="@drawable/ic_edit"
+            app:endIconMode="custom"
+            app:endIconTint="?accentDark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_youre_buying_for">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_mobile_number"
+                style="@style/InputFieldTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="false"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_wallet_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/til_mobile_number">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_choose_wallet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/choose_wallet"
+                android:textAppearance="?baseRegularContent"
+                android:textColor="?neutralA3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_personal"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/shop_wallet_height"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:layout_marginEnd="@dimen/margin_small"
+                app:layout_constraintEnd_toStartOf="@id/iv_retailer"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_choose_wallet"
+                app:srcCompat="@drawable/ic_personal_active" />
+
+            <ImageView
+                android:id="@+id/iv_retailer"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/shop_wallet_height"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:layout_marginEnd="@dimen/margin_standard"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@id/iv_personal"
+                app:layout_constraintTop_toBottomOf="@id/tv_choose_wallet"
+                app:srcCompat="@drawable/ic_retailer_inactive" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:background="?attr/colorSurface"
+            app:layout_constraintTop_toBottomOf="@id/cl_wallet_type"
+            tools:layout_editor_absoluteX="0dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_get_off"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_xs_standard"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:scaleType="fitXY"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/get_off_fixed"
+                tools:visibility="visible" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_enter_load_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:text="@string/enter_load_amount"
+                android:textAppearance="?xBaseBold"
+                android:textColor="?accentDark"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_get_off" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_load_amount"
+                style="@style/InputFieldStyle.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_xs_standard"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:textColorHint="?corpshadeA100"
+                app:errorEnabled="true"
+                app:errorIconDrawable="@null"
+                app:hintTextColor="?corpshadeA100"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_enter_load_amount">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_load_amount"
+                    style="@style/InputFieldTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLength="@integer/load_amount_max_length"
+                    app:errorIconDrawable="@null" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tv_pay_only"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?primary"
+                android:textSize="@dimen/text_size_standard"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/til_load_amount"
+                app:layout_constraintStart_toStartOf="@id/til_load_amount" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_choose_amount_here"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_ssmedium"
+                android:text="@string/choose_here"
+                android:textAppearance="?xBaseBold"
+                android:textColor="?accentDark"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_pay_only" />
+
+            <ph.com.globe.globeonesuperapp.utils.ui.BingoView
+                android:id="@+id/bingoView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_large"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:layout_marginEnd="@dimen/margin_large"
+                android:background="?attr/colorSurface"
+                app:layout_constraintTop_toBottomOf="@id/tv_choose_amount_here" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_voucher"
+                style="@style/InputFieldStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:layout_marginBottom="@dimen/margin_xxxlarge"
+                android:hint="@string/enter_voucher_code"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bingoView"
+                app:startIconDrawable="@drawable/ic_voucher"
+                app:startIconTintMode="src_atop">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_voucher"
+                    style="@style/InputFieldTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:maxLength="@integer/phone_number_length" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_subscribe"
+                style="@style/Widget.App.ClassicButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_xxxxlarge"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:layout_marginBottom="@dimen/margin_large"
+                android:text="@string/button_buy_load"
+                android:theme="@style/ThemeOverlay.App.ClassicButton"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_voucher" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

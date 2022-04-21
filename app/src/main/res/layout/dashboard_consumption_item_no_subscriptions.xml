@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/consumption_height"
+    android:background="?accentLight">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_no_subscriptions"
+        style="@style/ThemeOverlay.App.Black70TextColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_standard"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:text="@string/dashboard_consumption_no_subscriptions"
+        android:textAlignment="center"
+        android:textAppearance="?smallRegularContent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_browse_promos"
+        style="@style/Widget.App.ClassicButtonSmall"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_xxxxxlarge"
+        android:layout_marginEnd="@dimen/margin_xxxxxlarge"
+        android:layout_marginTop="@dimen/margin_xstandard"
+        android:text="@string/dashboard_consumption_discover_promos"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_no_subscriptions" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

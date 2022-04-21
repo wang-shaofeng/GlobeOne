@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/absolute_white">
+
+    <ph.com.globe.globeonesuperapp.utils.ui.Wayfinder
+        android:id="@+id/wf_rewards_catalog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?accentLight"
+        app:label="@string/wayfinder_rewards_catalog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/v_toolbar_divider"
+        style="@style/Widget.App.Divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/stroke_width_small"
+        app:layout_constraintTop_toBottomOf="@id/wf_rewards_catalog" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_reward_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dashboard_text_section_progress_green"
+        android:padding="@dimen/padding_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v_toolbar_divider">
+
+        <ImageView
+            android:id="@+id/iv_reward_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_gift_white" />
+
+        <TextView
+            android:id="@+id/tv_reward_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:textAppearance="?xBaseBold"
+            android:textColor="?absoluteWhite"
+            app:layout_constraintEnd_toStartOf="@id/iv_star"
+            app:layout_constraintStart_toEndOf="@id/iv_reward_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/reward_mock_title_1" />
+
+        <ImageView
+            android:id="@+id/iv_star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_standard"
+            app:layout_constraintBottom_toBottomOf="@id/tv_reward_cost"
+            app:layout_constraintEnd_toStartOf="@id/tv_reward_cost"
+            app:layout_constraintTop_toTopOf="@id/tv_reward_cost"
+            app:srcCompat="@drawable/ic_star" />
+
+        <TextView
+            android:id="@+id/tv_reward_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_xsmall"
+            android:textAppearance="?comfyData"
+            android:textColor="?absoluteWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/reward_mock_points_count" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_reward_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_standard"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_reward_details"
+        tools:text="@string/reward_mock_description" />
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_standard"
+        android:text="@string/text_message_info"
+        android:textAppearance="?baseRegularContent"
+        android:textColor="?neutralB0"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_reward_description"
+        tools:visibility="visible" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_sign_up"
+        style="@style/Widget.App.ClassicButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_standard"
+        android:layout_marginEnd="@dimen/margin_standard"
+        android:layout_marginBottom="@dimen/margin_standard"
+        android:text="@string/sign_up_or_log_in_to_redeem"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_kyc_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_standard"
+        android:background="@drawable/outlined_primary_shape"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/cl_redeem"
+        tools:layout_editor_absoluteX="16dp">
+
+        <ImageView
+            android:id="@+id/iv_kyc_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_standard"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_raffle_profile" />
+
+        <TextView
+            android:id="@+id/tv_kyc_status_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:text="@string/raffle_profile_status_title"
+            android:textAppearance="?chip"
+            android:textColor="@color/neutral_A_3"
+            app:layout_constraintBottom_toTopOf="@id/tv_kyc_status_value"
+            app:layout_constraintStart_toEndOf="@id/iv_kyc_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/tv_kyc_status_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:textAppearance="?smallAction"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_kyc_icon"
+            app:layout_constraintTop_toBottomOf="@id/tv_kyc_status_title"
+            tools:text="@string/raffle_profile_status_complete" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_complete_profile"
+            style="@style/Widget.App.ClassicButtonSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_standard"
+            android:text="@string/dashboard_raffle_complete_profile"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_redeem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_info"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/tv_you_are_redeeming_for"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginTop="@dimen/margin_standard"
+            android:layout_marginBottom="@dimen/margin_standard"
+            android:text="@string/you_are_redeeming_for"
+            android:textAppearance="?baseRegularContent"
+            android:textColor="?neutralA3"
+            app:layout_constraintBottom_toTopOf="@id/til_mobile_number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_mobile_number"
+            style="@style/InputFieldStyle.ShopInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_standard"
+            android:layout_marginVertical="@dimen/margin_small"
+            android:hint="@string/mobile_number"
+            app:endIconDrawable="@drawable/ic_edit"
+            app:endIconMode="custom"
+            app:layout_constraintBottom_toTopOf="@id/btn_next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_you_are_redeeming_for">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_mobile_number"
+                style="@style/InputFieldTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="false"
+                android:textColor="?colorOnSecondary"
+                android:textStyle="bold" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:id="@+id/v_select_account"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintBottom_toBottomOf="@id/til_mobile_number"
+            app:layout_constraintEnd_toEndOf="@id/til_mobile_number"
+            app:layout_constraintStart_toStartOf="@id/til_mobile_number"
+            app:layout_constraintTop_toTopOf="@id/til_mobile_number" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_next"
+            style="@style/Widget.App.ClassicButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:layout_marginEnd="@dimen/margin_standard"
+            android:layout_marginBottom="@dimen/margin_standard"
+            android:enabled="false"
+            android:text="@string/next"
+            android:theme="@style/ThemeOverlay.App.ClassicButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_pts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_ssmedium"
+            android:layout_marginEnd="@dimen/margin_xxxxxxlarge"
+            android:textAppearance="?comfyData"
+            android:textColor="?neutralA0"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/til_mobile_number"
+            app:layout_constraintTop_toTopOf="@id/til_mobile_number"
+            tools:text="101 pts"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/iv_star_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/tv_pts"
+            app:layout_constraintEnd_toStartOf="@id/tv_pts"
+            app:layout_constraintTop_toTopOf="@id/tv_pts"
+            app:srcCompat="@drawable/ic_star"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2021 LotusFlare
+  ~ All Rights Reserved.
+  ~ Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/go_create_subgraph"
+    app:startDestination="@id/goCreateIntroFragment">
+
+    <fragment
+        android:id="@+id/goCreateIntroFragment"
+        android:name="ph.com.globe.globeonesuperapp.gocreate.intro.GoCreateIntroFragment"
+        android:label="GoCreateIntroFragment"
+        tools:layout="@layout/go_create_intro_fragment">
+        <argument
+            android:name="entryPoint"
+            app:argType="string" />
+        <argument
+            android:name="mobileNumber"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_goCreateIntroFragment_to_goCreateSelectAccountFragment"
+            app:destination="@id/goCreateSelectAccountFragment" />
+        <action
+            android:id="@+id/action_goCreateIntroFragment_to_goCreateSelectionFragment"
+            app:destination="@id/goCreateSelectionFragment" />
+        <action
+            android:id="@+id/action_goCreateIntroFragment_to_goCreateLoadingFragment"
+            app:destination="@id/goCreateLoadingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/goCreateSelectAccountFragment"
+        android:name="ph.com.globe.globeonesuperapp.gocreate.select_account.GoCreateSelectAccountFragment"
+        android:label="GoCreateSelectAccountFragment"
+        tools:layout="@layout/go_create_select_account_fragment">
+    </fragment>
+    <fragment
+        android:id="@+id/goCreateLoadingFragment"
+        android:name="ph.com.globe.globeonesuperapp.gocreate.loading.GoCreateLoadingFragment"
+        android:label="GoCreateLoadingFragment"
+        tools:layout="@layout/go_create_loading_fragment">
+        <argument
+            android:name="entryPoint"
+            app:argType="ph.com.globe.globeonesuperapp.gocreate.loading.LoadingEntryPoint" />
+        <action
+            android:id="@+id/action_goCreateLoadingFragment_to_goCreateSelectionFragment"
+            app:destination="@id/goCreateSelectionFragment"
+            app:popUpTo="@id/goCreateIntroFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/goCreateSelectionFragment"
+        android:name="ph.com.globe.globeonesuperapp.gocreate.selection.GoCreateSelectionFragment"
+        android:label="GoCreateSelectionFragment"
+        tools:layout="@layout/go_create_selection_fragment">
+        <action
+            android:id="@+id/action_goCreateSelectionFragment_to_goCreateSummaryFragment"
+            app:destination="@id/goCreateSummaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/goCreateSummaryFragment"
+        android:name="ph.com.globe.globeonesuperapp.gocreate.summary.GoCreateSummaryFragment"
+        android:label="GoCreateSummaryFragment"
+        tools:layout="@layout/go_create_summary_fragment">
+        <action
+            android:id="@+id/action_goCreateSummaryFragment_to_goCreateSelectAccountFragment"
+            app:destination="@id/goCreateSelectAccountFragment" />
+        <action
+            android:id="@+id/action_goCreateSummaryFragment_to_payment_subgraph"
+            app:destination="@id/payment_subgraph">
+            <argument
+                android:name="paymentParameter"
+                app:argType="ph.com.globe.globeonesuperapp.payment.PaymentParameters" />
+        </action>
+    </fragment>
+
+    <include app:graph="@navigation/payment_subgraph" />
+
+</navigation>

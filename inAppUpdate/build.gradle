@@ -1,0 +1,109 @@
+/*
+ * Copyright (C) 2021 LotusFlare
+ * All Rights Reserved.
+ * Unauthorized copying and distribution of this file, via any medium is strictly prohibited.
+ */
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdkVersion globeCompileVersion
+    buildToolsVersion globeBuildToolsVersion
+
+    defaultConfig {
+        minSdkVersion globeMinSdkVersion
+        targetSdkVersion globeTargetSdkVersion
+
+        versionCode globeVersion.versionCode()
+        versionName globeVersion.versionName()
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "servers", "analyticsType"
+
+    productFlavors {
+
+        staging {
+            dimension "servers"
+            buildConfigField("String", "SMART_RATING_CONFIG", "\"smart_rating_test\"")
+            buildConfigField("String", "FORCED_UPDATE", "\"forced_upgrade_test\"")
+            buildConfigField("String", "RAFFLE", "\"raffle_test\"")
+            buildConfigField("String", "RUSH_CAMPAIGN", "\"rush_campaign_test\"")
+            buildConfigField("String", "DAC_CONFIG", "\"dac_config_test\"")
+            buildConfigField("String", "BANNERS", "\"dashboard_banners_test\"")
+            buildConfigField("String", "FEATURE_ACTIVATION", "\"feature_activation_config_test\"")
+            buildConfigField("String", "PERSONALIZED_CAMPAIGNS", "\"personalized_campaigns_config_test\"")
+            buildConfigField("String", "CHANNEL_MAP", "\"promo_channel_mapping_test\"")
+        }
+
+        prod {
+            dimension "servers"
+            buildConfigField("String", "SMART_RATING_CONFIG", "\"smart_rating\"")
+            buildConfigField("String", "FORCED_UPDATE", "\"forced_upgrade\"")
+            buildConfigField("String", "RAFFLE", "\"raffle\"")
+            buildConfigField("String", "RUSH_CAMPAIGN", "\"rush_campaign\"")
+            buildConfigField("String", "DAC_CONFIG", "\"dac_config\"")
+            buildConfigField("String", "BANNERS", "\"dashboard_banners\"")
+            buildConfigField("String", "FEATURE_ACTIVATION", "\"feature_activation_config\"")
+            buildConfigField("String", "CHANNEL_MAP", "\"promo_channel_mapping\"")
+            buildConfigField("String", "PERSONALIZED_CAMPAIGNS", "\"personalized_campaigns_config\"")
+        }
+
+        google {
+            dimension "analyticsType"
+        }
+
+        huawei {
+            dimension "analyticsType"
+        }
+
+        noAnalytics {
+            dimension "analyticsType"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    // implementations
+    implementation project(':util')
+    implementation project(':model')
+    implementation project(':analytics')
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "androidx.core:core-ktx:$coreKtxVersion"
+    implementation "androidx.appcompat:appcompat:$appCompatVersion"
+
+    // Hilt
+    implementation "com.google.dagger:hilt-android:$hiltDaggerVersion"
+    kapt "com.google.dagger:hilt-compiler:$hiltDaggerVersion"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hiltVersion"
+    kapt "androidx.hilt:hilt-compiler:$hiltVersion"
+
+    // Firebase
+    implementation platform("com.google.firebase:firebase-bom:$firebaseBomVersion")
+    implementation 'com.google.firebase:firebase-config-ktx'
+
+    // Coroutine
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion"
+}
